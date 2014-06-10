@@ -5,7 +5,7 @@
  *      Author: matias
  */
 
-#include "../headers/ProblemaSalud.h"
+#include "../../headers/clases/ProblemaSalud.h"
 
 //Creadores
 ProblemaSalud::ProblemaSalud(int codigoPS,string etiqueta): codigoPS(codigoPS), etiqueta(etiqueta) { }

@@ -6,7 +6,7 @@
  */
 
 
-#include "../headers/Administrativo.h"
+#include "../../headers/clases/Administrativo.h"
 
 
 

@@ -5,9 +5,9 @@
  *      Author: Emiliano
  */
 
-#include "../headers/Comun.h"
-#include "../headers/Consulta.h"
-#include "../headers/FechaHora.h"
+#include "../../headers/clases/Comun.h"
+#include "../../headers/clases/Consulta.h"
+#include "../../headers/dataTypes/FechaHora.h"
 
 Comun::Comun(int codigo, Fecha fechaComun, Hora horaComun, Fecha fechaReserva) : Consulta(codigo, fechaComun, horaComun,false), fechaReserva(fechaReserva){};
 

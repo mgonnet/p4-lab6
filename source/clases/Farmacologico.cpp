@@ -5,10 +5,7 @@
  *      Author: Emiliano
  */
 
-#include "../headers/Farmacologico.h"
-
-//Creadoras
-Farmacologico::Farmacologico(string descripcion): Tratamiento(descripcion){};
+#include "../../headers/clases/Farmacologico.h"
 
 
 

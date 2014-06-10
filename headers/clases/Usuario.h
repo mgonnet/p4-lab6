@@ -10,8 +10,8 @@
 
 #include <string>
 
-#include "Sexo.h"
-#include "FechaHora.h"
+#include "../../headers/dataTypes/Sexo.h"
+#include "../../headers/dataTypes/FechaHora.h"
 
 using namespace std;
 

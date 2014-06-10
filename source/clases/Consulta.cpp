@@ -7,7 +7,7 @@
 
 
 
-#include "../headers/Consulta.h"
+#include "../../headers/clases/Consulta.h"
 
 Consulta::Consulta(int codigo,Fecha fechaConsulta,Hora horaConsulta,bool asistio): codigo(codigo), fechaConsulta(fechaConsulta), horaConsulta(horaConsulta), asistio(asistio) { }
 

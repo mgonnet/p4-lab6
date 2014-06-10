@@ -1,6 +1,6 @@
 #include <string>
 
-#include "../headers/Medicamento.h"
+#include "../../headers/clases/Medicamento.h"
 
 //Creadoras
 Medicamento::Medicamento(string nombre): nombre(nombre) { }

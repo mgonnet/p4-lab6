@@ -10,7 +10,7 @@
 
 #include <string>
 
-#include "FechaHora.h"
+#include "../../headers/dataTypes/FechaHora.h"
 
 using namespace std;
 

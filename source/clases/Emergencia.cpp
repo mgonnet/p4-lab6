@@ -7,9 +7,9 @@
 
 
 
-#include "../headers/Emergencia.h"
-#include "../headers/Consulta.h"
-#include "../headers/FechaHora.h"
+#include "../../headers/clases/Emergencia.h"
+#include "../../headers/clases/Consulta.h"
+#include "../../headers/dataTypes/FechaHora.h"
 
 Emergencia::Emergencia(int codigo,Fecha fechaEmergencia,Hora horaEmergencia, string motivo) : Consulta(codigo, fechaEmergencia, horaEmergencia, true), motivo(motivo){};
 

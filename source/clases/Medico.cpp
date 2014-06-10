@@ -5,6 +5,6 @@
  *      Author: Emiliano
  */
 
-#include "../headers/Medico.h"
+#include "../../headers/clases/Medico.h"
 
 

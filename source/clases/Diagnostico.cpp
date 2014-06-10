@@ -5,7 +5,7 @@
  *      Author: matias
  */
 
-#include "../headers/Diagnostico.h"
+#include "../../headers/clases/Diagnostico.h"
 
 //Creadoras
 Diagnostico::Diagnostico(string descripcion): descripcion(descripcion) { }

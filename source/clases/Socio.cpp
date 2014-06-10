@@ -5,7 +5,7 @@
  *      Author: Emiliano
  */
 
-#include "../headers/Socio.h"
+#include "../../headers/clases/Socio.h"
 
 
 

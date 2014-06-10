@@ -6,7 +6,7 @@
  */
 
 
-#include "../headers/Tratamiento.h"
+#include "../../headers/clases/Tratamiento.h"
 
 
 Tratamiento::Tratamiento(string descripcion){

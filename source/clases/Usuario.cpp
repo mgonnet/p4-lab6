@@ -5,7 +5,7 @@
  *      Author: matias
  */
 
-#include "../headers/Usuario.h"
+#include "../../headers/clases/Usuario.h"
 
 //Constructores
 Usuario::Usuario(string nombre,string ci,Sexo sexo,Fecha fechaNac,bool activo):

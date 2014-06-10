@@ -6,7 +6,7 @@
  */
 
 
-#include "../headers/Quirurgico.h"
+#include "../../headers/clases/Quirurgico.h"
 
 Quirurgico::Quirurgico(string descripcion, Fecha fecha):Tratamiento(descripcion),fecha(fecha){};
 

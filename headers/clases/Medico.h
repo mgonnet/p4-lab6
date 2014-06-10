@@ -8,8 +8,6 @@
 #ifndef MEDICO_H_
 #define MEDICO_H_
 
-#include "RolUsuario.h"
-
 class Medico
 {
 

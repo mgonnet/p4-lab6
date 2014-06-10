@@ -4,17 +4,23 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../source/dataTypes/DTCategoriaPS.cpp \
 ../source/dataTypes/DTInfoLogueo.cpp \
+../source/dataTypes/DTSocio.cpp \
 ../source/dataTypes/DTUser.cpp \
 ../source/dataTypes/FechaHora.cpp 
 
 OBJS += \
+./source/dataTypes/DTCategoriaPS.o \
 ./source/dataTypes/DTInfoLogueo.o \
+./source/dataTypes/DTSocio.o \
 ./source/dataTypes/DTUser.o \
 ./source/dataTypes/FechaHora.o 
 
 CPP_DEPS += \
+./source/dataTypes/DTCategoriaPS.d \
 ./source/dataTypes/DTInfoLogueo.d \
+./source/dataTypes/DTSocio.d \
 ./source/dataTypes/DTUser.d \
 ./source/dataTypes/FechaHora.d 
 

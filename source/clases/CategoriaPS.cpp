@@ -1,6 +1,6 @@
 #include <string>
 
-#include "../headers/CategoriaPS.h"
+#include "../../headers/clases/CategoriaPS.h"
 
 //Creadoras
 CategoriaPS::CategoriaPS(char codigoCPS,string nombre): codigoCPS(codigoCPS), nombre(nombre) { }

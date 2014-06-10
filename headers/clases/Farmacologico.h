@@ -10,8 +10,8 @@
 
 #include <string>
 
-#include "FechaHora.h"
-#include "Tratamiento.h"
+#include "../../headers/dataTypes/FechaHora.h"
+#include "../../headers/clases/Tratamiento.h"
 
 using namespace std;
 
