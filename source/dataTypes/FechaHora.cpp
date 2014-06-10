@@ -5,7 +5,7 @@
  *      Author: matias
  */
 
-#include "../headers/FechaHora.h"
+#include "../../headers/dataTypes/FechaHora.h"
 
 
 // --------------- Fecha --------------- //

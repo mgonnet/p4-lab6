@@ -8,7 +8,19 @@
 #ifndef DTPROBLEMASALUD_H_
 #define DTPROBLEMASALUD_H_
 
+#include <string>
 
+using namespace std;
+
+class DTProblemaSalud
+{
+private:
+	string	codigo;
+	string	etiqueta;
+
+public:
+
+};
 
 
 #endif /* DTPROBLEMASALUD_H_ */

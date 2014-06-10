@@ -6,10 +6,10 @@
  */
 
 
-#include "../headers/dataTypes/DTInfoLogueo.h"
+#include "../../headers/dataTypes/DTInfoLogueo.h"
 
 //Constructoras
-DTInfoLogueo::DTInfoLogueo(): primerLogueo(false), adminPorDefecto(false), activo(false) { }
+DTInfoLogueo::DTInfoLogueo(): primerLogueo(false), adminPorDefecto(false), activo(false), usuarioExiste(false) { }
 DTInfoLogueo::DTInfoLogueo(bool primerLogueo, bool adminPorDefecto, bool activo, bool usuarioExiste): primerLogueo(primerLogueo), adminPorDefecto(adminPorDefecto),activo(activo), usuarioExiste(usuarioExiste) { }
 
 //Sobrecarga de operadores

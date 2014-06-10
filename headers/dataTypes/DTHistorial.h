@@ -8,7 +8,18 @@
 #ifndef DTHISTORIAL_H_
 #define DTHISTORIAL_H_
 
+#include <set>
 
+#include "DTConsulta.h"
+#include "DTSocio.h"
 
+using namespace std;
+
+class DTHistorial
+{
+private:
+	DTSocio			socio;
+	set<DTConsulta>	consultas;
+};
 
 #endif /* DTHISTORIAL_H_ */

@@ -8,7 +8,15 @@
 #ifndef DTMEDICAMENTO_H_
 #define DTMEDICAMENTO_H_
 
+#include <string>
 
+using namespace std;
+
+class DTMedicamento
+{
+private:
+	string	nombre;
+};
 
 
 #endif /* DTMEDICAMENTO_H_ */

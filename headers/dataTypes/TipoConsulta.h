@@ -8,7 +8,8 @@
 #ifndef TIPOCONSULTA_H_
 #define TIPOCONSULTA_H_
 
-
+enum TipoConsulta { COMUN,
+					EMERGENCIA };
 
 
 #endif /* TIPOCONSULTA_H_ */

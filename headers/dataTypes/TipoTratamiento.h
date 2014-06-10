@@ -8,7 +8,7 @@
 #ifndef TIPOTRATAMIENTO_H_
 #define TIPOTRATAMIENTO_H_
 
-
-
+enum TipoTratamiento {	QUIRURGICO,
+						FARMACOLOGICO };
 
 #endif /* TIPOTRATAMIENTO_H_ */

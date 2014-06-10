@@ -8,7 +8,16 @@
 #ifndef DTMEDICO_H_
 #define DTMEDICO_H_
 
+#include <string>
 
+using namespace std;
+
+class DTMedico
+{
+	string	nombre;
+	string	apellido;
+	string	ci;
+};
 
 
 #endif /* DTMEDICO_H_ */

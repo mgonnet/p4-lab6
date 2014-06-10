@@ -8,6 +8,14 @@
 #ifndef DTRESERVAA_H_
 #define DTRESERVAA_H_
 
+#include "FechaHora.h"
+
+class DTReservaA
+{
+	Fecha	fechaC;
+	Hora	horaC;
+	Fecha	fechaR;
+};
 
 
 

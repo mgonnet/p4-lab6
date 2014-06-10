@@ -7,7 +7,7 @@
 
 #include <iostream>
 
-#include "../headers/dataTypes/DTUser.h"
+#include "../../headers/dataTypes/DTUser.h"
 
 using namespace std;
 
@@ -52,6 +52,6 @@ ostream &operator<<( ostream &stream,DTUser imprimible) //Misterioso
 		cout << "El usuario está activo" << endl;
 	else
 		cout << "El usuario está inactivo" << endl;
-	stream << "Los roles son: " << imprimible.getRoles();
+	//stream << "Los roles son: " << imprimible.getRoles(); // CUIDADO:
 	return( stream );
 }

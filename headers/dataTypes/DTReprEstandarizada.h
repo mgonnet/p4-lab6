@@ -8,7 +8,17 @@
 #ifndef DTREPRESTANDARIZADA_H_
 #define DTREPRESTANDARIZADA_H_
 
+#include <string>
+#include <set>
 
+using namespace std;
 
+class DTReprEstandarizada
+{
+private:
+	string					codigoCPS;
+	string					nombre;
+	set<DTProblemaSalud>	problemasSalud;
+};
 
 #endif /* DTREPRESTANDARIZADA_H_ */
