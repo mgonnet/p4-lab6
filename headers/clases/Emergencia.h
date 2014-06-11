@@ -31,6 +31,10 @@ public:
 	
 	//Setters
 	void	setMotivo(string motivo);
+
+	//Operaciones
+		void 	create(string ciSocio, string ciMedico,
+								Fecha fechaConsulta, string motivo, bool asiste);
 };
 
 

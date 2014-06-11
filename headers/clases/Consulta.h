@@ -37,6 +37,21 @@ public:
 	void	setFechaConsulta(Fecha fechaConsulta);
 	void	setHoraConsulta(Hora horaConsulta);
 	void	setAsistioConsulta(bool asistio);
+
+	//Operaciones
+	DTReservaA		getDatosReserva();
+	DTConsulta		getHistorialConsultas();
+	TipoConsulta	getTipoConsulta();
+	DTConsulta		obtenerConsultaDia(); //aca deberia ser DTConsultaDia
+	bool			isActiva();
+	bool			esDeHoy();
+	void 			altaDiagnosticos();
+	void			crearLinkSocio();
+	void			crearLinkMedico();
+	void 			destruirLinkSocio();
+	void 			destruirLinkMedico();
+	void 			generarCodigoConsulta();
+
 };
 
 
