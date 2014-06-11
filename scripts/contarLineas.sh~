@@ -1,0 +1,3 @@
+#!/bin/bash
+cd ..
+find . -name '*.cpp' -and -name '*.h' | xargs wc -l
