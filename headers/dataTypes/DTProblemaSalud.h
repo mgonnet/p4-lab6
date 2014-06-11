@@ -19,7 +19,10 @@ private:
 	string	etiqueta;
 
 public:
+	DTProblemaSalud(string codigo, string etiqueta);
 
+	const string& getCodigo() const;
+	const string& getEtiqueta() const;
 };
 
 

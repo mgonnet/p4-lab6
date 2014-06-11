@@ -10,27 +10,33 @@
 
 #include <string>
 
-#include "../../headers/dataTypes/FechaHora.h"
-#include "../../headers/clases/Tratamiento.h"
+#include "Tratamiento.h"
+
+class Fecha;
+class Diagnostico;
 
 using namespace std;
 
 class Quirurgico: public Tratamiento{
 
 private:
-	
 	Fecha fecha;
+
+	void dummy() { }
 
 public:
 	
 	//Creadoras
-	Quirurgico(string descripcion, Fecha fecha);
+	Quirurgico(string descripcion, Fecha fecha, Diagnostico* diag);
 
 	//Getters
 	Fecha	getFecha();
 	
 	//Setters
 	void	setFecha(Fecha fecha);
+
+	//Destructor
+	virtual ~Quirurgico();
 };
 
 

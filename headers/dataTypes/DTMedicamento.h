@@ -14,6 +14,11 @@ using namespace std;
 
 class DTMedicamento
 {
+public:
+	DTMedicamento(string nombre);
+
+	const string& getNombre() const;
+
 private:
 	string	nombre;
 };

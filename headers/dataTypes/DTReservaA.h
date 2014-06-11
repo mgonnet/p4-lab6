@@ -12,6 +12,14 @@
 
 class DTReservaA
 {
+public:
+	DTReservaA(Fecha fechaC,Hora horaC,Fecha fechaR);
+
+	const Fecha& getFechaC() const;
+	const Fecha& getFechaR() const;
+	const Hora& getHoraC() const;
+
+private:
 	Fecha	fechaC;
 	Hora	horaC;
 	Fecha	fechaR;

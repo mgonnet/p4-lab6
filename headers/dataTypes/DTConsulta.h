@@ -20,6 +20,14 @@ private:
 	TipoConsulta	tipo;
 	DTMedico		medico;
 	DTDiagnostico	diagnostico;	// CUIDADO: creo que aca sería un conjunto
+
+public:
+	DTConsulta(Fecha fechaConsulta, TipoConsulta tipo, DTMedico medico, DTDiagnostico diagnostico);
+
+	const DTDiagnostico& getDiagnostico() const;
+	const Fecha& getFechaConsulta() const;
+	const DTMedico& getMedico() const;
+	TipoConsulta getTipo() const;
 };
 
 #endif /* DTCONSULTA_H_ */

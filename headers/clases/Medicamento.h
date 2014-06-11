@@ -1,5 +1,7 @@
 #include <string>
 
+class Farmacologico;
+
 using namespace std;
 
 class Medicamento
@@ -9,7 +11,7 @@ private:
 
 public:
 	//Creadoras
-	Medicamento(string nombre);
+	Medicamento(string nombre,Farmacologico farmacologico);
 
 	//Getters
 	string	getNombre();

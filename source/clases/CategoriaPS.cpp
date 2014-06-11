@@ -3,12 +3,12 @@
 #include "../../headers/clases/CategoriaPS.h"
 
 //Creadoras
-CategoriaPS::CategoriaPS(char codigoCPS,string nombre): codigoCPS(codigoCPS), nombre(nombre) { }
+CategoriaPS::CategoriaPS(char codigoCPS,string etiqueta): codigoCPS(codigoCPS), etiqueta(etiqueta) { }
 
 //Getters
 char 	CategoriaPS::getCodigoCPS() { return codigoCPS; }
-string	CategoriaPS::getNombre() { return nombre; }
+string	CategoriaPS::getEtiqueta() { return etiqueta; }
 
 //Setters
 void	CategoriaPS::setCodigoCPS(char codigoCPS) { this->codigoCPS=codigoCPS; }
-void	CategoriaPS::setNombre(string nombre){ this->nombre=nombre; }
+void	CategoriaPS::setEtiqueta(string etiqueta){ this->etiqueta=etiqueta; }

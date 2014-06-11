@@ -17,6 +17,18 @@ using namespace std;
 
 class DTDiagnosticoAlta
 {
+public:
+	DTDiagnosticoAlta(	string descripcion,
+						string codigo,
+						string etiqueta,
+						set<DTTratamiento> tratamientos);
+
+	const string& getCodigo() const;
+	const string& getDescripcion() const;
+	const string& getEtiqueta() const;
+	const set<DTTratamiento>& getTratamientos() const;
+
+private:
 	string				descripcion;
 	string				codigo;
 	string				etiqueta;

@@ -15,19 +15,22 @@ using namespace std;
 class Tratamiento{
 
 private:
-	
-	string descripcion;
+	string	descripcion;
+
+	virtual void dummy()=0;
 
 public:
-	
+
 	//Creadoras
 	Tratamiento(string descripcion);
 
 	//Getters
 	string	getDescripcion();
-	
+
 	//Setters
 	void	setDescripcion(string descripcion);
+
+	virtual ~Tratamiento();
 };
 
 

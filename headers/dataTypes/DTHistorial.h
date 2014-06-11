@@ -17,6 +17,12 @@ using namespace std;
 
 class DTHistorial
 {
+public:
+	DTHistorial(DTSocio socio, set<DTConsulta> consultas);
+
+	const set<DTConsulta>& getConsultas() const;
+	const DTSocio& getSocio() const;
+
 private:
 	DTSocio			socio;
 	set<DTConsulta>	consultas;

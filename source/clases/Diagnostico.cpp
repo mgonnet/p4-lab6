@@ -8,7 +8,7 @@
 #include "../../headers/clases/Diagnostico.h"
 
 //Creadoras
-Diagnostico::Diagnostico(string descripcion): descripcion(descripcion) { }
+Diagnostico::Diagnostico(string descripcion,  set<DTTratamiento> datosTratamientos): descripcion(descripcion) { }
 
 //Getters
 string	Diagnostico::getDescripcion() { return descripcion; }

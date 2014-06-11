@@ -9,14 +9,20 @@
 #define PROBLEMASALUD_H_
 
 #include <string>
+#include <set>
+
+class Diagnostico;
+class CategoriaPS;
 
 using namespace std;
 
 class ProblemaSalud
 {
 private:
-	int		codigoPS;
-	string	etiqueta;
+	int					codigoPS;
+	string				etiqueta;
+	set<Diagnostico*>	diagnosticos;
+	CategoriaPS*		categoriaPS;
 
 public:
 	//Creadores
@@ -29,6 +35,8 @@ public:
 	//Setters
 	void setCodigoPS(int codigoPS);
 	void setEtiqueta(string etiqueta);
+
+	void linkearDiagnostico(Diagnostico diag);
 };
 
 

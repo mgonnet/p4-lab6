@@ -13,9 +13,18 @@
 
 #include "TipoTratamiento.h"
 #include "DTMedicamento.h"
+#include "FechaHora.h"
 
 class DTTratamiento
 {
+public:
+	DTTratamiento(TipoTratamiento tipo, string descripcion, Fecha fecha, set<DTMedicamento> medicamentos);
+
+	const string& getDescripcion() const;
+	const Fecha& getFecha() const;
+	const set<DTMedicamento>& getMedicamentos() const;
+	TipoTratamiento getTipo() const;
+
 private:
 	TipoTratamiento		tipo;
 	string				descripcion;

@@ -14,8 +14,15 @@ using namespace std;
 
 class DTCategoriaPS
 {
+private:
 	string	codigoCPS;
 	string	etiqueta;
+
+public:
+	DTCategoriaPS(string codigoCPS,string etiqueta);
+
+	string	getCodigoCPS();
+	string	getEtiqueta();
 };
 
 #endif /* DTCATEGORIAPS_H_ */

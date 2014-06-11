@@ -9,23 +9,40 @@
 #define DIAGNOSTICO_H_
 
 #include <string>
+#include <set>
+
+#include "../../headers/dataTypes/DTTratamiento.h"
+#include "../../headers/dataTypes/DTDiagnostico.h"
+
+class Diagnostico;
+class Tratamiento;
+class Farmacologico;
+class Quirurgico;
+class ProblemaSalud;
 
 using namespace std;
 
 class Diagnostico
 {
 private:
-	string descripcion;
+	string				descripcion;
+	set<Tratamiento*>	tratamientos;
+	ProblemaSalud*		problemaSalud;
+	//Consulta*			consulta;	CUIDADO: ¿Es realmente necesario conocer la consulta en diagnostico?
 
 public:
 	//Creadores
-	Diagnostico(string descripcion);
+	Diagnostico(string descripcion, set<DTTratamiento> datosTratamientos);
 
 	//Getters
 	string	getDescripcion();
 
 	//Setters
 	void	setDescripcion();
+
+	//
+	DTDiagnostico	getHistorial();
+	void			linkearPS(ProblemaSalud ps);
 };
 
 

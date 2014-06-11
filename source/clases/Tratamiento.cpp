@@ -14,13 +14,12 @@ Tratamiento::Tratamiento(string descripcion){
 }
 
 //Getters
-	string	Tratamiento::getDescripcion(){
-		return this->descripcion;
-	}
+string	Tratamiento::getDescripcion() { return this->descripcion; }
 
 //Setters
-	void Tratamiento::setDescripcion(string descripcion){
-		this->descripcion = descripcion;
-	}
+void Tratamiento::setDescripcion(string descripcion) { this->descripcion = descripcion; }
+
+//Destructor
+Tratamiento::~Tratamiento() { }
 
 
