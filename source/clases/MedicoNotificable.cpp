@@ -8,12 +8,29 @@
 #include "../../headers/clases/MedicoNotificable.h"
 #include "../../headers/dataTypes/Parametro.h"
 #include "../../headers/clases/Mensaje.h"
+#include "../../headers/clases/Accion.h"
 
+void	MedicoNotificable::addAccion(Accion* accion)
+{
+	accionesUpdate.insert(accion);
+}
 
-void	MedicoNotificable::addAccion(Accion*) { }
-void	MedicoNotificable::rmAccion(Accion*) { }
+void	MedicoNotificable::rmAccion(Accion* accion)
+{
+	accionesUpdate.erase(accion);
+}
 
-void	MedicoNotificable::update(Parametro* param) { delete param; }
+void	MedicoNotificable::update(Parametro* param)
+{
+	if(/*checkeo 12 meses*/ true )
+	{
+		set<Accion*>::iterator it;
+		for(it=accionesUpdate.begin();it!=accionesUpdate.end();++it)
+		{
+			(*it)->performAction(this,param);
+		}
+	}
+}
 
 void	MedicoNotificable::addMensaje(Mensaje* mensaje)
 {

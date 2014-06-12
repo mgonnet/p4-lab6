@@ -21,3 +21,5 @@ void AccionMensaje::performAction(MedicoNotificable* medico,Parametro* param)
 	//Ahora se lo debo agregar al MedicoNotificable
 	medico->addMensaje(nuevoMensaje);
 }
+
+AccionMensaje::~AccionMensaje() { }

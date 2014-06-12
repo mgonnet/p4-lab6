@@ -29,7 +29,7 @@ public:
 
 	void	addAccion(Accion*);
 	void	rmAccion(Accion*);
-	void	update(Parametro*);
+	void	update(Parametro*); // Heredada de Observer
 
 	void	addMensaje(Mensaje*);
 

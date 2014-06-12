@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../source/clases/Accion.cpp \
 ../source/clases/AccionMensaje.cpp \
 ../source/clases/Administrativo.cpp \
 ../source/clases/CategoriaPS.cpp \
@@ -26,6 +27,7 @@ CPP_SRCS += \
 ../source/clases/Usuario.cpp 
 
 OBJS += \
+./source/clases/Accion.o \
 ./source/clases/AccionMensaje.o \
 ./source/clases/Administrativo.o \
 ./source/clases/CategoriaPS.o \
@@ -48,6 +50,7 @@ OBJS += \
 ./source/clases/Usuario.o 
 
 CPP_DEPS += \
+./source/clases/Accion.d \
 ./source/clases/AccionMensaje.d \
 ./source/clases/Administrativo.d \
 ./source/clases/CategoriaPS.d \

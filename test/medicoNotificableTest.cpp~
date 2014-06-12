@@ -57,3 +57,5 @@ TEST_F(MedicoNotificableTest,funcionaBuzon)
 	ASSERT_TRUE(estaSocio);
 	ASSERT_TRUE(estaArtigas);
 }
+
+

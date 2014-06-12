@@ -14,7 +14,7 @@ class Parametro;
 class Accion
 {
 public:
-	virtual void performAction(MedicoNotificable,Parametro*)=0;
+	virtual void performAction(MedicoNotificable*,Parametro*)=0;
 
 	virtual ~Accion();
 };

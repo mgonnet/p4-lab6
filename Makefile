@@ -46,7 +46,7 @@ hCI= headers/interfacesYControladores
 
 
 DT= FechaHora.o DTCategoriaPS.o DTMedico.o DTDiagnostico.o DTConsulta.o DTMedicamento.o DTDiagnosticoAlta.o DTTratamiento.o DTSocio.o DTHistorial.o DTInfoLogueo.o DTProblemaSalud.o DTReprEstandarizada.o DTReservaA.o DTUser.o   
-clases= ParametroAccionMensaje.o Observer.o Mensaje.o MedicoNotificable.o AccionMensaje.o
+clases= ParametroAccionMensaje.o Observer.o Mensaje.o MedicoNotificable.o Accion.o AccionMensaje.o
 
 DTUser.o : $(USER_DIR)/$(sDT)/DTUser.cpp $(USER_DIR)/$(hDT)/DTUser.h $(USER_DIR)/$(hDT)/Sexo.h $(USER_DIR)/$(hDT)/Rol.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sDT)/DTUser.cpp
@@ -105,7 +105,10 @@ Observer.o : $(USER_DIR)/$(sC)/Observer.cpp $(USER_DIR)/$(hC)/Observer.h $(GTEST
 Mensaje.o : $(USER_DIR)/$(sC)/Mensaje.cpp $(USER_DIR)/$(hC)/Mensaje.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/Mensaje.cpp
 
-AccionMensaje.o : $(USER_DIR)/$(sC)/AccionMensaje.cpp $(USER_DIR)/$(hC)/AccionMensaje.h $(USER_DIR)/$(hC)/Accion.h $(USER_DIR)/$(hDT)/Parametro.h MedicoNotificable.o $(GTEST_HEADERS)
+Accion.o : $(USER_DIR)/$(sC)/Accion.cpp $(USER_DIR)/$(hC)/Accion.h $(USER_DIR)/$(hDT)/Parametro.h MedicoNotificable.o $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/Accion.cpp
+	
+AccionMensaje.o : $(USER_DIR)/$(sC)/AccionMensaje.cpp $(USER_DIR)/$(hC)/AccionMensaje.h Accion.o $(USER_DIR)/$(hDT)/Parametro.h MedicoNotificable.o $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/AccionMensaje.cpp
 	
 MedicoNotificable.o : $(USER_DIR)/$(sC)/MedicoNotificable.cpp $(USER_DIR)/$(hC)/MedicoNotificable.h Mensaje.o Observer.o ParametroAccionMensaje.o $(USER_DIR)/$(hC)/Accion.h $(GTEST_HEADERS)
