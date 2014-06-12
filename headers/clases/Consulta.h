@@ -11,6 +11,9 @@
 #include <string>
 
 #include "../../headers/dataTypes/FechaHora.h"
+#include "../../headers/dataTypes/DTReservaA.h"
+#include "../../headers/dataTypes/DTConsulta.h"
+#include "../../headers/dataTypes/TipoConsulta.h"
 
 using namespace std;
 

@@ -11,11 +11,13 @@
 
 
 #include "headers/dataTypes/DTDiagnostico.h"
+#include "headers/dataTypes/DTProblemaSalud.h"
 
 using namespace std;
 
 int main()
 {
+	DTProblemaSalud cosa("gil","gil");
 	set<string> cosas;
 	cosas.insert("gil");
 

@@ -18,7 +18,8 @@ CPP_SRCS += \
 ../source/dataTypes/DTSocio.cpp \
 ../source/dataTypes/DTTratamiento.cpp \
 ../source/dataTypes/DTUser.cpp \
-../source/dataTypes/FechaHora.cpp 
+../source/dataTypes/FechaHora.cpp \
+../source/dataTypes/ParametroAccionMensaje.cpp 
 
 OBJS += \
 ./source/dataTypes/DTCategoriaPS.o \
@@ -35,7 +36,8 @@ OBJS += \
 ./source/dataTypes/DTSocio.o \
 ./source/dataTypes/DTTratamiento.o \
 ./source/dataTypes/DTUser.o \
-./source/dataTypes/FechaHora.o 
+./source/dataTypes/FechaHora.o \
+./source/dataTypes/ParametroAccionMensaje.o 
 
 CPP_DEPS += \
 ./source/dataTypes/DTCategoriaPS.d \
@@ -52,7 +54,8 @@ CPP_DEPS += \
 ./source/dataTypes/DTSocio.d \
 ./source/dataTypes/DTTratamiento.d \
 ./source/dataTypes/DTUser.d \
-./source/dataTypes/FechaHora.d 
+./source/dataTypes/FechaHora.d \
+./source/dataTypes/ParametroAccionMensaje.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

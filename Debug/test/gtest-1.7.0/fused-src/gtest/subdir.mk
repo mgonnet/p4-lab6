@@ -3,43 +3,21 @@
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
-O_SRCS += \
-../AccionMensaje.o \
-../DTCategoriaPS.o \
-../DTConsulta.o \
-../DTDiagnostico.o \
-../DTDiagnosticoAlta.o \
-../DTHistorial.o \
-../DTInfoLogueo.o \
-../DTMedicamento.o \
-../DTMedico.o \
-../DTProblemaSalud.o \
-../DTReprEstandarizada.o \
-../DTReservaA.o \
-../DTSocio.o \
-../DTTratamiento.o \
-../DTUser.o \
-../FechaHora.o \
-../MedicoNotificable.o \
-../Mensaje.o \
-../Observer.o \
-../ParametroAccionMensaje.o \
-../gtest-all.o \
-../gtest_main.o \
-../medicoNotificableTest.o 
-
-CPP_SRCS += \
-../main.cpp 
+CC_SRCS += \
+../test/gtest-1.7.0/fused-src/gtest/gtest-all.cc \
+../test/gtest-1.7.0/fused-src/gtest/gtest_main.cc 
 
 OBJS += \
-./main.o 
+./test/gtest-1.7.0/fused-src/gtest/gtest-all.o \
+./test/gtest-1.7.0/fused-src/gtest/gtest_main.o 
 
-CPP_DEPS += \
-./main.d 
+CC_DEPS += \
+./test/gtest-1.7.0/fused-src/gtest/gtest-all.d \
+./test/gtest-1.7.0/fused-src/gtest/gtest_main.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-%.o: ../%.cpp
+test/gtest-1.7.0/fused-src/gtest/%.o: ../test/gtest-1.7.0/fused-src/gtest/%.cc
 	@echo 'Building file: $<'
 	@echo 'Invoking: Cross G++ Compiler'
 	g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"

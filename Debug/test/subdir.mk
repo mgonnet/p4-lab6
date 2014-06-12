@@ -4,42 +4,23 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 O_SRCS += \
-../AccionMensaje.o \
-../DTCategoriaPS.o \
-../DTConsulta.o \
-../DTDiagnostico.o \
-../DTDiagnosticoAlta.o \
-../DTHistorial.o \
-../DTInfoLogueo.o \
-../DTMedicamento.o \
-../DTMedico.o \
-../DTProblemaSalud.o \
-../DTReprEstandarizada.o \
-../DTReservaA.o \
-../DTSocio.o \
-../DTTratamiento.o \
-../DTUser.o \
-../FechaHora.o \
-../MedicoNotificable.o \
-../Mensaje.o \
-../Observer.o \
-../ParametroAccionMensaje.o \
-../gtest-all.o \
-../gtest_main.o \
-../medicoNotificableTest.o 
+../test/FechaHora.o \
+../test/MedicoNotificable.o \
+../test/Mensaje.o \
+../test/medicoNotificableTest.o 
 
 CPP_SRCS += \
-../main.cpp 
+../test/medicoNotificableTest.cpp 
 
 OBJS += \
-./main.o 
+./test/medicoNotificableTest.o 
 
 CPP_DEPS += \
-./main.d 
+./test/medicoNotificableTest.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-%.o: ../%.cpp
+test/%.o: ../test/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: Cross G++ Compiler'
 	g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"

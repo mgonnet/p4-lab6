@@ -25,6 +25,5 @@ C_UPPER_DEPS :=
 SUBDIRS := \
 source/dataTypes \
 source/clases \
-obj \
 . \
 
