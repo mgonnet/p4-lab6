@@ -14,6 +14,9 @@ class Socio : public Subject
 {
 private:
 	void dummy() { }
+
+public:
+	virtual ~Socio() { }
 };
 
 

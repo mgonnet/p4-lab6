@@ -9,6 +9,7 @@
 #define ACCION_H_
 
 class MedicoNotificable;
+
 class Parametro;
 
 class Accion

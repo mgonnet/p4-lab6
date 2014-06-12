@@ -21,6 +21,7 @@ CPP_SRCS += \
 ../source/clases/Observer.cpp \
 ../source/clases/ProblemaSalud.cpp \
 ../source/clases/Quirurgico.cpp \
+../source/clases/Singleton.cpp \
 ../source/clases/Socio.cpp \
 ../source/clases/Subject.cpp \
 ../source/clases/Tratamiento.cpp \
@@ -44,6 +45,7 @@ OBJS += \
 ./source/clases/Observer.o \
 ./source/clases/ProblemaSalud.o \
 ./source/clases/Quirurgico.o \
+./source/clases/Singleton.o \
 ./source/clases/Socio.o \
 ./source/clases/Subject.o \
 ./source/clases/Tratamiento.o \
@@ -67,6 +69,7 @@ CPP_DEPS += \
 ./source/clases/Observer.d \
 ./source/clases/ProblemaSalud.d \
 ./source/clases/Quirurgico.d \
+./source/clases/Singleton.d \
 ./source/clases/Socio.d \
 ./source/clases/Subject.d \
 ./source/clases/Tratamiento.d \
