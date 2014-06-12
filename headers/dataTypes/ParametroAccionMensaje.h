@@ -15,7 +15,7 @@
 
 using namespace std;
 
-class ParametroAccionMensaje
+class ParametroAccionMensaje : public Parametro
 {
 public:
 	ParametroAccionMensaje(bool nuevosDiagnosticos,Fecha fecha, string ciSocio, string ciMedicoIntruso);
@@ -24,6 +24,8 @@ public:
 	const string& getCiSocio() const;
 	const Fecha& getFecha() const;
 	bool isNuevosDiagnosticos() const;
+
+	virtual ~ParametroAccionMensaje() { }
 
 private:
 	bool	nuevosDiagnosticos;

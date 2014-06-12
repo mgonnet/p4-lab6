@@ -6,7 +6,7 @@ CPPFLAGS += -isystem $(GTEST_DIR)/include
 
 CXXFLAGS += -g -Wall -Wextra -pthread
 
-TESTS = sample1_unittest
+TESTS = sample1_unittest SocioRobadoTest
 
 GTEST_HEADERS = $(GTEST_DIR)/include/gtest/*.h \
                 $(GTEST_DIR)/include/gtest/internal/*.h
@@ -46,8 +46,9 @@ hCI= headers/interfacesYControladores
 
 
 DT= FechaHora.o DTCategoriaPS.o DTMedico.o DTDiagnostico.o DTConsulta.o DTMedicamento.o DTDiagnosticoAlta.o DTTratamiento.o DTSocio.o DTHistorial.o DTInfoLogueo.o DTProblemaSalud.o DTReprEstandarizada.o DTReservaA.o DTUser.o   
-clases= ParametroAccionMensaje.o Observer.o Mensaje.o MedicoNotificable.o Accion.o AccionMensaje.o
+clases= Parametro.o ParametroAccionMensaje.o Observer.o Mensaje.o MedicoNotificable.o Accion.o AccionMensaje.o Subject.o Socio.o Accion.o Mensaje.o AccionMensaje.o 
 
+#DataTypes
 DTUser.o : $(USER_DIR)/$(sDT)/DTUser.cpp $(USER_DIR)/$(hDT)/DTUser.h $(USER_DIR)/$(hDT)/Sexo.h $(USER_DIR)/$(hDT)/Rol.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sDT)/DTUser.cpp
 	
@@ -96,10 +97,20 @@ DTHistorial.o : $(USER_DIR)/$(sDT)/DTHistorial.cpp $(USER_DIR)/$(hDT)/DTHistoria
 Parametro.o : $(USER_DIR)/$(sDT)/Parametro.cpp $(USER_DIR)/$(hDT)/Parametro.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sDT)/Parametro.cpp
 		
-ParametroAccionMensaje.o : $(USER_DIR)/$(sDT)/ParametroAccionMensaje.cpp $(USER_DIR)/$(hDT)/ParametroAccionMensaje.h $(USER_DIR)/$(hDT)/Parametro.h $(GTEST_HEADERS)
+ParametroAccionMensaje.o : $(USER_DIR)/$(sDT)/ParametroAccionMensaje.cpp $(USER_DIR)/$(hDT)/ParametroAccionMensaje.h Parametro.o $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sDT)/ParametroAccionMensaje.cpp
 
-Observer.o : $(USER_DIR)/$(sC)/Observer.cpp $(USER_DIR)/$(hC)/Observer.h $(GTEST_HEADERS)
+# Clases
+
+
+
+Subject.o : $(USER_DIR)/$(sC)/Subject.cpp $(USER_DIR)/$(hC)/Subject.h Observer.o Parametro.o $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/Subject.cpp
+
+Socio.o : $(USER_DIR)/$(sC)/Subject.cpp $(USER_DIR)/$(hC)/Socio.h Subject.o $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/Socio.cpp
+	
+Observer.o : $(USER_DIR)/$(sC)/Observer.cpp $(USER_DIR)/$(hC)/Observer.h Parametro.o Subject.o $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/Observer.cpp
 
 Mensaje.o : $(USER_DIR)/$(sC)/Mensaje.cpp $(USER_DIR)/$(hC)/Mensaje.h $(GTEST_HEADERS)
@@ -121,6 +132,11 @@ medicoNotificableTest.o : $(USER_DIR)/test/medicoNotificableTest.cpp
 sample1_unittest : $(DT) $(clases) medicoNotificableTest.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
 
+SocioRobadoTest.o : $(USER_DIR)/test/SocioRobadoTest.cpp
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/test/SocioRobadoTest.cpp
+	
+SocioRobadoTest : $(DT) $(clases) SocioRobadoTest.o gtest_main.a
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
 	
 #Aca se compila el MAIN
 main.o : $(DT) $(clases) main.cpp

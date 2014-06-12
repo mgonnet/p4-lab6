@@ -10,7 +10,7 @@
 
 #include "Subject.h"
 
-class Socio : Subject
+class Socio : public Subject
 {
 private:
 	void dummy() { }

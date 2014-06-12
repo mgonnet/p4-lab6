@@ -7,26 +7,48 @@
 
 #include <iostream>
 #include <set>
+#include <string>
 #include <stdlib.h>
 
 
-#include "headers/dataTypes/DTDiagnostico.h"
-#include "headers/dataTypes/DTProblemaSalud.h"
+#include "headers/dataTypes/ParametroAccionMensaje.h"
+#include "headers/clases/MedicoNotificable.h"
+#include "headers/clases/Mensaje.h"
+#include "headers/dataTypes/FechaHora.h"
+#include "headers/clases/Socio.h"
 
 using namespace std;
 
 int main()
 {
-	DTProblemaSalud cosa("gil","gil");
-	set<string> cosas;
-	cosas.insert("gil");
+	MedicoNotificable* 	medicoAlQueRoban;
+	Socio*				socioRobado;
 
-	DTDiagnostico diag("co","co","cod",cosas);
-	string gil=diag.getCodigo();
-	cout << gil;
-	gil="tu madre";
-	cout << gil;
-	cout << "Este es un programa que compila";
+	medicoAlQueRoban=new MedicoNotificable;
+	socioRobado=new Socio;
+
+	//Voy a hacer que medicoAlQueRoban siga a socioRobado
+	socioRobado->addObserver(medicoAlQueRoban);
+
+	bool estaElMensaje=false;
+
+	//Me voy a inventar un ParametroAccionMensaje
+	ParametroAccionMensaje* parametroInventado = new ParametroAccionMensaje(false,Fecha(21,21,21),"4855460","4855461");
+
+	//Ahora voy a hacer que socio notifique a sus seguidores
+	socioRobado->notifyAll(parametroInventado);
+
+	//Ahora voy a verificar que haya un nuevo mensaje en el buzon de medicoAlQueRoban
+	set<Mensaje*> buzon=medicoAlQueRoban->getMensajes();
+	for (set<Mensaje*>::iterator it=buzon.begin(); it!=buzon.end(); ++it)
+		if((*it)->getCiSocio()=="4855460")
+			estaElMensaje=true;
+
+	//Ahora hago la "ASSERT" que verifica que esté el mensaje
+	//ASSERT_TRUE(estaElMensaje);
+
+	delete medicoAlQueRoban;
+	delete socioRobado;
 
 	return 0;
 }

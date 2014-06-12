@@ -24,10 +24,13 @@ O_SRCS += \
 ../MedicoNotificable.o \
 ../Mensaje.o \
 ../Observer.o \
+../Parametro.o \
 ../ParametroAccionMensaje.o \
+../Socio.o \
+../SocioRobadoTest.o \
+../Subject.o \
 ../gtest-all.o \
 ../gtest_main.o \
-../main.o \
 ../medicoNotificableTest.o 
 
 CPP_SRCS += \

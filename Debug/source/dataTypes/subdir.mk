@@ -19,6 +19,7 @@ CPP_SRCS += \
 ../source/dataTypes/DTTratamiento.cpp \
 ../source/dataTypes/DTUser.cpp \
 ../source/dataTypes/FechaHora.cpp \
+../source/dataTypes/Parametro.cpp \
 ../source/dataTypes/ParametroAccionMensaje.cpp 
 
 OBJS += \
@@ -37,6 +38,7 @@ OBJS += \
 ./source/dataTypes/DTTratamiento.o \
 ./source/dataTypes/DTUser.o \
 ./source/dataTypes/FechaHora.o \
+./source/dataTypes/Parametro.o \
 ./source/dataTypes/ParametroAccionMensaje.o 
 
 CPP_DEPS += \
@@ -55,6 +57,7 @@ CPP_DEPS += \
 ./source/dataTypes/DTTratamiento.d \
 ./source/dataTypes/DTUser.d \
 ./source/dataTypes/FechaHora.d \
+./source/dataTypes/Parametro.d \
 ./source/dataTypes/ParametroAccionMensaje.d 
 
 
