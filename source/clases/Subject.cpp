@@ -24,6 +24,6 @@ void	Subject::notifyAll(Parametro* parametro)
 	set<Observer*>::iterator it;
 	for(it=this->observadores.begin();it!=this->observadores.end();++it)
 	{
-		(*it)->update(parametro);
+		(*it)->update(this,parametro);
 	}
 }

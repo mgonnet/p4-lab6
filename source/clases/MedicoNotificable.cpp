@@ -5,10 +5,16 @@
  *      Author: matias
  */
 
+#include <stdexcept>
+
 #include "../../headers/clases/MedicoNotificable.h"
 #include "../../headers/dataTypes/Parametro.h"
 #include "../../headers/clases/Mensaje.h"
 #include "../../headers/clases/Accion.h"
+#include "../../headers/clases/Socio.h"
+#include "../../headers/clases/Subject.h"
+
+using namespace std;
 
 void	MedicoNotificable::addAccion(Accion* accion)
 {
