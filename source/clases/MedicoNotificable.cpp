@@ -22,14 +22,21 @@ void	MedicoNotificable::rmAccion(Accion* accion)
 
 void	MedicoNotificable::update(Subject* sujeto,Parametro* param)
 {
-	if(/*checkeo 12 meses*/ true )
+	Socio* socioRobado=dynamic_cast<Socio*>(sujeto);
+
+	if(socioRobado!=NULL)
 	{
-		set<Accion*>::iterator it;
-		for(it=accionesUpdate.begin();it!=accionesUpdate.end();++it)
+		if(/*checkeo 12 meses*/ true )
 		{
-			(*it)->performAction(this,param);
+			set<Accion*>::iterator it;
+			for(it=accionesUpdate.begin();it!=accionesUpdate.end();++it)
+			{
+				(*it)->performAction(this,param);
+			}
 		}
 	}
+	else
+		throw invalid_argument("Medico Notificable solamente observa objetos de tipo Socio");
 }
 
 void	MedicoNotificable::addMensaje(Mensaje* mensaje)
