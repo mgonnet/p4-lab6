@@ -46,7 +46,7 @@ hCI= headers/interfacesYControladores
 
 
 DT= FechaHora.o DTCategoriaPS.o DTMedico.o DTDiagnostico.o DTConsulta.o DTMedicamento.o DTDiagnosticoAlta.o DTTratamiento.o DTSocio.o DTHistorial.o DTInfoLogueo.o DTProblemaSalud.o DTReprEstandarizada.o DTReservaA.o DTUser.o   
-clases= Parametro.o ParametroAccionMensaje.o Observer.o Mensaje.o MedicoNotificable.o Accion.o AccionMensaje.o Subject.o Socio.o Accion.o Mensaje.o AccionMensaje.o 
+clases= Parametro.o ParametroAccionMensaje.o Observer.o Mensaje.o MedicoNotificable.o Accion.o AccionMensaje.o Subject.o Socio.o 
 
 #DataTypes
 DTUser.o : $(USER_DIR)/$(sDT)/DTUser.cpp $(USER_DIR)/$(hDT)/DTUser.h $(USER_DIR)/$(hDT)/Sexo.h $(USER_DIR)/$(hDT)/Rol.h $(GTEST_HEADERS)
@@ -101,8 +101,6 @@ ParametroAccionMensaje.o : $(USER_DIR)/$(sDT)/ParametroAccionMensaje.cpp $(USER_
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sDT)/ParametroAccionMensaje.cpp
 
 # Clases
-
-
 
 Subject.o : $(USER_DIR)/$(sC)/Subject.cpp $(USER_DIR)/$(hC)/Subject.h Observer.o Parametro.o $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/Subject.cpp

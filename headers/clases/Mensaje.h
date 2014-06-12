@@ -21,8 +21,10 @@ public:
 
 	const string& getCiMedicoIntruso() const;
 	const string& getCiSocio() const;
-	const Fecha& getFecha() const;
+	Fecha getFecha();
 	bool isNuevosDiagnosticos() const;
+
+	~Mensaje();
 
 private:
 	string	ciSocio;
