@@ -55,4 +55,15 @@ set<Mensaje*>	MedicoNotificable::getMensajes()
 	return this->buzon;
 }
 
+//Destructor
+MedicoNotificable::~MedicoNotificable()
+// Hay que destruir todos los mensajes primero
+{
+	set<Mensaje*> buzon=this->getMensajes();
+	for (set<Mensaje*>::iterator it=buzon.begin(); it!=buzon.end(); ++it)
+	{
+		delete (*it);
+	}
+}
+
 

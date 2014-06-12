@@ -29,11 +29,6 @@ protected:
 
 	virtual void TearDown()
 	{
-		set<Mensaje*> buzon=medico->getMensajes();
-		for (set<Mensaje*>::iterator it=buzon.begin(); it!=buzon.end(); ++it)
-		{
-			delete (*it);
-		}
 		delete medico;
 	}
 

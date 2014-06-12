@@ -36,7 +36,7 @@ public:
 
 	set<Mensaje*>	getMensajes();
 
-	//virtual ~MedicoNotificable() { }
+	virtual ~MedicoNotificable();
 };
 
 
