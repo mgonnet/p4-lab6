@@ -20,7 +20,7 @@ void	MedicoNotificable::rmAccion(Accion* accion)
 	accionesUpdate.erase(accion);
 }
 
-void	MedicoNotificable::update(Parametro* param)
+void	MedicoNotificable::update(Subject* sujeto,Parametro* param)
 {
 	if(/*checkeo 12 meses*/ true )
 	{

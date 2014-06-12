@@ -9,13 +9,14 @@
 #define OBSERVER_H_
 
 class Parametro;
+class Subject;
 
 class Observer
 {
 public:
 	Observer();
 
-	virtual void update(Parametro*)=0;
+	virtual void update(Subject*,Parametro*)=0;
 
 	virtual ~Observer();
 };

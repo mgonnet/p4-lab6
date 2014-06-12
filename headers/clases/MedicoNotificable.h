@@ -12,6 +12,7 @@
 
 #include "Observer.h"
 
+class Subject;
 class Mensaje;
 class Parametro;
 class Accion;
@@ -29,7 +30,7 @@ public:
 
 	void	addAccion(Accion*);
 	void	rmAccion(Accion*);
-	void	update(Parametro*); // Heredada de Observer
+	void	update(Subject*,Parametro*); // Heredada de Observer
 
 	void	addMensaje(Mensaje*);
 
