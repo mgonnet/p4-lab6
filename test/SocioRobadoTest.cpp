@@ -42,7 +42,6 @@ protected:
 	{
 		delete medicoAlQueRoban;
 		delete socioRobado;
-		delete accionMensaje;
 		delete stockAcciones;
 	}
 

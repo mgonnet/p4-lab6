@@ -18,7 +18,6 @@ class StockAcciones
 private:
 	StockAcciones();
 
-	static int frutaMagica;
 	static StockAcciones*	instancia;
 	set<Accion*> acciones;
 
@@ -28,6 +27,8 @@ public:
 	void	performActions(MedicoNotificable*,Parametro*);
 	void	addAccion(Accion*);
 	void	rmAccion(Accion*);
+
+	~StockAcciones();
 };
 
 

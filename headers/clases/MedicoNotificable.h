@@ -33,6 +33,7 @@ public:
 	void	addMensaje(Mensaje*);
 
 	set<Mensaje*>	getMensajes();
+	int cantMensajesNoLeidos();
 
 	virtual ~MedicoNotificable();
 };

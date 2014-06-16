@@ -44,3 +44,11 @@ void	StockAcciones::rmAccion(Accion* accion)
 {
 	acciones.erase(accion);
 }
+
+StockAcciones::~StockAcciones()
+{
+	set<Accion*>::iterator it;
+	for(it=acciones.begin();it!=acciones.end();++it)
+		delete (*it);
+
+}

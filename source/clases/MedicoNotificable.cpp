@@ -43,6 +43,19 @@ set<Mensaje*>	MedicoNotificable::getMensajes()
 	return this->buzon;
 }
 
+int MedicoNotificable::cantMensajesNoLeidos()
+{
+	set<Mensaje*>::iterator it;
+	int cantMensajes=0;
+	for(it=buzon.begin();it!=buzon.end();++it)
+	{
+		if( !( (*it) -> isLeido() ) ) // Si no fue leido
+			cantMensajes++; //sumo 1
+	}
+	return cantMensajes;
+
+}
+
 //Destructor
 MedicoNotificable::~MedicoNotificable()
 // Hay que destruir todos los mensajes primero

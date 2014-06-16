@@ -30,6 +30,8 @@ bool Mensaje::isNuevosDiagnosticos() const {
 	return nuevosDiagnosticos;
 }
 
+bool Mensaje::isLeido() { return leido; }
+
 
 Mensaje::~Mensaje()
 {

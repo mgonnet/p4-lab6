@@ -23,6 +23,7 @@ public:
 	const string& getCiSocio() const;
 	Fecha getFecha();
 	bool isNuevosDiagnosticos() const;
+	bool isLeido();
 
 	~Mensaje();
 
@@ -31,6 +32,7 @@ private:
 	string	ciMedicoIntruso;
 	Fecha	fecha;
 	bool	nuevosDiagnosticos;
+	bool	leido;
 };
 
 
