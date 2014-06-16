@@ -47,8 +47,8 @@ void	StockAcciones::rmAccion(Accion* accion)
 
 StockAcciones::~StockAcciones()
 {
+	StockAcciones::instancia=NULL;
 	set<Accion*>::iterator it;
 	for(it=acciones.begin();it!=acciones.end();++it)
 		delete (*it);
-
 }

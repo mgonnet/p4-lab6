@@ -76,7 +76,9 @@ TEST_F(SocioRobadoTest,MedicoRecibeMensajesAlNotificarlo)
 	ASSERT_TRUE(estaElMensaje);
 }
 
-
-
+TEST_F(SocioRobadoTest,fruta)
+{
+	ASSERT_TRUE(true);
+}
 
 

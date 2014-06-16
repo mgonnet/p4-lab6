@@ -123,7 +123,7 @@ Accion.o : $(USER_DIR)/$(sC)/Accion.cpp $(USER_DIR)/$(hC)/Accion.h $(USER_DIR)/$
 AccionMensaje.o : $(USER_DIR)/$(sC)/AccionMensaje.cpp $(USER_DIR)/$(hC)/AccionMensaje.h Accion.o $(USER_DIR)/$(hDT)/Parametro.h MedicoNotificable.o $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/AccionMensaje.cpp
 	
-MedicoNotificable.o : $(USER_DIR)/$(sC)/MedicoNotificable.cpp $(USER_DIR)/$(hC)/MedicoNotificable.h Mensaje.o Observer.o ParametroAccionMensaje.o $(USER_DIR)/$(hC)/Accion.h StockAcciones.o $(GTEST_HEADERS)
+MedicoNotificable.o : $(USER_DIR)/$(sC)/MedicoNotificable.cpp $(USER_DIR)/$(hC)/MedicoNotificable.h Mensaje.o Observer.o ParametroAccionMensaje.o Accion.o StockAcciones.o $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/MedicoNotificable.cpp
 
 #Poner aca los Test
