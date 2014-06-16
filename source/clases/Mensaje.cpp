@@ -22,7 +22,7 @@ const string& Mensaje::getCiSocio() const {
 	return ciSocio;
 }
 
-const Fecha& Mensaje::getFecha() const {
+Fecha Mensaje::getFecha(){
 	return fecha;
 }
 
@@ -30,7 +30,11 @@ bool Mensaje::isNuevosDiagnosticos() const {
 	return nuevosDiagnosticos;
 }
 
+bool Mensaje::isLeido() { return leido; }
 
 
+Mensaje::~Mensaje()
+{
+}
 
 

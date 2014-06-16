@@ -7,10 +7,7 @@
 
 #include "../../headers/clases/Observer.h"
 
-Observer::Observer()
-{
-
-}
+Observer::Observer() { }
 
 Observer::~Observer(){ }
 

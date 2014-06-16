@@ -10,9 +10,11 @@
 
 #include "Accion.h"
 
-class AccionMensaje
+class AccionMensaje : public Accion
 {
 	void performAction(MedicoNotificable*,Parametro*);
+
+	virtual ~AccionMensaje();
 };
 
 #endif /* ACCIONMENSAJE_H_ */

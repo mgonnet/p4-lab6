@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 O_SRCS += \
+../Accion.o \
 ../AccionMensaje.o \
 ../DTCategoriaPS.o \
 ../DTConsulta.o \
@@ -23,7 +24,12 @@ O_SRCS += \
 ../MedicoNotificable.o \
 ../Mensaje.o \
 ../Observer.o \
+../Parametro.o \
 ../ParametroAccionMensaje.o \
+../Socio.o \
+../SocioRobadoTest.o \
+../StockAcciones.o \
+../Subject.o \
 ../gtest-all.o \
 ../gtest_main.o \
 ../medicoNotificableTest.o 

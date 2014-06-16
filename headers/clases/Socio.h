@@ -8,9 +8,12 @@
 #ifndef SOCIO_H_
 #define SOCIO_H_
 
-class Socio
-{
+#include "Subject.h"
 
+class Socio : public Subject
+{
+private:
+	void dummy() { }
 };
 
 
