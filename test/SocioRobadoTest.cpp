@@ -17,21 +17,25 @@
 #include "../headers/clases/Mensaje.h"
 #include "../headers/dataTypes/FechaHora.h"
 #include "../headers/clases/Socio.h"
+#include "../headers/clases/StockAcciones.h"
 
 class SocioRobadoTest : public ::testing::Test
 {
 protected:
 	virtual void SetUp()
 	{
+		//Primero creo las acciones y las cargo
 		accionMensaje=new AccionMensaje;
+		stockAcciones=StockAcciones::getInstance();
+
+		stockAcciones->addAccion(accionMensaje);
+
 		medicoAlQueRoban=new MedicoNotificable;
 		socioRobado=new Socio;
 
 		//Voy a hacer que medicoAlQueRoban siga a socioRobado
 		socioRobado->addObserver(medicoAlQueRoban);
 
-		//Voy a agregarle esta accion al MedicoNotificable
-		medicoAlQueRoban->addAccion(accionMensaje); // CUIDADO: #1
 	}
 
 	virtual void TearDown()
@@ -39,11 +43,13 @@ protected:
 		delete medicoAlQueRoban;
 		delete socioRobado;
 		delete accionMensaje;
+		delete stockAcciones;
 	}
 
 	MedicoNotificable* 	medicoAlQueRoban;
 	Socio*				socioRobado;
 	Accion*				accionMensaje; // CUIDADO: #1
+	StockAcciones*		stockAcciones;
 };
 
 TEST_F(SocioRobadoTest,MedicoRecibeMensajesAlNotificarlo)

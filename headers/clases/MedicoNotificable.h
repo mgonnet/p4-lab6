@@ -11,6 +11,7 @@
 #include <set>
 
 #include "Observer.h"
+#include "StockAcciones.h"
 
 class Subject;
 class Mensaje;
@@ -23,13 +24,10 @@ class MedicoNotificable : public Observer
 {
 private:
 	set<Mensaje*> buzon;
-	set<Accion*> accionesUpdate;
 
 public:
 	//MedicoNotificable() { }
 
-	void	addAccion(Accion*);
-	void	rmAccion(Accion*);
 	void	update(Subject*,Parametro*); // Heredada de Observer
 
 	void	addMensaje(Mensaje*);

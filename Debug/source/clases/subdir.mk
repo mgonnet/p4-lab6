@@ -7,6 +7,7 @@ CPP_SRCS += \
 ../source/clases/Accion.cpp \
 ../source/clases/AccionMensaje.cpp \
 ../source/clases/Administrativo.cpp \
+../source/clases/Almacen.cpp \
 ../source/clases/CategoriaPS.cpp \
 ../source/clases/Comun.cpp \
 ../source/clases/Consulta.cpp \
@@ -22,6 +23,7 @@ CPP_SRCS += \
 ../source/clases/ProblemaSalud.cpp \
 ../source/clases/Quirurgico.cpp \
 ../source/clases/Socio.cpp \
+../source/clases/StockAcciones.cpp \
 ../source/clases/Subject.cpp \
 ../source/clases/Tratamiento.cpp \
 ../source/clases/Usuario.cpp 
@@ -30,6 +32,7 @@ OBJS += \
 ./source/clases/Accion.o \
 ./source/clases/AccionMensaje.o \
 ./source/clases/Administrativo.o \
+./source/clases/Almacen.o \
 ./source/clases/CategoriaPS.o \
 ./source/clases/Comun.o \
 ./source/clases/Consulta.o \
@@ -45,6 +48,7 @@ OBJS += \
 ./source/clases/ProblemaSalud.o \
 ./source/clases/Quirurgico.o \
 ./source/clases/Socio.o \
+./source/clases/StockAcciones.o \
 ./source/clases/Subject.o \
 ./source/clases/Tratamiento.o \
 ./source/clases/Usuario.o 
@@ -53,6 +57,7 @@ CPP_DEPS += \
 ./source/clases/Accion.d \
 ./source/clases/AccionMensaje.d \
 ./source/clases/Administrativo.d \
+./source/clases/Almacen.d \
 ./source/clases/CategoriaPS.d \
 ./source/clases/Comun.d \
 ./source/clases/Consulta.d \
@@ -68,6 +73,7 @@ CPP_DEPS += \
 ./source/clases/ProblemaSalud.d \
 ./source/clases/Quirurgico.d \
 ./source/clases/Socio.d \
+./source/clases/StockAcciones.d \
 ./source/clases/Subject.d \
 ./source/clases/Tratamiento.d \
 ./source/clases/Usuario.d 

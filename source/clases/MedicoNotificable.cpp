@@ -13,18 +13,9 @@
 #include "../../headers/clases/Accion.h"
 #include "../../headers/clases/Socio.h"
 #include "../../headers/clases/Subject.h"
+#include "../../headers/clases/StockAcciones.h"
 
 using namespace std;
-
-void	MedicoNotificable::addAccion(Accion* accion)
-{
-	accionesUpdate.insert(accion);
-}
-
-void	MedicoNotificable::rmAccion(Accion* accion)
-{
-	accionesUpdate.erase(accion);
-}
 
 void	MedicoNotificable::update(Subject* sujeto,Parametro* param)
 {
@@ -34,11 +25,8 @@ void	MedicoNotificable::update(Subject* sujeto,Parametro* param)
 	{
 		if(/*checkeo 12 meses*/ true )
 		{
-			set<Accion*>::iterator it;
-			for(it=accionesUpdate.begin();it!=accionesUpdate.end();++it)
-			{
-				(*it)->performAction(this,param);
-			}
+			StockAcciones* stockAcciones=StockAcciones::getInstance();
+			stockAcciones->performActions(this,param);
 		}
 	}
 	else

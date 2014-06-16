@@ -26,8 +26,8 @@ public:
 	static StockAcciones* getInstance();
 
 	void	performActions(MedicoNotificable*,Parametro*);
-	void	addAction(Accion*);
-	void	rmAction(Accion*);
+	void	addAccion(Accion*);
+	void	rmAccion(Accion*);
 };
 
 

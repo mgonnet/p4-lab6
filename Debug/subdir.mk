@@ -28,6 +28,7 @@ O_SRCS += \
 ../ParametroAccionMensaje.o \
 ../Socio.o \
 ../SocioRobadoTest.o \
+../StockAcciones.o \
 ../Subject.o \
 ../gtest-all.o \
 ../gtest_main.o \

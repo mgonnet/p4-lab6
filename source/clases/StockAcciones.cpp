@@ -35,12 +35,12 @@ void	StockAcciones::performActions(MedicoNotificable* medico,Parametro* param)
 
 }
 
-void	StockAcciones::addAction(Accion* accion)
+void	StockAcciones::addAccion(Accion* accion)
 {
 	acciones.insert(accion);
 }
 
-void	StockAcciones::rmAction(Accion* accion)
+void	StockAcciones::rmAccion(Accion* accion)
 {
 	acciones.erase(accion);
 }
