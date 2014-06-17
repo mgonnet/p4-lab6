@@ -1,13 +1,37 @@
 /*
  * IUsuario.h
  *
- *  Created on: 09/06/2014
- *      Author: GRUPO_04
+ *  Created on: Jun 10, 2014
+ *      Author: eacosta
  */
 
 #ifndef IUSUARIO_H_
 #define IUSUARIO_H_
 
+#include <string>
+#include <set>
+#include "DTInfoLogueo.h"
+#include "Sexo.h"
+#include "FechaHora.h"
+#include "Rol.h"
+#include "DTUser.h"
+
+using namespace std;
+
+class IUsuario {
+public:
+	virtual const set<DTInfoLogueo>& comienzoInicioSesion(string ci) = 0;
+	virtual bool ingresarContrasenia(string contrasenia) = 0;
+	virtual void asignarSesionUsuario() = 0;
+	virtual void crearContrasenia(string contrasenia) = 0;
+	virtual void cerrarSesion() = 0;
+	virtual bool iniciarAltaReactivacion(string ci) = 0;
+	virtual void ingresarDatos(string nombre, string apellido, Sexo s, Fecha fNac, const set<Rol>& roles) = 0;
+	virtual void altaUsuario() = 0;
+	virtual DTUser pedirDatos() = 0;
+	virtual void reactivarUsuario() = 0;
+	virtual ~IUsuario();
+ };
 
 
 
