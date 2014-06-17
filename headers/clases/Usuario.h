@@ -12,6 +12,7 @@
 
 #include "../../headers/dataTypes/Sexo.h"
 #include "../../headers/dataTypes/FechaHora.h"
+#include "../../headers/dataTypes/DTInfoLogueo.h"
 
 using namespace std;
 
@@ -24,6 +25,8 @@ private:
 	Fecha	fechaNac;
 	bool	activo;
 	string	contrasenia;
+	bool	primerLogueo;
+	bool	adminPorDefecto;
 
 public:
 	//Creadoras
@@ -43,6 +46,9 @@ public:
 	void	setFechaNac(Fecha fechaNac);
 	void	setActivo(bool activo);
 	void	setContrasenia(string contrasenia);
+
+	//Negocio
+	DTInfoLogueo	getInfoLogueo();
 };
 
 

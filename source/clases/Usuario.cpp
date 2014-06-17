@@ -30,3 +30,6 @@ void	Usuario::setSexo(Sexo sexo) { this->sexo=sexo; }
 void	Usuario::setFechaNac(Fecha fechaNac) { this->fechaNac=fechaNac; }
 void	Usuario::setActivo(bool activo) { this->activo=activo; }
 void	Usuario::setContrasenia(string contrasenia) { this->contrasenia=contrasenia; }
+
+//Negocio
+DTInfoLogueo	Usuario::getInfoLogueo() { return DTInfoLogueo(primerLogueo,adminPorDefecto,activo,true); }
