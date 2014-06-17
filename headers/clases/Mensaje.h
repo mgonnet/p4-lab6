@@ -25,6 +25,8 @@ public:
 	bool isNuevosDiagnosticos() const;
 	bool isLeido();
 
+	void	marcarComoLeido();
+
 	~Mensaje();
 
 private:

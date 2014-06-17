@@ -26,23 +26,22 @@ using namespace std;
 int main()
 {
 	MedicoNotificable* 	medicoAlQueRoban;
-	Socio*				socioRobado;
-	Accion*				accionMensaje; // CUIDADO: #1
-	StockAcciones*		stockAcciones;
+		Socio*				socioRobado;
+		Accion*				accionMensaje; // CUIDADO: #1
+		StockAcciones*		stockAcciones;
+
 
 	//Primero creo las acciones y las cargo
-	accionMensaje=new AccionMensaje;
-	stockAcciones=StockAcciones::getInstance();
+			accionMensaje=new AccionMensaje;
+			stockAcciones=StockAcciones::getInstance();
 
-	stockAcciones->addAccion(accionMensaje);
+			stockAcciones->addAccion(accionMensaje);
 
-	medicoAlQueRoban=new MedicoNotificable;
-	socioRobado=new Socio;
+			medicoAlQueRoban=new MedicoNotificable;
+			socioRobado=new Socio;
 
-	//Voy a hacer que medicoAlQueRoban siga a socioRobado
-	socioRobado->addObserver(medicoAlQueRoban);
-
-	bool estaElMensaje=false;
+			//Voy a hacer que medicoAlQueRoban siga a socioRobado
+			socioRobado->addObserver(medicoAlQueRoban);
 
 	Fecha fecha(21,21,21);
 
@@ -55,54 +54,33 @@ int main()
 	//Hay que acordarse de borrar los Parametro dinámicos
 	delete parametroInventado;
 
-	//Ahora voy a verificar que haya un nuevo mensaje en el buzon de medicoAlQueRoban
+	cout << medicoAlQueRoban->cantMensajesNoLeidos() << "Solo hay un mensaje y esta sin leer";
+
 	set<Mensaje*> buzon=medicoAlQueRoban->getMensajes();
 	for (set<Mensaje*>::iterator it=buzon.begin(); it!=buzon.end(); ++it)
-		if((*it)->getCiSocio()=="4855460")
-			estaElMensaje=true;
+		(*it)->marcarComoLeido();
 
-	//Ahora hago la "ASSERT" que verifica que esté el mensaje
-	cout << estaElMensaje << " DEBERIA SER 1";
+	cout << medicoAlQueRoban->cantMensajesNoLeidos() << "Marqué todos los mensajes como leidos";
+
+	//Envio dos mensajes seguidos
+	parametroInventado = new ParametroAccionMensaje(false,fecha,"4855461","4855461");
+	socioRobado->notifyAll(parametroInventado);
+	delete parametroInventado;
+	parametroInventado = new ParametroAccionMensaje(false,fecha,"4855462","4855461");
+	socioRobado->notifyAll(parametroInventado);
+	delete parametroInventado;
+
+	cout << medicoAlQueRoban->cantMensajesNoLeidos() << "Hay dos mensajes sin leer";
+
+	for (set<Mensaje*>::iterator it=buzon.begin(); it!=buzon.end(); ++it)
+		if((*it)->getCiSocio()=="4855462")
+			(*it)->marcarComoLeido();
+
+	cout << medicoAlQueRoban->cantMensajesNoLeidos() << "Marque el segundo mensaje como leido";
 
 	delete medicoAlQueRoban;
 	delete socioRobado;
 	delete stockAcciones;
-
-
-	//Primero creo las acciones y las cargo
-	accionMensaje=new AccionMensaje;
-	stockAcciones=StockAcciones::getInstance();
-
-	stockAcciones->addAccion(accionMensaje);
-
-	medicoAlQueRoban=new MedicoNotificable;
-	socioRobado=new Socio;
-
-	//Voy a hacer que medicoAlQueRoban siga a socioRobado
-	socioRobado->addObserver(medicoAlQueRoban);
-
-	estaElMensaje=false;
-
-		fecha=Fecha(21,21,21);
-
-		//Me voy a inventar un ParametroAccionMensaje
-		parametroInventado = new ParametroAccionMensaje(false,fecha,"4855460","4855461");
-
-		//Ahora voy a hacer que socio notifique a sus seguidores
-		socioRobado->notifyAll(parametroInventado);
-
-		//Hay que acordarse de borrar los Parametro dinámicos
-		delete parametroInventado;
-
-		//Ahora voy a verificar que haya un nuevo mensaje en el buzon de medicoAlQueRoban
-		buzon=medicoAlQueRoban->getMensajes();
-		for (set<Mensaje*>::iterator it=buzon.begin(); it!=buzon.end(); ++it)
-			if((*it)->getCiSocio()=="4855460")
-				estaElMensaje=true;
-
-		//Ahora hago la "ASSERT" que verifica que esté el mensaje
-		cout << estaElMensaje << " DEBERIA SER 1";
-
 
 	return 0;
 }
