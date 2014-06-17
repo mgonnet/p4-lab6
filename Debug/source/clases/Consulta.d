@@ -3,8 +3,8 @@ source/clases/Consulta.d: ../source/clases/Consulta.cpp \
  ../source/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h \
  ../source/clases/../../headers/clases/../../headers/dataTypes/DTReservaA.h \
  ../source/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h \
- ../source/clases/../../headers/clases/../../headers/dataTypes/DTConsulta.h \
  ../source/clases/../../headers/clases/../../headers/dataTypes/DTMedico.h \
+ ../source/clases/../../headers/clases/../../headers/dataTypes/DTConsulta.h \
  ../source/clases/../../headers/clases/../../headers/dataTypes/DTDiagnostico.h \
  ../source/clases/../../headers/clases/../../headers/dataTypes/TipoConsulta.h \
  ../source/clases/../../headers/clases/../../headers/dataTypes/TipoConsulta.h
@@ -17,9 +17,9 @@ source/clases/Consulta.d: ../source/clases/Consulta.cpp \
 
 ../source/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h:
 
-../source/clases/../../headers/clases/../../headers/dataTypes/DTConsulta.h:
-
 ../source/clases/../../headers/clases/../../headers/dataTypes/DTMedico.h:
+
+../source/clases/../../headers/clases/../../headers/dataTypes/DTConsulta.h:
 
 ../source/clases/../../headers/clases/../../headers/dataTypes/DTDiagnostico.h:
 

@@ -76,9 +76,44 @@ TEST_F(SocioRobadoTest,MedicoRecibeMensajesAlNotificarlo)
 	ASSERT_TRUE(estaElMensaje);
 }
 
-TEST_F(SocioRobadoTest,fruta)
+TEST_F(SocioRobadoTest,CantidadNoLeidos)
 {
-	ASSERT_TRUE(true);
+
+	Fecha fecha(21,21,21);
+
+	//Me voy a inventar un ParametroAccionMensaje
+	ParametroAccionMensaje* parametroInventado = new ParametroAccionMensaje(false,fecha,"4855460","4855461");
+
+	//Ahora voy a hacer que socio notifique a sus seguidores
+	socioRobado->notifyAll(parametroInventado);
+
+	//Hay que acordarse de borrar los Parametro dinámicos
+	delete parametroInventado;
+
+	ASSERT_EQ(1,medicoAlQueRoban->cantMensajesNoLeidos()) << "Solo hay un mensaje y esta sin leer";
+
+	set<Mensaje*> buzon=medicoAlQueRoban->getMensajes();
+	for (set<Mensaje*>::iterator it=buzon.begin(); it!=buzon.end(); ++it)
+		(*it)->marcarComoLeido();
+
+	ASSERT_EQ(0,medicoAlQueRoban->cantMensajesNoLeidos()) << "Marqué todos los mensajes como leidos";
+
+	//Envio dos mensajes seguidos
+	parametroInventado = new ParametroAccionMensaje(false,fecha,"4855461","4855461");
+	socioRobado->notifyAll(parametroInventado);
+	delete parametroInventado;
+	parametroInventado = new ParametroAccionMensaje(false,fecha,"4855462","4855461");
+	socioRobado->notifyAll(parametroInventado);
+	delete parametroInventado;
+
+	ASSERT_EQ(2,medicoAlQueRoban->cantMensajesNoLeidos()) << "Hay dos mensajes sin leer";
+
+	buzon=medicoAlQueRoban->getMensajes();
+	for (set<Mensaje*>::iterator it=buzon.begin(); it!=buzon.end(); ++it)
+		if((*it)->getCiSocio()=="4855462")
+			(*it)->marcarComoLeido();
+
+	ASSERT_EQ(1,medicoAlQueRoban->cantMensajesNoLeidos()) << "Marque el segundo mensaje como leido";
 }
 
 

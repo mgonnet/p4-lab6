@@ -23,7 +23,7 @@ void	MedicoNotificable::update(Subject* sujeto,Parametro* param)
 
 	if(socioRobado!=NULL)
 	{
-		if(/*checkeo 12 meses*/ true )
+		if(/*checkeo 12 meses*/ true )  // CUIDADO: Falta crear la operacion que haga el chequeo.
 		{
 			StockAcciones* stockAcciones=StockAcciones::getInstance();
 			stockAcciones->performActions(this,param);

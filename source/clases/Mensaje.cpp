@@ -33,6 +33,8 @@ bool Mensaje::isNuevosDiagnosticos() const {
 bool Mensaje::isLeido() { return leido; }
 
 
+void Mensaje::marcarComoLeido() { leido=true; }
+
 Mensaje::~Mensaje()
 {
 }
