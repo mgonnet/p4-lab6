@@ -9,20 +9,23 @@
 #define DTRESERVAA_H_
 
 #include "FechaHora.h"
+#include "DTMedico.h"
 
 class DTReservaA
 {
 public:
-	DTReservaA(Fecha fechaC,Hora horaC,Fecha fechaR);
+	DTReservaA(Fecha fechaC,Hora horaC,Fecha fechaR, DTMedico dtMed);
 
 	const Fecha& getFechaC() const;
 	const Fecha& getFechaR() const;
 	const Hora& getHoraC() const;
+	const DTMedico& getDTMedico() const;
 
 private:
 	Fecha	fechaC;
 	Hora	horaC;
 	Fecha	fechaR;
+	DTMedico dtMed;
 };
 
 
