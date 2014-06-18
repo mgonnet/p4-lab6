@@ -8,6 +8,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include source/interfacesYControladores/subdir.mk
 -include source/dataTypes/subdir.mk
 -include source/clases/subdir.mk
 -include subdir.mk

@@ -7,7 +7,6 @@ CPP_SRCS += \
 ../source/clases/Accion.cpp \
 ../source/clases/AccionMensaje.cpp \
 ../source/clases/Administrativo.cpp \
-../source/clases/Almacen.cpp \
 ../source/clases/CategoriaPS.cpp \
 ../source/clases/Comun.cpp \
 ../source/clases/Consulta.cpp \
@@ -32,7 +31,6 @@ OBJS += \
 ./source/clases/Accion.o \
 ./source/clases/AccionMensaje.o \
 ./source/clases/Administrativo.o \
-./source/clases/Almacen.o \
 ./source/clases/CategoriaPS.o \
 ./source/clases/Comun.o \
 ./source/clases/Consulta.o \
@@ -57,7 +55,6 @@ CPP_DEPS += \
 ./source/clases/Accion.d \
 ./source/clases/AccionMensaje.d \
 ./source/clases/Administrativo.d \
-./source/clases/Almacen.d \
 ./source/clases/CategoriaPS.d \
 ./source/clases/Comun.d \
 ./source/clases/Consulta.d \
