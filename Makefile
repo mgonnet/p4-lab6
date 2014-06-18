@@ -6,7 +6,7 @@ CPPFLAGS += -isystem $(GTEST_DIR)/include
 
 CXXFLAGS += -g -Wall -Wextra -pthread
 
-TESTS = sample1_unittest SocioRobadoTest SesionTest
+TESTS = medicoNotificableTest SocioRobadoTest SesionTest
 
 GTEST_HEADERS = $(GTEST_DIR)/include/gtest/*.h \
                 $(GTEST_DIR)/include/gtest/internal/*.h
@@ -46,7 +46,7 @@ hCI= headers/interfacesYControladores
 
 
 DT= FechaHora.o DTCategoriaPS.o DTMedico.o DTDiagnostico.o DTConsulta.o DTMedicamento.o DTDiagnosticoAlta.o DTTratamiento.o DTSocio.o DTHistorial.o DTInfoLogueo.o DTProblemaSalud.o DTReprEstandarizada.o DTReservaA.o DTUser.o   
-clases= Quirurgico.o Farmacologico.o Tratamiento.o ProblemaSalud.o CategoriaPS.o ProblemaSalud.o Medicamento.o Almacen.o Parametro.o ParametroAccionMensaje.o Observer.o Mensaje.o MedicoNotificable.o Accion.o AccionMensaje.o Subject.o Socio.o StockAcciones.o Usuario.o
+clases= Quirurgico.o Farmacologico.o Tratamiento.o ProblemaSalud.o CategoriaPS.o ProblemaSalud.o Medicamento.o Almacen.o Parametro.o ParametroAccionMensaje.o Observer.o Mensaje.o MedicoNotificable.o Accion.o AccionMensaje.o Subject.o Socio.o StockAcciones.o Usuario.o Logueo.o
 interControl= CUsuario.o
 
 #DataTypes
@@ -150,20 +150,23 @@ AccionMensaje.o : $(USER_DIR)/$(sC)/AccionMensaje.cpp $(USER_DIR)/$(hC)/AccionMe
 	
 MedicoNotificable.o : $(USER_DIR)/$(sC)/MedicoNotificable.cpp $(USER_DIR)/$(hC)/MedicoNotificable.h Mensaje.o Observer.o ParametroAccionMensaje.o Accion.o StockAcciones.o $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/MedicoNotificable.cpp
+	
+Logueo.o : $(USER_DIR)/$(sC)/Logueo.cpp $(USER_DIR)/$(hC)/Logueo.h Usuario.o $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/Logueo.cpp	
 
 Usuario.o : $(USER_DIR)/$(sC)/Usuario.cpp $(USER_DIR)/$(hC)/Usuario.h DTInfoLogueo.o  $(USER_DIR)/$(hDT)/Sexo.h FechaHora.o $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/Usuario.cpp
 	
 #Interfaces Y Controladores
 
-CUsuario.o : $(USER_DIR)/$(sCI)/CUsuario.cpp $(USER_DIR)/$(hCI)/CUsuario.h Usuario.o Almacen.o DTInfoLogueo.o  DTUser.o $(USER_DIR)/$(hCI)/IUsuario.h FechaHora.o $(GTEST_HEADERS)
+CUsuario.o : $(USER_DIR)/$(sCI)/CUsuario.cpp $(USER_DIR)/$(hCI)/CUsuario.h Usuario.o Almacen.o DTInfoLogueo.o  DTUser.o $(USER_DIR)/$(hCI)/IUsuario.h FechaHora.o Logueo.o $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sCI)/CUsuario.cpp
 
 #Poner aca los Test
 medicoNotificableTest.o : $(USER_DIR)/test/medicoNotificableTest.cpp
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/test/medicoNotificableTest.cpp
 
-sample1_unittest : $(DT) $(clases) $(interControl) medicoNotificableTest.o gtest_main.a
+medicoNotificableTest : $(DT) $(clases) $(interControl) medicoNotificableTest.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
 
 SocioRobadoTest.o : $(USER_DIR)/test/SocioRobadoTest.cpp
@@ -184,4 +187,11 @@ main.o : $(DT) $(clases) main.cpp
 
 lab6 : main.o $(DT) $(clases) $(interControl)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
+	
+# Otras cosas
+
+runtest:
+	./medicoNotificableTest
+	./SocioRobadoTest
+	./SesionTest
 	

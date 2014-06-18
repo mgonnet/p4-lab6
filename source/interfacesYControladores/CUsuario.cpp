@@ -12,6 +12,7 @@
 
 #include "../../headers/clases/Usuario.h"
 #include "../../headers/interfacesYControladores/Almacen.h"
+#include "../../headers/clases/Logueo.h"
 
 CUsuario::CUsuario():
 	logueante(NULL)
@@ -50,10 +51,12 @@ bool CUsuario::ingresarContrasenia(string contrasenia)
 
 void CUsuario::asignarSesionUsuario()
 {
-
+	Logueo* logueo=Logueo::getInstance();
+	logueo->logIn(logueante);
 }
 
-void CUsuario::crearContrasenia(string contrasenia){}
+void CUsuario::crearContrasenia(string contrasenia) { logueante->setContrasenia(contrasenia); }
+
 void CUsuario::cerrarSesion(){}
 bool CUsuario::iniciarAltaReactivacion(string ci){}
 void CUsuario::ingresarDatos(string nombre, string apellido, Sexo sexo, Fecha fNac, const set<Rol>& roles){}
