@@ -4,13 +4,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../source/interfacesYControladores/Almacen.cpp 
+../source/interfacesYControladores/Almacen.cpp \
+../source/interfacesYControladores/CUsuario.cpp 
 
 OBJS += \
-./source/interfacesYControladores/Almacen.o 
+./source/interfacesYControladores/Almacen.o \
+./source/interfacesYControladores/CUsuario.o 
 
 CPP_DEPS += \
-./source/interfacesYControladores/Almacen.d 
+./source/interfacesYControladores/Almacen.d \
+./source/interfacesYControladores/CUsuario.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

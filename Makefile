@@ -47,6 +47,7 @@ hCI= headers/interfacesYControladores
 
 DT= FechaHora.o DTCategoriaPS.o DTMedico.o DTDiagnostico.o DTConsulta.o DTMedicamento.o DTDiagnosticoAlta.o DTTratamiento.o DTSocio.o DTHistorial.o DTInfoLogueo.o DTProblemaSalud.o DTReprEstandarizada.o DTReservaA.o DTUser.o   
 clases= Quirurgico.o Farmacologico.o Tratamiento.o ProblemaSalud.o CategoriaPS.o ProblemaSalud.o Medicamento.o Almacen.o Parametro.o ParametroAccionMensaje.o Observer.o Mensaje.o MedicoNotificable.o Accion.o AccionMensaje.o Subject.o Socio.o StockAcciones.o Usuario.o
+interControl= CUsuario.o
 
 #DataTypes
 DTUser.o : $(USER_DIR)/$(sDT)/DTUser.cpp $(USER_DIR)/$(hDT)/DTUser.h $(USER_DIR)/$(hDT)/Sexo.h $(USER_DIR)/$(hDT)/Rol.h $(GTEST_HEADERS)
@@ -153,29 +154,34 @@ MedicoNotificable.o : $(USER_DIR)/$(sC)/MedicoNotificable.cpp $(USER_DIR)/$(hC)/
 Usuario.o : $(USER_DIR)/$(sC)/Usuario.cpp $(USER_DIR)/$(hC)/Usuario.h DTInfoLogueo.o  $(USER_DIR)/$(hDT)/Sexo.h FechaHora.o $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/Usuario.cpp
 	
+#Interfaces Y Controladores
+
+CUsuario.o : $(USER_DIR)/$(sCI)/CUsuario.cpp $(USER_DIR)/$(hCI)/CUsuario.h Usuario.o Almacen.o DTInfoLogueo.o  DTUser.o $(USER_DIR)/$(hCI)/IUsuario.h FechaHora.o $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sCI)/CUsuario.cpp
+
 #Poner aca los Test
 medicoNotificableTest.o : $(USER_DIR)/test/medicoNotificableTest.cpp
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/test/medicoNotificableTest.cpp
 
-sample1_unittest : $(DT) $(clases) medicoNotificableTest.o gtest_main.a
+sample1_unittest : $(DT) $(clases) $(interControl) medicoNotificableTest.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
 
 SocioRobadoTest.o : $(USER_DIR)/test/SocioRobadoTest.cpp
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/test/SocioRobadoTest.cpp
 	
-SocioRobadoTest : $(DT) $(clases) SocioRobadoTest.o gtest_main.a
+SocioRobadoTest : $(DT) $(clases) $(interControl) SocioRobadoTest.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
 	
 SesionTest.o : $(USER_DIR)/test/SesionTest.cpp
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/test/SesionTest.cpp
 	
 SesionTest : $(DT) $(clases) SesionTest.o gtest_main.a
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(interControl) -lpthread $^ -o $@
 	
 #Aca se compila el MAIN
 main.o : $(DT) $(clases) main.cpp
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c main.cpp
 
-lab6 : main.o $(DT) $(clases)
+lab6 : main.o $(DT) $(clases) $(interControl)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
 	
