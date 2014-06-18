@@ -26,10 +26,12 @@ O_SRCS += \
 ../Observer.o \
 ../Parametro.o \
 ../ParametroAccionMensaje.o \
+../SesionTest.o \
 ../Socio.o \
 ../SocioRobadoTest.o \
 ../StockAcciones.o \
 ../Subject.o \
+../Usuario.o \
 ../gtest-all.o \
 ../gtest_main.o \
 ../medicoNotificableTest.o 

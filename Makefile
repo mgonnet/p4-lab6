@@ -46,7 +46,7 @@ hCI= headers/interfacesYControladores
 
 
 DT= FechaHora.o DTCategoriaPS.o DTMedico.o DTDiagnostico.o DTConsulta.o DTMedicamento.o DTDiagnosticoAlta.o DTTratamiento.o DTSocio.o DTHistorial.o DTInfoLogueo.o DTProblemaSalud.o DTReprEstandarizada.o DTReservaA.o DTUser.o   
-clases= Parametro.o ParametroAccionMensaje.o Observer.o Mensaje.o MedicoNotificable.o Accion.o AccionMensaje.o Subject.o Socio.o StockAcciones.o Usuario.o
+clases= Quirurgico.o Farmacologico.o Tratamiento.o ProblemaSalud.o CategoriaPS.o ProblemaSalud.o Medicamento.o Almacen.o Parametro.o ParametroAccionMensaje.o Observer.o Mensaje.o MedicoNotificable.o Accion.o AccionMensaje.o Subject.o Socio.o StockAcciones.o Usuario.o
 
 #DataTypes
 DTUser.o : $(USER_DIR)/$(sDT)/DTUser.cpp $(USER_DIR)/$(hDT)/DTUser.h $(USER_DIR)/$(hDT)/Sexo.h $(USER_DIR)/$(hDT)/Rol.h $(GTEST_HEADERS)
@@ -102,6 +102,30 @@ ParametroAccionMensaje.o : $(USER_DIR)/$(sDT)/ParametroAccionMensaje.cpp $(USER_
 
 # Clases
 
+Quirurgico.o : $(USER_DIR)/$(sC)/Quirurgico.cpp $(USER_DIR)/$(hC)/Quirurgico.h FechaHora.o Tratamiento.o $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/Quirurgico.cpp
+	
+Farmacologico.o : $(USER_DIR)/$(sC)/Farmacologico.cpp $(USER_DIR)/$(hC)/Farmacologico.h Medicamento.o Tratamiento.o $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/Farmacologico.cpp
+	
+Tratamiento.o : $(USER_DIR)/$(sC)/Tratamiento.cpp $(USER_DIR)/$(hC)/Tratamiento.h $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/Tratamiento.cpp
+	
+Diagnostico.o : $(USER_DIR)/$(sC)/Diagnostico.cpp $(USER_DIR)/$(hC)/Diagnostico.h Tratamiento.o Farmacologico.o Quirurgico.o ProblemaSalud.o $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/Diagnostico.cpp
+
+CategoriaPS.o : $(USER_DIR)/$(sC)/CategoriaPS.cpp $(USER_DIR)/$(hC)/CategoriaPS.h ProblemaSalud.o DTReprEstandarizada.o DTProblemaSalud.o $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/CategoriaPS.cpp
+	
+ProblemaSalud.o : $(USER_DIR)/$(sC)/ProblemaSalud.cpp $(USER_DIR)/$(hC)/ProblemaSalud.h Diagnostico.o CategoriaPS.o $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/ProblemaSalud.cpp
+	
+Medicamento.o : $(USER_DIR)/$(sC)/Medicamento.cpp $(USER_DIR)/$(hC)/Medicamento.h Farmacologico.o $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/Medicamento.cpp
+	
+Almacen.o : $(USER_DIR)/$(sCI)/Almacen.cpp $(USER_DIR)/$(hCI)/Almacen.h Medicamento.o CategoriaPS.o Usuario.o ProblemaSalud.o $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sCI)/Almacen.cpp
+	
 StockAcciones.o : $(USER_DIR)/$(sC)/StockAcciones.cpp $(USER_DIR)/$(hC)/StockAcciones.h Accion.o $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/StockAcciones.cpp
 	

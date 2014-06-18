@@ -8,12 +8,16 @@
 #include "../../headers/clases/Usuario.h"
 
 //Constructores
-Usuario::Usuario(string nombre,string ci,Sexo sexo,Fecha fechaNac,bool activo):
+Usuario::Usuario(string nombre,string apellido,string ci,Sexo sexo,Fecha fechaNac,bool activo, int edad, bool adminPorDefecto, bool primerLogueo):
 	nombre(nombre),
+	apellido(apellido),
 	ci(ci),
 	sexo(sexo),
 	fechaNac(fechaNac),
-	activo(activo)
+	activo(activo),
+	edad(edad),
+	adminPorDefecto(adminPorDefecto),
+	primerLogueo(primerLogueo)
 { }
 
 //Getters
