@@ -8,41 +8,85 @@
 #ifndef USUARIO_H_
 #define USUARIO_H_
 
-#include <string>
-
 #include "../../headers/dataTypes/Sexo.h"
 #include "../../headers/dataTypes/FechaHora.h"
-
+#include "../../headers/dataTypes/DTInfoLogueo.h"
+#include "../../headers/dataTypes/DTConsulta.h"
+#include "../../headers/dataTypes/DTReservaA.h"
+#include "../../headers/dataTypes/DTMedico.h"
+#include "../../headers/dataTypes/DTSocio.h"
+#include "../../headers/dataTypes/DTUser.h"
+#include <string>
 using namespace std;
 
-class Usuario
-{
+class Medico;
+class Administrativo;
+class Socio;
+
+class Usuario {
+
 private:
 	string	nombre;
+	string  apellido;
 	string	ci;
 	Sexo	sexo;
 	Fecha	fechaNac;
 	bool	activo;
 	string	contrasenia;
+	int 	edad;
+	bool 	adminPorDefecto;
+	bool	primerLogueo;
 
 public:
 	//Creadoras
-	Usuario(string nombre,string ci,Sexo sexo,Fecha fechaNac,bool activo);
+	Usuario(string nombre,string apellido,string ci,Sexo sexo,Fecha fechaNac,bool activo, int edad, bool adminPorDefecto, bool primerLogueo);
 
 	//Getters
 	string	getNombre();
+	string	getApellido();
 	string	getCi();
 	Sexo	getSexo();
 	Fecha	getFechaNac();
-	bool	isActivo();
+	bool	getActivo();
+	string	getContrasenia();
+	int		getEdad();
+	bool	getAdminPorDefecto();
+	bool	getPrimerLogueo();
 
 	//Setters
 	void	setNombre(string nombre);
+	void	setApellido(string apellido);
 	void	setCi(string ci);
 	void	setSexo(Sexo sexo);
 	void	setFechaNac(Fecha fechaNac);
 	void	setActivo(bool activo);
 	void	setContrasenia(string contrasenia);
+	void	setEdad(int edad);
+	void	setAdminPorDefecto(bool admin);
+	void	setPrimerLogueo(bool logueo);
+
+	//operaciones
+	void linkearAdmin(Administrativo administrativo);
+	void linkearMedico(Medico medico);
+	void linkearSocio(Socio socio);
+	void activar();
+	bool idAdminPorDefecto();
+	bool isActivo();
+	bool isPrimerLogueo();
+	bool contraseniaCorrecta();
+	DTUser getDatosCompletos();
+	DTInfoLogueo getInfoLogueo();
+	Administrativo getAdmin();
+	Medico getMedico();
+	Socio getSocio();
+	DTSocio getDatosBasicos();
+	set<DTConsulta> getHistorialConsultas();
+	DTMedico getDatosMedico();
+	set<DTReservaA> obtenerReservasActivas();
+	set<DTConsulta> obtenerListaConsultas(); ///IMPORTANTE!!! DTConsultaDia
+	void darBajarR(string codigo);
+	void asistir(string ciMedico, Fecha fechaConsulta);
+
 };
 
 
