@@ -12,6 +12,7 @@
 #include "../../headers/dataTypes/DTLineaRegistro.h"
 #include "../../headers/clases/LineaRegistroAR.h"
 #include "../../headers/clases/Usuario.h"
+#include "../../headers/clases/Administrativo.h"
 
 #include <string>
 using namespace std;
@@ -20,11 +21,11 @@ class RegistroAR {
 private:
 	Usuario* usuario;
 	Administrativo* adm;  // CUIDADO: Ver si realmente se uso
-	set<RegistroAR*> lineas;
+	set<LineaRegistroAR*> lineas;
 
 public:
 
-		RegistroAR create(Usuario u);
+		RegistroAR(Usuario*,Administrativo*);
 		void linkearUsuario(Usuario u);
 		void addLineaRegistroAR(Fecha,TipoOper);
 		bool usuarioIS(Usuario u);

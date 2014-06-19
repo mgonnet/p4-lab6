@@ -58,9 +58,9 @@ public:
 	bool	getAdminPorDefecto();
 	bool	getPrimerLogueo();
 
-	Administrativo	getAdministrativo();
-	Medico			getMedico();
-	Socio			getSocio();
+	Administrativo*	getAdministrativo();
+	Medico*			getMedico();
+	Socio*			getSocio();
 
 	//Setters
 	void	setNombre(string nombre);
@@ -75,9 +75,6 @@ public:
 	void	setPrimerLogueo(bool logueo);
 
 	//operaciones
-	void linkearAdmin(Administrativo administrativo);
-	void linkearMedico(Medico medico);
-	void linkearSocio(Socio socio);
 	void activar();
 	bool idAdminPorDefecto();
 	bool isActivo();
@@ -85,9 +82,6 @@ public:
 	bool contraseniaCorrecta();
 	DTUser getDatosCompletos();
 	DTInfoLogueo getInfoLogueo();
-	Administrativo getAdmin();
-	Medico getMedico();
-	Socio getSocio();
 	DTSocio getDatosBasicos();
 	set<DTConsulta> getHistorialConsultas();
 	DTMedico getDatosMedico();

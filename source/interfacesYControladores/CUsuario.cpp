@@ -11,6 +11,7 @@
 #include "../../headers/interfacesYControladores/CUsuario.h"
 
 #include "../../headers/clases/Usuario.h"
+#include "../../headers/clases/Administrativo.h"
 #include "../../headers/interfacesYControladores/Almacen.h"
 #include "../../headers/clases/Logueo.h"
 
