@@ -12,11 +12,12 @@
 #include <string>
 using namespace std;
 
-#include "DTInfoLogueo.h"
-#include "DTUser.h"
-#include "Rol.h"
-#include "Sexo.h"
-#include "IUsuario.h"
+#include "../../headers/dataTypes/DTInfoLogueo.h"
+#include "../../headers/dataTypes/DTUser.h"
+#include "../../headers/dataTypes/Rol.h"
+#include "../../headers/dataTypes/Sexo.h"
+#include "../../headers/interfacesYControladores/IUsuario.h"
+#include "../../headers/clases/Usuario.h"
 
 class CUsuario : public IUsuario {
 private:
@@ -25,8 +26,14 @@ private:
 	string apellido;
 	Fecha fNac;
 	set<Rol> roles;
+
+	//Memoria muy interna del controlador
+	Usuario* logueante;
+
 public:
-	const set<DTInfoLogueo>& comienzoInicioSesion(string ci);
+	CUsuario();
+
+	DTInfoLogueo comienzoInicioSesion(string ci);
 	bool ingresarContrasenia(string contrasenia);
 	void asignarSesionUsuario();
 	void crearContrasenia(string contrasenia);

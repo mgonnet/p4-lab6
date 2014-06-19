@@ -49,7 +49,7 @@ int MedicoNotificable::cantMensajesNoLeidos()
 	int cantMensajes=0;
 	for(it=buzon.begin();it!=buzon.end();++it)
 	{
-		if( !( (*it) -> isLeido() ) ) // Si no fue leido
+		if( !( (*it)->isLeido() ) ) // Si no fue leido
 			cantMensajes++; //sumo 1
 	}
 	return cantMensajes;

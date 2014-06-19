@@ -8,17 +8,18 @@
 #ifndef SOCIO_H_
 #define SOCIO_H_
 
+#include "../../headers/clases/Subject.h"
 #include "../../headers/clases/Consulta.h"
 #include <string>
 using namespace std;
 
 class Usuario;
 
-class Socio
+class Socio : public Subject
 {
 
 public:
-
+	void dummy() {}
 
 	//operaciones
 	Socio create(Usuario u);

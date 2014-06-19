@@ -9,7 +9,7 @@
 #define MEDICO_H_
 
 #include "../../headers/clases/Consulta.h"
-#include "../../headers/datatypes/DTConsultaDia.h"
+#include "../../headers/dataTypes/DTConsultaDia.h"
 #include <string>
 using namespace std;
 

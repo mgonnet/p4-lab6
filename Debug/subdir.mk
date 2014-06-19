@@ -6,6 +6,9 @@
 O_SRCS += \
 ../Accion.o \
 ../AccionMensaje.o \
+../Almacen.o \
+../CUsuario.o \
+../CategoriaPS.o \
 ../DTCategoriaPS.o \
 ../DTConsulta.o \
 ../DTDiagnostico.o \
@@ -20,16 +23,25 @@ O_SRCS += \
 ../DTSocio.o \
 ../DTTratamiento.o \
 ../DTUser.o \
+../Diagnostico.o \
+../Farmacologico.o \
 ../FechaHora.o \
+../Logueo.o \
+../Medicamento.o \
 ../MedicoNotificable.o \
 ../Mensaje.o \
 ../Observer.o \
 ../Parametro.o \
 ../ParametroAccionMensaje.o \
+../ProblemaSalud.o \
+../Quirurgico.o \
+../SesionTest.o \
 ../Socio.o \
 ../SocioRobadoTest.o \
 ../StockAcciones.o \
 ../Subject.o \
+../Tratamiento.o \
+../Usuario.o \
 ../gtest-all.o \
 ../gtest_main.o \
 ../medicoNotificableTest.o 
