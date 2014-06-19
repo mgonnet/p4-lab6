@@ -6,6 +6,10 @@
  */
 
 #include "../../headers/clases/Usuario.h"
+#include "../../headers/clases/Administrativo.h"
+#include "../../headers/clases/Medico.h"
+#include "../../headers/clases/Socio.h"
+
 #include <stdexcept>
 
 //Constructores
@@ -44,6 +48,30 @@ Fecha	Usuario::getFechaNac() { return fechaNac; }
 bool	Usuario::isActivo(){ return activo; }
 string	Usuario::getContrasenia() { return contrasenia; }
 bool	Usuario::getPrimerLogueo() { return primerLogueo; }
+
+Administrativo Usuario::getAdministrativo()
+{
+	if(administrativo == NULL)
+		throw invalid_argument("El usuario no tiene ese Rol");
+	else
+		return administrativo;
+}
+
+Socio Usuario::getSocio()
+{
+	if(socio == NULL)
+		throw invalid_argument("El usuario no tiene ese Rol");
+	else
+		return socio;
+}
+
+Medico Usuario::getMedico()
+{
+	if(medico == NULL)
+		throw invalid_argument("El usuario no tiene ese Rol");
+	else
+		return medico;
+}
 
 //Setters
 void	Usuario::setNombre(string nombre) { this->nombre=nombre; }

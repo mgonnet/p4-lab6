@@ -21,14 +21,15 @@ class Administrativo
 {
 
 private:
-	set<RegistroAR*>  registrosAR;
-	set<DTUsuarioAR*> datasUsuariosAR;
+	Usuario*			usuario;
+	set<RegistroAR*>	registrosAR;
+	//set<DTUsuarioAR*>	datasUsuariosAR; // CUIDADO: No estoy seguro de por que esto esta aca
 public:
 	//operaciones
-	Administrativo create(Usuario u);
-	void linkearUsuario(Usuario u);
-	void altaUsuario(Usuario u);
-	void reactivarUsuario(Usuario u, TipoOper tipo);
+	Administrativo(Usuario* u);
+	void linkearUsuario(Usuario *u);
+	void altaUsuario(Usuario *u);
+	void reactivarUsuario(Usuario *u, TipoOper tipo);
 	set<DTUsuarioAR*> listarUsuariosAR();
 	void addDTUsuarioAR(DTUsuarioAR*);
 };

@@ -17,14 +17,16 @@ class Usuario;
 
 class Medico
 {
+private:
+	Usuario* usuario;
+
 public:
 
-
 	//operaciones
-	Medico create(Usuario u);
-	void linkearUsuario(Usuario u);
+	Medico(Usuario* u);
+	void linkearUsuario(Usuario* u);
 	void crearLinkEmergencia();
-	void destruirLinkConsulta(Consulta c);
+	void destruirLinkConsulta(Consulta* c);
 	DTMedico getDatosMedico();
 	set<DTConsultaDia> obtenerListaConsultas();
 

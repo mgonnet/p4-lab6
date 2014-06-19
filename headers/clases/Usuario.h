@@ -58,6 +58,10 @@ public:
 	bool	getAdminPorDefecto();
 	bool	getPrimerLogueo();
 
+	Administrativo	getAdministrativo();
+	Medico			getMedico();
+	Socio			getSocio();
+
 	//Setters
 	void	setNombre(string nombre);
 	void	setApellido(string apellido);

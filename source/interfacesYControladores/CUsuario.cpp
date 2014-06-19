@@ -96,6 +96,15 @@ void CUsuario::altaUsuario()
 {
 	Usuario* nuevoUsuario = new Usuario (nombre,apellido,ci,sexo,fNac,true,edad,false,true,roles);
 	// CUIDADO: No se si activo debe ir en TRUE
+
+	Logueo* log=Logueo::getInstance();
+	Usuario* creador=log->getUsuario();
+	Administrativo* adm=creador->getAdministrativo(); // CUIDADO: Tal vez debería mandar el mensaje directamente al usuario en vez de pedirle el Administrativo
+
+	adm->altaUsuario(nuevoUsuario);
+
+	Almacen* alm=Almacen::getInstance();
+	alm->addUsuario(nuevoUsuario);
 }
 
 DTUser CUsuario::pedirDatos(){}

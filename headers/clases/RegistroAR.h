@@ -17,12 +17,16 @@
 using namespace std;
 
 class RegistroAR {
+private:
+	Usuario* usuario;
+	Administrativo* adm;  // CUIDADO: Ver si realmente se uso
+	set<RegistroAR*> lineas;
 
 public:
 
 		RegistroAR create(Usuario u);
 		void linkearUsuario(Usuario u);
-		void addLineaRegistroAR(LineaRegistroAR lineaRegistro);
+		void addLineaRegistroAR(Fecha,TipoOper);
 		bool usuarioIS(Usuario u);
 		DTUsuarioAR* crearDTUsuarioAR(set<DTLineaRegistro> lineasRegistro);
 		set<DTLineaRegistro> listarLineasRegistroAR();

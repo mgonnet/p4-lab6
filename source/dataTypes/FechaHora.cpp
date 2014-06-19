@@ -63,7 +63,7 @@ bool Fecha::esMenorQue(Fecha fecha){
 }
 
 int	Fecha::calcularEdad()
-{
+{ // CUIDADO:
 	/*FechaSistema* fSis=FechaSistema::getInstance();
 	Fecha fechaSistema=fSis->getFecha();
 

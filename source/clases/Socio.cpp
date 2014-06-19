@@ -7,5 +7,8 @@
 
 #include "../../headers/clases/Socio.h"
 
+Socio::Socio(Usuario* u):
+	usuario(u)
+{}
 
 

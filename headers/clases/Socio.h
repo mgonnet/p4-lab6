@@ -17,12 +17,14 @@ class Usuario;
 
 class Socio : public Subject
 {
+private:
+	Usuario* usuario;
 
 public:
 	void dummy() {}
 
 	//operaciones
-	Socio create(Usuario u);
+	Socio(Usuario* u);
 	void linkearUsuario(Usuario u);
 	void darBajarR(string codigo);
 	void asistir(string ciMedico, Fecha fechaConsulta);

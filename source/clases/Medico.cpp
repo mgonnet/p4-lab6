@@ -7,4 +7,7 @@
 
 #include "../../headers/clases/Medico.h"
 
+Medico::Medico(Usuario* u):
+	usuario(u)
+{}
 
