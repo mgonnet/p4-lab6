@@ -24,7 +24,9 @@ private:
 	string ci;
 	string nombre;
 	string apellido;
+	Sexo sexo;
 	Fecha fNac;
+	int edad;
 	set<Rol> roles;
 
 	//Memoria muy interna del controlador

@@ -64,8 +64,34 @@ void CUsuario::cerrarSesion()
 	log->logOut();
 }
 
-bool CUsuario::iniciarAltaReactivacion(string ci){}
-void CUsuario::ingresarDatos(string nombre, string apellido, Sexo sexo, Fecha fNac, const set<Rol>& roles){}
+bool CUsuario::iniciarAltaReactivacion(string ci)
+{
+	Almacen* alm=Almacen::getInstance();
+	set<Usuario*> usuarios=alm->getUsuarios();  // Consigo el conjunto de usuarios
+	set<Usuario*>::iterator it;
+
+	this->ci=ci;  // Guardo la ci
+
+	bool encontre=false;
+	for( it=usuarios.begin() ; it != usuarios.end() && !encontre ; ++it )
+		if ( (*it)->getCi() == ci )
+			encontre = true;
+
+	return encontre;
+}
+
+
+void CUsuario::ingresarDatos(string nombre, string apellido, Sexo sexo, Fecha fNac, const set<Rol>& roles)
+{
+	this->nombre=nombre;
+	this->apellido=apellido;
+	this->sexo=sexo;
+	this->fNac=fNac;
+	this->roles=roles;
+
+	edad=fNac->calcularEdad();
+}
+
 void CUsuario::altaUsuario(){}
 DTUser CUsuario::pedirDatos(){}
 void CUsuario::reactivarUsuario(){}
