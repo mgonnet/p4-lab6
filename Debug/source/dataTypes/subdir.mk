@@ -6,6 +6,7 @@
 CPP_SRCS += \
 ../source/dataTypes/DTCategoriaPS.cpp \
 ../source/dataTypes/DTConsulta.cpp \
+../source/dataTypes/DTConsultaDia.cpp \
 ../source/dataTypes/DTDiagnostico.cpp \
 ../source/dataTypes/DTDiagnosticoAlta.cpp \
 ../source/dataTypes/DTHistorial.cpp \
@@ -25,6 +26,7 @@ CPP_SRCS += \
 OBJS += \
 ./source/dataTypes/DTCategoriaPS.o \
 ./source/dataTypes/DTConsulta.o \
+./source/dataTypes/DTConsultaDia.o \
 ./source/dataTypes/DTDiagnostico.o \
 ./source/dataTypes/DTDiagnosticoAlta.o \
 ./source/dataTypes/DTHistorial.o \
@@ -44,6 +46,7 @@ OBJS += \
 CPP_DEPS += \
 ./source/dataTypes/DTCategoriaPS.d \
 ./source/dataTypes/DTConsulta.d \
+./source/dataTypes/DTConsultaDia.d \
 ./source/dataTypes/DTDiagnostico.d \
 ./source/dataTypes/DTDiagnosticoAlta.d \
 ./source/dataTypes/DTHistorial.d \

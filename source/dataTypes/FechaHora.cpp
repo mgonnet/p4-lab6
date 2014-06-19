@@ -6,12 +6,14 @@
  */
 
 #include "../../headers/dataTypes/FechaHora.h"
+#include <stdexcept>
 
+using namespace std;
 
 // --------------- Fecha --------------- //
 //Creadoras
 Fecha::Fecha() :dia(0),mes(0),anio(0) { }
-Fecha::Fecha(int dia,int mes,int anio): dia(dia),mes(mes),anio(anio) { }
+Fecha::Fecha(int dia,int mes,int anio): dia(dia),mes(mes),anio(anio){}
 
 //Sobrecarga de operadores
 Fecha Fecha::operator=(Fecha original)

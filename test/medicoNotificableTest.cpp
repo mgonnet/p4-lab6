@@ -20,7 +20,7 @@ protected:
 	virtual void SetUp()
 	{
 		medico=new MedicoNotificable;
-		Fecha fecha(21,21,21);
+		Fecha fecha(21,2,1990);
 		Mensaje* mensajito=new Mensaje("socio","ladron",fecha,false);
 		medico->addMensaje(mensajito);
 		mensajito=new Mensaje("artigas","ansina",fecha,false);

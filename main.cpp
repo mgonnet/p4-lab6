@@ -32,7 +32,7 @@ int main()
 {
 	Usuario* usuario1;
 
-	Fecha fecha(21,21,21);
+	Fecha fecha(21,2,1990);
 	usuario1=new Usuario("Juan","Perez","4855460",MASCULINO,fecha,true,21,false,true);
 
 	Almacen* alm=Almacen::getInstance();
