@@ -14,6 +14,7 @@
 #include "../headers/interfacesYControladores/IUsuario.h"
 #include "../headers/interfacesYControladores/CUsuario.h"
 #include "../headers/interfacesYControladores/Almacen.h"
+#include "../headers/interfacesYControladores/Factory.h"
 
 class SesionTest : public ::testing::Test
 {
@@ -74,5 +75,22 @@ TEST_F(SesionTest,IniciarSesionYaSeLogueoAntes)
 	ASSERT_EQ(false,usuario1->getPrimerLogueo()); // Miro que se haya actualizado primerLogueo
 }
 
+TEST_F(SesionTest,CerrarSesion)
+{
+	Factory factoria;
+	IUsuario* iUsuario=factoria.getIUsuario();  // CUIDADO: debería usar la Fabrica
+
+	iUsuario->comienzoInicioSesion("4855460");  // Logueo a un tipo
+	iUsuario->crearContrasenia("passfrutera");
+	iUsuario->asignarSesionUsuario();
+
+	Logueo* log=Logueo::getInstance();
+
+	ASSERT_EQ(usuario1,log->getUsuario());  // Por las dudas verifico que se haya logueado
+
+	iUsuario->cerrarSesion(); // Cierro la sesion
+
+	ASSERT_EQ(NULL,log->getUsuario()); // Verifico que se haya cerrado
+}
 
 

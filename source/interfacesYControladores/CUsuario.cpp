@@ -58,7 +58,12 @@ void CUsuario::asignarSesionUsuario()
 
 void CUsuario::crearContrasenia(string contrasenia) { logueante->setContrasenia(contrasenia); }
 
-void CUsuario::cerrarSesion(){}
+void CUsuario::cerrarSesion()
+{
+	Logueo* log=Logueo::getInstance();
+	log->logOut();
+}
+
 bool CUsuario::iniciarAltaReactivacion(string ci){}
 void CUsuario::ingresarDatos(string nombre, string apellido, Sexo sexo, Fecha fNac, const set<Rol>& roles){}
 void CUsuario::altaUsuario(){}
