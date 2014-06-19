@@ -45,9 +45,9 @@ sCI= source/interfacesYControladores
 hCI= headers/interfacesYControladores
 
 
-DT= FechaHora.o DTCategoriaPS.o DTMedico.o DTDiagnostico.o DTConsulta.o DTMedicamento.o DTDiagnosticoAlta.o DTTratamiento.o DTSocio.o DTHistorial.o DTInfoLogueo.o DTProblemaSalud.o DTReprEstandarizada.o DTReservaA.o DTUser.o   
+DT= FechaHora.o DTCategoriaPS.o DTMedico.o DTDiagnostico.o DTConsulta.o DTMedicamento.o DTDiagnosticoAlta.o DTTratamiento.o DTSocio.o DTHistorial.o DTInfoLogueo.o DTProblemaSalud.o DTReprEstandarizada.o DTReservaA.o DTUser.o DTConsultaDia.o   
 clases= Quirurgico.o Farmacologico.o Tratamiento.o ProblemaSalud.o CategoriaPS.o ProblemaSalud.o Medicamento.o Almacen.o Parametro.o ParametroAccionMensaje.o Observer.o Mensaje.o MedicoNotificable.o Accion.o AccionMensaje.o Subject.o Socio.o StockAcciones.o Usuario.o Logueo.o
-interControl= CUsuario.o
+interControl= CUsuario.o CConsulta.o CDiagnostico.o Factory.o
 
 #DataTypes
 DTUser.o : $(USER_DIR)/$(sDT)/DTUser.cpp $(USER_DIR)/$(hDT)/DTUser.h $(USER_DIR)/$(hDT)/Sexo.h $(USER_DIR)/$(hDT)/Rol.h $(GTEST_HEADERS)
@@ -82,7 +82,10 @@ DTConsulta.o : $(USER_DIR)/$(sDT)/DTConsulta.cpp $(USER_DIR)/$(hDT)/DTConsulta.h
 	
 DTMedicamento.o : $(USER_DIR)/$(sDT)/DTMedicamento.cpp $(USER_DIR)/$(hDT)/DTMedicamento.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sDT)/DTMedicamento.cpp
-	
+
+DTConsultaDia.o : $(USER_DIR)/$(sDT)/DTConsultaDia.cpp $(USER_DIR)/$(hDT)/DTConsultaDia.h FechaHora.o $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sDT)/DTConsultaDia.cpp
+		
 DTTratamiento.o : $(USER_DIR)/$(sDT)/DTTratamiento.cpp $(USER_DIR)/$(hDT)/DTTratamiento.h $(USER_DIR)/$(hDT)/TipoTratamiento.h DTMedicamento.o FechaHora.o $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sDT)/DTTratamiento.cpp
 	
@@ -161,6 +164,15 @@ Usuario.o : $(USER_DIR)/$(sC)/Usuario.cpp $(USER_DIR)/$(hC)/Usuario.h DTInfoLogu
 
 CUsuario.o : $(USER_DIR)/$(sCI)/CUsuario.cpp $(USER_DIR)/$(hCI)/CUsuario.h Usuario.o Almacen.o DTInfoLogueo.o  DTUser.o $(USER_DIR)/$(hCI)/IUsuario.h FechaHora.o Logueo.o $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sCI)/CUsuario.cpp
+	
+CConsulta.o : $(USER_DIR)/$(sCI)/CConsulta.cpp $(USER_DIR)/$(hCI)/CConsulta.h $(USER_DIR)/$(hCI)/IConsulta.h DTConsultaDia.o DTConsulta.o DTDiagnostico.o FechaHora.o DTMedico.o $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sCI)/CConsulta.cpp
+	
+CDiagnostico.o : $(USER_DIR)/$(sCI)/CDiagnostico.cpp $(USER_DIR)/$(hCI)/CDiagnostico.h $(USER_DIR)/$(hCI)/IDiagnostico.h DTReprEstandarizada.o $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sCI)/CDiagnostico.cpp
+	
+Factory.o : $(USER_DIR)/$(sCI)/Factory.cpp $(USER_DIR)/$(hCI)/Factory.h $(USER_DIR)/$(hCI)/CDiagnostico.h $(USER_DIR)/$(hCI)/IDiagnostico.h $(USER_DIR)/$(hCI)/IUsuario.h CConsulta.o CUsuario.o CDiagnostico.o $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sCI)/Factory.cpp	
 
 #Poner aca los Test
 medicoNotificableTest.o : $(USER_DIR)/test/medicoNotificableTest.cpp

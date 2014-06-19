@@ -9,13 +9,13 @@
 #define IDIAGNOSTICO_H_
 
 //class DTReprEstandarizada;
-#include "DTReprEstandarizada.h"
+#include "../dataTypes/DTReprEstandarizada.h"
 #include <set>
 
 class IDiagnostico{
 public:
 	virtual const set<DTReprEstandarizada>& getReprEstandarizadas() = 0;
-	virtual ~IDiagnostico();
+	virtual ~IDiagnostico() {}
 };
 
 

@@ -11,14 +11,14 @@
 #include <string>
 #include <set>
 
-#include "DTReservaA.h"
-#include "DTHistorial.h"
-#include "DTConsulta.h"
-#include "DTCategoriaPS.h"
-#include "DTProblemaSalud.h"
-#include "FechaHora.h"
-#include "DTMedicamento.h"
-#include "TipoTratamiento.h"
+#include "../dataTypes/DTReservaA.h"
+#include "../dataTypes/DTHistorial.h"
+#include "../dataTypes/DTConsulta.h"
+#include "../dataTypes/DTCategoriaPS.h"
+#include "../dataTypes/DTProblemaSalud.h"
+#include "../dataTypes/FechaHora.h"
+#include "../dataTypes/DTMedicamento.h"
+#include "../dataTypes/TipoTratamiento.h"
 
 using namespace std;
 
@@ -37,10 +37,10 @@ public:
 	virtual void agregarDescripcionDiagnostico(string descripcion) = 0;
 	virtual void indicarTipoTratamiento(TipoTratamiento tipo) = 0;
 	virtual void agregarDatosTQ(string descripcion, Fecha fecha) = 0;
-	virtual void agregarDatosTF(string descripcion, const set<DTMedicamento>& medicamentos) = 0;
+	//virtual void agregarDatosTF(string descripcion, set<DTMedicamento> medicamentos) = 0; // CUIDADO: NO COMPILA Y NI SIQUIERA DICE EL ERROR
 	virtual void altaTratamiento() = 0;
 	virtual void confirmarAltaDiagnosticos() = 0;
-	virtual ~IConsulta();
+	virtual ~IConsulta() {}
 };
 
 

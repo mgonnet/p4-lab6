@@ -10,11 +10,12 @@
 
 #include <set>
 #include "IDiagnostico.h"
-#include "DTReprEstandarizada.h"
+#include "../dataTypes/DTReprEstandarizada.h"
 
-class IDiagnostico{
+class CDiagnostico : public IDiagnostico
+{
 public:
-	const set <DTReprEstandarizada>& getReprEstandarizadas();
+	const set <DTReprEstandarizada>& getReprEstandarizadas() {}
 };
 
 
