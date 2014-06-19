@@ -178,8 +178,8 @@ SocioRobadoTest : $(DT) $(clases) $(interControl) SocioRobadoTest.o gtest_main.a
 SesionTest.o : $(USER_DIR)/test/SesionTest.cpp
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/test/SesionTest.cpp
 	
-SesionTest : $(DT) $(clases) SesionTest.o gtest_main.a
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(interControl) -lpthread $^ -o $@
+SesionTest : $(DT) $(clases) $(interControl) SesionTest.o gtest_main.a
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
 	
 #Aca se compila el MAIN
 main.o : $(DT) $(clases) main.cpp

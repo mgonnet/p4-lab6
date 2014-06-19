@@ -12,7 +12,9 @@ Mensaje::Mensaje(string ciSocio,string ciMedicoIntruso,Fecha fecha,bool nuevosDi
 	ciSocio(ciSocio),
 	ciMedicoIntruso(ciMedicoIntruso),
 	fecha(fecha),
-	nuevosDiagnosticos(nuevosDiagnosticos) { }
+	nuevosDiagnosticos(nuevosDiagnosticos),
+	leido(false)
+{ }
 
 const string& Mensaje::getCiMedicoIntruso() const {
 	return ciMedicoIntruso;

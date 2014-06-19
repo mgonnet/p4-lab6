@@ -24,9 +24,9 @@ DTInfoLogueo CUsuario::comienzoInicioSesion(string ci)
 	Almacen* alm=Almacen::getInstance();  // Consigo el almacen
 	set<Usuario*> usuarios=alm->getUsuarios(); // Le pido la coleccion
 	set<Usuario*>::iterator it;
-	bool encontre=true;
+	bool encontre=false;
 	for ( it = usuarios.begin() ; it != usuarios.end() && !encontre ; ++it ) // Itero hasta que encuentro la cedula o se acabe
-		if( (*it)->getCi() != ci ) // Como lo encontre, para la iteracion y me quedo con el usuario
+		if( (*it)->getCi() == ci ) // Como lo encontre, para la iteracion y me quedo con el usuario
 		{
 			encontre = true;
 			usuario=(*it);
@@ -52,7 +52,8 @@ bool CUsuario::ingresarContrasenia(string contrasenia)
 void CUsuario::asignarSesionUsuario()
 {
 	Logueo* logueo=Logueo::getInstance();
-	logueo->logIn(logueante);
+	logueo->logIn(logueante); // Hago el link con logueo
+	logueante->setPrimerLogueo(false);  // Seteo como false primerLogueo, si ya era false no hace nada, si no, actualizo.
 }
 
 void CUsuario::crearContrasenia(string contrasenia) { logueante->setContrasenia(contrasenia); }

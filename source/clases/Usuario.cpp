@@ -26,6 +26,8 @@ string	Usuario::getCi() { return ci; }
 Sexo	Usuario::getSexo() { return sexo; }
 Fecha	Usuario::getFechaNac() { return fechaNac; }
 bool	Usuario::isActivo(){ return activo; }
+string	Usuario::getContrasenia() { return contrasenia; }
+bool	Usuario::getPrimerLogueo() { return primerLogueo; }
 
 //Setters
 void	Usuario::setNombre(string nombre) { this->nombre=nombre; }
@@ -34,6 +36,7 @@ void	Usuario::setSexo(Sexo sexo) { this->sexo=sexo; }
 void	Usuario::setFechaNac(Fecha fechaNac) { this->fechaNac=fechaNac; }
 void	Usuario::setActivo(bool activo) { this->activo=activo; }
 void	Usuario::setContrasenia(string contrasenia) { this->contrasenia=contrasenia; }
+void	Usuario::setPrimerLogueo(bool pL) { primerLogueo = pL; }
 
 //Negocio
 DTInfoLogueo	Usuario::getInfoLogueo() { return DTInfoLogueo(primerLogueo,adminPorDefecto,activo,true); }

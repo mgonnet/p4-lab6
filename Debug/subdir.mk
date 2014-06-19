@@ -26,6 +26,7 @@ O_SRCS += \
 ../Diagnostico.o \
 ../Farmacologico.o \
 ../FechaHora.o \
+../Logueo.o \
 ../Medicamento.o \
 ../MedicoNotificable.o \
 ../Mensaje.o \

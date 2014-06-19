@@ -16,7 +16,30 @@ main.d: ../main.cpp ../headers/clases/Accion.h \
  ../headers/clases/../../headers/clases/../../headers/dataTypes/DTDiagnostico.h \
  ../headers/clases/../../headers/clases/../../headers/dataTypes/TipoConsulta.h \
  ../headers/clases/../../headers/clases/../../headers/dataTypes/TipoConsulta.h \
- ../headers/clases/StockAcciones.h
+ ../headers/clases/StockAcciones.h ../headers/clases/Logueo.h \
+ ../headers/clases/Usuario.h \
+ ../headers/clases/../../headers/dataTypes/Sexo.h \
+ ../headers/clases/../../headers/dataTypes/DTInfoLogueo.h \
+ ../headers/clases/../../headers/dataTypes/DTConsulta.h \
+ ../headers/clases/../../headers/dataTypes/DTReservaA.h \
+ ../headers/clases/../../headers/dataTypes/DTMedico.h \
+ ../headers/clases/../../headers/dataTypes/DTSocio.h \
+ ../headers/clases/../../headers/dataTypes/FechaHora.h \
+ ../headers/clases/../../headers/dataTypes/DTUser.h \
+ ../headers/clases/../../headers/dataTypes/Sexo.h \
+ ../headers/clases/../../headers/dataTypes/Rol.h \
+ ../headers/interfacesYControladores/IUsuario.h \
+ ../headers/interfacesYControladores/../../headers/dataTypes/DTInfoLogueo.h \
+ ../headers/interfacesYControladores/../../headers/dataTypes/Sexo.h \
+ ../headers/interfacesYControladores/../../headers/dataTypes/FechaHora.h \
+ ../headers/interfacesYControladores/../../headers/dataTypes/Rol.h \
+ ../headers/interfacesYControladores/../../headers/dataTypes/DTUser.h \
+ ../headers/interfacesYControladores/CUsuario.h \
+ ../headers/interfacesYControladores/../../headers/interfacesYControladores/IUsuario.h \
+ ../headers/interfacesYControladores/../../headers/clases/Usuario.h \
+ ../headers/interfacesYControladores/Almacen.h \
+ ../headers/interfacesYControladores/../../headers/clases/Medicamento.h \
+ ../headers/clases/Usuario.h
 
 ../headers/clases/Accion.h:
 
@@ -65,3 +88,51 @@ main.d: ../main.cpp ../headers/clases/Accion.h \
 ../headers/clases/../../headers/clases/../../headers/dataTypes/TipoConsulta.h:
 
 ../headers/clases/StockAcciones.h:
+
+../headers/clases/Logueo.h:
+
+../headers/clases/Usuario.h:
+
+../headers/clases/../../headers/dataTypes/Sexo.h:
+
+../headers/clases/../../headers/dataTypes/DTInfoLogueo.h:
+
+../headers/clases/../../headers/dataTypes/DTConsulta.h:
+
+../headers/clases/../../headers/dataTypes/DTReservaA.h:
+
+../headers/clases/../../headers/dataTypes/DTMedico.h:
+
+../headers/clases/../../headers/dataTypes/DTSocio.h:
+
+../headers/clases/../../headers/dataTypes/FechaHora.h:
+
+../headers/clases/../../headers/dataTypes/DTUser.h:
+
+../headers/clases/../../headers/dataTypes/Sexo.h:
+
+../headers/clases/../../headers/dataTypes/Rol.h:
+
+../headers/interfacesYControladores/IUsuario.h:
+
+../headers/interfacesYControladores/../../headers/dataTypes/DTInfoLogueo.h:
+
+../headers/interfacesYControladores/../../headers/dataTypes/Sexo.h:
+
+../headers/interfacesYControladores/../../headers/dataTypes/FechaHora.h:
+
+../headers/interfacesYControladores/../../headers/dataTypes/Rol.h:
+
+../headers/interfacesYControladores/../../headers/dataTypes/DTUser.h:
+
+../headers/interfacesYControladores/CUsuario.h:
+
+../headers/interfacesYControladores/../../headers/interfacesYControladores/IUsuario.h:
+
+../headers/interfacesYControladores/../../headers/clases/Usuario.h:
+
+../headers/interfacesYControladores/Almacen.h:
+
+../headers/interfacesYControladores/../../headers/clases/Medicamento.h:
+
+../headers/clases/Usuario.h:
