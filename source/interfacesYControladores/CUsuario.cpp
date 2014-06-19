@@ -89,10 +89,15 @@ void CUsuario::ingresarDatos(string nombre, string apellido, Sexo sexo, Fecha fN
 	this->fNac=fNac;
 	this->roles=roles;
 
-	edad=fNac->calcularEdad();
+	//this->edad=fNac->calcularEdad(); // CUIDADO: Agregar Fecha Sistema y descomentar Fecha::calcularEdad
 }
 
-void CUsuario::altaUsuario(){}
+void CUsuario::altaUsuario()
+{
+	Usuario* nuevoUsuario = new Usuario (nombre,apellido,ci,sexo,fNac,true,edad,false,true,roles);
+	// CUIDADO: No se si activo debe ir en TRUE
+}
+
 DTUser CUsuario::pedirDatos(){}
 void CUsuario::reactivarUsuario(){}
 

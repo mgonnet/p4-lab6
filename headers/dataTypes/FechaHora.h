@@ -33,6 +33,7 @@ public:
 
 	bool isCorrecta();
 	bool esMenorQue(Fecha fecha);
+	int	 calcularEdad();
 };
 
 class Hora

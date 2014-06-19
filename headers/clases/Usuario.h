@@ -37,9 +37,14 @@ private:
 	bool 	adminPorDefecto;
 	bool	primerLogueo;
 
+	//Links
+	Administrativo*	administrativo;
+	Medico*			medico;
+	Socio*			socio;
+
 public:
 	//Creadoras
-	Usuario(string nombre,string apellido,string ci,Sexo sexo,Fecha fechaNac,bool activo, int edad, bool adminPorDefecto, bool primerLogueo);
+	Usuario(string nombre,string apellido,string ci,Sexo sexo,Fecha fechaNac,bool activo, int edad, bool adminPorDefecto, bool primerLogueo, set<Rol> roles);
 
 	//Getters
 	string	getNombre();

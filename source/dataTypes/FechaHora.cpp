@@ -62,6 +62,18 @@ bool Fecha::esMenorQue(Fecha fecha){
             || ((anio == fecha.getAnio()) && (mes == fecha.getMes()) && (dia <= fecha.getDia())));
 }
 
+int	Fecha::calcularEdad()
+{
+	/*FechaSistema* fSis=FechaSistema::getInstance();
+	Fecha fechaSistema=fSis->getFecha();
+
+	int edad=fechaSistema->getAnio() - this->getAnio();
+	if ( this->getMes() >= fechaSistema->getMes() )
+	{
+		if ( !(this->getMes == fechaSistema->getMes() && this->getDia > fechaSistema->getDia()) ) {}
+		edad--;
+	}*/
+}
 
 // --------------- Hora --------------- //
 //Creadoras
