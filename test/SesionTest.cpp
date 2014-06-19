@@ -90,6 +90,8 @@ TEST_F(SesionTest,CerrarSesion)
 
 	iUsuario->cerrarSesion(); // Cierro la sesion
 
+	delete iUsuario;
+
 	ASSERT_EQ(NULL,log->getUsuario()); // Verifico que se haya cerrado
 }
 
