@@ -56,5 +56,23 @@ TEST_F(SesionTest,IniciarSesionPrimerLogueo)
 	ASSERT_EQ(false,usuario1->getPrimerLogueo()); // Miro que se haya actualizado primerLogueo
 }
 
+TEST_F(SesionTest,IniciarSesionYaSeLogueoAntes)
+{
+	usuario1->setContrasenia("passfrutera");  // Seteo la contrasenia
+	usuario1->setPrimerLogueo(false);  // Ya se logueo antes
+
+	IUsuario* iUsuario=new CUsuario;  // CUIDADO: debería usar la Fabrica
+	iUsuario->comienzoInicioSesion("4855460");
+
+	ASSERT_EQ(true,iUsuario->ingresarContrasenia("passfrutera"));  // Ingreso la contraseña y espero que me digan que sea valida
+	iUsuario->asignarSesionUsuario();
+	delete iUsuario;
+
+	Logueo* logueo=Logueo::getInstance();
+	ASSERT_EQ(usuario1,logueo->getUsuario()); // Miro que se haya creado el link
+
+	ASSERT_EQ(false,usuario1->getPrimerLogueo()); // Miro que se haya actualizado primerLogueo
+}
+
 
 

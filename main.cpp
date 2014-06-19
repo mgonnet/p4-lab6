@@ -38,22 +38,25 @@ int main()
 	Almacen* alm=Almacen::getInstance();
 	alm->addUsuario(usuario1);
 
+	usuario1->setContrasenia("passfrutera");  // Seteo la contrasenia
+	usuario1->setPrimerLogueo(false);  // Ya se logueo antes
+
 	IUsuario* iUsuario=new CUsuario;  // CUIDADO: debería usar la Fabrica
-
 	iUsuario->comienzoInicioSesion("4855460");
-	iUsuario->crearContrasenia("passfrutera");
+
+	cout << "Espero TRUE: " << iUsuario->ingresarContrasenia("passfrutera") << endl;  // Ingreso la contraseña y espero que me digan que sea valida
 	iUsuario->asignarSesionUsuario();
-
 	delete iUsuario;
-
-	cout << "Espero passfrutera: " << usuario1->getContrasenia() << endl; // Se guardo la contrasenia que queria
 
 	Logueo* logueo=Logueo::getInstance();
 	cout << logueo->getUsuario()->getNombre() << endl; // Miro que se haya creado el link
 
-	cout << "Espero false: " << usuario1->getPrimerLogueo() << endl; // Miro que se haya actualizado primerLogueo
+	cout << "Espero FALSE: " << usuario1->getPrimerLogueo(); // Miro que se haya actualizado primerLogueo
 
-	delete usuario1;
+
+	delete logueo;
+
+	delete alm;
 	return 0;
 }
 

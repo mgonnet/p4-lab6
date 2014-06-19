@@ -46,7 +46,7 @@ bool CUsuario::ingresarContrasenia(string contrasenia)
 	if(logueante==NULL)
 		throw invalid_argument("No existe ningún usuario con la CI indicada, no insista.");
 	else
-		return ( logueante->getCi() == contrasenia );
+		return ( logueante->getContrasenia() == contrasenia );
 }
 
 void CUsuario::asignarSesionUsuario()
