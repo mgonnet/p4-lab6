@@ -15,11 +15,11 @@ Administrativo::Administrativo(Usuario* u):
 
 void Administrativo::altaUsuario(Usuario *u)
 {
-	/*RegistroAR* rar=new RegistroAR(u,this);
+	RegistroAR* rar=new RegistroAR(u,this);
 
 	FechaSistema* fSis=FechaSistema::getInstance();
 	rar->addLineaRegistroAR(fSis->getFechaSistema(),ALTA);
 
-	registros.insert(rar);*/
+	registros.insert(rar);
 }
 

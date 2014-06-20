@@ -22,6 +22,7 @@ private:
 		TipoOper tipoOper;
 
 public:
+		LineaRegistroAR(Fecha fecha, TipoOper tipoOper);
 
 		//Getters
 		Fecha	getFecha();
@@ -31,7 +32,6 @@ public:
 		void	setFechaNac(Fecha fechaNac);
 		void	setTipoOper(TipoOper tipo);
 
-		LineaRegistroAR(Fecha fecha, TipoOper tipoOper);
 		DTLineaRegistro crearDTRegistro();
 };
 

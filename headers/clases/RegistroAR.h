@@ -17,7 +17,8 @@
 #include <string>
 using namespace std;
 
-class RegistroAR {
+class RegistroAR
+{
 private:
 	Usuario* usuario;
 	Administrativo* adm;  // CUIDADO: Ver si realmente se uso

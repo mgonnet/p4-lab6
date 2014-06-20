@@ -17,6 +17,7 @@
 using namespace std;
 
 class Usuario;
+class RegistroAR;
 
 class Administrativo
 {
@@ -24,6 +25,7 @@ class Administrativo
 private:
 	Usuario*			usuario;
 	set<RegistroAR*>	registros;
+
 	//set<DTUsuarioAR*>	datasUsuariosAR; // CUIDADO: No estoy seguro de por que esto esta aca
 public:
 	//operaciones
