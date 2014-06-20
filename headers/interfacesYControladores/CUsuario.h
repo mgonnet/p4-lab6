@@ -47,6 +47,7 @@ public:
 	void reactivarUsuario();
 
 	void crearAdminPorDefecto();
+	set<Rol> rolesDelLogueado();
 
 	~CUsuario() {}
 };

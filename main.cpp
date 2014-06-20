@@ -39,6 +39,8 @@ using namespace std;
 void SetUp();
 void TearDown();
 bool PantallaInicial();
+void MostrarCasosDeUso();
+bool EjecutarCasoDeUso();
 
 int main(int argc, char *argv[])
 {
@@ -48,7 +50,12 @@ int main(int argc, char *argv[])
 	{
 		if ( iniciarSesion() )
 		{
-			// HACER ALGO
+			bool salir=false;
+			while ( !salir )
+			{
+				MostrarCasosDeUso();
+				salir = EjecutarCasoDeUso();
+			}
 		}
 	}
 
@@ -79,4 +86,88 @@ bool	PantallaInicial()
 	getline(cin,dummy);
 
 	return !(dummy == "SALIR");
+}
+
+void MostrarCasosDeUso()
+{
+	IUsuario* iU=Factory::getIUsuario();
+	set<Rol> roles=iU->rolesDelLogueado();
+
+	system("clear");
+	cout << "SELECCIONE ACCION" << endl;
+	cout << "-----------------" << endl;
+
+	if ( roles.find(ADMIN) != roles.end() )
+	{
+		cout << "(aru) > Alta/Reactivación Usuario" << endl;
+		cout << "(uar) > Usuarios dados de alta y reactivados" << endl;
+		cout << "(am)  > Alta Medicamento" << endl;
+		cout << "(ard) > Alta Representación estandarizada de Diágnosticos" << endl;
+		cout << "(rc)  > Registro Consulta" << endl;
+		cout << "(ccd) > Cantidad de Consultas por Categoría Diagnóstico" << endl;
+	}
+
+	if ( roles.find(MEDICO) != roles.end() )
+	{
+		cout << "(adc) > Alta Diagnósticos de una consulta" << endl;
+		cout << "(ohp) > Obtener Historial Paciente" << endl;
+	}
+
+	if ( roles.find(MEDICO) != roles.end() || roles.find(ADMIN) != roles.end() )
+	{
+		cout << "(lre) > Listar Representaciones Estandarizadas" << endl;
+	}
+
+	if ( roles.find(SOCIO) != roles.end() )
+	{
+		cout << "(rc)  > Reserva Consulta" << endl;
+		cout << "(dc)  > Devolucion Consulta" << endl;
+	}
+
+	cout << "(cs) > Cerrar Sesion" << endl;
+
+	cout << "> ";
+}
+
+bool EjecutarCasoDeUso()
+{
+	bool salir=false;
+	string buffer;
+	getline(cin,buffer);
+
+	IUsuario* iU=Factory::getIUsuario();
+	set<Rol> roles=iU->rolesDelLogueado();
+
+	if ( roles.find(ADMIN) != roles.end() )
+	{
+		if(buffer == "aru") AltaReactivacionDeUsuarios();
+		if(buffer == "uar") UsuariosDadosDeAltaYReactivados();
+		if(buffer == "am")  AltaMedicamento();
+		if(buffer == "ard") AltaReprEstandarizadaDeDiagnosticos();
+		if(buffer == "rc")  RegistroConsulta();
+	}
+
+	if ( roles.find(MEDICO) != roles.end() )
+	{
+		if(buffer == "adc") AltaDiagnosticosDeUnaConsulta();
+		if(buffer == "ohp") ObtenerHistorialPaciente();
+	}
+
+	if ( roles.find(MEDICO) != roles.end() || roles.find(ADMIN) != roles.end() )
+	{
+		if(buffer == "lre") ListarRepresentacionesEstandarizadas();
+	}
+
+	if ( roles.find(SOCIO) != roles.end() )
+	{
+		if(buffer == "rc")  ReservaConsulta();
+		if(buffer == "dc")  DevolucionConsulta();
+	}
+
+	if(buffer == "cs")
+	{
+		CerrarSesion();
+		salir=true;
+	}
+	return salir;
 }

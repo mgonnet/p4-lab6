@@ -169,3 +169,12 @@ void CUsuario::crearAdminPorDefecto()
 	alm->addUsuario(adminPorDefecto);
 }
 
+set<Rol> CUsuario::rolesDelLogueado()
+{
+	Logueo* log=Logueo::getInstance();
+	Usuario* u=log->getUsuario();
+	if( u == NULL )
+		throw invalid_argument("No hay nadie logueado actualmente.");
+	else
+		return u->getRoles();
+}

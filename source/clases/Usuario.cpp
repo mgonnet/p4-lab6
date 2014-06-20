@@ -90,9 +90,9 @@ DTInfoLogueo	Usuario::getInfoLogueo() { return DTInfoLogueo(primerLogueo,adminPo
 set<Rol>		Usuario::getRoles()
 {
 	set<Rol> roles;
-	if ( this->getAdministrativo() != NULL ) roles.insert(ADMIN);
-	if ( this->getSocio() != NULL ) roles.insert(SOCIO);
-	if ( this->getMedico() != NULL ) roles.insert(MEDICO);
+	if ( this->administrativo != NULL ) roles.insert(ADMIN);
+	if ( this->socio != NULL ) roles.insert(SOCIO);
+	if ( this->medico != NULL ) roles.insert(MEDICO);
 	return roles;
 }
 

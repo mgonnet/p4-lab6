@@ -32,6 +32,7 @@ public:
 	virtual void reactivarUsuario() = 0;
 
 	virtual void crearAdminPorDefecto()=0;
+	virtual set<Rol> rolesDelLogueado()=0;
 
 	virtual ~IUsuario() {}
  };

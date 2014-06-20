@@ -59,6 +59,8 @@ bool iniciarSesion(){
 				if(contraseniaIncorrecta)
 				{
 					system("clear");
+					cout << "INCIO DE SESION" << endl;
+					cout << "---------------" << endl;
 					cout << "Oops. Has ingresado una contraseña incorrecta. ¿Quieres volver a probar? [1/0]" << endl;
 					cout << "> ";
 					getline(cin,buffer);
@@ -72,6 +74,8 @@ bool iniciarSesion(){
 				exito=true;
 				iU->asignarSesionUsuario();
 				system("clear");
+				cout << "INCIO DE SESION" << endl;
+				cout << "---------------" << endl;
 				cout << "Tu sesion ha sido iniciada. Enter para continuar" << endl;
 				getline(cin,buffer);
 			}
@@ -83,6 +87,8 @@ bool iniciarSesion(){
 				do
 				{
 					system("clear");
+					cout << "INCIO DE SESION" << endl;
+					cout << "---------------" << endl;
 					cout << "Es la primera vez que inicias sesion. Debes indicar cual será tu contraseña:" << endl;
 					cout << "> ";
 					getline(cin,contrasenia);
@@ -92,6 +98,8 @@ bool iniciarSesion(){
 					if(contraseniaInvalida)
 					{
 						system("clear");
+						cout << "INCIO DE SESION" << endl;
+						cout << "---------------" << endl;
 						cout << "Oops. Has ingresado una contraseña con un formato no válido. ¿Quieres volver a probar? [1/0]" << endl;
 						cout << "> ";
 						getline(cin,buffer);
@@ -104,6 +112,8 @@ bool iniciarSesion(){
 					exito=true;
 					iU->asignarSesionUsuario();
 					system("clear");
+					cout << "INCIO DE SESION" << endl;
+					cout << "---------------" << endl;
 					cout << "Tu contrasenia fue almacenada y tu sesion iniciada. Enter para continuar" << endl;
 					getline(cin,buffer);
 				}
@@ -113,6 +123,8 @@ bool iniciarSesion(){
 				do
 				{
 					system("clear");
+					cout << "INCIO DE SESION" << endl;
+					cout << "---------------" << endl;
 					cout << "Eres un simple usuario y no es tu primer logueo." << endl;
 					cout << "Por favor ingresa tu contraseña" << endl;
 					cout << "> ";
@@ -123,6 +135,8 @@ bool iniciarSesion(){
 					if(contraseniaIncorrecta)
 					{
 						system("clear");
+						cout << "INCIO DE SESION" << endl;
+						cout << "---------------" << endl;
 						cout << "Oops. Has ingresado una contraseña incorrecta. ¿Quieres volver a probar? [1/0]" << endl;
 						cout << "> ";
 						getline(cin,buffer);
@@ -134,6 +148,8 @@ bool iniciarSesion(){
 				if(!infoLogueo.isActivo()) //SI ES INACTIVO
 				{
 					system("clear");
+					cout << "INCIO DE SESION" << endl;
+					cout << "---------------" << endl;
 					cout << "Su usuario está inactivo y no puede loguearse. Enter para continuar" << endl;
 					getline(cin,buffer);
 				}
@@ -142,6 +158,8 @@ bool iniciarSesion(){
 					{
 						exito=true;
 						system("clear");
+						cout << "INCIO DE SESION" << endl;
+						cout << "---------------" << endl;
 						iU->asignarSesionUsuario();
 						cout << "Tu sesion ha sido iniciada. Enter para continuar" << endl;
 						getline(cin,buffer);
@@ -160,6 +178,23 @@ bool iniciarSesion(){
 	//End Iniciar Sesion
 
 	return exito;
+}
+
+void AltaReactivacionDeUsuarios(){}
+void UsuariosDadosDeAltaYReactivados(){}
+void AltaMedicamento(){}
+void AltaReprEstandarizadaDeDiagnosticos(){}
+void RegistroConsulta(){}
+void AltaDiagnosticosDeUnaConsulta(){}
+void ObtenerHistorialPaciente(){}
+void ListarRepresentacionesEstandarizadas(){}
+void ReservaConsulta(){}
+void DevolucionConsulta(){}
+
+void CerrarSesion()
+{
+	IUsuario* iU=Factory::getIUsuario();
+	iU->cerrarSesion();
 }
 
 bool validaPass(string contrasenia)
