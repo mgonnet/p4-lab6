@@ -211,7 +211,7 @@ void AltaReactivacionDeUsuarios()
 		system("clear");
 		cout << "ALTA/REACTIVACION DE USUARIOS" << endl;
 		cout << "-----------------------------" << endl;
-		cout << "Usted es el Administrativo Pol Macarni. Está aquí para dar de alta o reactivar un usuario." << endl;
+		cout << "Está aquí para dar de alta o reactivar un usuario." << endl;
 		cout << "Ingrese la cedula de usuario en cuestion:" << endl;
 		cout << "> ";
 		getline(cin,ci);
@@ -286,6 +286,9 @@ void AltaReactivacionDeUsuarios()
 
 				if(datosInvalidos)
 				{
+					system("clear");
+					cout << "ALTA/REACTIVACION DE USUARIOS" << endl;
+					cout << "-----------------------------" << endl;
 					cout << "Has ingresado algún dato mal." << endl;
 					cout << "¿Deseas volver a probar? [1/0]" << endl;
 					cout << "> ";
@@ -302,12 +305,20 @@ void AltaReactivacionDeUsuarios()
 			if(!cancelarAlta)
 			{
 				iU->altaUsuario();
-				cout << "El usuario ha sido dado de alta." << endl;
+				system("clear");
+				cout << "ALTA/REACTIVACION DE USUARIOS" << endl;
+				cout << "-----------------------------" << endl;
+				cout << "El usuario ha sido dado de alta. Enter para continuar." << endl;
+				getline(cin,buffer);
 				repetir=false;
 			}
 			else
 			{
-				cout << "Se ha cancelado el alta." << endl;
+				system("clear");
+				cout << "ALTA/REACTIVACION DE USUARIOS" << endl;
+				cout << "-----------------------------" << endl;
+				cout << "Se ha cancelado el alta. Enter para continuar." << endl;
+				getline(cin,buffer);
 			}
 		}
 		else // Usuario existe
@@ -317,6 +328,9 @@ void AltaReactivacionDeUsuarios()
 
 			if(datosUsuario.isActivo())
 			{
+				system("clear");
+				cout << "ALTA/REACTIVACION DE USUARIOS" << endl;
+				cout << "-----------------------------" << endl;
 				cout << "Este usuario ya está dado de alta y además está activo. No hay nada que hacer aquí." << endl;
 				cout << "¿Desea probar suerte con otro usuario? [1/0]" << endl;
 				cout << "> ";
@@ -325,6 +339,9 @@ void AltaReactivacionDeUsuarios()
 			}
 			else //Confirmar la reactivacion
 			{
+				system("clear");
+				cout << "ALTA/REACTIVACION DE USUARIOS" << endl;
+				cout << "-----------------------------" << endl;
 				cout << "Este usuario está inactivo. ¿Desea reactivarlo? [1/0]" << endl;
 				cout << "> ";
 				getline(cin,buffer);
@@ -333,11 +350,18 @@ void AltaReactivacionDeUsuarios()
 				if(reactivar)
 				{
 					iU->reactivarUsuario();
-					cout << "EL usuario ha sido reactivado." << endl;
+					system("clear");
+					cout << "ALTA/REACTIVACION DE USUARIOS" << endl;
+					cout << "-----------------------------" << endl;
+					cout << "EL usuario ha sido reactivado. Enter para continuar." << endl;
+					getline(cin,buffer);
 					repetir=false;
 				}
 				else
 				{
+					system("clear");
+					cout << "ALTA/REACTIVACION DE USUARIOS" << endl;
+					cout << "-----------------------------" << endl;
 					cout << "¿Desea probar suerte con otro usuario? [1/0]" << endl;
 					cout << "> ";
 					getline(cin,buffer);
