@@ -39,7 +39,22 @@ main.d: ../main.cpp ../headers/clases/Accion.h \
  ../headers/interfacesYControladores/../../headers/clases/Usuario.h \
  ../headers/interfacesYControladores/Almacen.h \
  ../headers/interfacesYControladores/../../headers/clases/Medicamento.h \
- ../headers/clases/Usuario.h
+ ../headers/clases/Usuario.h ../headers/CasosDeUso.h \
+ ../headers/interfacesYControladores/Factory.h \
+ ../headers/interfacesYControladores/IUsuario.h \
+ ../headers/interfacesYControladores/IConsulta.h \
+ ../headers/interfacesYControladores/../dataTypes/DTReservaA.h \
+ ../headers/interfacesYControladores/../dataTypes/DTHistorial.h \
+ ../headers/interfacesYControladores/../dataTypes/DTConsulta.h \
+ ../headers/interfacesYControladores/../dataTypes/DTSocio.h \
+ ../headers/interfacesYControladores/../dataTypes/DTConsulta.h \
+ ../headers/interfacesYControladores/../dataTypes/DTCategoriaPS.h \
+ ../headers/interfacesYControladores/../dataTypes/DTProblemaSalud.h \
+ ../headers/interfacesYControladores/../dataTypes/FechaHora.h \
+ ../headers/interfacesYControladores/../dataTypes/DTMedicamento.h \
+ ../headers/interfacesYControladores/../dataTypes/TipoTratamiento.h \
+ ../headers/interfacesYControladores/IDiagnostico.h \
+ ../headers/interfacesYControladores/../dataTypes/DTReprEstandarizada.h
 
 ../headers/clases/Accion.h:
 
@@ -136,3 +151,35 @@ main.d: ../main.cpp ../headers/clases/Accion.h \
 ../headers/interfacesYControladores/../../headers/clases/Medicamento.h:
 
 ../headers/clases/Usuario.h:
+
+../headers/CasosDeUso.h:
+
+../headers/interfacesYControladores/Factory.h:
+
+../headers/interfacesYControladores/IUsuario.h:
+
+../headers/interfacesYControladores/IConsulta.h:
+
+../headers/interfacesYControladores/../dataTypes/DTReservaA.h:
+
+../headers/interfacesYControladores/../dataTypes/DTHistorial.h:
+
+../headers/interfacesYControladores/../dataTypes/DTConsulta.h:
+
+../headers/interfacesYControladores/../dataTypes/DTSocio.h:
+
+../headers/interfacesYControladores/../dataTypes/DTConsulta.h:
+
+../headers/interfacesYControladores/../dataTypes/DTCategoriaPS.h:
+
+../headers/interfacesYControladores/../dataTypes/DTProblemaSalud.h:
+
+../headers/interfacesYControladores/../dataTypes/FechaHora.h:
+
+../headers/interfacesYControladores/../dataTypes/DTMedicamento.h:
+
+../headers/interfacesYControladores/../dataTypes/TipoTratamiento.h:
+
+../headers/interfacesYControladores/IDiagnostico.h:
+
+../headers/interfacesYControladores/../dataTypes/DTReprEstandarizada.h:

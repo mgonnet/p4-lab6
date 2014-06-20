@@ -48,7 +48,7 @@ bool CUsuario::ingresarContrasenia(string contrasenia)
 	if(logueante==NULL)
 		throw invalid_argument("No existe ningún usuario con la CI indicada, no insista.");
 	else
-		return ( logueante->getContrasenia() == contrasenia );
+		return !( logueante->getContrasenia() == contrasenia );
 }
 
 void CUsuario::asignarSesionUsuario()
@@ -158,4 +158,14 @@ void CUsuario::reactivarUsuario()
 	adm->reactivarUsuario(usuario); // DC 6
 }
 
+void CUsuario::crearAdminPorDefecto()
+{
+	Almacen* alm=Almacen::getInstance();
+	Fecha fecha;
+	set<Rol> roles;
+	roles.insert(ADMIN);
+	Usuario* adminPorDefecto = new Usuario("ROOT","ROOT","ROOT",MASCULINO,fecha,true,0,true,false,roles);
+	adminPorDefecto->setContrasenia("123");
+	alm->addUsuario(adminPorDefecto);
+}
 

@@ -18,3 +18,4 @@ void RegistroAR::addLineaRegistroAR(Fecha fecha,TipoOper tipo)
 	this->lineas.insert(nuevaLinea);
 }
 
+bool RegistroAR::usuarioIs(Usuario* u) { return this->usuario==u; }

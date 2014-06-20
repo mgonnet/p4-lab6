@@ -25,38 +25,58 @@
 #include "headers/interfacesYControladores/CUsuario.h"
 #include "headers/interfacesYControladores/Almacen.h"
 #include "headers/clases/Usuario.h"
+#include "headers/CasosDeUso.h"
+#include "headers/interfacesYControladores/Factory.h"
 
 using namespace std;
 
-int main()
+#include <stdio.h>
+#include <stdlib.h>
+
+// Ejemplo extraido de Snippets Zone: http://snippets.dzone.com/posts/show/2734
+// Compilarlo con $ gcc -o clear clear.c y mover a /usr/bin
+
+void SetUp();
+void TearDown();
+bool PantallaInicial();
+
+int main(int argc, char *argv[])
 {
-	Usuario* usuario1;
+	SetUp();
 
-	Fecha fecha(21,2,1990);
-	//usuario1=new Usuario("Juan","Perez","4855460",MASCULINO,fecha,true,21,false,true);
+	while( PantallaInicial() )
+	{
+		if ( iniciarSesion() )
+		{
+			// HACER ALGO
+		}
+	}
 
-	Almacen* alm=Almacen::getInstance();
-	alm->addUsuario(usuario1);
+	TearDown();
 
-	usuario1->setContrasenia("passfrutera");  // Seteo la contrasenia
-	usuario1->setPrimerLogueo(false);  // Ya se logueo antes
-
-	IUsuario* iUsuario=new CUsuario;  // CUIDADO: debería usar la Fabrica
-	iUsuario->comienzoInicioSesion("4855460");
-
-	cout << "Espero TRUE: " << iUsuario->ingresarContrasenia("passfrutera") << endl;  // Ingreso la contraseña y espero que me digan que sea valida
-	iUsuario->asignarSesionUsuario();
-	delete iUsuario;
-
-	Logueo* logueo=Logueo::getInstance();
-	cout << logueo->getUsuario()->getNombre() << endl; // Miro que se haya creado el link
-
-	cout << "Espero FALSE: " << usuario1->getPrimerLogueo(); // Miro que se haya actualizado primerLogueo
-
-
-	delete logueo;
-
-	delete alm;
 	return 0;
 }
 
+void SetUp()
+{
+	IUsuario* iU=Factory::getIUsuario();
+	iU->crearAdminPorDefecto();
+	delete iU;
+}
+
+void TearDown()
+{
+
+}
+
+bool	PantallaInicial()
+{
+	string dummy;
+	system("clear");
+	cout << "BIENVENIDO A HOSPITAL PÉCUATRO" << endl;
+	cout << "------------------------------" << endl;
+	cout << "Presione enter para iniciar sesion o escriba SALIR para salir..." << endl;
+	getline(cin,dummy);
+
+	return !(dummy == "SALIR");
+}

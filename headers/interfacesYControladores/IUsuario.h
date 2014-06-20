@@ -30,6 +30,9 @@ public:
 	virtual void altaUsuario() = 0;
 	virtual DTUser pedirDatos() = 0;
 	virtual void reactivarUsuario() = 0;
+
+	virtual void crearAdminPorDefecto()=0;
+
 	virtual ~IUsuario() {}
  };
 

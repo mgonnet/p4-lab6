@@ -45,6 +45,10 @@ public:
 	void altaUsuario();
 	DTUser pedirDatos();
 	void reactivarUsuario();
+
+	void crearAdminPorDefecto();
+
+	~CUsuario() {}
 };
 
 

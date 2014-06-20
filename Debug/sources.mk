@@ -26,5 +26,6 @@ SUBDIRS := \
 source/interfacesYControladores \
 source/dataTypes \
 source/clases \
+source/casosDeUso \
 . \
 
