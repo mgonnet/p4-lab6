@@ -35,6 +35,8 @@ public:
 	void reactivarUsuario(Usuario *u);
 	set<DTUsuarioAR*> listarUsuariosAR();
 	void addDTUsuarioAR(DTUsuarioAR*);
+
+	~Administrativo();
 };
 
 

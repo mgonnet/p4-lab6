@@ -44,3 +44,11 @@ void Administrativo::reactivarUsuario(Usuario *u)
 	if(!encontre)
 		registros.insert(rar);
 }
+
+Administrativo::~Administrativo()
+{
+	//Debo eliminar los registros
+	set<RegistroAR*>::iterator it;
+	for ( it = registros.begin() ; it != registros.end() ; ++it)
+		delete (*it);
+}

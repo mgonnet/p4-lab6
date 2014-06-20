@@ -32,6 +32,8 @@ public:
 	bool usuarioIs(Usuario* u);
 	DTUsuarioAR* crearDTUsuarioAR(set<DTLineaRegistro> lineasRegistro);
 	set<DTLineaRegistro> listarLineasRegistroAR();
+
+	~RegistroAR();
 };
 
 

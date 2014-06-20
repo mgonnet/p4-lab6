@@ -19,3 +19,10 @@ void RegistroAR::addLineaRegistroAR(Fecha fecha,TipoOper tipo)
 }
 
 bool RegistroAR::usuarioIs(Usuario* u) { return this->usuario==u; }
+
+RegistroAR::~RegistroAR()
+{
+	set<LineaRegistroAR*>::iterator it;
+	for ( it = lineas.begin() ; it != lineas.end() ; ++it)
+		delete (*it);
+}
