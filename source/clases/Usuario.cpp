@@ -97,3 +97,10 @@ set<Rol>		Usuario::getRoles()
 }
 
 void Usuario::activar() { activo=true; }
+
+Usuario::~Usuario()
+{
+	if (administrativo != NULL) delete administrativo;
+	if (socio != NULL) delete socio;
+	if (medico != NULL) delete medico;
+}
