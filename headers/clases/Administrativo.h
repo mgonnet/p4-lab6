@@ -32,7 +32,7 @@ public:
 	Administrativo(Usuario* u);
 	void linkearUsuario(Usuario *u);
 	void altaUsuario(Usuario *u);
-	void reactivarUsuario(Usuario *u, TipoOper tipo);
+	void reactivarUsuario(Usuario *u);
 	set<DTUsuarioAR*> listarUsuariosAR();
 	void addDTUsuarioAR(DTUsuarioAR*);
 };

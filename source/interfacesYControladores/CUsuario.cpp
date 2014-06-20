@@ -134,6 +134,28 @@ DTUser CUsuario::pedirDatos()
 	}
 }
 
-void CUsuario::reactivarUsuario(){}
+void CUsuario::reactivarUsuario()
+{
+	Almacen* alm=Almacen::getInstance();  // DC 1
+
+	set<Usuario*> usuarios = alm->getUsuarios(); // DC 2
+	set<Usuario*>::iterator it;
+	Usuario* usuario;
+	bool encontre=false;
+	for ( it = usuarios.begin() ; it != usuarios.end() && !encontre ; ++it )
+		if ( (*it)->getCi() == ci)
+		{
+			encontre=true;
+			usuario = (*it);
+		}
+
+	usuario->activar(); //DC 3
+
+	Logueo* log=Logueo::getInstance(); // DC 4
+
+	Administrativo* adm = log->getUsuario()->getAdministrativo(); // DC 5
+
+	adm->reactivarUsuario(usuario); // DC 6
+}
 
 

@@ -95,3 +95,5 @@ set<Rol>		Usuario::getRoles()
 	if ( this->getMedico() != NULL ) roles.insert(MEDICO);
 	return roles;
 }
+
+void Usuario::activar() { activo=true; }
