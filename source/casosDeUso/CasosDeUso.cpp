@@ -109,6 +109,7 @@ bool iniciarSesion(){
 
 				if(!contraseniaInvalida)
 				{
+					iU->crearContrasenia(contrasenia);
 					exito=true;
 					iU->asignarSesionUsuario();
 					system("clear");
@@ -180,7 +181,175 @@ bool iniciarSesion(){
 	return exito;
 }
 
-void AltaReactivacionDeUsuarios(){}
+void AltaReactivacionDeUsuarios()
+{
+	bool repetir=true;
+	bool repetirRoles=true;
+	bool existe;
+	bool datosInvalidos=false;
+	bool reactivar=false;
+	bool cancelarAlta;
+	string ci;
+	string nombre;
+	string apellido;
+	string buffer;
+	Sexo sexo;
+
+	int dia;
+	int mes;
+	int anio;
+	Fecha fecha;
+
+	set<Rol> roles;
+
+	IUsuario* iU=Factory::getIUsuario();
+
+	DTUser datosUsuario;
+
+	do
+	{
+		system("clear");
+		cout << "ALTA/REACTIVACION DE USUARIOS" << endl;
+		cout << "-----------------------------" << endl;
+		cout << "Usted es el Administrativo Pol Macarni. Está aquí para dar de alta o reactivar un usuario." << endl;
+		cout << "Ingrese la cedula de usuario en cuestion:" << endl;
+		cout << "> ";
+		getline(cin,ci);
+
+		existe=iU->iniciarAltaReactivacion(ci);
+
+		if(!existe)
+		{
+			system("clear");
+			cout << "ALTA/REACTIVACION DE USUARIOS" << endl;
+			cout << "-----------------------------" << endl;
+			cout << "No existe un usuario con esa cedula por lo que procederemos con el ALTA:" << endl;
+			cancelarAlta=false;
+			do
+			{
+				datosInvalidos = false;
+				cout << "Ingrese un nombre:" << endl;
+				cout << "> ";
+				getline(cin,nombre);
+
+				cout << "Ingrese un apellido:" << endl;
+				cout << "> ";
+				getline(cin,apellido);
+
+				cout << "Ingrese el sexo [m/f]:" << endl;
+				cout << "> ";
+				getline(cin,buffer);
+				if(buffer=="m")
+					sexo=MASCULINO;
+				else if(buffer=="f")
+					sexo=FEMENINO;
+				else
+					datosInvalidos=datosInvalidos || true;
+
+				cout << "Ingrese la fecha de nacimiento: el dia:" << endl;
+				cout << "> ";
+				getline(cin,buffer);
+				dia=atoi(buffer.c_str());
+				cout << "Ingrese la fecha de nacimiento: el mes:" << endl;
+				cout << "> ";
+				getline(cin,buffer);
+				mes=atoi(buffer.c_str());
+				cout << "Ingrese la fecha de nacimiento: el año:" << endl;
+				cout << "> ";
+				getline(cin,buffer);
+				anio=atoi(buffer.c_str());
+				fecha=Fecha(dia,mes,anio);
+				if(!fecha.isCorrecta())
+					datosInvalidos=datosInvalidos || true;
+
+				roles.clear();
+				do
+				{
+					cout << "Ingrese un Rol para el usuario: (ADMIN/MEDICO/SOCIO):" << endl;
+					cout << "> ";
+					getline(cin,buffer);
+					if(buffer=="ADMIN")
+						roles.insert(ADMIN);
+					else if(buffer=="MEDICO")
+						roles.insert(MEDICO);
+					else if(buffer=="SOCIO")
+						roles.insert(SOCIO);
+					else
+						datosInvalidos=datosInvalidos || true;
+					cout << "Desea ingresar otro ROL: [1/0]" << endl;
+					cout << "> ";
+					getline(cin,buffer);
+					repetirRoles=(buffer=="1");
+				}while(repetirRoles && (roles.size()<=2));
+				//datosInvalidos=datosInvalidos || roles.hayRepetidos();
+
+
+				if(datosInvalidos)
+				{
+					cout << "Has ingresado algún dato mal." << endl;
+					cout << "¿Deseas volver a probar? [1/0]" << endl;
+					cout << "> ";
+					getline(cin,buffer);
+					if(buffer!="1")
+					{
+						cancelarAlta=true;
+					}
+				}
+				else
+					iU->ingresarDatos(nombre,apellido,sexo,fecha,roles);
+			}while(datosInvalidos && !cancelarAlta);
+
+			if(!cancelarAlta)
+			{
+				iU->altaUsuario();
+				cout << "El usuario ha sido dado de alta." << endl;
+				repetir=false;
+			}
+			else
+			{
+				cout << "Se ha cancelado el alta." << endl;
+			}
+		}
+		else // Usuario existe
+		{
+			datosUsuario=iU->pedirDatos();
+			cout << datosUsuario << endl;
+
+			if(datosUsuario.isActivo())
+			{
+				cout << "Este usuario ya está dado de alta y además está activo. No hay nada que hacer aquí." << endl;
+				cout << "¿Desea probar suerte con otro usuario? [1/0]" << endl;
+				cout << "> ";
+				getline(cin,buffer);
+				repetir=(buffer=="1");
+			}
+			else //Confirmar la reactivacion
+			{
+				cout << "Este usuario está inactivo. ¿Desea reactivarlo? [1/0]" << endl;
+				cout << "> ";
+				getline(cin,buffer);
+				reactivar=(buffer==("1"));
+
+				if(reactivar)
+				{
+					iU->reactivarUsuario();
+					cout << "EL usuario ha sido reactivado." << endl;
+					repetir=false;
+				}
+				else
+				{
+					cout << "¿Desea probar suerte con otro usuario? [1/0]" << endl;
+					cout << "> ";
+					getline(cin,buffer);
+					repetir=(buffer=="1");
+				}
+			}
+
+		}
+
+	}while(repetir);
+}
+
 void UsuariosDadosDeAltaYReactivados(){}
 void AltaMedicamento(){}
 void AltaReprEstandarizadaDeDiagnosticos(){}

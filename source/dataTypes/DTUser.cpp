@@ -12,6 +12,7 @@
 using namespace std;
 
 //Constructora
+DTUser::DTUser(){}
 DTUser::DTUser(string nombre,string apellido,Sexo sexo,int edad,bool activo,set<Rol> roles) : nombre(nombre), apellido(apellido), sexo(sexo),edad(edad),activo(activo)
 {
 	this->roles=roles;
