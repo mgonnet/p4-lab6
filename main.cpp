@@ -131,7 +131,7 @@ void MostrarCasosDeUso()
 
 bool EjecutarCasoDeUso()
 {
-	bool salir=false;
+	bool salir=true;
 	string buffer;
 	getline(cin,buffer);
 

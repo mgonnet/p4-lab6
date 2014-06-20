@@ -391,6 +391,7 @@ void CerrarSesion()
 {
 	IUsuario* iU=Factory::getIUsuario();
 	iU->cerrarSesion();
+	delete iU;
 }
 
 bool validaPass(string contrasenia)
