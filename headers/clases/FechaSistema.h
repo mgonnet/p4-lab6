@@ -28,6 +28,8 @@ public:
 	Fecha getFechaSistema();
 	Hora getHoraSistema();
 
+	void setFechaSistema(Fecha);
+	void setHoraSistema(Hora);
 	~FechaSistema();
 
 };

@@ -11,4 +11,4 @@ Socio::Socio(Usuario* u):
 	usuario(u)
 {}
 
-
+Socio::~Socio() {}

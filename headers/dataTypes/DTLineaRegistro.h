@@ -12,6 +12,10 @@
 #include "../../headers/dataTypes/FechaHora.h"
 
 class DTLineaRegistro {
+public:
+	const Fecha& getFecha() const;
+	TipoOper getTipoOper() const;
+
 private:
 	Fecha fecha;
 	TipoOper tipoOper;

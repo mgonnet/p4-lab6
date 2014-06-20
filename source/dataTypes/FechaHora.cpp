@@ -5,7 +5,9 @@
  *      Author: matias
  */
 
+#include <iostream>
 #include "../../headers/dataTypes/FechaHora.h"
+#include "../../headers/clases/FechaSistema.h"
 #include <stdexcept>
 
 using namespace std;
@@ -64,15 +66,18 @@ bool Fecha::esMenorQue(Fecha fecha){
 
 int	Fecha::calcularEdad()
 { // CUIDADO:
-	/*FechaSistema* fSis=FechaSistema::getInstance();
-	Fecha fechaSistema=fSis->getFecha();
+	FechaSistema* fSis=FechaSistema::getInstance();
+	Fecha fechaSistema=fSis->getFechaSistema();
 
-	int edad=fechaSistema->getAnio() - this->getAnio();
-	if ( this->getMes() >= fechaSistema->getMes() )
+	int edad=fechaSistema.getAnio() - this->getAnio();
+	if ( this->getMes() >= fechaSistema.getMes() )
 	{
-		if ( !(this->getMes == fechaSistema->getMes() && this->getDia > fechaSistema->getDia()) ) {}
-		edad--;
-	}*/
+		if ( (this->getMes() == fechaSistema.getMes() && this->getDia() <= fechaSistema.getDia()) ) {}
+		else
+			edad--;
+	}
+
+	return edad;
 }
 
 // --------------- Hora --------------- //

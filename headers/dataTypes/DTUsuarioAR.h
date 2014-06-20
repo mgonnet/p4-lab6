@@ -14,6 +14,14 @@
 using namespace std;
 
 class DTUsuarioAR {
+public:
+	bool isActivo() const;
+	const string& getApellido() const;
+	const string& getCi() const;
+	int getEdad() const;
+	const string& getNombre() const;
+	const set<DTLineaRegistro>& getRegistros() const;
+
 private:
 	string nombre;
 	string apellido;

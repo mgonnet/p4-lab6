@@ -39,7 +39,7 @@ bool PantallaInicial();
 void MostrarCasosDeUso();
 bool EjecutarCasoDeUso();
 
-int main(int argc, char *argv[])
+int main()
 {
 	SetUp();
 

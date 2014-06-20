@@ -6,11 +6,13 @@
 O_SRCS += \
 ../Accion.o \
 ../AccionMensaje.o \
+../Administrativo.o \
 ../Almacen.o \
 ../CConsulta.o \
 ../CDiagnostico.o \
 ../CUsuario.o \
 ../CategoriaPS.o \
+../Consulta.o \
 ../DTCategoriaPS.o \
 ../DTConsulta.o \
 ../DTConsultaDia.o \
@@ -18,6 +20,7 @@ O_SRCS += \
 ../DTDiagnosticoAlta.o \
 ../DTHistorial.o \
 ../DTInfoLogueo.o \
+../DTLineaRegistro.o \
 ../DTMedicamento.o \
 ../DTMedico.o \
 ../DTProblemaSalud.o \
@@ -26,12 +29,16 @@ O_SRCS += \
 ../DTSocio.o \
 ../DTTratamiento.o \
 ../DTUser.o \
+../DTUsuarioAR.o \
 ../Diagnostico.o \
 ../Factory.o \
 ../Farmacologico.o \
 ../FechaHora.o \
+../FechaSistema.o \
+../LineaRegistroAR.o \
 ../Logueo.o \
 ../Medicamento.o \
+../Medico.o \
 ../MedicoNotificable.o \
 ../Mensaje.o \
 ../Observer.o \
@@ -39,9 +46,8 @@ O_SRCS += \
 ../ParametroAccionMensaje.o \
 ../ProblemaSalud.o \
 ../Quirurgico.o \
-../SesionTest.o \
+../RegistroAR.o \
 ../Socio.o \
-../SocioRobadoTest.o \
 ../StockAcciones.o \
 ../Subject.o \
 ../Tratamiento.o \

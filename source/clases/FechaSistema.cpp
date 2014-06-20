@@ -23,5 +23,7 @@ FechaSistema* FechaSistema::getInstance(){
 }
 
 Fecha FechaSistema::getFechaSistema() { return fechaSis; }
-
 Hora FechaSistema::getHoraSistema() { return horaSis; }
+
+void FechaSistema::setFechaSistema(Fecha fecha) { fechaSis=fecha; }
+void FechaSistema::setHoraSistema(Hora hora) { horaSis=hora; }

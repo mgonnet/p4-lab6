@@ -25,6 +25,7 @@ public:
 
 	//operaciones
 	Socio(Usuario* u);
+	Socio(){} //CUIDADO:
 	void linkearUsuario(Usuario u);
 	void darBajarR(string codigo);
 	void asistir(string ciMedico, Fecha fechaConsulta);
@@ -34,6 +35,7 @@ public:
 	set<DTConsulta> getHistorialConsultas();
 	void buscarConsulta(DTConsulta c);
 
+	virtual ~Socio();
 };
 
 
