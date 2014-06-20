@@ -13,6 +13,8 @@ CPP_SRCS += \
 ../source/clases/Diagnostico.cpp \
 ../source/clases/Emergencia.cpp \
 ../source/clases/Farmacologico.cpp \
+../source/clases/FechaSistema.cpp \
+../source/clases/LineaRegistroAR.cpp \
 ../source/clases/Logueo.cpp \
 ../source/clases/Medicamento.cpp \
 ../source/clases/Medico.cpp \
@@ -38,6 +40,8 @@ OBJS += \
 ./source/clases/Diagnostico.o \
 ./source/clases/Emergencia.o \
 ./source/clases/Farmacologico.o \
+./source/clases/FechaSistema.o \
+./source/clases/LineaRegistroAR.o \
 ./source/clases/Logueo.o \
 ./source/clases/Medicamento.o \
 ./source/clases/Medico.o \
@@ -63,6 +67,8 @@ CPP_DEPS += \
 ./source/clases/Diagnostico.d \
 ./source/clases/Emergencia.d \
 ./source/clases/Farmacologico.d \
+./source/clases/FechaSistema.d \
+./source/clases/LineaRegistroAR.d \
 ./source/clases/Logueo.d \
 ./source/clases/Medicamento.d \
 ./source/clases/Medico.d \

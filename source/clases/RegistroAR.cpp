@@ -12,7 +12,7 @@ RegistroAR::RegistroAR(Usuario* u, Administrativo* adm):
 	adm(adm)
 {}
 
-void addLineaRegistroAR(Fecha fecha,TipoOper tipo)
+void RegistroAR::addLineaRegistroAR(Fecha fecha,TipoOper tipo)
 {
 	LineaRegistroAR* nuevaLinea=new LineaRegistroAR(fecha,tipo);
 	this->lineas.insert(nuevaLinea);

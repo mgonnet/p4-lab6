@@ -45,11 +45,14 @@ private:
 
 public:
 	//Creadoras
+	Hora();
 	Hora(int horas,int minutos);
 
 	//Getters
 	int getHoras();
 	int getMinutos();
+
+	Hora operator=(Hora original);
 };
 
 

@@ -49,7 +49,7 @@ bool	Usuario::isActivo(){ return activo; }
 string	Usuario::getContrasenia() { return contrasenia; }
 bool	Usuario::getPrimerLogueo() { return primerLogueo; }
 
-Administrativo Usuario::getAdministrativo()
+Administrativo* Usuario::getAdministrativo()
 {
 	if(administrativo == NULL)
 		throw invalid_argument("El usuario no tiene ese Rol");
@@ -57,7 +57,7 @@ Administrativo Usuario::getAdministrativo()
 		return administrativo;
 }
 
-Socio Usuario::getSocio()
+Socio* Usuario::getSocio()
 {
 	if(socio == NULL)
 		throw invalid_argument("El usuario no tiene ese Rol");
@@ -65,7 +65,7 @@ Socio Usuario::getSocio()
 		return socio;
 }
 
-Medico Usuario::getMedico()
+Medico* Usuario::getMedico()
 {
 	if(medico == NULL)
 		throw invalid_argument("El usuario no tiene ese Rol");

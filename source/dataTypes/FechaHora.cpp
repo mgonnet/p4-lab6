@@ -78,7 +78,15 @@ int	Fecha::calcularEdad()
 // --------------- Hora --------------- //
 //Creadoras
 Hora::Hora(int horas,int minutos): horas(horas), minutos(minutos) { }
+Hora::Hora(): horas(0), minutos(0) { }
 
 //Getters
 int Hora::getHoras() { return horas; }
 int Hora::getMinutos() { return minutos; }
+
+Hora Hora::operator=(Hora original)
+{
+	this->horas=original.horas;
+	this->minutos=original.minutos;
+	return (*this);
+}

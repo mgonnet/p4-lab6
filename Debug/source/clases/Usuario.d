@@ -28,6 +28,7 @@ source/clases/Usuario.d: ../source/clases/Usuario.cpp \
  ../source/clases/../../headers/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h \
  ../source/clases/../../headers/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/DTLineaRegistro.h \
  ../source/clases/../../headers/clases/../../headers/clases/../../headers/clases/Usuario.h \
+ ../source/clases/../../headers/clases/../../headers/clases/../../headers/clases/Administrativo.h \
  ../source/clases/../../headers/clases/Medico.h \
  ../source/clases/../../headers/clases/../../headers/clases/Consulta.h \
  ../source/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h \
@@ -95,6 +96,8 @@ source/clases/Usuario.d: ../source/clases/Usuario.cpp \
 ../source/clases/../../headers/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/DTLineaRegistro.h:
 
 ../source/clases/../../headers/clases/../../headers/clases/../../headers/clases/Usuario.h:
+
+../source/clases/../../headers/clases/../../headers/clases/../../headers/clases/Administrativo.h:
 
 ../source/clases/../../headers/clases/Medico.h:
 

@@ -7,6 +7,7 @@
 
 #include "../../headers/clases/Administrativo.h"
 #include "../../headers/clases/RegistroAR.h"
+#include "../../headers/clases/FechaSistema.h"
 
 Administrativo::Administrativo(Usuario* u):
 	usuario(u)
@@ -14,9 +15,11 @@ Administrativo::Administrativo(Usuario* u):
 
 void Administrativo::altaUsuario(Usuario *u)
 {
-	RegistroAR* rar=new RegistroAR(u,this);
+	/*RegistroAR* rar=new RegistroAR(u,this);
 
-	FechaSistema* fSis;
-	rar->addLineaRegistroAR(fSis->getFecha(),ALTA);
+	FechaSistema* fSis=FechaSistema::getInstance();
+	rar->addLineaRegistroAR(fSis->getFechaSistema(),ALTA);
+
+	registros.insert(rar);*/
 }
 

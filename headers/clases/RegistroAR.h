@@ -25,12 +25,12 @@ private:
 
 public:
 
-		RegistroAR(Usuario*,Administrativo*);
-		void linkearUsuario(Usuario u);
-		void addLineaRegistroAR(Fecha,TipoOper);
-		bool usuarioIS(Usuario u);
-		DTUsuarioAR* crearDTUsuarioAR(set<DTLineaRegistro> lineasRegistro);
-		set<DTLineaRegistro> listarLineasRegistroAR();
+	RegistroAR(Usuario*,Administrativo*);
+	void linkearUsuario(Usuario u);
+	void addLineaRegistroAR(Fecha,TipoOper);
+	bool usuarioIS(Usuario u);
+	DTUsuarioAR* crearDTUsuarioAR(set<DTLineaRegistro> lineasRegistro);
+	set<DTLineaRegistro> listarLineasRegistroAR();
 };
 
 
