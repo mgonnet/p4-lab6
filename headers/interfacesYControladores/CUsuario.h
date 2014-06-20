@@ -49,6 +49,8 @@ public:
 	void crearAdminPorDefecto();
 	set<Rol> rolesDelLogueado();
 
+	void liberarMemoria(); // CUIDADO: Tendria que ir en algún lugar más neutral
+
 	~CUsuario() {}
 };
 

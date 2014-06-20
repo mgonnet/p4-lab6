@@ -178,6 +178,7 @@ bool iniciarSesion(){
 	}
 	//End Iniciar Sesion
 
+	delete iU;
 	return exito;
 }
 
@@ -372,6 +373,8 @@ void AltaReactivacionDeUsuarios()
 		}
 
 	}while(repetir);
+
+	delete iU;
 }
 
 void UsuariosDadosDeAltaYReactivados(){}

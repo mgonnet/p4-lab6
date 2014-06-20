@@ -34,6 +34,7 @@ public:
 	virtual void crearAdminPorDefecto()=0;
 	virtual set<Rol> rolesDelLogueado()=0;
 
+	virtual void liberarMemoria()=0; // CUIDADO: Tendria que ir en algún lugar más neutral
 	virtual ~IUsuario() {}
  };
 

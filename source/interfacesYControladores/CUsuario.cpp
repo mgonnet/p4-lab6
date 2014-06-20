@@ -14,6 +14,7 @@
 #include "../../headers/clases/Administrativo.h"
 #include "../../headers/interfacesYControladores/Almacen.h"
 #include "../../headers/clases/Logueo.h"
+#include "../../headers/clases/FechaSistema.h"
 
 CUsuario::CUsuario():
 ci(""),
@@ -177,4 +178,14 @@ set<Rol> CUsuario::rolesDelLogueado()
 		throw invalid_argument("No hay nadie logueado actualmente.");
 	else
 		return u->getRoles();
+}
+
+void CUsuario::liberarMemoria()
+{
+	Almacen* alm=Almacen::getInstance();
+	delete alm;
+	Logueo* log=Logueo::getInstance();
+	delete log;
+	FechaSistema* fSis=FechaSistema::getInstance();
+	delete fSis;
 }

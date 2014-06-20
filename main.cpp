@@ -33,9 +33,6 @@ using namespace std;
 #include <stdio.h>
 #include <stdlib.h>
 
-// Ejemplo extraido de Snippets Zone: http://snippets.dzone.com/posts/show/2734
-// Compilarlo con $ gcc -o clear clear.c y mover a /usr/bin
-
 void SetUp();
 void TearDown();
 bool PantallaInicial();
@@ -73,7 +70,9 @@ void SetUp()
 
 void TearDown()
 {
-
+	IUsuario* iU=Factory::getIUsuario();
+	iU->liberarMemoria();
+	delete iU;
 }
 
 bool	PantallaInicial()
@@ -127,6 +126,7 @@ void MostrarCasosDeUso()
 	cout << "(cs) > Cerrar Sesion" << endl;
 
 	cout << "> ";
+	delete iU;
 }
 
 bool EjecutarCasoDeUso()
@@ -169,5 +169,7 @@ bool EjecutarCasoDeUso()
 		CerrarSesion();
 		salir=true;
 	}
+
+	delete iU;
 	return salir;
 }
