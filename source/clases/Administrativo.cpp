@@ -23,3 +23,24 @@ void Administrativo::altaUsuario(Usuario *u)
 	registros.insert(rar);
 }
 
+void Administrativo::reactivarUsuario(Usuario *u)
+{
+	RegistroAR* rar;
+	set<RegistroAR*>::iterator it;
+	bool encontre=false;
+	for ( it = registros.begin() ; it != registros.end() && !encontre ; ++it )
+		if( (*it)->usuarioIs(u) )
+		{
+			encontre=true;
+			rar = (*it);
+		}
+
+	if(!encontre)
+		rar = new RegistroAR(u,this);
+
+	FechaSistema* fSis=FechaSistema::getInstance();
+	rar->addLineaRegistroAR(fSis->getFechaSistema(),REACTIVACION);
+
+	if(!encontre)
+		registros.insert(rar);
+}
