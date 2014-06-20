@@ -89,7 +89,7 @@ public:
 	set<DTConsulta> obtenerListaConsultas(); ///IMPORTANTE!!! DTConsultaDia
 	void darBajarR(string codigo);
 	void asistir(string ciMedico, Fecha fechaConsulta);
-
+	set<Rol> getRoles();
 };
 
 

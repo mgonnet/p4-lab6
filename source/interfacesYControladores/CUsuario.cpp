@@ -16,7 +16,8 @@
 #include "../../headers/clases/Logueo.h"
 
 CUsuario::CUsuario():
-	logueante(NULL)
+ci(""),
+logueante(NULL)
 {}
 
 DTInfoLogueo CUsuario::comienzoInicioSesion(string ci)
@@ -108,7 +109,31 @@ void CUsuario::altaUsuario()
 	alm->addUsuario(nuevoUsuario);
 }
 
-DTUser CUsuario::pedirDatos(){}
+DTUser CUsuario::pedirDatos()
+{
+	if ( ci == "" )
+		throw invalid_argument("En IUsuario::pedirDatos: No se está recordando ninguna ci");
+	else
+	{
+		Usuario* usuario;
+		Almacen* alm=Almacen::getInstance();
+		set<Usuario*> usuarios = alm->getUsuarios();
+		set<Usuario*>::iterator it;
+		bool encontre=false;
+		for ( it = usuarios.begin() ; it != usuarios.end() && !encontre ; ++it )
+			if ( (*it)->getCi() == ci)
+			{
+				encontre=true;
+				usuario = (*it);
+			}
+
+		if(!encontre)
+			throw invalid_argument("En IUsuario::pedirDatos: No existe usuario con la ci indicada");
+		else
+			return DTUser(usuario->getNombre(),usuario->getApellido(),usuario->getSexo(),usuario->getEdad(),usuario->getActivo(),usuario->getRoles());
+	}
+}
+
 void CUsuario::reactivarUsuario(){}
 
 

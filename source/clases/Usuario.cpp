@@ -14,18 +14,18 @@
 
 //Constructores
 Usuario::Usuario(string nombre,string apellido,string ci,Sexo sexo,Fecha fechaNac,bool activo, int edad, bool adminPorDefecto, bool primerLogueo, set<Rol> roles):
-	nombre(nombre),
-	apellido(apellido),
-	ci(ci),
-	sexo(sexo),
-	fechaNac(fechaNac),
-	activo(activo),
-	edad(edad),
-	adminPorDefecto(adminPorDefecto),
-	primerLogueo(primerLogueo),
-	administrativo(NULL),
-	medico(NULL),
-	socio(NULL)
+nombre(nombre),
+apellido(apellido),
+ci(ci),
+sexo(sexo),
+fechaNac(fechaNac),
+activo(activo),
+edad(edad),
+adminPorDefecto(adminPorDefecto),
+primerLogueo(primerLogueo),
+administrativo(NULL),
+medico(NULL),
+socio(NULL)
 {
 	if( (roles.find(ADMIN) != roles.end() ) && (roles.find(MEDICO) != roles.end() ) )
 		throw invalid_argument("Se seleccionaron roles ADMIN y MEDICO");
@@ -42,10 +42,12 @@ Usuario::Usuario(string nombre,string apellido,string ci,Sexo sexo,Fecha fechaNa
 
 //Getters
 string	Usuario::getNombre() { return nombre; }
+string	Usuario::getApellido() { return apellido; }
 string	Usuario::getCi() { return ci; }
 Sexo	Usuario::getSexo() { return sexo; }
 Fecha	Usuario::getFechaNac() { return fechaNac; }
-bool	Usuario::isActivo(){ return activo; }
+bool	Usuario::getActivo(){ return activo; }
+int		Usuario::getEdad() { return edad; }
 string	Usuario::getContrasenia() { return contrasenia; }
 bool	Usuario::getPrimerLogueo() { return primerLogueo; }
 
@@ -84,3 +86,12 @@ void	Usuario::setPrimerLogueo(bool pL) { primerLogueo = pL; }
 
 //Negocio
 DTInfoLogueo	Usuario::getInfoLogueo() { return DTInfoLogueo(primerLogueo,adminPorDefecto,activo,true); }
+
+set<Rol>		Usuario::getRoles()
+{
+	set<Rol> roles;
+	if ( this->getAdministrativo() != NULL ) roles.insert(ADMIN);
+	if ( this->getSocio() != NULL ) roles.insert(SOCIO);
+	if ( this->getMedico() != NULL ) roles.insert(MEDICO);
+	return roles;
+}
