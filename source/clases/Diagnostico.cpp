@@ -16,3 +16,8 @@ string	Diagnostico::getDescripcion() { return descripcion; }
 //Setters
 void	Diagnostico::setDescripcion() { this->descripcion=descripcion; }
 
+//Negocio
+DTDiagnostico	Diagnostico::getHistorial(){
+
+
+}
