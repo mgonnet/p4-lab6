@@ -54,15 +54,7 @@ void Consulta::setAsistioConsulta(bool asistio){
 
 //Operaciones
 
-DTConsulta Consulta::getHistorialConsultas(){
-
-	set<DTDiagnostico> auxDTDiagnosticos;
-	set<Diagnostico*>::iterator it;
-	for ( it = diagnosticos.begin() ; it != diagnosticos.end() ; ++it)
-		auxDTDiagnosticos.insert((*it)->getHistorial());   //aca estoy insertando un DTDiagnostico
-
-	return (DTConsulta(this->getFechaConsulta(),this->getTipoConsulta(),this->medico->getDatosMedico(),auxDTDiagnosticos));
-}
+DTConsulta Consulta::getHistorialConsultas(){}
 
 DTConsultaDia Consulta::obtenerConsultaDia(Socio* socio){
 	FechaSistema* fechaSistema=FechaSistema::getInstance();
