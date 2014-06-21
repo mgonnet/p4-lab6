@@ -7,13 +7,9 @@
 
 #include "../../headers/clases/Emergencia.h"
 
-
-
-
-
 Emergencia::Emergencia(Fecha fechaConsulta,Hora horaConsulta,bool asistio,Medico* medico,
 		Socio* socio,string motivo):
-		Consulta(fechaConsulta,horaConsulta,asistio,NULL,NULL),
+		Consulta(fechaConsulta,horaConsulta,asistio,medico,socio),
 		motivo(motivo){}
 
 //Getters
@@ -26,9 +22,9 @@ void Emergencia::setMotivo(string motivo){
 	this->motivo = motivo;
 }
 
-TipoConsulta getTipoConsulta(){
+TipoConsulta Emergencia::getTipoConsulta(){
     	return EMERGENCIA;
-};
+}
 
 Emergencia::~Emergencia() {}
 

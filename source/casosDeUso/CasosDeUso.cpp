@@ -493,7 +493,7 @@ void UsuariosDadosDeAltaYReactivados(){}
 void AltaMedicamento(){}
 
 void AltaReprEstandarizadaDeDiagnosticos()
-{
+{/*
 	bool deseaCategorias=true;
 	IDiagnostico* iD=Factory::getIDiagnostico();
 	string buffer;
@@ -540,7 +540,7 @@ void AltaReprEstandarizadaDeDiagnosticos()
 		}
 
 
-	}
+	}*/
 }
 
 void RegistroConsulta(){}

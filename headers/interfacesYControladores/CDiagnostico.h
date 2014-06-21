@@ -16,10 +16,10 @@
 class CDiagnostico : public IDiagnostico
 {
 public:
-	set<DTCategoriaPS> obtenerCategorias();
+	/*set<DTCategoriaPS> obtenerCategorias();
 	void agregarCategoria(string,string);
 	void seleccionarCategoria(string);
-	set <DTReprEstandarizada> getReprEstandarizadas();
+	set<DTReprEstandarizada> getReprEstandarizadas();*/
 
 	~CDiagnostico();
 };

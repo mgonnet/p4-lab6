@@ -26,14 +26,14 @@ public:
 
 	//Getters
 	string	getMotivo();
-	
+
 	//Setters
 	void	setMotivo(string motivo);
 
 	//Operaciones
 	TipoConsulta	getTipoConsulta();
 
-	virtual ~Emergencia();
+	~Emergencia();
 };
 
 

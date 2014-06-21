@@ -7,10 +7,10 @@
 
 #include "../../headers/interfacesYControladores/CDiagnostico.h"
 
-set<DTCategoriaPS> obtenerCategorias(){}
+/*set<DTCategoriaPS> obtenerCategorias(){}
 void agregarCategoria(string,string){}
 void seleccionarCategoria(string){}
-set <DTReprEstandarizada> getReprEstandarizadas(){}
+set <DTReprEstandarizada> getReprEstandarizadas(){}*/
 
 CDiagnostico::~CDiagnostico(){}
 

@@ -20,9 +20,11 @@ Consulta::Consulta( Fecha fechaConsulta,Hora horaConsulta,bool asistio,Medico* m
 							fechaConsulta(fechaConsulta),
 							horaConsulta(horaConsulta),
 							asistio(asistio),
-							medico(NULL),
-							socio(NULL)
-{ this->codigo = Consulta::ultimoCodigo++; }
+							medico(medico),
+							socio(socio)
+{
+	this->codigo = Consulta::ultimoCodigo++;
+}
 
 //Getters
 int Consulta::getCodigo(){

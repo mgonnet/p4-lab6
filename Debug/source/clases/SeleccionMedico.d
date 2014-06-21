@@ -1,2 +1,1 @@
-source/clases/SeleccionMedico.d source/clases/SeleccionMedico.o:  \
- ../source/clases/SeleccionMedico.cpp
+source/clases/SeleccionMedico.d: ../source/clases/SeleccionMedico.cpp
