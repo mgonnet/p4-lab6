@@ -25,4 +25,6 @@ public:
 	string	getEtiqueta();
 };
 
+std::ostream &operator<<( std::ostream &stream,DTCategoriaPS imprimible);
+
 #endif /* DTCATEGORIAPS_H_ */

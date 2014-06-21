@@ -9,13 +9,16 @@ main.d: ../main.cpp ../headers/clases/Accion.h \
  ../headers/clases/../../headers/clases/Subject.h \
  ../headers/clases/../../headers/clases/Consulta.h \
  ../headers/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h \
- ../headers/clases/../../headers/clases/../../headers/dataTypes/DTReservaA.h \
+ ../headers/clases/../../headers/clases/../../headers/dataTypes/DTConsulta.h \
  ../headers/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h \
  ../headers/clases/../../headers/clases/../../headers/dataTypes/DTMedico.h \
- ../headers/clases/../../headers/clases/../../headers/dataTypes/DTConsulta.h \
  ../headers/clases/../../headers/clases/../../headers/dataTypes/DTDiagnostico.h \
  ../headers/clases/../../headers/clases/../../headers/dataTypes/TipoConsulta.h \
+ ../headers/clases/../../headers/clases/../../headers/dataTypes/DTReservaA.h \
+ ../headers/clases/../../headers/clases/../../headers/dataTypes/DTConsultaDia.h \
  ../headers/clases/../../headers/clases/../../headers/dataTypes/TipoConsulta.h \
+ ../headers/clases/../../headers/clases/../../headers/clases/FechaSistema.h \
+ ../headers/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h \
  ../headers/clases/StockAcciones.h ../headers/clases/Logueo.h \
  ../headers/clases/Usuario.h \
  ../headers/clases/../../headers/dataTypes/Sexo.h \
@@ -89,19 +92,25 @@ main.d: ../main.cpp ../headers/clases/Accion.h \
 
 ../headers/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h:
 
-../headers/clases/../../headers/clases/../../headers/dataTypes/DTReservaA.h:
+../headers/clases/../../headers/clases/../../headers/dataTypes/DTConsulta.h:
 
 ../headers/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h:
 
 ../headers/clases/../../headers/clases/../../headers/dataTypes/DTMedico.h:
 
-../headers/clases/../../headers/clases/../../headers/dataTypes/DTConsulta.h:
-
 ../headers/clases/../../headers/clases/../../headers/dataTypes/DTDiagnostico.h:
 
 ../headers/clases/../../headers/clases/../../headers/dataTypes/TipoConsulta.h:
 
+../headers/clases/../../headers/clases/../../headers/dataTypes/DTReservaA.h:
+
+../headers/clases/../../headers/clases/../../headers/dataTypes/DTConsultaDia.h:
+
 ../headers/clases/../../headers/clases/../../headers/dataTypes/TipoConsulta.h:
+
+../headers/clases/../../headers/clases/../../headers/clases/FechaSistema.h:
+
+../headers/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h:
 
 ../headers/clases/StockAcciones.h:
 

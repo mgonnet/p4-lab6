@@ -39,8 +39,23 @@ source/interfacesYControladores/Factory.d: \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTUser.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/CDiagnostico.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/CConsulta.h \
- ../source/interfacesYControladores/../../headers/interfacesYControladores/../dataTypes/DTConsultaDia.h \
- ../source/interfacesYControladores/../../headers/interfacesYControladores/../dataTypes/DTDiagnostico.h
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/interfacesYControladores/IConsulta.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTConsultaDia.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/FechaHora.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTConsulta.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTDiagnostico.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/TipoTratamiento.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTMedicamento.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTMedico.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/interfacesYControladores/Almacen.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Medicamento.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Consulta.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTConsultaDia.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/TipoConsulta.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/clases/FechaSistema.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Logueo.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Usuario.h
 
 ../source/interfacesYControladores/../../headers/interfacesYControladores/Factory.h:
 
@@ -120,6 +135,36 @@ source/interfacesYControladores/Factory.d: \
 
 ../source/interfacesYControladores/../../headers/interfacesYControladores/CConsulta.h:
 
-../source/interfacesYControladores/../../headers/interfacesYControladores/../dataTypes/DTConsultaDia.h:
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/interfacesYControladores/IConsulta.h:
 
-../source/interfacesYControladores/../../headers/interfacesYControladores/../dataTypes/DTDiagnostico.h:
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTConsultaDia.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/FechaHora.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTConsulta.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTDiagnostico.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/TipoTratamiento.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTMedicamento.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTMedico.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/interfacesYControladores/Almacen.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Medicamento.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Consulta.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTConsultaDia.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/TipoConsulta.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/clases/FechaSistema.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Logueo.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Usuario.h:

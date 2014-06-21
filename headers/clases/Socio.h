@@ -10,6 +10,7 @@
 
 #include "../../headers/clases/Subject.h"
 #include "../../headers/clases/Consulta.h"
+
 #include <string>
 using namespace std;
 
@@ -25,7 +26,8 @@ public:
 
 	//operaciones
 	Socio(Usuario* u);
-	Socio(){} //CUIDADO:
+	Socio(); //CUIDADO:
+	string getCISocio();
 	void linkearUsuario(Usuario u);
 	void darBajarR(string codigo);
 	void asistir(string ciMedico, Fecha fechaConsulta);

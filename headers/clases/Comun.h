@@ -10,8 +10,7 @@
 
 #include <string>
 
-#include "../dataTypes/FechaHora.h"
-#include "Consulta.h"
+#include "../../headers/clases/Consulta.h"
 
 using namespace std;
 
@@ -24,7 +23,8 @@ private:
 public:
 	
 	//Creadoras
-	Comun(int codigo,Fecha fechaComun,Hora horaComun, Fecha fechaReserva);
+	Comun(	Fecha fechaConsulta,Hora horaConsulta,bool asistio,Medico* medico,
+			Socio* socio,Fecha fechaReserva );
 
 	//Getters
 	Fecha	getFechaReserva();
@@ -35,6 +35,9 @@ public:
 	//Operaciones
 	void 	create(string ciSocio, string ciMedico,
 							Fecha fechaConsulta, Fecha fechaReserva, bool asiste);
+	bool			isActiva();
+	TipoConsulta	getTipoConsulta();
+	//DTReservaA		getDatosReserva();
 };
 
 
