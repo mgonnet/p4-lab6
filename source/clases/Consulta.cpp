@@ -96,5 +96,5 @@ void	Consulta::destruirLinkMedico(){
 	this->medico = NULL;
 }
 
-Consulta::~Consulta() {}
+Consulta::~Consulta(){}
 

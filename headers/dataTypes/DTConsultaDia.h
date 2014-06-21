@@ -22,9 +22,9 @@ private:
 public:
 	DTConsultaDia(Fecha fechaConsulta, Hora horaConsulta, string ciSocio);
 
-	const Fecha& getFechaConsulta() const;
-	const Hora& getHoraConsulta() const;
-	const string& getCiSocio() const;
+	Fecha getFechaConsulta();
+	Hora getHoraConsulta();
+	string getCiSocio();
 };
 
 #endif /* DTCONSULTADIA_H_ */
