@@ -95,3 +95,21 @@ Hora Hora::operator=(Hora original)
 	this->minutos=original.minutos;
 	return (*this);
 }
+
+
+ostream &operator<<( std::ostream &stream,Fecha imprimible)
+{
+	stream	<< "Dia: " << imprimible.getDia() << endl
+			<< "Mes: " << imprimible.getMes() << endl
+			<< "Año: " << imprimible.getAnio() << endl;
+
+	return (stream);
+}
+
+ostream &operator<<( std::ostream &stream,Hora imprimible)
+{
+	stream	<< "Hora: " << imprimible.getHoras() << endl
+			<< "Minuto: " << imprimible.getMinutos() << endl;
+
+	return (stream);
+}

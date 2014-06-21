@@ -36,7 +36,7 @@ using namespace std;
 
 void SetUp();
 void TearDown();
-bool PantallaInicial();
+int	 PantallaInicial();
 void MostrarCasosDeUso();
 bool EjecutarCasoDeUso();
 
@@ -44,20 +44,26 @@ using namespace std;
 
 int main()
 {
+	int opcion=0; // 0 iniciar sesion, 1 Config Fecha Sistema
 	SetUp();
 
-	while( PantallaInicial() )
+
+	do
 	{
-		if ( iniciarSesion(0,"ROOT","123","\n") )
-		{
-			bool salir=false;
-			while ( !salir )
+		opcion=PantallaInicial();
+		if(opcion!=1){
+			if ( opcion==2 ) cambiarFechaSistema();
+			else if ( iniciarSesion(0,"ROOT","123","\n") )
 			{
-				MostrarCasosDeUso();
-				salir = EjecutarCasoDeUso();
+				bool salir=false;
+				while ( !salir )
+				{
+					MostrarCasosDeUso();
+					salir = EjecutarCasoDeUso();
+				}
 			}
 		}
-	}
+	}while( opcion!=1 );
 
 	TearDown();
 
@@ -78,7 +84,7 @@ void TearDown()
 	delete iU;
 }
 
-bool	PantallaInicial()
+int	PantallaInicial()
 {
 	string dummy;
 	system("clear");
@@ -87,7 +93,12 @@ bool	PantallaInicial()
 	cout << "Presione enter para iniciar sesion o escriba SALIR para salir..." << endl;
 	getline(cin,dummy);
 
-	return !(dummy == "SALIR");
+	int opcion;
+	if (dummy == "SALIR") opcion=1;
+	else if ( dummy == "CONFIGFECHASIS") opcion=2;
+	else opcion=0;
+
+	return opcion;
 }
 
 void MostrarCasosDeUso()

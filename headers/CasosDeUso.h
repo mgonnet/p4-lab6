@@ -21,5 +21,7 @@ void ReservaConsulta();
 void DevolucionConsulta();
 void CerrarSesion();
 
+void cambiarFechaSistema();
+
 
 #endif /* CASOSDEUSO_H_ */

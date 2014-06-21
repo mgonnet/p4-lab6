@@ -8,7 +8,10 @@
 #ifndef FECHAHORA_H_
 #define FECHAHORA_H_
 
+#include <iostream>
 #include <time.h>
+
+using namespace std;
 
 class Fecha
 //DataType Fecha
@@ -55,6 +58,9 @@ public:
 	Hora operator=(Hora original);
 };
 
+
+std::ostream &operator<<( std::ostream &stream,Fecha imprimible);
+std::ostream &operator<<( std::ostream &stream,Hora imprimible);
 
 #endif /* FECHAHORA_H_ */
 

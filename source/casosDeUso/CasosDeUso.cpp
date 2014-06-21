@@ -9,6 +9,7 @@
 #include "../../headers/interfacesYControladores/IUsuario.h"
 #include "../../headers/interfacesYControladores/IConsulta.h"
 #include "../../headers/dataTypes/DTInfoLogueo.h"
+#include "../../headers/clases/FechaSistema.h"
 
 #include <string>
 #include <stdlib.h>
@@ -19,6 +20,20 @@ using namespace std;
 
 Fecha ingresoFecha();
 bool validaPass(string contrasenia);
+
+void cambiarFechaSistema()
+{
+	FechaSistema* fSis=FechaSistema::getInstance();
+
+	system("clear");
+	cout << "CAMBIO DE FECHA SISTEMA" << endl;
+	cout << "-----------------------" << endl;
+	cout << "La Fecha actual es:" << endl;
+	cout << fSis->getFechaSistema();
+	Fecha fecha=ingresoFecha();
+
+	fSis->setFechaSistema(fecha);
+}
 
 bool iniciarSesion(int argc, ... ){
 	va_list p;
