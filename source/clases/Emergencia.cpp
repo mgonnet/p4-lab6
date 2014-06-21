@@ -9,11 +9,12 @@
 
 
 
+
+
 Emergencia::Emergencia(Fecha fechaConsulta,Hora horaConsulta,bool asistio,Medico* medico,
 		Socio* socio,string motivo):
-		Consulta(fechaConsulta,horaConsulta,asistio,medico,socio),
-		motivo(motivo)
-{}
+		Consulta(fechaConsulta,horaConsulta,asistio,NULL,NULL),
+		motivo(motivo){}
 
 //Getters
 string	Emergencia::getMotivo(){

@@ -10,7 +10,7 @@
 set<DTCategoriaPS> obtenerCategorias(){}
 void agregarCategoria(string,string){}
 void seleccionarCategoria(string){}
-const set <DTReprEstandarizada>& getReprEstandarizadas(){}
+set <DTReprEstandarizada> getReprEstandarizadas(){}
 
 CDiagnostico::~CDiagnostico(){}
 
