@@ -25,6 +25,6 @@ const Hora& ParametroCriterio2::getHora() const {
 	return hora;
 }
 
-void ParametroCriterio1::dummy() { }
+void ParametroCriterio2::dummy() { }
 
 

@@ -67,6 +67,7 @@ public:
 	void			crearLinkMedico(Medico* medico);
 	void 			destruirLinkSocio();
 	void 			destruirLinkMedico();
+
 	virtual ~Consulta();
 
 };
