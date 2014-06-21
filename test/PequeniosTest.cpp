@@ -27,6 +27,7 @@ TEST(FechaSistema,CalculoDeEdad)
 
 	Fecha fecha4(18,6,1993);
 	ASSERT_EQ(21,fecha4.calcularEdad());
+	delete fSis;
 }
 
 

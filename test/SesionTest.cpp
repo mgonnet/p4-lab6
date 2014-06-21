@@ -22,7 +22,8 @@ protected:
 	virtual void SetUp()
 	{
 		Fecha fecha(21,21,21);
-		usuario1=new Usuario("Juan","Perez","4855460",MASCULINO,fecha,true,21,false,true);
+		set<Rol> roles; roles.insert(ADMIN);
+		usuario1=new Usuario("Juan","Perez","4855460",MASCULINO,fecha,true,21,false,true,roles);
 
 		Almacen* alm=Almacen::getInstance();
 		alm->addUsuario(usuario1);
@@ -65,7 +66,7 @@ TEST_F(SesionTest,IniciarSesionYaSeLogueoAntes)
 	IUsuario* iUsuario=new CUsuario;  // CUIDADO: debería usar la Fabrica
 	iUsuario->comienzoInicioSesion("4855460");
 
-	ASSERT_EQ(true,iUsuario->ingresarContrasenia("passfrutera"));  // Ingreso la contraseña y espero que me digan que sea valida
+	ASSERT_EQ(false,iUsuario->ingresarContrasenia("passfrutera"));  // Ingreso la contraseña y espero que me digan que no es incorrecta
 	iUsuario->asignarSesionUsuario();
 	delete iUsuario;
 

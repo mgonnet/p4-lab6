@@ -12,6 +12,6 @@
 
 IUsuario* Factory::getIUsuario() { return new CUsuario(); }
 IDiagnostico* Factory::getIDiagnostico() { return new CDiagnostico(); }
-// IConsulta* Factory::getIConsulta() { return new CConsulta(); } // CUIDADO: Es un viaje incluir CConsulta, prova compilar
+IConsulta* Factory::getIConsulta() { /*return new CConsulta();*/ } // CUIDADO: Es un viaje incluir CConsulta, prova compilar
 
 

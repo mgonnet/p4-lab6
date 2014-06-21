@@ -53,6 +53,9 @@ public:
 	void altaTratamiento();
 	void confirmarAltaDiagnosticos();
 
+	virtual set<DTMedico> listarMedicos();
+	virtual void reservarConsulta(string,Fecha,Hora);
+
 	virtual ~CConsulta();
 };
 

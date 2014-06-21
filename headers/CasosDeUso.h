@@ -8,7 +8,7 @@
 #ifndef CASOSDEUSO_H_
 #define CASOSDEUSO_H_
 
-bool iniciarSesion();
+bool iniciarSesion(int,...);
 void AltaReactivacionDeUsuarios();
 void UsuariosDadosDeAltaYReactivados();
 void AltaMedicamento();

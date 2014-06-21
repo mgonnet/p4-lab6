@@ -46,7 +46,7 @@ hCI= headers/interfacesYControladores
 
 
 DT= FechaHora.o DTCategoriaPS.o DTMedico.o DTDiagnostico.o DTConsulta.o DTMedicamento.o DTDiagnosticoAlta.o DTTratamiento.o DTSocio.o DTHistorial.o DTInfoLogueo.o DTProblemaSalud.o DTReprEstandarizada.o DTReservaA.o DTUser.o DTConsultaDia.o DTUsuarioAR.o DTLineaRegistro.o
-clases= Quirurgico.o Farmacologico.o Tratamiento.o ProblemaSalud.o CategoriaPS.o ProblemaSalud.o Medicamento.o Almacen.o Parametro.o ParametroAccionMensaje.o Observer.o Mensaje.o MedicoNotificable.o Accion.o AccionMensaje.o Subject.o Socio.o StockAcciones.o Usuario.o Logueo.o FechaSistema.o Administrativo.o RegistroAR.o LineaRegistroAR.o Medico.o Consulta.o Socio.o 
+clases= Quirurgico.o Farmacologico.o Tratamiento.o ProblemaSalud.o CategoriaPS.o ProblemaSalud.o Medicamento.o Almacen.o Parametro.o ParametroAccionMensaje.o Observer.o Mensaje.o MedicoNotificable.o Accion.o AccionMensaje.o Subject.o Socio.o StockAcciones.o Usuario.o Logueo.o FechaSistema.o Administrativo.o RegistroAR.o LineaRegistroAR.o Medico.o Consulta.o  
 interControl= CUsuario.o CConsulta.o CDiagnostico.o Factory.o
 
 #DataTypes
@@ -162,9 +162,6 @@ StockAcciones.o : $(USER_DIR)/$(sC)/StockAcciones.cpp $(USER_DIR)/$(hC)/StockAcc
 	
 Subject.o : $(USER_DIR)/$(sC)/Subject.cpp $(USER_DIR)/$(hC)/Subject.h Observer.o Parametro.o $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/Subject.cpp
-
-Socio.o : $(USER_DIR)/$(sC)/Subject.cpp $(USER_DIR)/$(hC)/Socio.h Subject.o $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/Socio.cpp
 	
 Observer.o : $(USER_DIR)/$(sC)/Observer.cpp $(USER_DIR)/$(hC)/Observer.h Parametro.o Subject.o $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/$(sC)/Observer.cpp
@@ -239,4 +236,4 @@ runtest:
 	./medicoNotificableTest
 	./SocioRobadoTest
 	./SesionTest
-	
+	./PequeniosTest

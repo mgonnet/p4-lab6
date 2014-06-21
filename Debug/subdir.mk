@@ -44,10 +44,13 @@ O_SRCS += \
 ../Observer.o \
 ../Parametro.o \
 ../ParametroAccionMensaje.o \
+../PequeniosTest.o \
 ../ProblemaSalud.o \
 ../Quirurgico.o \
 ../RegistroAR.o \
+../SesionTest.o \
 ../Socio.o \
+../SocioRobadoTest.o \
 ../StockAcciones.o \
 ../Subject.o \
 ../Tratamiento.o \

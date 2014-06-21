@@ -27,6 +27,7 @@
 #include "headers/clases/Usuario.h"
 #include "headers/CasosDeUso.h"
 #include "headers/interfacesYControladores/Factory.h"
+#include "headers/dataTypes/DTReprEstandarizada.h"
 
 using namespace std;
 
@@ -39,13 +40,15 @@ bool PantallaInicial();
 void MostrarCasosDeUso();
 bool EjecutarCasoDeUso();
 
+using namespace std;
+
 int main()
 {
 	SetUp();
 
 	while( PantallaInicial() )
 	{
-		if ( iniciarSesion() )
+		if ( iniciarSesion(0,"ROOT","123","\n") )
 		{
 			bool salir=false;
 			while ( !salir )

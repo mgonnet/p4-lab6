@@ -59,7 +59,11 @@ void CUsuario::asignarSesionUsuario()
 	logueante->setPrimerLogueo(false);  // Seteo como false primerLogueo, si ya era false no hace nada, si no, actualizo.
 }
 
-void CUsuario::crearContrasenia(string contrasenia) { logueante->setContrasenia(contrasenia); }
+void CUsuario::crearContrasenia(string contrasenia)
+{
+	logueante->activar();
+	logueante->setContrasenia(contrasenia);
+}
 
 void CUsuario::cerrarSesion()
 {
@@ -97,7 +101,7 @@ void CUsuario::ingresarDatos(string nombre, string apellido, Sexo sexo, Fecha fN
 
 void CUsuario::altaUsuario()
 {
-	Usuario* nuevoUsuario = new Usuario (nombre,apellido,ci,sexo,fNac,true,edad,false,true,roles);
+	Usuario* nuevoUsuario = new Usuario (nombre,apellido,ci,sexo,fNac,false,edad,false,true,roles);
 	// CUIDADO: No se si activo debe ir en TRUE
 
 	Logueo* log=Logueo::getInstance();

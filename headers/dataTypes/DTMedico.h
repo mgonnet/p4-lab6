@@ -27,5 +27,6 @@ private:
 	string	ci;
 };
 
+std::ostream &operator<<( std::ostream &stream,DTMedico imprimible);
 
 #endif /* DTMEDICO_H_ */

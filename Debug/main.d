@@ -54,7 +54,8 @@ main.d: ../main.cpp ../headers/clases/Accion.h \
  ../headers/interfacesYControladores/../dataTypes/DTMedicamento.h \
  ../headers/interfacesYControladores/../dataTypes/TipoTratamiento.h \
  ../headers/interfacesYControladores/IDiagnostico.h \
- ../headers/interfacesYControladores/../dataTypes/DTReprEstandarizada.h
+ ../headers/interfacesYControladores/../dataTypes/DTReprEstandarizada.h \
+ ../headers/dataTypes/DTReprEstandarizada.h
 
 ../headers/clases/Accion.h:
 
@@ -183,3 +184,5 @@ main.d: ../main.cpp ../headers/clases/Accion.h \
 ../headers/interfacesYControladores/IDiagnostico.h:
 
 ../headers/interfacesYControladores/../dataTypes/DTReprEstandarizada.h:
+
+../headers/dataTypes/DTReprEstandarizada.h:

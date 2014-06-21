@@ -6,6 +6,9 @@
  */
 
 #include "../../headers/dataTypes/DTMedico.h"
+#include <iostream>
+
+using namespace std;
 
 DTMedico::DTMedico(string nombre, string apellido, string ci):
 	nombre(nombre),
@@ -22,4 +25,13 @@ const string& DTMedico::getCi() const {
 
 const string& DTMedico::getNombre() const {
 	return nombre;
+}
+
+
+std::ostream &operator<<( std::ostream &stream,DTMedico imprimible)
+{
+	stream	<< "Nombre: " << imprimible.getNombre() << endl
+			<< "Apellido: " << imprimible.getApellido() << endl
+			<< "CI: " << imprimible.getCi() << endl;
+	return (stream);
 }

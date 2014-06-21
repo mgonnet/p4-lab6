@@ -24,6 +24,14 @@ void CConsulta::agregarDatosTQ(string descripcion, Fecha fecha) {}
 void CConsulta::altaTratamiento() {}
 void CConsulta::confirmarAltaDiagnosticos() {}
 
+set<DTMedico> CConsulta::listarMedicos()
+{
+	set<DTMedico> lista;
+	return lista;
+}
+
+void CConsulta::reservarConsulta(string,Fecha,Hora){}
+
 CConsulta::~CConsulta() {}
 
 
