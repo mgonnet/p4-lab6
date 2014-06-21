@@ -40,7 +40,7 @@ private:
 
 public:
 	//Creadoras
-	Consulta(Fecha fechaConsulta,Hora horaConsulta,bool asistio,Medico* medico,Socio* socio);
+	Consulta( Fecha fechaConsulta,Hora horaConsulta,bool asistio,Medico* medico,Socio* socio);
 
 	//Getters
 	int	    getCodigo();
