@@ -38,6 +38,8 @@ public:
 	bool			isActiva();
 	TipoConsulta	getTipoConsulta();
 	//DTReservaA		getDatosReserva();
+
+	~Comun();
 };
 
 

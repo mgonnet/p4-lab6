@@ -32,7 +32,6 @@ bool	Comun::isActiva(){
 TipoConsulta	Comun::getTipoConsulta(){ return COMUN;}
 //DTReservaA	Comun::getDatosReserva(){ return DTReservaA(this->fechaConsulta,this->getHoraConsulta(),fechaReserva,this->getMedico()->getDatosMedico()); }
 
-
-
+Comun::~Comun(){}
 
 

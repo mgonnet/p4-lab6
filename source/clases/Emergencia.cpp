@@ -27,5 +27,5 @@ TipoConsulta getTipoConsulta(){
     	return EMERGENCIA;
 };
 
-
+Emergencia::~Emergencia() {}
 

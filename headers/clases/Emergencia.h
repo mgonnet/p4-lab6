@@ -36,6 +36,8 @@ public:
 	//Operaciones
 
 	TipoConsulta	getTipoConsulta();
+
+	virtual ~Emergencia();
 };
 
 
