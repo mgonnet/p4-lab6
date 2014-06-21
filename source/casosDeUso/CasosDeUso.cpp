@@ -490,7 +490,58 @@ void AltaReactivacionDeUsuarios()
 
 void UsuariosDadosDeAltaYReactivados(){}
 void AltaMedicamento(){}
-void AltaReprEstandarizadaDeDiagnosticos(){}
+
+void AltaReprEstandarizadaDeDiagnosticos()
+{
+	bool deseaCategorias=true;
+	IDiagnostico* iD=Factory::getIDiagnostico();
+	string buffer;
+	string codigoCat;
+	string etiquetaCat;
+
+
+	while ( deseaCategorias )
+	{
+		set<DTCategoriaPS> categorias=iD->obtenerCategorias();
+
+		system("clear");
+		cout << "ALTA REPRESENTACION ESTANDARIZADA DE DIAGNOSTICO" << endl;
+		cout << "------------------------------------------------" << endl;
+		cout << "Estas son las categorias del sistema:" << endl;
+
+		set<DTCategoriaPS>::iterator it;
+		for ( it=categorias.begin() ; it != categorias.end() ; ++it )
+			cout << (*it) << endl;
+		cout << "Seleccione la categoria de su elección. (Escriba NO para crear una nueva)" << endl;
+		cout << "> ";
+		getline(cin,buffer);
+
+		if(buffer == "NO") // Usuario no encuentra categoria
+		{
+			system("clear");
+			cout << "ALTA REPRESENTACION ESTANDARIZADA DE DIAGNOSTICO" << endl;
+			cout << "------------------------------------------------" << endl;
+			cout << "Crearemos una nueva categoria:" << endl;
+			cout << "Ingrese el codigo:" << endl;
+			cout << "> ";
+			getline(cin,codigoCat);
+			cout << "Ingrese la etiqueta" << endl;
+			cout << "> ";
+			getline(cin,etiquetaCat);
+			iD->agregarCategoria(codigoCat,etiquetaCat);
+		}
+		else
+		{
+			if(buffer.size()>1)
+				throw invalid_argument("El codigo de categorias tiene una sola letra");
+			else
+				iD->seleccionarCategoria(buffer);
+		}
+
+
+	}
+}
+
 void RegistroConsulta(){}
 void AltaDiagnosticosDeUnaConsulta(){}
 void ObtenerHistorialPaciente(){}
