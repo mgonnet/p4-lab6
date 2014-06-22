@@ -103,6 +103,17 @@ DTMedico Usuario::getDatosMedico()
 	return DTMedico(this->getNombre(),this->getApellido(),this->getCi());
 }
 
+set<DTMedico> Usuario::getDatosPacientes()
+{
+	if(medico==NULL) throw invalid_argument("El Usuario no tiene pacientes porque no es Medico");
+	else
+	{
+		set<DTMedico> datosPacientes;
+
+		return datosPacientes;
+	}
+}
+
 Usuario::~Usuario()
 {
 	if (administrativo != NULL) delete administrativo;

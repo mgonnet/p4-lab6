@@ -6,6 +6,8 @@
  */
 
 #include "../../headers/interfacesYControladores/CConsulta.h"
+#include "../../headers/clases/Socio.h"
+#include "../../headers/clases/Medico.h"
 #include <set>
 #include <stdexcept>
 
@@ -86,7 +88,7 @@ void CConsulta::iniciarSeguimientoPaciente(string ci)
 
 	set<Usuario*>::iterator it;
 	bool encontre=false;
-	for ( it = usuarios.begin ; it != usuarios.end() && !encontre ; ++it )
+	for ( it = usuarios.begin() ; it != usuarios.end() && !encontre ; ++it )
 		if( (*it)->getCi() == ci )
 		{
 			encontre=true;

@@ -91,6 +91,9 @@ public:
 	void asistir(string ciMedico, Fecha fechaConsulta);
 	set<Rol> getRoles();
 
+	//Notificar
+	set<DTMedico> getDatosPacientes();
+
 	~Usuario();
 };
 

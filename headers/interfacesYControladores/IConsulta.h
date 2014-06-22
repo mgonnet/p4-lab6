@@ -46,7 +46,7 @@ public:
 
 	//NOTIFICAR
 	virtual set<DTMedico> listarPacientesDelMedicoLogueado()=0;
-	virtual void iniciarSeguimientoPaciente()=0;
+	virtual void iniciarSeguimientoPaciente(string ci)=0;
 
 	virtual ~IConsulta() {}
 };

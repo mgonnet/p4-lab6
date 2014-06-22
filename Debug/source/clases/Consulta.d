@@ -27,6 +27,10 @@ source/clases/Consulta.d: ../source/clases/Consulta.cpp \
  ../source/clases/../../headers/clases/../../headers/dataTypes/DTDiagnostico.h \
  ../source/clases/../../headers/clases/Medico.h \
  ../source/clases/../../headers/clases/../../headers/clases/Consulta.h \
+ ../source/clases/../../headers/clases/../../headers/clases/MedicoNotificable.h \
+ ../source/clases/../../headers/clases/../../headers/clases/Observer.h \
+ ../source/clases/../../headers/clases/../../headers/clases/StockAcciones.h \
+ ../source/clases/../../headers/clases/../../headers/clases/Accion.h \
  ../source/clases/../../headers/clases/Socio.h \
  ../source/clases/../../headers/clases/../../headers/clases/Subject.h
 
@@ -85,6 +89,14 @@ source/clases/Consulta.d: ../source/clases/Consulta.cpp \
 ../source/clases/../../headers/clases/Medico.h:
 
 ../source/clases/../../headers/clases/../../headers/clases/Consulta.h:
+
+../source/clases/../../headers/clases/../../headers/clases/MedicoNotificable.h:
+
+../source/clases/../../headers/clases/../../headers/clases/Observer.h:
+
+../source/clases/../../headers/clases/../../headers/clases/StockAcciones.h:
+
+../source/clases/../../headers/clases/../../headers/clases/Accion.h:
 
 ../source/clases/../../headers/clases/Socio.h:
 
