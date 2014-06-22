@@ -48,7 +48,7 @@ private:
 
 public:
 	set<DTReservaA>& listarReservasActivas();
-	void darBajaReserva(string codigo);
+	void darBajaReserva(int codigo);
 	void registrarConsultaComun(string ciMedico, string ciSocio, Fecha fechaConsulta);
 	void registrarConsultaEmergencia(string ciMedico, string ciSocio, string motivo, Fecha fechaConsulta);
 	DTHistorial obtenerHistorialPaciente(string ciSocio);

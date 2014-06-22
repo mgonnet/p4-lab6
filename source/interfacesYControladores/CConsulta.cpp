@@ -11,7 +11,7 @@
 
 
 set<DTReservaA>& CConsulta::listarReservasActivas() {}
-void CConsulta::darBajaReserva(string codigo) {}
+void CConsulta::darBajaReserva(int codigo) {}
 void CConsulta::registrarConsultaComun(string ciMedico, string ciSocio, Fecha fechaConsulta) {}
 void CConsulta::registrarConsultaEmergencia(string ciMedico, string ciSocio, string motivo, Fecha fechaConsulta) {}
 DTHistorial CConsulta::obtenerHistorialPaciente(string ciSocio) {}
