@@ -27,7 +27,7 @@ void CConsulta::agregarDatosTQ(string descripcion, Fecha fecha) {}
 void CConsulta::altaTratamiento() {}
 void CConsulta::confirmarAltaDiagnosticos() {}
 
-set<DTMedico> listarMedicos(){
+set<DTMedico> CConsulta::listarMedicos(){
 
 	set<DTMedico> datosMedicos;
 	Usuario* usuario;
@@ -35,21 +35,16 @@ set<DTMedico> listarMedicos(){
 	set<Usuario*> usuarios = alm->getUsuarios();
 	set<Usuario*>::iterator it;
 	for ( it = usuarios.begin() ; it != usuarios.end(); ++it ){
-			set<Rol> roles = (*it)->getRoles();
-			if ( roles.find(MEDICO) != roles.end())
-				{	usuario = (*it);
-					datosMedicos.insert(usuario->getDatosMedico());
-				}
+		set<Rol> roles = (*it)->getRoles();
+		if ( roles.find(MEDICO) != roles.end())
+		{	usuario = (*it);
+		datosMedicos.insert(usuario->getDatosMedico());
+		}
 	}
 	return datosMedicos;
 }
 
-//El caso de uso comienza cuando un Usuario Socio que ha iniciado una
-//sesión desea agendar una nueva consulta. Para esto se listan todos los
-//médicos del sistema, el usuario elije uno, e indica la fecha y hora para la
-//consulta. Luego el Sistema da de alta la nueva reserva de consulta.
-
-void reservarConsulta(string ciMedico,Fecha fechaConsulta,Hora horaConsulta){
+void CConsulta::reservarConsulta(string ciMedico,Fecha fechaConsulta,Hora horaConsulta){
 
 	bool encontre = false;
 	Usuario* usuario;
@@ -57,10 +52,11 @@ void reservarConsulta(string ciMedico,Fecha fechaConsulta,Hora horaConsulta){
 	set<Usuario*> usuarios = alm->getUsuarios();
 	set<Usuario*>::iterator it;
 	for( it=usuarios.begin() ; it != usuarios.end() && !encontre ; ++it )
-			if ( (*it)->getCi() == ciMedico ){
-				encontre = true;
-				usuario = (*it);
-			}
+		if ( (*it)->getCi() == ciMedico )
+		{
+			encontre = true;
+			usuario = (*it);
+		}
 
 	if(!encontre) throw invalid_argument("En IUsuario::pedirDatos: No existe medico con la ci indicada");
 
@@ -70,7 +66,8 @@ void reservarConsulta(string ciMedico,Fecha fechaConsulta,Hora horaConsulta){
 
 	if (roles.find(MEDICO) != roles.end()) throw invalid_argument("No hay un SOCIO logueado actualmente.");
 
-	Consulta(fechaConsulta,horaConsulta,false,u->getMedico(),u->getSocio());
+	FechaSistema* fSis=FechaSistema::getInstance();
+	Consulta* nuevaConsulta= new Comun(fechaConsulta,horaConsulta,false,u->getMedico(),u->getSocio(),fSis->getFechaSistema());
 }
 
 CConsulta::~CConsulta() {}

@@ -36,9 +36,12 @@ Fecha Consulta::getFechaConsulta(){
 Hora Consulta::getHoraConsulta(){
 	return this->horaConsulta;
 }
-bool Consulta::AsistioConsulta(){
+bool Consulta::getAsistioConsulta(){
 	return this->asistio;
 }
+
+Medico* Consulta::getMedico(){}
+Socio*	Consulta::getSocio(){}
 
 //Setters
 void Consulta::setCodigo(int codigo){

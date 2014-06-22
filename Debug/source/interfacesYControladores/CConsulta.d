@@ -39,6 +39,8 @@ source/interfacesYControladores/CConsulta.d: \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/TipoConsulta.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/clases/FechaSistema.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Comun.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/clases/Consulta.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Usuario.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/Sexo.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTInfoLogueo.h \
@@ -125,6 +127,10 @@ source/interfacesYControladores/CConsulta.d: \
 ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/clases/FechaSistema.h:
 
 ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Comun.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/clases/Consulta.h:
 
 ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Usuario.h:
 

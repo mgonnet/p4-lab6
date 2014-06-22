@@ -27,6 +27,7 @@ using namespace std;
 #include "../../headers/dataTypes/DTMedico.h"
 #include "../../headers/interfacesYControladores/Almacen.h"
 #include "../../headers/clases/Consulta.h"
+#include "../../headers/clases/Comun.h"
 #include "../../headers/clases/Usuario.h"
 #include "../../headers/clases/Logueo.h"
 

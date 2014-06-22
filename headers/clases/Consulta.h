@@ -57,8 +57,8 @@ public:
 
 	//Negocio
 
-	virtual 		TipoConsulta getTipoConsulta();
-	bool			AsistioConsulta();
+	virtual 		TipoConsulta getTipoConsulta()=0;
+	bool			getAsistioConsulta();
 	DTConsulta		getHistorialConsultas();
 	DTConsultaDia	obtenerConsultaDia(Socio* socio);
 	bool			esDeHoy();

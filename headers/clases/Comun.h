@@ -33,8 +33,6 @@ public:
 	void	setFechaReserva(Fecha fechaReserva);
 
 	//Operaciones
-	void 	create(string ciSocio, string ciMedico,
-							Fecha fechaConsulta, Fecha fechaReserva, bool asiste);
 	bool			isActiva();
 	TipoConsulta	getTipoConsulta();
 	//DTReservaA		getDatosReserva();
