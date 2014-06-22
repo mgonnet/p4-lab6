@@ -36,6 +36,8 @@ public:
 	DTReprEstandarizada	obtenerReprEstandarizada(); //CUIDADO: Creo que puede ser un conjunto lo que devuelve
 	DTProblemaSalud*	obtenerPS(); //CUIDADO: Creo que puede ser un conjunto lo que devuelve
 	DTCategoriaPS obtenerCategoria();
+
+	~CategoriaPS();
 };
 
 #endif /* CATEGORIAPS_H_ */
