@@ -8,7 +8,10 @@
 #ifndef FECHAHORA_H_
 #define FECHAHORA_H_
 
+#include <iostream>
 #include <time.h>
+
+using namespace std;
 
 class Fecha
 //DataType Fecha
@@ -33,6 +36,7 @@ public:
 
 	bool isCorrecta();
 	bool esMenorQue(Fecha fecha);
+	int	 calcularEdad();
 };
 
 class Hora
@@ -44,13 +48,19 @@ private:
 
 public:
 	//Creadoras
+	Hora();
 	Hora(int horas,int minutos);
 
 	//Getters
 	int getHoras();
 	int getMinutos();
+
+	Hora operator=(Hora original);
 };
 
+
+std::ostream &operator<<( std::ostream &stream,Fecha imprimible);
+std::ostream &operator<<( std::ostream &stream,Hora imprimible);
 
 #endif /* FECHAHORA_H_ */
 

@@ -115,5 +115,3 @@ TEST_F(SocioRobadoTest,CantidadNoLeidos)
 
 	ASSERT_EQ(1,medicoAlQueRoban->cantMensajesNoLeidos()) << "Marque el segundo mensaje como leido";
 }
-
-

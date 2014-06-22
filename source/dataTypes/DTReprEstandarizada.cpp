@@ -22,6 +22,6 @@ const string& DTReprEstandarizada::getNombre() const {
 	return nombre;
 }
 
-const set<DTProblemaSalud>& DTReprEstandarizada::getProblemasSalud() const {
+set<DTProblemaSalud> DTReprEstandarizada::getProblemasSalud() const {
 	return problemasSalud;
 }

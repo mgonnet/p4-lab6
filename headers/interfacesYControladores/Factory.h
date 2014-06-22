@@ -13,10 +13,12 @@
 #include "IDiagnostico.h"
 
 class Factory {
+
 public:
-	IUsuario* getIUsuario();
-	IConsulta* getIConsulta();
-	IDiagnostico* getIDiagnostico();
+
+	static IUsuario* getIUsuario();
+	static IConsulta* getIConsulta();
+	static IDiagnostico* getIDiagnostico();
 };
 
 

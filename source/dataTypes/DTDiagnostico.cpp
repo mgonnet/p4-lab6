@@ -37,7 +37,10 @@ const set<string>& DTDiagnostico::getTratamientos() const {
 	return tratamientos;
 }
 
-
+bool DTDiagnostico::operator<(DTDiagnostico otro) const
+{
+	return this->codigo < otro.getCodigo();
+}
 
 
 

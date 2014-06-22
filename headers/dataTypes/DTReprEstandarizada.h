@@ -22,7 +22,7 @@ public:
 
 	const string& getCodigoCps() const;
 	const string& getNombre() const;
-	const set<DTProblemaSalud>& getProblemasSalud() const;
+	set<DTProblemaSalud> getProblemasSalud() const;
 
 private:
 	string					codigoCPS;

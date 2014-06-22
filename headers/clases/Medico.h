@@ -8,8 +8,30 @@
 #ifndef MEDICO_H_
 #define MEDICO_H_
 
+#include "../../headers/clases/Consulta.h"
+#include "../../headers/dataTypes/DTConsultaDia.h"
+#include <string>
+using namespace std;
+
+class Usuario;
+class Consulta;
+
 class Medico
 {
+private:
+	Usuario* usuario;
+
+	set<Consulta*> consultas;
+
+public:
+
+	//operaciones
+	Medico(Usuario* u);
+	void linkearUsuario(Usuario* u);
+	void crearLinkEmergencia();
+	void destruirLinkConsulta(Consulta* c);
+	DTMedico getDatosMedico();
+	set<DTConsultaDia> obtenerListaConsultas();
 
 };
 

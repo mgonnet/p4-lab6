@@ -9,23 +9,23 @@
 
 DTConsulta::DTConsulta(	Fecha fechaConsulta,
 						TipoConsulta tipo,
-						DTMedico medico,
-						DTDiagnostico diagnostico):
+						DTMedico dtMedico,
+						set<DTDiagnostico> diagnosticos):
 	fechaConsulta(fechaConsulta),
 	tipo(tipo),
-	medico(medico),
-	diagnostico(diagnostico) { }
+	dtMedico(dtMedico),
+	diagnosticos(diagnosticos) { }
 
-inline const DTDiagnostico& DTConsulta::getDiagnostico() const {
-	return diagnostico;
+inline const set<DTDiagnostico>& DTConsulta::getSetDiagnostico() const {
+	return diagnosticos;
 }
 
 inline const Fecha& DTConsulta::getFechaConsulta() const {
 	return fechaConsulta;
 }
 
-inline const DTMedico& DTConsulta::getMedico() const {
-	return medico;
+inline const DTMedico& DTConsulta::getDTMedico() const {
+	return dtMedico;
 }
 
 inline TipoConsulta DTConsulta::getTipo() const {

@@ -20,68 +20,201 @@
 #include "headers/dataTypes/FechaHora.h"
 #include "headers/clases/Socio.h"
 #include "headers/clases/StockAcciones.h"
+#include "headers/clases/Logueo.h"
+#include "headers/interfacesYControladores/IUsuario.h"
+#include "headers/interfacesYControladores/CUsuario.h"
+#include "headers/interfacesYControladores/Almacen.h"
+#include "headers/clases/Usuario.h"
+#include "headers/CasosDeUso.h"
+#include "headers/interfacesYControladores/Factory.h"
+#include "headers/dataTypes/DTReprEstandarizada.h"
+
+using namespace std;
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void SetUp();
+void TearDown();
+int	 PantallaInicial();
+void MostrarCasosDeUso();
+bool EjecutarCasoDeUso();
+void SetUpPruebasNuestras();
 
 using namespace std;
 
 int main()
 {
-	MedicoNotificable* 	medicoAlQueRoban;
-		Socio*				socioRobado;
-		Accion*				accionMensaje; // CUIDADO: #1
-		StockAcciones*		stockAcciones;
+	int opcion=0; // 0 iniciar sesion, 1 Config Fecha Sistema
+	SetUp();
 
 
-	//Primero creo las acciones y las cargo
-			accionMensaje=new AccionMensaje;
-			stockAcciones=StockAcciones::getInstance();
+	do
+	{
+		opcion=PantallaInicial();
+		if(opcion!=1){
+			if ( opcion==2 ) cambiarFechaSistema();
+			else if ( opcion==3 ) SetUpPruebasNuestras();
+			else if ( iniciarSesion(0,"ROOT","123","\n") )
+			{
+				bool salir=false;
+				while ( !salir )
+				{
+					MostrarCasosDeUso();
+					salir = EjecutarCasoDeUso();
+				}
+			}
+		}
+	}while( opcion!=1 );
 
-			stockAcciones->addAccion(accionMensaje);
-
-			medicoAlQueRoban=new MedicoNotificable;
-			socioRobado=new Socio;
-
-			//Voy a hacer que medicoAlQueRoban siga a socioRobado
-			socioRobado->addObserver(medicoAlQueRoban);
-
-	Fecha fecha(21,21,21);
-
-	//Me voy a inventar un ParametroAccionMensaje
-	ParametroAccionMensaje* parametroInventado = new ParametroAccionMensaje(false,fecha,"4855460","4855461");
-
-	//Ahora voy a hacer que socio notifique a sus seguidores
-	socioRobado->notifyAll(parametroInventado);
-
-	//Hay que acordarse de borrar los Parametro dinámicos
-	delete parametroInventado;
-
-	cout << medicoAlQueRoban->cantMensajesNoLeidos() << "Solo hay un mensaje y esta sin leer";
-
-	set<Mensaje*> buzon=medicoAlQueRoban->getMensajes();
-	for (set<Mensaje*>::iterator it=buzon.begin(); it!=buzon.end(); ++it)
-		(*it)->marcarComoLeido();
-
-	cout << medicoAlQueRoban->cantMensajesNoLeidos() << "Marqué todos los mensajes como leidos";
-
-	//Envio dos mensajes seguidos
-	parametroInventado = new ParametroAccionMensaje(false,fecha,"4855461","4855461");
-	socioRobado->notifyAll(parametroInventado);
-	delete parametroInventado;
-	parametroInventado = new ParametroAccionMensaje(false,fecha,"4855462","4855461");
-	socioRobado->notifyAll(parametroInventado);
-	delete parametroInventado;
-
-	cout << medicoAlQueRoban->cantMensajesNoLeidos() << "Hay dos mensajes sin leer";
-
-	for (set<Mensaje*>::iterator it=buzon.begin(); it!=buzon.end(); ++it)
-		if((*it)->getCiSocio()=="4855462")
-			(*it)->marcarComoLeido();
-
-	cout << medicoAlQueRoban->cantMensajesNoLeidos() << "Marque el segundo mensaje como leido";
-
-	delete medicoAlQueRoban;
-	delete socioRobado;
-	delete stockAcciones;
+	TearDown();
 
 	return 0;
 }
 
+void SetUp()
+{
+	IUsuario* iU=Factory::getIUsuario();
+	iU->crearAdminPorDefecto();
+	delete iU;
+}
+
+void TearDown()
+{
+	IUsuario* iU=Factory::getIUsuario();
+	iU->liberarMemoria();
+	delete iU;
+}
+
+int	PantallaInicial()
+{
+	string dummy;
+	system("clear");
+	cout << "BIENVENIDO A HOSPITAL PÉCUATRO" << endl;
+	cout << "------------------------------" << endl;
+	cout << "Presione enter para iniciar sesion o escriba SALIR para salir..." << endl;
+	getline(cin,dummy);
+
+	int opcion;
+	if (dummy == "SALIR") opcion=1;
+	else if ( dummy == "CONFIGFECHASIS") opcion=2;
+	else if ( dummy == "SETUPPRUEBASNUESTRAS") opcion=3;
+	else opcion=0;
+
+	return opcion;
+}
+
+void MostrarCasosDeUso()
+{
+	IUsuario* iU=Factory::getIUsuario();
+	set<Rol> roles=iU->rolesDelLogueado();
+
+	system("clear");
+	cout << "SELECCIONE ACCION" << endl;
+	cout << "-----------------" << endl;
+
+	if ( roles.find(ADMIN) != roles.end() )
+	{
+		cout << "(aru) > Alta/Reactivación Usuario" << endl;
+		cout << "(uar) > Usuarios dados de alta y reactivados" << endl;
+		cout << "(am)  > Alta Medicamento" << endl;
+		cout << "(ard) > Alta Representación estandarizada de Diágnosticos" << endl;
+		cout << "(rc)  > Registro Consulta" << endl;
+		cout << "(ccd) > Cantidad de Consultas por Categoría Diagnóstico" << endl;
+	}
+
+	if ( roles.find(MEDICO) != roles.end() )
+	{
+		cout << "(adc) > Alta Diagnósticos de una consulta" << endl;
+		cout << "(ohp) > Obtener Historial Paciente" << endl;
+	}
+
+	if ( roles.find(MEDICO) != roles.end() || roles.find(ADMIN) != roles.end() )
+	{
+		cout << "(lre) > Listar Representaciones Estandarizadas" << endl;
+	}
+
+	if ( roles.find(SOCIO) != roles.end() )
+	{
+		cout << "(rc)  > Reserva Consulta" << endl;
+		cout << "(dc)  > Devolucion Consulta" << endl;
+	}
+
+	cout << "(cs) > Cerrar Sesion" << endl;
+
+	cout << "> ";
+	delete iU;
+}
+
+bool EjecutarCasoDeUso()
+{
+	bool salir=false;
+	string buffer;
+	getline(cin,buffer);
+
+	IUsuario* iU=Factory::getIUsuario();
+	set<Rol> roles=iU->rolesDelLogueado();
+
+	if ( roles.find(ADMIN) != roles.end() )
+	{
+		if(buffer == "aru") AltaReactivacionDeUsuarios();
+		if(buffer == "uar") UsuariosDadosDeAltaYReactivados();
+		if(buffer == "am")  AltaMedicamento();
+		if(buffer == "ard") AltaReprEstandarizadaDeDiagnosticos();
+		if(buffer == "rc")  RegistroConsulta();
+	}
+
+	if ( roles.find(MEDICO) != roles.end() )
+	{
+		if(buffer == "adc") AltaDiagnosticosDeUnaConsulta();
+		if(buffer == "ohp") ObtenerHistorialPaciente();
+	}
+
+	if ( roles.find(MEDICO) != roles.end() || roles.find(ADMIN) != roles.end() )
+	{
+		if(buffer == "lre") ListarRepresentacionesEstandarizadas();
+	}
+
+	if ( roles.find(SOCIO) != roles.end() )
+	{
+		if(buffer == "rc")  ReservaConsulta();
+		if(buffer == "dc")  DevolucionConsulta();
+	}
+
+	if(buffer == "cs")
+	{
+		CerrarSesion();
+		salir=true;
+	}
+
+	delete iU;
+	return salir;
+}
+
+void SetUpPruebasNuestras()
+{
+	IUsuario* iU=Factory::getIUsuario();
+	//VOY A LOGUEAR AL ROOT
+	iU->comienzoInicioSesion("ROOT");
+	iU->ingresarContrasenia("123");
+	iU->asignarSesionUsuario();
+
+	set<Rol> soloMedico; soloMedico.insert(MEDICO);
+	set<Rol> soloSocio; soloSocio.insert(SOCIO);
+
+	//CREO UN MEDICO
+	iU->iniciarAltaReactivacion("4855460");
+	iU->ingresarDatos("JUAN","MONTES",MASCULINO,Fecha(21,2,1993),soloMedico);
+	iU->altaUsuario();
+
+	//CREO UN SOCIO
+	iU->iniciarAltaReactivacion("4855461");
+	iU->ingresarDatos("SAM","SAGAZ",MASCULINO,Fecha(21,2,1993),soloSocio);
+	iU->altaUsuario();
+
+	//DESLOGUEO AL ROOT
+	iU->cerrarSesion();
+
+
+	delete iU;
+}

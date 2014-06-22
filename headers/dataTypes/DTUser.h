@@ -24,6 +24,7 @@ private:
 
 public:
 	//Constructora
+	DTUser();
 	DTUser(string nombre,string apellido,Sexo sexo,int edad,bool activo,set<Rol> roles);
 
 	//Sobrecarga de operadores

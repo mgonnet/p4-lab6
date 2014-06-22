@@ -8,9 +8,35 @@
 #ifndef ADMINISTRATIVO_H_
 #define ADMINISTRATIVO_H_
 
+#include "../../headers/dataTypes/TipoOper.h"
+#include "../../headers/dataTypes/DTUsuarioAR.h"
+#include "../../headers/clases/RegistroAR.h"
+
+#include <set>
+
+using namespace std;
+
+class Usuario;
+class RegistroAR;
+
 class Administrativo
 {
 
+private:
+	Usuario*			usuario;
+	set<RegistroAR*>	registros;
+
+	//set<DTUsuarioAR*>	datasUsuariosAR; // CUIDADO: No estoy seguro de por que esto esta aca
+public:
+	//operaciones
+	Administrativo(Usuario* u);
+	void linkearUsuario(Usuario *u);
+	void altaUsuario(Usuario *u);
+	void reactivarUsuario(Usuario *u);
+	set<DTUsuarioAR*> listarUsuariosAR();
+	void addDTUsuarioAR(DTUsuarioAR*);
+
+	~Administrativo();
 };
 
 
