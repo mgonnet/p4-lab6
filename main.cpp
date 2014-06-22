@@ -194,6 +194,8 @@ bool EjecutarCasoDeUso()
 void SetUpPruebasNuestras()
 {
 	IUsuario* iU=Factory::getIUsuario();
+	IDiagnostico* iD=Factory::getIDiagnostico();
+
 	//VOY A LOGUEAR AL ROOT
 	iU->comienzoInicioSesion("ROOT");
 	iU->ingresarContrasenia("123");
@@ -212,9 +214,24 @@ void SetUpPruebasNuestras()
 	iU->ingresarDatos("SAM","SAGAZ",MASCULINO,Fecha(21,2,1993),soloSocio);
 	iU->altaUsuario();
 
+	//AGREGO UNA CATEGORIA
+	iD->agregarCategoria("A","TORSO");
+	iD->ingresarRepDiag("01","PUÑALADA");
+	iD->ingresarRepDiag("02","COSTILLA ROTA");
+	iD->finProblemasSalud();
+	iD->confirmarAlta();
+
+	//AGREGO OTRA CATEGORIA
+	iD->agregarCategoria("B","PIERNA");
+	iD->ingresarRepDiag("01","HUESO ROTO");
+	iD->ingresarRepDiag("02","DOLOR INDEFINIDO");
+	iD->finProblemasSalud();
+	iD->confirmarAlta();
+
 	//DESLOGUEO AL ROOT
 	iU->cerrarSesion();
 
 
 	delete iU;
+	delete iD;
 }
