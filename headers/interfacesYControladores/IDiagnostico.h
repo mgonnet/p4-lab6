@@ -25,6 +25,7 @@ public:
 	virtual bool ingresarDatosMedicamento(string nombre) = 0;
 	virtual void confirmarAltaMedicamento()=0;
 
+	virtual void confirmarAlta()=0; // CUIDADO: ALTA REPR
 	virtual bool ingresarRepDiag(string codigo, string etiqueta) = 0;
 	virtual void finProblemasSalud() = 0;
 
