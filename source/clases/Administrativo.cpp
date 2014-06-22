@@ -45,8 +45,8 @@ void Administrativo::reactivarUsuario(Usuario *u)
 		registrosAR.insert(rar);
 }
 
-set<DTUsuarioAR*> Administrativo::listarUsuariosAR() {
-	set<DTUsuarioAR*> datosRegistros; //conjunto de elementos que quiero listar
+set<DTUsuarioAR> Administrativo::listarUsuariosAR() {
+	set<DTUsuarioAR> datosRegistros; //conjunto de elementos que quiero listar
 	set<RegistroAR*> registros = (this)->getRegistrosAR(); //coleccion de punteros a RegistroAR
 	set<RegistroAR*>::iterator it; //iterar sobre la coleccion de punteros a RegistroAR
 	for (it = registros.begin(); it != registros.end(); ++it) {
@@ -54,6 +54,10 @@ set<DTUsuarioAR*> Administrativo::listarUsuariosAR() {
 		datosRegistros.insert(registro->getDatosUsuarioAR()); //insertar un datatype de DTUsuarioAR a datosRegistro
 	}
 	return datosRegistros;
+}
+
+set<RegistroAR*> Administrativo::getRegistrosAR() {
+	return registrosAR;
 }
 
 Administrativo::~Administrativo()

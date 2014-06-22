@@ -30,10 +30,10 @@ public:
 	void linkearUsuario(Usuario u);
 	void addLineaRegistroAR(Fecha,TipoOper);
 	bool usuarioIs(Usuario* u);
-	set<DTLineaRegistro> listarLineasRegistroAR();
+	set<DTLineaRegistro*> listarLineasRegistroAR();
 
 	set<LineaRegistroAR*> getLineasRegistroAR(); //devuelve coleccion de punteros de LineaRegistroAR asociada a RegistroAR
-	DTUsuarioAR* getDatosUsuarioAR(); //devuelve datatype de DTUsuarioAR
+	DTUsuarioAR getDatosUsuarioAR(); //devuelve datatype de DTUsuarioAR
 
 	Usuario* getUsuario();
 

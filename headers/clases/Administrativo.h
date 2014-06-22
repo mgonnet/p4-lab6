@@ -31,7 +31,7 @@ public:
 	Administrativo(Usuario* u);
 	void altaUsuario(Usuario *u);
 	void reactivarUsuario(Usuario *u);
-	set<DTUsuarioAR*> listarUsuariosAR();
+	set<DTUsuarioAR> listarUsuariosAR();
 	set<RegistroAR*> getRegistrosAR(); //devuelve coleccion de punteros a RegistroAR asociada a Administrativo
 
 	~Administrativo();

@@ -22,15 +22,15 @@ public:
 	const string& getCi() const;
 	int getEdad() const;
 	const string& getNombre() const;
-	set<DTLineaRegistro*> getRegistros() const;
-
+	set<DTLineaRegistro*> getRegistros();
+	bool operator<(DTUsuarioAR) const;
 private:
 	string nombre;
 	string apellido;
 	string ci;
 	int edad;
 	bool activo;
-	set<DTLineaRegistro> registros;
+	set<DTLineaRegistro*> registros;
 };
 
 

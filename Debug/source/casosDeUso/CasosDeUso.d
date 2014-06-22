@@ -8,6 +8,10 @@ source/casosDeUso/CasosDeUso.d: ../source/casosDeUso/CasosDeUso.cpp \
  ../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/DTUser.h \
  ../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/Sexo.h \
  ../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/Rol.h \
+ ../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/DTUsuarioAR.h \
+ ../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/DTLineaRegistro.h \
+ ../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/../../headers/dataTypes/TipoOper.h \
+ ../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/../../headers/dataTypes/FechaHora.h \
  ../source/casosDeUso/../../headers/interfacesYControladores/IConsulta.h \
  ../source/casosDeUso/../../headers/interfacesYControladores/../dataTypes/DTReservaA.h \
  ../source/casosDeUso/../../headers/interfacesYControladores/../dataTypes/FechaHora.h \
@@ -48,6 +52,14 @@ source/casosDeUso/CasosDeUso.d: ../source/casosDeUso/CasosDeUso.cpp \
 ../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/Sexo.h:
 
 ../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/Rol.h:
+
+../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/DTUsuarioAR.h:
+
+../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/DTLineaRegistro.h:
+
+../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/../../headers/dataTypes/TipoOper.h:
+
+../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/../../headers/dataTypes/FechaHora.h:
 
 ../source/casosDeUso/../../headers/interfacesYControladores/IConsulta.h:
 

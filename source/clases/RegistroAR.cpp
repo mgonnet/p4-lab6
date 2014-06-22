@@ -27,7 +27,7 @@ RegistroAR::~RegistroAR()
 		delete (*it);
 }
 
-DTUsuarioAR* RegistroAR::getDatosUsuarioAR() {
+DTUsuarioAR RegistroAR::getDatosUsuarioAR() {
 	set<DTLineaRegistro*> datosLineaRegistro; //conjunto de elementos que quiero listar para agregar a DTUsuarioAR*
 	set<LineaRegistroAR*> lineasRegistro = (this)->getLineasRegistroAR(); //coleccion de punteros a LineaRegistroAR
 	set<LineaRegistroAR*>::iterator it; //iterar sobre la coleccion de punteros a LineaRegistroAR
@@ -42,8 +42,7 @@ DTUsuarioAR* RegistroAR::getDatosUsuarioAR() {
 	int edadUs = usuario->getEdad();
 	bool activoUs = usuario->getActivo();
 
-	DTUsuarioAR* nuevoDTUsuarioAR = new DTUsuarioAR(nombreUs,apellidoUs,ciUs,edadUs,activoUs,datosLineaRegistro);
-	return nuevoDTUsuarioAR;
+	return DTUsuarioAR(nombreUs,apellidoUs,ciUs,edadUs,activoUs,datosLineaRegistro);
 }
 
 set<LineaRegistroAR*> RegistroAR::getLineasRegistroAR() { return lineasRegistro; }

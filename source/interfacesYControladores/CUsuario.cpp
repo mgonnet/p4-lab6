@@ -194,10 +194,10 @@ void CUsuario::liberarMemoria()
 	delete fSis;
 }
 
-set<DTUsuarioAR*> CUsuario::listarUsuariosAR() {
+set<DTUsuarioAR> CUsuario::listarUsuariosAR() {
 	Logueo* logueo = Logueo::getInstance();
 	Usuario* usuario = logueo->getUsuario();
 	Administrativo* administrativo = usuario->getAdministrativo();
-	set<DTUsuarioAR*> usuariosAR = administrativo->listarUsuariosAR();
+	set<DTUsuarioAR> usuariosAR=administrativo->listarUsuariosAR();
 	return usuariosAR;
 }

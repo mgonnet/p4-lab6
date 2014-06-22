@@ -51,7 +51,7 @@ public:
 
 	void liberarMemoria(); // CUIDADO: Tendria que ir en algún lugar más neutral
 
-	set<DTUsuarioAR*> listarUsuariosAR();
+	set<DTUsuarioAR> listarUsuariosAR();
 
 	~CUsuario() {}
 };

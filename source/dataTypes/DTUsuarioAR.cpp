@@ -30,7 +30,11 @@ const string& DTUsuarioAR::getNombre() const {
 	return nombre;
 }
 
-const set<DTLineaRegistro*>& DTUsuarioAR::getRegistros() const {
+set<DTLineaRegistro*> DTUsuarioAR::getRegistros(){
 	return registros;
+}
+
+bool DTUsuarioAR::operator<(DTUsuarioAR dtu) const {
+	return(this->ci < dtu.getCi());
 }
 
