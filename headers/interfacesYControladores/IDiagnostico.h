@@ -22,6 +22,9 @@ public:
 	virtual void seleccionarCategoria(string)=0;
 	virtual set<DTReprEstandarizada> getReprEstandarizadas() = 0;
 
+	virtual bool ingresarDatosMedicamento(string nombre) = 0;
+	virtual void confirmarAltaMedicamento()=0;
+
 	virtual ~IDiagnostico() {}
 };
 

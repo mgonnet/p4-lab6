@@ -490,11 +490,71 @@ void AltaReactivacionDeUsuarios()
 }
 
 void UsuariosDadosDeAltaYReactivados(){}
-void AltaMedicamento(){}
+
+void AltaMedicamento()
+{
+
+	IDiagnostico* iD = Factory::getIDiagnostico();
+
+	string buffer;
+	bool existeMedicamento;
+	bool repetir;
+	bool cancelar;
+	string nombre;
+
+	do {
+		system("clear");
+		cout << "ALTA MEDICAMENTO" << endl;
+		cout << "-----------------------------" << endl;
+		cout << "Antes de dar de alta un nuevo medicamento, el sistema verificara que no exista" << endl;
+		cout << "Ingrese nombre del medicamento:" << endl;
+		cout << "> ";
+		getline(cin, nombre);
+
+		existeMedicamento = iD->ingresarDatosMedicamento(nombre);
+
+		if (existeMedicamento)
+		{
+			system("clear");
+			cout << "ALTA MEDICAMENTO" << endl;
+			cout << "-----------------------------" << endl;
+			cout << "Ya existe un medicamento con ese nombre. ¿Desea dar de alta otro diferente? [1/0]" << endl;
+			cout << "> ";
+			getline(cin, buffer);
+			repetir = (buffer == "1");
+			cancelar = !repetir;
+		} else // Medicamento no existe
+		{
+			system("clear");
+			cout << "ALTA MEDICAMENTO" << endl;
+			cout << "-----------------------------" << endl;
+			cout << "El medicamento no existe. ¿Desea darlo de alta? [1/0]" << endl;
+			getline(cin, buffer);
+			cancelar = (buffer=="0");
+			if (!cancelar) {
+				iD->confirmarAltaMedicamento();
+				system("clear");
+				cout << "ALTA MEDICAMENTO" << endl;
+				cout << "-----------------------------" << endl;
+				cout << "El medicamento ha sido dado de alta. Enter para continuar." << endl;
+				getline(cin, buffer);
+			}
+			repetir = false;
+		}
+		if (cancelar) {
+			system("clear");
+			cout << "ALTA MEDICAMENTO" << endl;
+			cout << "-----------------------------" << endl;
+			cout << "Se ha cancelado Alta Medicamento. Enter para continuar." << endl;
+			getline(cin, buffer);
+		}
+	} while (repetir);
+	delete iD;
+}
 
 void AltaReprEstandarizadaDeDiagnosticos()
 {
-/*	bool deseaCategorias=true;
+	/*	bool deseaCategorias=true;
 	IDiagnostico* iD=Factory::getIDiagnostico();
 	string buffer;
 	string codigoCat;
