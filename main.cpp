@@ -39,6 +39,7 @@ void TearDown();
 int	 PantallaInicial();
 void MostrarCasosDeUso();
 bool EjecutarCasoDeUso();
+void SetUpPruebasNuestras();
 
 using namespace std;
 
@@ -53,6 +54,7 @@ int main()
 		opcion=PantallaInicial();
 		if(opcion!=1){
 			if ( opcion==2 ) cambiarFechaSistema();
+			else if ( opcion==3 ) SetUpPruebasNuestras();
 			else if ( iniciarSesion(0,"ROOT","123","\n") )
 			{
 				bool salir=false;
@@ -96,6 +98,7 @@ int	PantallaInicial()
 	int opcion;
 	if (dummy == "SALIR") opcion=1;
 	else if ( dummy == "CONFIGFECHASIS") opcion=2;
+	else if ( dummy == "SETUPPRUEBASNUESTRAS") opcion=3;
 	else opcion=0;
 
 	return opcion;
@@ -186,4 +189,32 @@ bool EjecutarCasoDeUso()
 
 	delete iU;
 	return salir;
+}
+
+void SetUpPruebasNuestras()
+{
+	IUsuario* iU=Factory::getIUsuario();
+	//VOY A LOGUEAR AL ROOT
+	iU->comienzoInicioSesion("ROOT");
+	iU->ingresarContrasenia("123");
+	iU->asignarSesionUsuario();
+
+	set<Rol> soloMedico; soloMedico.insert(MEDICO);
+	set<Rol> soloSocio; soloSocio.insert(SOCIO);
+
+	//CREO UN MEDICO
+	iU->iniciarAltaReactivacion("4855460");
+	iU->ingresarDatos("JUAN","MONTES",MASCULINO,Fecha(21,2,1993),soloMedico);
+	iU->altaUsuario();
+
+	//CREO UN SOCIO
+	iU->iniciarAltaReactivacion("4855461");
+	iU->ingresarDatos("SAM","SAGAZ",MASCULINO,Fecha(21,2,1993),soloSocio);
+	iU->altaUsuario();
+
+	//DESLOGUEO AL ROOT
+	iU->cerrarSesion();
+
+
+	delete iU;
 }
