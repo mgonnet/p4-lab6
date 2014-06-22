@@ -32,7 +32,8 @@ public:
 		void	setFechaNac(Fecha fechaNac);
 		void	setTipoOper(TipoOper tipo);
 
-		DTLineaRegistro crearDTRegistro();
+
+		DTLineaRegistro* getDatosRegistro();
 };
 
 #endif /* LINEAREGISTROAR_H_ */

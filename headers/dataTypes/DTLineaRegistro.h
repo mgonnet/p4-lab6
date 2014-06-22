@@ -15,6 +15,7 @@ class DTLineaRegistro {
 public:
 	const Fecha& getFecha() const;
 	TipoOper getTipoOper() const;
+	DTLineaRegistro(Fecha fecha,TipoOper tipoOper); //constructor del datatype
 
 private:
 	Fecha fecha;

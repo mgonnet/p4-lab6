@@ -15,12 +15,14 @@ using namespace std;
 
 class DTUsuarioAR {
 public:
+	DTUsuarioAR(string nombre, string apellido, string ci, int edad, bool activo, set<DTLineaRegistro*> registros);
+
 	bool isActivo() const;
 	const string& getApellido() const;
 	const string& getCi() const;
 	int getEdad() const;
 	const string& getNombre() const;
-	const set<DTLineaRegistro>& getRegistros() const;
+	set<DTLineaRegistro*> getRegistros() const;
 
 private:
 	string nombre;

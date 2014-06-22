@@ -7,6 +7,8 @@
 
 #include "../../headers/dataTypes/DTLineaRegistro.h"
 
+DTLineaRegistro::DTLineaRegistro(Fecha fecha,TipoOper tipoOper):fecha(fecha), tipoOper(tipoOper) {}
+
 const Fecha& DTLineaRegistro::getFecha() const {
 	return fecha;
 }
@@ -14,3 +16,4 @@ const Fecha& DTLineaRegistro::getFecha() const {
 TipoOper DTLineaRegistro::getTipoOper() const {
 	return tipoOper;
 }
+

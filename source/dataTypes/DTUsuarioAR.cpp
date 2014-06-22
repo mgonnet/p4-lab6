@@ -7,6 +7,9 @@
 
 #include "../../headers/dataTypes/DTUsuarioAR.h"
 
+DTUsuarioAR::DTUsuarioAR(string nombre, string apellido, string ci, int edad, bool activo, set<DTLineaRegistro*> registros):
+nombre(nombre), apellido(apellido), ci(ci), edad(edad), activo(activo), registros(registros) {}
+
 bool DTUsuarioAR::isActivo() const {
 	return activo;
 }
@@ -27,6 +30,7 @@ const string& DTUsuarioAR::getNombre() const {
 	return nombre;
 }
 
-const set<DTLineaRegistro>& DTUsuarioAR::getRegistros() const {
+const set<DTLineaRegistro*>& DTUsuarioAR::getRegistros() const {
 	return registros;
 }
+
