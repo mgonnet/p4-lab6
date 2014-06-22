@@ -40,3 +40,12 @@ bool DTReservaA::operator<(DTReservaA otro) const
 	return this->codigoC < otro.codigoC;
 }
 
+std::ostream &operator<<( std::ostream &stream,DTReservaA imprimible)
+{
+	stream	<< "El Codigo es: " << imprimible.getCodigoC() << endl
+			<< "El Medico es: " << imprimible.getDTMedico() << endl
+			<< "La Fecha es: " << imprimible.getFechaC() << endl
+			<< "La Hora es: " << imprimible.getHoraC() << endl
+			<< "La Fecha Reserva es: " << imprimible.getFechaR() << endl;
+	return (stream);
+}

@@ -42,8 +42,8 @@ bool Consulta::getAsistioConsulta(){
 	return this->asistio;
 }
 
-Medico* Consulta::getMedico(){}
-Socio*	Consulta::getSocio(){}
+Medico* Consulta::getMedico(){return medico;}
+Socio*	Consulta::getSocio(){return socio;}
 
 //Setters
 void Consulta::setCodigo(int codigo){

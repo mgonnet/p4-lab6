@@ -77,6 +77,7 @@ void SetUp()
 	IUsuario* iU=Factory::getIUsuario();
 	iU->crearAdminPorDefecto();
 	delete iU;
+	SetUpPruebasNuestras();
 }
 
 void TearDown()
@@ -195,6 +196,10 @@ void SetUpPruebasNuestras()
 {
 	IUsuario* iU=Factory::getIUsuario();
 	IDiagnostico* iD=Factory::getIDiagnostico();
+	IConsulta* iC=Factory::getIConsulta();
+	FechaSistema* fSis=FechaSistema::getInstance();
+
+	fSis->setFechaSistema(Fecha(1,1,2014));
 
 	//VOY A LOGUEAR AL ROOT
 	iU->comienzoInicioSesion("ROOT");
@@ -229,6 +234,17 @@ void SetUpPruebasNuestras()
 	iD->confirmarAlta();
 
 	//DESLOGUEO AL ROOT
+	iU->cerrarSesion();
+
+	//LOGUEO A UN SOCIO
+	iU->comienzoInicioSesion("4855461");
+	iU->crearContrasenia("123456");
+	iU->asignarSesionUsuario();
+
+	//AGREGO UNA CONSULTA ENTRE MED 4855460 Y SOCIO 4855461
+	iC->reservarConsulta("4855460",Fecha(21,12,2015),Hora(21,21));
+
+	//DESLOGUEO AL SOCIO
 	iU->cerrarSesion();
 
 

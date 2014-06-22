@@ -24,7 +24,7 @@ set<DTReservaA> Socio::obtenerReservasActivas()
 	FechaSistema* fSistema = FechaSistema::getInstance();
 	for( it=consultas.begin() ; it != consultas.end() && !encontre ; ++it )
 
-		if ((*it)->getFechaConsulta().esMenorQue(fSistema->getFechaSistema()))
+		if (fSistema->getFechaSistema().esMenorQue((*it)->getFechaConsulta()))
 			{
 				TipoConsulta tipo = (*it)->getTipoConsulta();
 				if (tipo == COMUN)

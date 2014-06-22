@@ -32,6 +32,6 @@ private:
 	DTMedico dtMed;
 };
 
-
+std::ostream &operator<<( std::ostream &stream,DTReservaA imprimible);
 
 #endif /* DTRESERVAA_H_ */
