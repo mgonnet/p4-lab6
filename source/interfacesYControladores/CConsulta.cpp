@@ -70,6 +70,39 @@ void CConsulta::reservarConsulta(string ciMedico,Fecha fechaConsulta,Hora horaCo
 	Consulta* nuevaConsulta= new Comun(fechaConsulta,horaConsulta,false,usuario->getMedico(),u->getSocio(),fSis->getFechaSistema());
 }
 
+set<DTMedico> CConsulta::listarPacientesDelMedicoLogueado()
+{
+	Logueo* log=Logueo::getInstance();
+	return log->getUsuario()->getDatosPacientes();
+}
+
+void CConsulta::iniciarSeguimientoPaciente(string ci)
+{
+	// EL USUARIO MEDICO LOGUEADO EMPIEZA A SEGUIR AL SOCIO CON ci
+	Logueo* log=Logueo::getInstance();
+	Almacen* alm=Almacen::getInstance();
+	set<Usuario*> usuarios=alm->getUsuarios();
+	Usuario* uSocio;
+
+	set<Usuario*>::iterator it;
+	bool encontre=false;
+	for ( it = usuarios.begin ; it != usuarios.end() && !encontre ; ++it )
+		if( (*it)->getCi() == ci )
+		{
+			encontre=true;
+			uSocio=(*it);
+		}
+
+	if(!encontre) throw invalid_argument("No existe ese paciente");
+	else
+	{
+		set<Rol> roles = uSocio->getRoles();
+		if ( roles.find(SOCIO) == roles.end() ) throw invalid_argument("El usuario con esa CI no es paciente");
+		else
+			uSocio->getSocio()->addObserver(log->getUsuario()->getMedico());
+	}
+}
+
 CConsulta::~CConsulta() {}
 
 

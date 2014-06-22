@@ -65,6 +65,11 @@ public:
 	void confirmarAltaDiagnosticos();
 	set<DTMedico> listarMedicos();
 	void reservarConsulta(string ciMedico,Fecha fechaConsulta,Hora horaConsulta);
+
+	//Notificar
+	set<DTMedico> listarPacientesDelMedicoLogueado();
+	void iniciarSeguimientoPaciente(string ci);
+
 	virtual ~CConsulta();
 };
 

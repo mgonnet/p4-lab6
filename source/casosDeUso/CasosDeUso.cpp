@@ -603,6 +603,12 @@ void CerrarSesion()
 	delete iU;
 }
 
+void Notificar()
+{
+	// PRIMERO CONSIGO UN SET<DTBASICOUSER> CON LOS DATOS DE TODOS LOS PACIENTES DEL MEDICO LOGUEADO
+	// DESPUES EMPIEZO A SEGUIR A UN SOCIO SELECCIONADO POR SU CI
+}
+
 bool validaPass(string contrasenia)
 {
 	bool malCaracter=false;

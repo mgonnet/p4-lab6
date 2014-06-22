@@ -127,6 +127,7 @@ void MostrarCasosDeUso()
 	{
 		cout << "(adc) > Alta Diagnósticos de una consulta" << endl;
 		cout << "(ohp) > Obtener Historial Paciente" << endl;
+		cout << "(not) > Iniciar Seguimiento de Paciente" << endl;
 	}
 
 	if ( roles.find(MEDICO) != roles.end() || roles.find(ADMIN) != roles.end() )
@@ -168,6 +169,7 @@ bool EjecutarCasoDeUso()
 	{
 		if(buffer == "adc") AltaDiagnosticosDeUnaConsulta();
 		if(buffer == "ohp") ObtenerHistorialPaciente();
+		if(buffer == "not") Notificar();
 	}
 
 	if ( roles.find(MEDICO) != roles.end() || roles.find(ADMIN) != roles.end() )

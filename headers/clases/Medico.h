@@ -9,6 +9,7 @@
 #define MEDICO_H_
 
 #include "../../headers/clases/Consulta.h"
+#include "../../headers/clases/MedicoNotificable.h"
 #include "../../headers/dataTypes/DTConsultaDia.h"
 #include <string>
 using namespace std;
@@ -16,7 +17,7 @@ using namespace std;
 class Usuario;
 class Consulta;
 
-class Medico
+class Medico : public MedicoNotificable
 {
 private:
 	Usuario* usuario;
