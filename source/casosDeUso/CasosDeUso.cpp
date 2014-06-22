@@ -494,7 +494,7 @@ void AltaMedicamento(){}
 
 void AltaReprEstandarizadaDeDiagnosticos()
 {
-	bool deseaCategorias=true;
+/*	bool deseaCategorias=true;
 	IDiagnostico* iD=Factory::getIDiagnostico();
 	string buffer;
 	string codigoCat;
@@ -540,7 +540,7 @@ void AltaReprEstandarizadaDeDiagnosticos()
 		}
 
 
-	}
+	}*/
 }
 
 void RegistroConsulta(){}
