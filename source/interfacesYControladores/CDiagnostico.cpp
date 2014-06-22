@@ -21,7 +21,7 @@ bool CDiagnostico::ingresarDatosMedicamento(string nombre) {
 	Almacen* alm = Almacen::getInstance();
 	set<Medicamento*> medicamentos = alm->getMedicamentos();
 	bool existe = alm->memberMedicamento(nombre);
-	if (existe) { this->nombreMedicamentoAlta = nombre; }
+	if (!existe) { this->nombreMedicamentoAlta = nombre; }
 	return existe;
 }
 
