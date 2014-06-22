@@ -34,7 +34,16 @@ void Almacen::addUsuario(Usuario* usu) { usuarios.insert(usu); }
 
 void Almacen::addCategoriaPS(CategoriaPS* catPS) { categorias.insert(catPS); }
 
-bool Almacen::memberMedicamento(string nombre) { return true; }
+bool Almacen::memberMedicamento(string nombre) {
+	set<Medicamento*>::iterator it;
+	bool encontre = false;
+	for(it = medicamentos.begin(); !encontre && (it != medicamentos.end()); ++it) {
+		if ((*it)->getNombre() == nombre) {
+			encontre = true;
+		}
+	}
+	return encontre;
+}
 
 
 Almacen::~Almacen()

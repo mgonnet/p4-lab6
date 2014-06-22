@@ -20,19 +20,18 @@ bool CDiagnostico::ingresarDatosMedicamento(string nombre) {
 
 	Almacen* alm = Almacen::getInstance();
 	set<Medicamento*> medicamentos = alm->getMedicamentos();
-	set<Medicamento*>::iterator it;
-
-	bool existe = false;
-	for(it = medicamentos.begin(); !existe && (it != medicamentos.end()); ++it) {
-		if ((*it)->getNombre() == nombre) {
-			existe = true;
-			this->nombreMedicamentoAlta = nombre;
-		}
-	}
+	bool existe = alm->memberMedicamento(nombre);
+	if (existe) { this->nombreMedicamentoAlta = nombre; }
 	return existe;
 }
 
-void CDiagnostico::confirmarAltaMedicamento() {}
+void CDiagnostico::confirmarAltaMedicamento() {
+
+	Medicamento* nuevoMedicamento = new Medicamento(this->nombreMedicamentoAlta);
+	Almacen* alm = Almacen::getInstance();
+	alm->addMedicamento(nuevoMedicamento); //ya esta implementado en Almacen.cpp
+}
+
 
 CDiagnostico::~CDiagnostico(){}
 

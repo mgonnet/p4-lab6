@@ -11,6 +11,7 @@ private:
 
 public:
 	//Creadoras
+	Medicamento(string nombre);
 	Medicamento(string nombre,Farmacologico farmacologico);
 
 	//Getters
