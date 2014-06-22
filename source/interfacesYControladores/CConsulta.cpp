@@ -90,8 +90,6 @@ void CConsulta::darBajaReserva(int codigo)
 	if (roles.find(SOCIO) == roles.end()) throw invalid_argument("No hay un SOCIO logueado actualmente.");
 
 	cons = u->getSocio()->getConsulta(codigo);
-	cons->destruirLinkMedico();
-	cons->destruirLinkSocio();
 	delete cons;
 }
 
