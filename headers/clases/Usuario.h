@@ -82,7 +82,7 @@ public:
 	bool contraseniaCorrecta();
 	DTUser getDatosCompletos();
 	DTInfoLogueo getInfoLogueo();
-	DTSocio getDatosBasicos();
+	//DTSocio getDatosBasicos();
 	set<DTConsulta> getHistorialConsultas();
 	DTMedico getDatosMedico();
 	set<DTReservaA> obtenerReservasActivas();
@@ -93,6 +93,7 @@ public:
 
 	//Notificar
 	set<DTMedico> getDatosPacientes();
+	DTMedico		getDatosBasicos();
 
 	~Usuario();
 };

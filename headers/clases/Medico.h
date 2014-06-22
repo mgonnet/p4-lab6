@@ -34,6 +34,7 @@ public:
 	DTMedico getDatosMedico();
 	set<DTConsultaDia> obtenerListaConsultas();
 
+	set<DTMedico> getDatosPacientes();
 };
 
 

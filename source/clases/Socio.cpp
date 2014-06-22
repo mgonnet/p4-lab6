@@ -16,5 +16,9 @@ Socio::Socio(Usuario* u):
 string Socio::getCISocio() { return (this->usuario->getCi()); }
 
 
+DTMedico Socio::getDatosBasicos()
+{
+	return usuario->getDatosBasicos();
+}
 
 Socio::~Socio() {}

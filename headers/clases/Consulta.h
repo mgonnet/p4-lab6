@@ -68,6 +68,8 @@ public:
 	void 			destruirLinkSocio();
 	void 			destruirLinkMedico();
 
+	DTMedico		getDatosSocio();
+
 	virtual ~Consulta();
 
 };

@@ -93,5 +93,10 @@ void	Consulta::destruirLinkMedico(){
 	this->medico = NULL;
 }
 
+DTMedico Consulta::getDatosSocio()
+{
+	return socio->getDatosBasicos();
+}
+
 Consulta::~Consulta(){}
 

@@ -107,12 +107,10 @@ set<DTMedico> Usuario::getDatosPacientes()
 {
 	if(medico==NULL) throw invalid_argument("El Usuario no tiene pacientes porque no es Medico");
 	else
-	{
-		set<DTMedico> datosPacientes;
-
-		return datosPacientes;
-	}
+		return medico->getDatosPacientes();
 }
+
+DTMedico		Usuario::getDatosBasicos() { return DTMedico(nombre,apellido,ci); }
 
 Usuario::~Usuario()
 {

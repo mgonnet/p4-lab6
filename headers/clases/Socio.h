@@ -40,6 +40,8 @@ public:
 	set<DTConsulta> getHistorialConsultas();
 	void buscarConsulta(DTConsulta c);
 
+	DTMedico getDatosBasicos();
+
 	virtual ~Socio();
 };
 

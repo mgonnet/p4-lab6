@@ -16,3 +16,14 @@ Medico::Medico(Usuario* u):
 DTMedico Medico::getDatosMedico(){
 	return this->usuario->getDatosMedico();
 }
+
+set<DTMedico> Medico::getDatosPacientes()
+{
+	set<DTMedico> datosPacientes;
+
+	set<Consulta*>::iterator it;
+	for( it = consultas.begin() ; it != consultas.end() ; ++it )
+		datosPacientes.insert( (*it)->getDatosSocio() );
+
+	return datosPacientes;
+}
