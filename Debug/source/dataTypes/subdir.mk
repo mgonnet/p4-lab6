@@ -5,6 +5,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../source/dataTypes/DTCategoriaPS.cpp \
+../source/dataTypes/DTCombinado.cpp \
 ../source/dataTypes/DTConsulta.cpp \
 ../source/dataTypes/DTConsultaDia.cpp \
 ../source/dataTypes/DTDiagnostico.cpp \
@@ -27,6 +28,7 @@ CPP_SRCS += \
 
 OBJS += \
 ./source/dataTypes/DTCategoriaPS.o \
+./source/dataTypes/DTCombinado.o \
 ./source/dataTypes/DTConsulta.o \
 ./source/dataTypes/DTConsultaDia.o \
 ./source/dataTypes/DTDiagnostico.o \
@@ -49,6 +51,7 @@ OBJS += \
 
 CPP_DEPS += \
 ./source/dataTypes/DTCategoriaPS.d \
+./source/dataTypes/DTCombinado.d \
 ./source/dataTypes/DTConsulta.d \
 ./source/dataTypes/DTConsultaDia.d \
 ./source/dataTypes/DTDiagnostico.d \

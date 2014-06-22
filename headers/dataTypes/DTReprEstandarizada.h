@@ -23,6 +23,7 @@ public:
 	const string& getCodigoCps() const;
 	const string& getNombre() const;
 	set<DTProblemaSalud> getProblemasSalud() const;
+	bool operator<(DTReprEstandarizada) const;
 
 private:
 	string					codigoCPS;

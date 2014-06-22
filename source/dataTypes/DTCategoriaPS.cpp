@@ -18,6 +18,9 @@ DTCategoriaPS::DTCategoriaPS(string codigoCPS, string etiqueta) :
 //Getters
 string	DTCategoriaPS::getCodigoCPS() { return this->codigoCPS; }
 string	DTCategoriaPS::getEtiqueta() { return this->etiqueta; }
+bool DTCategoriaPS::operator <(DTCategoriaPS dtCps) const {
+	return (codigoCPS < dtCps.getCodigoCPS());
+}
 
 std::ostream &operator<<( std::ostream &stream,DTCategoriaPS imprimible)
 {

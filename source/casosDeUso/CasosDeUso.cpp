@@ -656,7 +656,7 @@ void ReservaConsulta()
 
 void DevolucionConsulta()
 {
-	IConsulta* iC=Factory::getIConsulta();
+/*	IConsulta* iC=Factory::getIConsulta();
 	string buffer;
 
 	system("clear");
@@ -672,7 +672,7 @@ void DevolucionConsulta()
 	cout << "Ingrese el codigo de la Reserva que desea cancelar" << endl;
 	cout << "> ";
 	getline(cin, buffer);
-	iC->darBajaReserva(atoi(buffer.c_str));
+	iC->darBajaReserva(atoi(buffer.c_str));*/
 }
 
 void CerrarSesion()

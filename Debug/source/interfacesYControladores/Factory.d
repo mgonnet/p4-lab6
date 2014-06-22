@@ -38,6 +38,10 @@ source/interfacesYControladores/Factory.d: \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTSocio.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTUser.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/CDiagnostico.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../dataTypes/DTCombinado.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../dataTypes/DTCategoriaPS.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../dataTypes/DTProblemaSalud.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/CategoriaPS.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/CConsulta.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/interfacesYControladores/IConsulta.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTConsultaDia.h \
@@ -134,6 +138,14 @@ source/interfacesYControladores/Factory.d: \
 ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTUser.h:
 
 ../source/interfacesYControladores/../../headers/interfacesYControladores/CDiagnostico.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../dataTypes/DTCombinado.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../dataTypes/DTCategoriaPS.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../dataTypes/DTProblemaSalud.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/CategoriaPS.h:
 
 ../source/interfacesYControladores/../../headers/interfacesYControladores/CConsulta.h:
 
