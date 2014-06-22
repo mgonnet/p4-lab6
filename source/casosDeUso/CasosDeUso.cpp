@@ -44,7 +44,7 @@ bool iniciarSesion(int argc, ... ){
 
 	IUsuario* iU=Factory::getIUsuario();
 
-	//Variables Usuadas en iniciar Sesion
+	//Variables Usuada()s en iniciar Sesion
 	string	buffer;
 	bool	contraseniaIncorrecta;
 	string	contrasenia;
@@ -664,7 +664,27 @@ void AltaReprEstandarizadaDeDiagnosticos()
 void RegistroConsulta(){}
 void AltaDiagnosticosDeUnaConsulta(){}
 void ObtenerHistorialPaciente(){}
-void ListarRepresentacionesEstandarizadas(){}
+
+void ListarRepresentacionesEstandarizadas()
+{
+	IDiagnostico* iD=Factory::getIDiagnostico();
+	string buffer;
+	set<DTReprEstandarizada> repr=iD->getReprEstandarizadas();
+	set<DTReprEstandarizada>::iterator it;
+
+	system("clear");
+	cout << "LISTAR REPRESENTACIONES ESTANDARIZADAS" << endl;
+	cout << "--------------------------------------" << endl;
+	cout << "Estos son las Representaciones de Problemas de Salud del sistema" << endl;
+
+	for ( it=repr.begin(); it!=repr.end();++it)
+		cout << (*it);
+
+	cout << "Enter para continuar." << endl;
+	getline(cin,buffer);
+
+	delete iD;
+}
 
 void ReservaConsulta()
 {
