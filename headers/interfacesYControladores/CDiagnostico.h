@@ -15,11 +15,20 @@
 
 class CDiagnostico : public IDiagnostico
 {
+private:
+	string nombreMedicamentoAlta;
+
 public:
+	CDiagnostico();
+
 	set<DTCategoriaPS> obtenerCategorias();
 	void agregarCategoria(string,string);
 	void seleccionarCategoria(string);
 	set<DTReprEstandarizada> getReprEstandarizadas();
+
+
+	bool ingresarDatosMedicamento(string nombre);
+	void confirmarAltaMedicamento();
 
 	~CDiagnostico();
 };
