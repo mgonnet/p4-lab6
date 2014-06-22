@@ -10,7 +10,6 @@
 #include <stdexcept>
 
 
-set<DTReservaA>& CConsulta::listarReservasActivas() {}
 void CConsulta::darBajaReserva(string codigo) {}
 void CConsulta::registrarConsultaComun(string ciMedico, string ciSocio, Fecha fechaConsulta) {}
 void CConsulta::registrarConsultaEmergencia(string ciMedico, string ciSocio, string motivo, Fecha fechaConsulta) {}
@@ -38,7 +37,7 @@ set<DTMedico> CConsulta::listarMedicos(){
 		set<Rol> roles = (*it)->getRoles();
 		if ( roles.find(MEDICO) != roles.end())
 		{	usuario = (*it);
-		datosMedicos.insert(usuario->getDatosMedico());
+			datosMedicos.insert(usuario->getDatosMedico());
 		}
 	}
 	return datosMedicos;
@@ -67,7 +66,19 @@ void CConsulta::reservarConsulta(string ciMedico,Fecha fechaConsulta,Hora horaCo
 	if (roles.find(SOCIO) == roles.end()) throw invalid_argument("No hay un SOCIO logueado actualmente.");
 
 	FechaSistema* fSis=FechaSistema::getInstance();
-	Consulta* nuevaConsulta= new Comun(fechaConsulta,horaConsulta,false,usuario->getMedico(),u->getSocio(),fSis->getFechaSistema());
+	new Comun(fechaConsulta,horaConsulta,false,usuario->getMedico(),u->getSocio(),fSis->getFechaSistema());
+	//se genera una nueva instacia de Consulta Comun linkeada con sus respectivos medico y socio
+}
+
+set<DTReservaA> CConsulta::listarReservasActivas(){
+
+	Logueo* log=Logueo::getInstance();
+	Usuario* u=log->getUsuario();
+	set<Rol> roles = (u)->getRoles();
+
+	if (roles.find(SOCIO) == roles.end()) throw invalid_argument("No hay un SOCIO logueado actualmente.");
+
+	return u->obtenerReservasActivas();
 }
 
 CConsulta::~CConsulta() {}

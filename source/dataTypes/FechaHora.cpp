@@ -64,6 +64,8 @@ bool Fecha::esMenorQue(Fecha fecha){
             || ((anio == fecha.getAnio()) && (mes == fecha.getMes()) && (dia <= fecha.getDia())));
 }
 
+bool esIgualQue(Fecha fecha){ return true; }
+
 int	Fecha::calcularEdad()
 { // CUIDADO:
 	FechaSistema* fSis=FechaSistema::getInstance();

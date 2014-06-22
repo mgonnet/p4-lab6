@@ -36,6 +36,7 @@ public:
 
 	bool isCorrecta();
 	bool esMenorQue(Fecha fecha);
+	bool esIgualQue(Fecha fecha);
 	int	 calcularEdad();
 };
 
