@@ -98,6 +98,11 @@ set<Rol>		Usuario::getRoles()
 
 void Usuario::activar() { activo=true; }
 
+DTMedico Usuario::getDatosMedico()
+{
+	return DTMedico(this->getNombre(),this->getApellido(),this->getCi());
+}
+
 Usuario::~Usuario()
 {
 	if (administrativo != NULL) delete administrativo;

@@ -8,18 +8,29 @@
 #ifndef CCONSULTA_H_
 #define CCONSULTA_H_
 
-#include "IConsulta.h"
+#include <stdexcept>
+
 #include <string>
 #include <set>
 using namespace std;
 
-#include "../dataTypes/DTConsultaDia.h"
-#include "../dataTypes/DTConsulta.h"
-#include "../dataTypes/DTDiagnostico.h"
-#include "../dataTypes/TipoTratamiento.h"
-#include "../dataTypes/FechaHora.h"
-#include "../dataTypes/DTMedicamento.h"
-#include "IConsulta.h"
+#include "../../headers/interfacesYControladores/IConsulta.h"
+#include "../../headers/dataTypes/DTInfoLogueo.h"
+#include "../../headers/dataTypes/DTUser.h"
+#include "../../headers/dataTypes/Rol.h"
+#include "../../headers/dataTypes/DTConsultaDia.h"
+#include "../../headers/dataTypes/DTConsulta.h"
+#include "../../headers/dataTypes/DTDiagnostico.h"
+#include "../../headers/dataTypes/TipoTratamiento.h"
+#include "../../headers/dataTypes/FechaHora.h"
+#include "../../headers/dataTypes/DTMedicamento.h"
+#include "../../headers/dataTypes/DTMedico.h"
+#include "../../headers/interfacesYControladores/Almacen.h"
+#include "../../headers/clases/Consulta.h"
+#include "../../headers/clases/Comun.h"
+#include "../../headers/clases/Usuario.h"
+#include "../../headers/clases/Logueo.h"
+
 
 class CConsulta : public IConsulta{
 private:
@@ -52,10 +63,8 @@ public:
 	//void agregarDatosTF(string descripcion, set<DTMedicamento> medicamentos); // CUIDADO: NO COMPILA Y NI SIQUIERA DICE EL ERROR
 	void altaTratamiento();
 	void confirmarAltaDiagnosticos();
-
-	virtual set<DTMedico> listarMedicos();
-	virtual void reservarConsulta(string,Fecha,Hora);
-
+	set<DTMedico> listarMedicos();
+	void reservarConsulta(string ciMedico,Fecha fechaConsulta,Hora horaConsulta);
 	virtual ~CConsulta();
 };
 

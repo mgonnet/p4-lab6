@@ -26,6 +26,7 @@ public:
 	const string& getEtiqueta() const;
 	const set<string>& getTratamientos() const;
 
+	bool operator<(DTDiagnostico) const;
 private:
 	string		descripcion;
 	string		codigo;

@@ -10,6 +10,7 @@
 
 #include "../../headers/clases/Subject.h"
 #include "../../headers/clases/Consulta.h"
+
 #include <string>
 using namespace std;
 
@@ -25,11 +26,12 @@ public:
 
 	//operaciones
 	Socio(Usuario* u);
-	Socio(){} //CUIDADO:
-	void linkearUsuario(Usuario u);
+	Socio(); //CUIDADO:
+	string getCISocio();
+	void linkearUsuario(Usuario* u);
 	void darBajarR(string codigo);
 	void asistir(string ciMedico, Fecha fechaConsulta);
-	void destruirLinkConsulta(Consulta c);
+	void destruirLinkConsulta(Consulta* c);
 	void crearLinkEmergencia();
 	set<DTReservaA> obtenerReservasActivas();
 	set<DTConsulta> getHistorialConsultas();

@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <cstdarg>
+#include <stdexcept>
 
 using namespace std;
 

@@ -15,11 +15,14 @@ using namespace std;
 class DTMedico
 {
 public:
+	DTMedico() {} //CUIDADO:
 	DTMedico(string nombre, string apellido, string ci);
 
 	const string& getApellido() const;
 	const string& getCi() const;
 	const string& getNombre() const;
+
+	bool operator<(DTMedico) const;
 
 private:
 	string	nombre;

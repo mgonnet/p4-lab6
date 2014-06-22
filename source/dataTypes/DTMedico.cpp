@@ -27,6 +27,10 @@ const string& DTMedico::getNombre() const {
 	return nombre;
 }
 
+bool DTMedico::operator<(DTMedico otro) const
+{
+	return this->ci < otro.getCi();
+}
 
 std::ostream &operator<<( std::ostream &stream,DTMedico imprimible)
 {

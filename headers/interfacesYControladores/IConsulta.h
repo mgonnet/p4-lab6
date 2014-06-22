@@ -40,10 +40,8 @@ public:
 	//virtual void agregarDatosTF(string descripcion, set<DTMedicamento> medicamentos) = 0; // CUIDADO: NO COMPILA Y NI SIQUIERA DICE EL ERROR
 	virtual void altaTratamiento() = 0;
 	virtual void confirmarAltaDiagnosticos() = 0;
-
-	virtual set<DTMedico> listarMedicos()=0;
-	virtual void reservarConsulta(string,Fecha,Hora)=0;
-
+	virtual set<DTMedico> listarMedicos() = 0;
+	virtual void reservarConsulta(string ciMedico,Fecha fechaConsulta,Hora horaConsulta) = 0;
 	virtual ~IConsulta() {}
 };
 
