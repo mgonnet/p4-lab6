@@ -64,10 +64,10 @@ void CConsulta::reservarConsulta(string ciMedico,Fecha fechaConsulta,Hora horaCo
 	Usuario* u=log->getUsuario();
 	set<Rol> roles = (u)->getRoles();
 
-	if (roles.find(MEDICO) != roles.end()) throw invalid_argument("No hay un SOCIO logueado actualmente.");
+	if (roles.find(SOCIO) == roles.end()) throw invalid_argument("No hay un SOCIO logueado actualmente.");
 
 	FechaSistema* fSis=FechaSistema::getInstance();
-	Consulta* nuevaConsulta= new Comun(fechaConsulta,horaConsulta,false,u->getMedico(),u->getSocio(),fSis->getFechaSistema());
+	Consulta* nuevaConsulta= new Comun(fechaConsulta,horaConsulta,false,usuario->getMedico(),u->getSocio(),fSis->getFechaSistema());
 }
 
 CConsulta::~CConsulta() {}
