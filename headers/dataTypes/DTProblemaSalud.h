@@ -9,6 +9,7 @@
 #define DTPROBLEMASALUD_H_
 
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -26,5 +27,6 @@ public:
 	bool operator<(DTProblemaSalud) const;
 };
 
+std::ostream &operator<<( std::ostream &stream,DTProblemaSalud imprimible);
 
 #endif /* DTPROBLEMASALUD_H_ */

@@ -10,6 +10,7 @@
 
 #include <string>
 #include <set>
+#include <iostream>
 
 class DTProblemaSalud;
 
@@ -30,5 +31,7 @@ private:
 	string					nombre;
 	set<DTProblemaSalud>	problemasSalud;
 };
+
+std::ostream &operator<<( std::ostream &stream,DTReprEstandarizada imprimible);
 
 #endif /* DTREPRESTANDARIZADA_H_ */
