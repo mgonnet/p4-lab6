@@ -25,3 +25,7 @@ const string& DTReprEstandarizada::getNombre() const {
 set<DTProblemaSalud> DTReprEstandarizada::getProblemasSalud() const {
 	return problemasSalud;
 }
+
+bool DTReprEstandarizada::operator<(DTReprEstandarizada dtrep) const{
+	return ((*this).codigoCPS<(dtrep.getCodigoCps()));
+}

@@ -19,3 +19,8 @@ const string& DTProblemaSalud::getCodigo() const {
 const string& DTProblemaSalud::getEtiqueta() const {
 	return etiqueta;
 }
+
+bool DTProblemaSalud::operator<(DTProblemaSalud otro) const
+{
+	return this->codigo < otro.codigo;
+}

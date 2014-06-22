@@ -23,6 +23,7 @@ public:
 
 	const string& getCodigo() const;
 	const string& getEtiqueta() const;
+	bool operator<(DTProblemaSalud) const;
 };
 
 
