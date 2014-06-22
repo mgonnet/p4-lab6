@@ -494,7 +494,7 @@ void AltaMedicamento(){}
 
 void AltaReprEstandarizadaDeDiagnosticos()
 {
-/*	bool deseaCategorias=true;
+	/*	bool deseaCategorias=true;
 	IDiagnostico* iD=Factory::getIDiagnostico();
 	string buffer;
 	string codigoCat;
@@ -607,6 +607,32 @@ void Notificar()
 {
 	// PRIMERO CONSIGO UN SET<DTBASICOUSER> CON LOS DATOS DE TODOS LOS PACIENTES DEL MEDICO LOGUEADO
 	// DESPUES EMPIEZO A SEGUIR A UN SOCIO SELECCIONADO POR SU CI
+	IConsulta* iC=Factory::getIConsulta();
+	string buffer;
+
+	system("clear");
+	cout << "INICIAR SEGUIMIENTO DE PACIENTE" << endl;
+	cout << "-------------------------------" << endl;
+	cout << "Estos sus pacientes:" << endl;
+
+	set<DTMedico> datosPacientes=iC->listarPacientesDelMedicoLogueado();
+	set<DTMedico>::iterator it;
+	for ( it=datosPacientes.begin() ; it != datosPacientes.end() ; ++it )
+		cout << (*it) << endl;
+
+	cout << "Ingrese la CI del paciente a seguir" << endl;
+	cout << "> ";
+	getline(cin,buffer);
+
+	iC->iniciarSeguimientoPaciente(buffer);
+
+	system("clear");
+	cout << "INICIAR SEGUIMIENTO DE PACIENTE" << endl;
+	cout << "-------------------------------" << endl;
+	cout << "Se ha iniciado el seguimiento del paciente. Enter para continuar." << endl;
+	getline(cin,buffer);
+
+	delete iC;
 }
 
 bool validaPass(string contrasenia)
