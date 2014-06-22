@@ -16,11 +16,11 @@
 
 class IDiagnostico{
 public:
-/*
+
 	virtual set<DTCategoriaPS> obtenerCategorias()=0;
 	virtual void agregarCategoria(string,string)=0;
 	virtual void seleccionarCategoria(string)=0;
-	virtual const set<DTReprEstandarizada>& getReprEstandarizadas() = 0;*/
+	virtual set<DTReprEstandarizada> getReprEstandarizadas() = 0;
 
 	virtual ~IDiagnostico() {}
 };
