@@ -15,11 +15,14 @@
 using namespace std;
 
 class Usuario;
+class Consulta;
 
 class Socio : public Subject
 {
 private:
 	Usuario* usuario;
+
+	set<Consulta*> consultas;
 
 public:
 	void dummy() {}

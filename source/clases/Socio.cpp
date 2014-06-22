@@ -7,6 +7,7 @@
 
 #include "../../headers/clases/Socio.h"
 #include "../../headers/clases/Usuario.h"
+#include "../../headers/clases/Consulta.h"
 
 Socio::Socio(Usuario* u):
 	usuario(u)

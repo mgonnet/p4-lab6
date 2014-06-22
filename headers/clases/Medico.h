@@ -14,11 +14,14 @@
 using namespace std;
 
 class Usuario;
+class Consulta;
 
 class Medico
 {
 private:
 	Usuario* usuario;
+
+	set<Consulta*> consultas;
 
 public:
 
