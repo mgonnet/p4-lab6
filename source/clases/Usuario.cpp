@@ -87,6 +87,12 @@ void	Usuario::setPrimerLogueo(bool pL) { primerLogueo = pL; }
 //Negocio
 DTInfoLogueo	Usuario::getInfoLogueo() { return DTInfoLogueo(primerLogueo,adminPorDefecto,activo,true); }
 
+
+set<DTReservaA> Usuario::obtenerReservasActivas()
+{
+	return (this->getSocio()->obtenerReservasActivas());
+}
+
 set<Rol>		Usuario::getRoles()
 {
 	set<Rol> roles;

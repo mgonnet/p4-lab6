@@ -20,6 +20,7 @@ using namespace std;
 #include "../../headers/dataTypes/Rol.h"
 #include "../../headers/dataTypes/DTConsultaDia.h"
 #include "../../headers/dataTypes/DTConsulta.h"
+#include "../../headers/dataTypes/DTReservaA.h"
 #include "../../headers/dataTypes/DTDiagnostico.h"
 #include "../../headers/dataTypes/TipoTratamiento.h"
 #include "../../headers/dataTypes/FechaHora.h"
@@ -29,6 +30,7 @@ using namespace std;
 #include "../../headers/clases/Consulta.h"
 #include "../../headers/clases/Comun.h"
 #include "../../headers/clases/Usuario.h"
+#include "../../headers/clases/Socio.h"
 #include "../../headers/clases/Logueo.h"
 
 
@@ -47,8 +49,8 @@ private:
 	set<DTMedicamento> medicamentos;
 
 public:
-	set<DTReservaA>& listarReservasActivas();
-	void darBajaReserva(int codigo);
+
+	void darBajaReserva(string codigo);
 	void registrarConsultaComun(string ciMedico, string ciSocio, Fecha fechaConsulta);
 	void registrarConsultaEmergencia(string ciMedico, string ciSocio, string motivo, Fecha fechaConsulta);
 	DTHistorial obtenerHistorialPaciente(string ciSocio);
@@ -65,6 +67,7 @@ public:
 	void confirmarAltaDiagnosticos();
 	set<DTMedico> listarMedicos();
 	void reservarConsulta(string ciMedico,Fecha fechaConsulta,Hora horaConsulta);
+	set<DTReservaA> listarReservasActivas();
 	virtual ~CConsulta();
 };
 

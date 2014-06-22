@@ -8,6 +8,7 @@
 #include "../../headers/clases/Socio.h"
 #include "../../headers/clases/Usuario.h"
 #include "../../headers/clases/Consulta.h"
+#include <set>
 
 Socio::Socio(Usuario* u):
 	usuario(u)
@@ -15,6 +16,36 @@ Socio::Socio(Usuario* u):
 
 string Socio::getCISocio() { return (this->usuario->getCi()); }
 
+set<DTReservaA> Socio::obtenerReservasActivas()
+{
+	set<DTReservaA> reservasActivas;
+	bool encontre = false;
+	set<Consulta*>::iterator it;
+	FechaSistema* fSistema = FechaSistema::getInstance();
+	for( it=consultas.begin() ; it != consultas.end() && !encontre ; ++it )
+
+		if ((*it)->getFechaConsulta().esMenorQue(fSistema->getFechaSistema()))
+			{
+				TipoConsulta tipo = (*it)->getTipoConsulta();
+				if (tipo == COMUN)
+				{
+					//DTReservaA dtRA = (*it)->getDatosReserva();
+					reservasActivas.insert((*it)->getDatosReserva());
+				}
+			}
+	return reservasActivas;
+}
+
+
+void Socio::destruirLinkConsulta(Consulta* c)
+{
+	consultas.erase(c);
+}
+
+void Socio::crearLinkConsulta(Consulta* c)
+{
+	consultas.insert(c);
+}
 
 
 Socio::~Socio() {}

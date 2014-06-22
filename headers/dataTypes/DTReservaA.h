@@ -14,14 +14,18 @@
 class DTReservaA
 {
 public:
-	DTReservaA(Fecha fechaC,Hora horaC,Fecha fechaR, DTMedico dtMed);
+	DTReservaA(int codigoC,Fecha fechaC,Hora horaC,Fecha fechaR,DTMedico dtMed);
 
-	const Fecha& getFechaC() const;
-	const Fecha& getFechaR() const;
-	const Hora& getHoraC() const;
-	const DTMedico& getDTMedico() const;
+	int getCodigoC();
+	Fecha getFechaC();
+	Fecha getFechaR();
+	Hora getHoraC();
+	DTMedico getDTMedico();
+
+	bool operator<(DTReservaA) const;
 
 private:
+	int		codigoC;
 	Fecha	fechaC;
 	Hora	horaC;
 	Fecha	fechaR;

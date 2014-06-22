@@ -14,6 +14,7 @@
 #include "../../headers/dataTypes/DTConsulta.h"
 #include "../../headers/dataTypes/DTReservaA.h"
 #include "../../headers/dataTypes/DTConsultaDia.h"
+#include "../../headers/dataTypes/DTReservaA.h"
 #include "../../headers/dataTypes/TipoConsulta.h"
 #include "../../headers/clases/FechaSistema.h"
 
@@ -58,6 +59,7 @@ public:
 	//Negocio
 
 	virtual 		TipoConsulta getTipoConsulta()=0;
+	virtual			DTReservaA getDatosReserva()=0;
 	bool			getAsistioConsulta();
 	DTConsulta		getHistorialConsultas();
 	DTConsultaDia	obtenerConsultaDia(Socio* socio);

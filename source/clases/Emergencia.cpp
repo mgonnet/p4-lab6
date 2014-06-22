@@ -22,6 +22,9 @@ void Emergencia::setMotivo(string motivo){
 	this->motivo = motivo;
 }
 
+DTReservaA		Emergencia::getDatosReserva(){}
+
+
 TipoConsulta Emergencia::getTipoConsulta(){
     	return EMERGENCIA;
 }
