@@ -31,6 +31,14 @@ DTReprEstandarizada	CategoriaPS::obtenerReprEstandarizada() {
 	return DTReprEstandarizada(codCPS,etiq,setProbSal);
 }
 
+CategoriaPS::~CategoriaPS()
+{
+	//DEBO BORRAR LOS PROBLEMAS SALUD QUE CUELGAN
+	set<ProblemaSalud*>::iterator it;
+	for ( it = problemasSalud.begin() ; it != problemasSalud.end() ; ++it )
+		delete (*it);
+}
+
 DTCategoriaPS CategoriaPS::obtenerCategoria() {
 	return DTCategoriaPS(codigoCPS,etiqueta);
 }
