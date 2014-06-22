@@ -654,7 +654,26 @@ void ReservaConsulta()
 	delete iC;
 }
 
-void DevolucionConsulta(){}
+void DevolucionConsulta()
+{
+	IConsulta* iC=Factory::getIConsulta();
+	string buffer;
+
+	system("clear");
+	cout << "DEVOLUCION CONSULTA" << endl;
+	cout << "-------------------" << endl;
+	cout << "Estas son sus Reservas Activas" << endl;
+
+	set<DTReservaA> reservasActivas=iC->listarReservasActivas();
+	set<DTReservaA>::iterator it;
+	for ( it = reservasActivas.begin() ; it != reservasActivas.end() ; ++it )
+		cout << (*it);
+
+	cout << "Ingrese el codigo de la Reserva que desea cancelar" << endl;
+	cout << "> ";
+	getline(cin, buffer);
+	iC->darBajaReserva(atoi(buffer.c_str));
+}
 
 void CerrarSesion()
 {
