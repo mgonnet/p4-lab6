@@ -15,12 +15,15 @@ using namespace std;
 
 class DTUsuarioAR {
 public:
+	DTUsuarioAR(string nombre, string apellido, string ci, int edad, bool activo, set<DTLineaRegistro> registros);
+
 	bool isActivo() const;
 	const string& getApellido() const;
 	const string& getCi() const;
 	int getEdad() const;
 	const string& getNombre() const;
-	const set<DTLineaRegistro>& getRegistros() const;
+	set<DTLineaRegistro> getRegistros();
+	bool operator<(DTUsuarioAR) const;
 
 private:
 	string nombre;
@@ -31,6 +34,6 @@ private:
 	set<DTLineaRegistro> registros;
 };
 
-
+std::ostream &operator<<( std::ostream &stream,DTUsuarioAR imprimible);
 
 #endif /* DTUSUARIOAR_H_ */

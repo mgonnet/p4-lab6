@@ -22,7 +22,7 @@ class RegistroAR
 private:
 	Usuario* usuario;
 	Administrativo* adm;  // CUIDADO: Ver si realmente se uso
-	set<LineaRegistroAR*> lineas;
+	set<LineaRegistroAR*> lineasRegistro; //pseudoatributo
 
 public:
 
@@ -30,8 +30,12 @@ public:
 	void linkearUsuario(Usuario u);
 	void addLineaRegistroAR(Fecha,TipoOper);
 	bool usuarioIs(Usuario* u);
-	DTUsuarioAR* crearDTUsuarioAR(set<DTLineaRegistro> lineasRegistro);
-	set<DTLineaRegistro> listarLineasRegistroAR();
+	set<DTLineaRegistro*> listarLineasRegistroAR();
+
+	set<LineaRegistroAR*> getLineasRegistroAR(); //devuelve coleccion de punteros de LineaRegistroAR asociada a RegistroAR
+	DTUsuarioAR getDatosUsuarioAR(); //devuelve datatype de DTUsuarioAR
+
+	Usuario* getUsuario();
 
 	~RegistroAR();
 };

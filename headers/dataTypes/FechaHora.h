@@ -30,12 +30,12 @@ public:
 	Fecha operator=(Fecha original);
 
 	//Getters
-	int getDia();
-	int getMes();
-	int getAnio();
+	int getDia() const;
+	int getMes() const;
+	int getAnio() const;
 
 	bool isCorrecta();
-	bool esMenorQue(Fecha fecha);
+	bool esMenorQue(Fecha fecha) const;
 	bool esIgualQue(Fecha fecha);
 	int	 calcularEdad();
 };

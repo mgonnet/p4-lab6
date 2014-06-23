@@ -489,7 +489,24 @@ void AltaReactivacionDeUsuarios()
 	delete iU;
 }
 
-void UsuariosDadosDeAltaYReactivados(){}
+void UsuariosDadosDeAltaYReactivados() {
+
+	string buffer;
+	IUsuario* iU=Factory::getIUsuario();
+	system("clear");
+	cout << "USUARIOS DADOS DE ALTA Y REACTIVADOS" << endl;
+	cout << "-----------------" << endl;
+	cout << "Se lista el historial de altas y reactivaciones que usted realizo. Enter para continuar" << endl << endl;
+	set<DTUsuarioAR> listaAltasReactivaciones=iU->listarUsuariosAR();
+
+	set<DTUsuarioAR>::iterator it;
+	for ( it = listaAltasReactivaciones.begin() ; it != listaAltasReactivaciones.end() ; ++it)
+		cout << (*it) << endl;
+
+	getline(cin,buffer);
+
+	delete iU;
+}
 
 void AltaMedicamento()
 {
@@ -662,7 +679,25 @@ void AltaReprEstandarizadaDeDiagnosticos()
 }
 
 void RegistroConsulta(){}
-void AltaDiagnosticosDeUnaConsulta(){}
+
+void AltaDiagnosticosDeUnaConsulta()
+{
+
+}
+/*
+void AltaTratamiento()
+{
+	string buffer;
+
+	system("clear");
+	cout << "ALTA TRATAMIENTO PARA UN DIAGNOSTICO" << endl;
+	cout << "------------------------------------" << endl;
+	cout << "¿Que tratamiento desea? [F/Q]" << endl;
+	cout << "> ";
+
+
+}*/
+
 void ObtenerHistorialPaciente(){}
 
 void ListarRepresentacionesEstandarizadas()

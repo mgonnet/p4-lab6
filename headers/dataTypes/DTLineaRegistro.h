@@ -13,14 +13,18 @@
 
 class DTLineaRegistro {
 public:
-	const Fecha& getFecha() const;
+	Fecha getFecha();
 	TipoOper getTipoOper() const;
+	DTLineaRegistro(Fecha fecha,TipoOper tipoOper); //constructor del datatype
+	bool operator<(DTLineaRegistro) const;
+
 
 private:
 	Fecha fecha;
 	TipoOper tipoOper;
 };
 
+std::ostream &operator<<( std::ostream &stream,DTLineaRegistro imprimible);
 
 
 #endif /* DTLINEAREGISTRO_H_ */
