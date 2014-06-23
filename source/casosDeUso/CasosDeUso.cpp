@@ -791,6 +791,8 @@ void DevolucionConsulta()
 	cout << "DEVOLUCION CONSULTA" << endl;
 	cout << "-------------------" << endl;
 	cout << "Se ha devuelto la reserva" << endl;
+
+	delete iC;
 }
 
 void CerrarSesion()
