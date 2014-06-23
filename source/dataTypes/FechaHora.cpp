@@ -26,9 +26,9 @@ Fecha Fecha::operator=(Fecha original)
 	return (*this);
 }
 //Getters
-int Fecha::getDia() { return dia; }
-int Fecha::getMes() { return mes; }
-int Fecha::getAnio() { return anio; }
+int Fecha::getDia() const { return dia; }
+int Fecha::getMes() const { return mes; }
+int Fecha::getAnio() const{ return anio; }
 
 bool Fecha::isCorrecta(){
 	int dia_a;
@@ -58,7 +58,7 @@ bool Fecha::isCorrecta(){
 	return (*this).esMenorQue(Fecha(dia_a,mes_a,anio_a));
 }
 
-bool Fecha::esMenorQue(Fecha fecha){
+bool Fecha::esMenorQue(Fecha fecha) const{
 	return ((anio < fecha.getAnio()) 
 		    || ((anio == fecha.getAnio()) && (mes < fecha.getMes()))
             || ((anio == fecha.getAnio()) && (mes == fecha.getMes()) && (dia <= fecha.getDia())));

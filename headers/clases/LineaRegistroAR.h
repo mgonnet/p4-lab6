@@ -33,7 +33,7 @@ public:
 		void	setTipoOper(TipoOper tipo);
 
 
-		DTLineaRegistro* getDatosRegistro();
+		DTLineaRegistro getDatosRegistro();
 };
 
 #endif /* LINEAREGISTROAR_H_ */

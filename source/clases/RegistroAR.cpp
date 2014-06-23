@@ -28,7 +28,7 @@ RegistroAR::~RegistroAR()
 }
 
 DTUsuarioAR RegistroAR::getDatosUsuarioAR() {
-	set<DTLineaRegistro*> datosLineaRegistro; //conjunto de elementos que quiero listar para agregar a DTUsuarioAR*
+	set<DTLineaRegistro> datosLineaRegistro; //conjunto de elementos que quiero listar para agregar a DTUsuarioAR*
 	set<LineaRegistroAR*> lineasRegistro = (this)->getLineasRegistroAR(); //coleccion de punteros a LineaRegistroAR
 	set<LineaRegistroAR*>::iterator it; //iterar sobre la coleccion de punteros a LineaRegistroAR
 	for (it = lineasRegistro.begin(); it != lineasRegistro.end(); ++it) {

@@ -496,7 +496,7 @@ void UsuariosDadosDeAltaYReactivados() {
 	system("clear");
 	cout << "USUARIOS DADOS DE ALTA Y REACTIVADOS" << endl;
 	cout << "-----------------" << endl;
-	cout << "Se lista el historial de altas y reactivaciones que usted realizo. Enter para continuar" << endl;
+	cout << "Se lista el historial de altas y reactivaciones que usted realizo. Enter para continuar" << endl << endl;
 	set<DTUsuarioAR> listaAltasReactivaciones=iU->listarUsuariosAR();
 
 	set<DTUsuarioAR>::iterator it;
