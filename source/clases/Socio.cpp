@@ -62,4 +62,9 @@ Consulta* Socio::getConsulta(int codigo)
 }
 
 
-Socio::~Socio() {}
+Socio::~Socio()
+{
+	set<Consulta*>::iterator it;
+	for ( it=consultas.begin() ; it !=consultas.end() ; ++it )
+		delete (*it);
+}
