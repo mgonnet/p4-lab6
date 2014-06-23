@@ -249,5 +249,6 @@ void SetUpPruebasNuestras()
 
 
 	delete iU;
+	delete iC;
 	delete iD;
 }
