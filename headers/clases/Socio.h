@@ -45,6 +45,7 @@ public:
 	set<DTReservaA> obtenerReservasActivas();
 	set<DTConsulta> getHistorialConsultas();
 	void buscarConsulta(DTConsulta c);
+	Consulta* getConsulta(int codigo);
 
 	virtual ~Socio();
 };

@@ -47,5 +47,19 @@ void Socio::crearLinkConsulta(Consulta* c)
 	consultas.insert(c);
 }
 
+Consulta* Socio::getConsulta(int codigo)
+{
+	bool encontre = false;
+	Consulta* consultaRetorno;
+	set<Consulta*>::iterator it;
+	for( it=consultas.begin() ; it != consultas.end() && !encontre ; ++it )
+			if ((*it)->getCodigo() == codigo)
+			{
+				encontre = true;
+				consultaRetorno = (*it);
+			}
+	return consultaRetorno;
+}
+
 
 Socio::~Socio() {}

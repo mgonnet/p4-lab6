@@ -10,7 +10,6 @@
 #include <stdexcept>
 
 
-void CConsulta::darBajaReserva(int codigo) {}
 void CConsulta::registrarConsultaComun(string ciMedico, string ciSocio, Fecha fechaConsulta) {}
 void CConsulta::registrarConsultaEmergencia(string ciMedico, string ciSocio, string motivo, Fecha fechaConsulta) {}
 DTHistorial CConsulta::obtenerHistorialPaciente(string ciSocio) {}
@@ -37,7 +36,7 @@ set<DTMedico> CConsulta::listarMedicos(){
 		set<Rol> roles = (*it)->getRoles();
 		if ( roles.find(MEDICO) != roles.end())
 		{	usuario = (*it);
-		datosMedicos.insert(usuario->getDatosMedico());
+			datosMedicos.insert(usuario->getDatosMedico());
 		}
 	}
 	return datosMedicos;
@@ -79,6 +78,19 @@ set<DTReservaA> CConsulta::listarReservasActivas(){
 	if (roles.find(SOCIO) == roles.end()) throw invalid_argument("No hay un SOCIO logueado actualmente.");
 
 	return u->obtenerReservasActivas();
+}
+
+void CConsulta::darBajaReserva(int codigo)
+{
+	Consulta* cons;
+	Logueo* log=Logueo::getInstance();
+	Usuario* u=log->getUsuario();
+	set<Rol> roles = (u)->getRoles();
+
+	if (roles.find(SOCIO) == roles.end()) throw invalid_argument("No hay un SOCIO logueado actualmente.");
+
+	cons = u->getSocio()->getConsulta(codigo);
+	delete cons;
 }
 
 CConsulta::~CConsulta() {}
