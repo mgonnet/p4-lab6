@@ -13,9 +13,11 @@ source/clases/Socio.d: ../source/clases/Socio.cpp \
  ../source/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/TipoConsulta.h \
  ../source/clases/../../headers/clases/../../headers/clases/../../headers/clases/FechaSistema.h \
  ../source/clases/../../headers/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h \
+ ../source/clases/../../headers/clases/../../headers/dataTypes/TipoConsulta.h \
+ ../source/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h \
+ ../source/clases/../../headers/clases/../../headers/clases/FechaSistema.h \
  ../source/clases/../../headers/clases/Usuario.h \
  ../source/clases/../../headers/clases/../../headers/dataTypes/Sexo.h \
- ../source/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h \
  ../source/clases/../../headers/clases/../../headers/dataTypes/DTInfoLogueo.h \
  ../source/clases/../../headers/clases/../../headers/dataTypes/DTConsulta.h \
  ../source/clases/../../headers/clases/../../headers/dataTypes/DTReservaA.h \
@@ -55,11 +57,15 @@ source/clases/Socio.d: ../source/clases/Socio.cpp \
 
 ../source/clases/../../headers/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h:
 
+../source/clases/../../headers/clases/../../headers/dataTypes/TipoConsulta.h:
+
+../source/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h:
+
+../source/clases/../../headers/clases/../../headers/clases/FechaSistema.h:
+
 ../source/clases/../../headers/clases/Usuario.h:
 
 ../source/clases/../../headers/clases/../../headers/dataTypes/Sexo.h:
-
-../source/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h:
 
 ../source/clases/../../headers/clases/../../headers/dataTypes/DTInfoLogueo.h:
 

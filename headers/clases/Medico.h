@@ -29,7 +29,7 @@ public:
 	//operaciones
 	Medico(Usuario* u);
 	void linkearUsuario(Usuario* u);
-	void crearLinkEmergencia();
+	void crearLinkConsulta(Consulta* c);
 	void destruirLinkConsulta(Consulta* c);
 	DTMedico getDatosMedico();
 	set<DTConsultaDia> obtenerListaConsultas();

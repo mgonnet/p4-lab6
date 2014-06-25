@@ -24,8 +24,8 @@ using namespace std;
 
 class IConsulta {
 public:
-	virtual const set<DTReservaA>& listarReservasActivas() = 0;
-	virtual void darBajaReserva(string codigo) = 0;
+	virtual set<DTReservaA> listarReservasActivas() = 0;
+	virtual void darBajaReserva(int codigo) = 0;
 	virtual void registrarConsultaComun(string ciMedico, string ciSocio, Fecha fechaConsulta) = 0;
 	virtual void registrarConsultaEmergencia(string ciMedico, string ciSocio, string motivo, Fecha fechaConsulta) = 0;
 	virtual DTHistorial obtenerHistorialPaciente(string ciSocio) = 0;

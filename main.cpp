@@ -77,6 +77,7 @@ void SetUp()
 	IUsuario* iU=Factory::getIUsuario();
 	iU->crearAdminPorDefecto();
 	delete iU;
+	SetUpPruebasNuestras();
 }
 
 void TearDown()
@@ -196,6 +197,12 @@ bool EjecutarCasoDeUso()
 void SetUpPruebasNuestras()
 {
 	IUsuario* iU=Factory::getIUsuario();
+	IDiagnostico* iD=Factory::getIDiagnostico();
+	IConsulta* iC=Factory::getIConsulta();
+	FechaSistema* fSis=FechaSistema::getInstance();
+
+	fSis->setFechaSistema(Fecha(1,1,2014));
+
 	//VOY A LOGUEAR AL ROOT
 	iU->comienzoInicioSesion("ROOT");
 	iU->ingresarContrasenia("123");
@@ -214,9 +221,36 @@ void SetUpPruebasNuestras()
 	iU->ingresarDatos("SAM","SAGAZ",MASCULINO,Fecha(21,2,1993),soloSocio);
 	iU->altaUsuario();
 
+	//AGREGO UNA CATEGORIA
+	iD->agregarCategoria("A","TORSO");
+	iD->ingresarRepDiag("01","PUÑALADA");
+	iD->ingresarRepDiag("02","COSTILLA ROTA");
+	iD->finProblemasSalud();
+	iD->confirmarAlta();
+
+	//AGREGO OTRA CATEGORIA
+	iD->agregarCategoria("B","PIERNA");
+	iD->ingresarRepDiag("01","HUESO ROTO");
+	iD->ingresarRepDiag("02","DOLOR INDEFINIDO");
+	iD->finProblemasSalud();
+	iD->confirmarAlta();
+
 	//DESLOGUEO AL ROOT
+	iU->cerrarSesion();
+
+	//LOGUEO A UN SOCIO
+	iU->comienzoInicioSesion("4855461");
+	iU->crearContrasenia("123456");
+	iU->asignarSesionUsuario();
+
+	//AGREGO UNA CONSULTA ENTRE MED 4855460 Y SOCIO 4855461
+	iC->reservarConsulta("4855460",Fecha(21,12,2015),Hora(21,21));
+
+	//DESLOGUEO AL SOCIO
 	iU->cerrarSesion();
 
 
 	delete iU;
+	delete iC;
+	delete iD;
 }

@@ -24,17 +24,15 @@ class Administrativo
 
 private:
 	Usuario*			usuario;
-	set<RegistroAR*>	registros;
+	set<RegistroAR*>	registrosAR;
 
-	//set<DTUsuarioAR*>	datasUsuariosAR; // CUIDADO: No estoy seguro de por que esto esta aca
 public:
 	//operaciones
 	Administrativo(Usuario* u);
-	void linkearUsuario(Usuario *u);
 	void altaUsuario(Usuario *u);
 	void reactivarUsuario(Usuario *u);
-	set<DTUsuarioAR*> listarUsuariosAR();
-	void addDTUsuarioAR(DTUsuarioAR*);
+	set<DTUsuarioAR> listarUsuariosAR();
+	set<RegistroAR*> getRegistrosAR(); //devuelve coleccion de punteros a RegistroAR asociada a Administrativo
 
 	~Administrativo();
 };

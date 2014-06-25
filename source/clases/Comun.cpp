@@ -7,6 +7,8 @@
 
 #include "../../headers/clases/Consulta.h"
 #include "../../headers/clases/Comun.h"
+#include "../../headers/clases/Medico.h"
+
 
 
 Comun::Comun(Fecha fechaConsulta,Hora horaConsulta,bool asistio,Medico* medico,
@@ -30,7 +32,8 @@ bool	Comun::isActiva(){
 	return (fSis->getFechaSistema().esMenorQue(this->getFechaConsulta()));
 }
 TipoConsulta	Comun::getTipoConsulta(){ return COMUN;}
-//DTReservaA	Comun::getDatosReserva(){ return DTReservaA(this->fechaConsulta,this->getHoraConsulta(),fechaReserva,this->getMedico()->getDatosMedico()); }
+
+DTReservaA	Comun::getDatosReserva(){ return DTReservaA(this->getCodigo(),this->getFechaConsulta(),this->getHoraConsulta(),this->getFechaReserva(),this->getMedico()->getDatosMedico()); }
 
 Comun::~Comun(){}
 

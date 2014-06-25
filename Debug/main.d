@@ -19,6 +19,8 @@ main.d: ../main.cpp ../headers/clases/Accion.h \
  ../headers/clases/../../headers/clases/../../headers/dataTypes/TipoConsulta.h \
  ../headers/clases/../../headers/clases/../../headers/clases/FechaSistema.h \
  ../headers/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h \
+ ../headers/clases/../../headers/dataTypes/TipoConsulta.h \
+ ../headers/clases/../../headers/clases/FechaSistema.h \
  ../headers/clases/StockAcciones.h ../headers/clases/Logueo.h \
  ../headers/clases/Usuario.h \
  ../headers/clases/../../headers/dataTypes/Sexo.h \
@@ -37,6 +39,10 @@ main.d: ../main.cpp ../headers/clases/Accion.h \
  ../headers/interfacesYControladores/../../headers/dataTypes/FechaHora.h \
  ../headers/interfacesYControladores/../../headers/dataTypes/Rol.h \
  ../headers/interfacesYControladores/../../headers/dataTypes/DTUser.h \
+ ../headers/interfacesYControladores/../../headers/dataTypes/DTUsuarioAR.h \
+ ../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/DTLineaRegistro.h \
+ ../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/../../headers/dataTypes/TipoOper.h \
+ ../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/../../headers/dataTypes/FechaHora.h \
  ../headers/interfacesYControladores/CUsuario.h \
  ../headers/interfacesYControladores/../../headers/interfacesYControladores/IUsuario.h \
  ../headers/interfacesYControladores/../../headers/clases/Usuario.h \
@@ -112,6 +118,10 @@ main.d: ../main.cpp ../headers/clases/Accion.h \
 
 ../headers/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h:
 
+../headers/clases/../../headers/dataTypes/TipoConsulta.h:
+
+../headers/clases/../../headers/clases/FechaSistema.h:
+
 ../headers/clases/StockAcciones.h:
 
 ../headers/clases/Logueo.h:
@@ -149,6 +159,14 @@ main.d: ../main.cpp ../headers/clases/Accion.h \
 ../headers/interfacesYControladores/../../headers/dataTypes/Rol.h:
 
 ../headers/interfacesYControladores/../../headers/dataTypes/DTUser.h:
+
+../headers/interfacesYControladores/../../headers/dataTypes/DTUsuarioAR.h:
+
+../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/DTLineaRegistro.h:
+
+../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/../../headers/dataTypes/TipoOper.h:
+
+../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/../../headers/dataTypes/FechaHora.h:
 
 ../headers/interfacesYControladores/CUsuario.h:
 

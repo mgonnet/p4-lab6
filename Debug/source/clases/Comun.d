@@ -12,7 +12,8 @@ source/clases/Comun.d: ../source/clases/Comun.cpp \
  ../source/clases/../../headers/clases/../../headers/clases/FechaSistema.h \
  ../source/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h \
  ../source/clases/../../headers/clases/Comun.h \
- ../source/clases/../../headers/clases/../../headers/clases/Consulta.h
+ ../source/clases/../../headers/clases/../../headers/clases/Consulta.h \
+ ../source/clases/../../headers/clases/Medico.h
 
 ../source/clases/../../headers/clases/Consulta.h:
 
@@ -41,3 +42,5 @@ source/clases/Comun.d: ../source/clases/Comun.cpp \
 ../source/clases/../../headers/clases/Comun.h:
 
 ../source/clases/../../headers/clases/../../headers/clases/Consulta.h:
+
+../source/clases/../../headers/clases/Medico.h:

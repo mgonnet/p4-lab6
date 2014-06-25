@@ -44,7 +44,9 @@ source/clases/Usuario.d: ../source/clases/Usuario.cpp \
  ../source/clases/../../headers/clases/../../headers/clases/Accion.h \
  ../source/clases/../../headers/clases/../../headers/dataTypes/DTConsultaDia.h \
  ../source/clases/../../headers/clases/Socio.h \
- ../source/clases/../../headers/clases/../../headers/clases/Subject.h
+ ../source/clases/../../headers/clases/../../headers/clases/Subject.h \
+ ../source/clases/../../headers/clases/../../headers/dataTypes/TipoConsulta.h \
+ ../source/clases/../../headers/clases/../../headers/clases/FechaSistema.h
 
 ../source/clases/../../headers/clases/Usuario.h:
 
@@ -137,3 +139,7 @@ source/clases/Usuario.d: ../source/clases/Usuario.cpp \
 ../source/clases/../../headers/clases/Socio.h:
 
 ../source/clases/../../headers/clases/../../headers/clases/Subject.h:
+
+../source/clases/../../headers/clases/../../headers/dataTypes/TipoConsulta.h:
+
+../source/clases/../../headers/clases/../../headers/clases/FechaSistema.h:

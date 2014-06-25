@@ -10,6 +10,12 @@
 
 #include "../../headers/clases/Subject.h"
 #include "../../headers/clases/Consulta.h"
+#include "../../headers/dataTypes/TipoConsulta.h"
+#include "../../headers/dataTypes/FechaHora.h"
+#include "../../headers/clases/FechaSistema.h"
+
+
+
 
 #include <string>
 using namespace std;
@@ -35,10 +41,11 @@ public:
 	void darBajarR(string codigo);
 	void asistir(string ciMedico, Fecha fechaConsulta);
 	void destruirLinkConsulta(Consulta* c);
-	void crearLinkEmergencia();
+	void crearLinkConsulta(Consulta* c);
 	set<DTReservaA> obtenerReservasActivas();
 	set<DTConsulta> getHistorialConsultas();
 	void buscarConsulta(DTConsulta c);
+	Consulta* getConsulta(int codigo);
 
 	DTMedico getDatosBasicos();
 

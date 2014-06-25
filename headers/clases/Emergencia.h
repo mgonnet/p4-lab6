@@ -32,6 +32,7 @@ public:
 
 	//Operaciones
 	TipoConsulta	getTipoConsulta();
+	DTReservaA		getDatosReserva();
 
 	~Emergencia();
 };

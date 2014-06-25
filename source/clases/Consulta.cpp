@@ -24,6 +24,8 @@ Consulta::Consulta( Fecha fechaConsulta,Hora horaConsulta,bool asistio,Medico* m
 							socio(socio)
 {
 	this->codigo = Consulta::ultimoCodigo++;
+	this->crearLinkMedico(medico);
+	this->crearLinkSocio(socio);
 }
 
 //Getters
@@ -40,8 +42,8 @@ bool Consulta::getAsistioConsulta(){
 	return this->asistio;
 }
 
-Medico* Consulta::getMedico(){}
-Socio*	Consulta::getSocio(){}
+Medico* Consulta::getMedico(){return medico;}
+Socio*	Consulta::getSocio(){return socio;}
 
 //Setters
 void Consulta::setCodigo(int codigo){
@@ -68,35 +70,38 @@ DTConsultaDia Consulta::obtenerConsultaDia(Socio* socio){
 
 bool	Consulta::esDeHoy(){
 	FechaSistema* fechaSistema=FechaSistema::getInstance();
-	return (fechaSistema->getFechaSistema().esMenorQue(fechaConsulta));
+	return (fechaSistema->getFechaSistema().esMenorQue(fechaConsulta));//CUIDADO: aca va es igual que
 }
 
 void	Consulta::altaDiagnosticos(Diagnostico* dt){
 	this->diagnosticos.insert(dt);
 }
 
-
 void	Consulta::crearLinkSocio(Socio* soc){
-	this->socio = soc;
+	soc->crearLinkConsulta(this);
 }
 
 void	Consulta::crearLinkMedico(Medico* med){
-	this->medico = med;
+	med->crearLinkConsulta(this);
 }
 void	Consulta::destruirLinkSocio(){
-	delete this->socio;
-	this->socio = NULL;
+	socio->destruirLinkConsulta(this);
 }
 
 void	Consulta::destruirLinkMedico(){
-	delete this->medico;
-	this->medico = NULL;
+	medico->destruirLinkConsulta(this);
 }
+
 
 DTMedico Consulta::getDatosSocio()
 {
 	return socio->getDatosBasicos();
 }
 
-Consulta::~Consulta(){}
+Consulta::~Consulta()
+{
+	this->destruirLinkMedico();
+	this->destruirLinkSocio();
+
+}
 

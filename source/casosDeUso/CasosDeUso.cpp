@@ -489,12 +489,89 @@ void AltaReactivacionDeUsuarios()
 	delete iU;
 }
 
-void UsuariosDadosDeAltaYReactivados(){}
-void AltaMedicamento(){}
+void UsuariosDadosDeAltaYReactivados() {
+
+	string buffer;
+	IUsuario* iU=Factory::getIUsuario();
+	system("clear");
+	cout << "USUARIOS DADOS DE ALTA Y REACTIVADOS" << endl;
+	cout << "-----------------" << endl;
+	cout << "Se lista el historial de altas y reactivaciones que usted realizo. Enter para continuar" << endl << endl;
+	set<DTUsuarioAR> listaAltasReactivaciones=iU->listarUsuariosAR();
+
+	set<DTUsuarioAR>::iterator it;
+	for ( it = listaAltasReactivaciones.begin() ; it != listaAltasReactivaciones.end() ; ++it)
+		cout << (*it) << endl;
+
+	getline(cin,buffer);
+
+	delete iU;
+}
+
+void AltaMedicamento()
+{
+
+	IDiagnostico* iD = Factory::getIDiagnostico();
+
+	string buffer;
+	bool existeMedicamento;
+	bool repetir;
+	bool cancelar;
+	string nombre;
+
+	do {
+		system("clear");
+		cout << "ALTA MEDICAMENTO" << endl;
+		cout << "-----------------------------" << endl;
+		cout << "Antes de dar de alta un nuevo medicamento, el sistema verificara que no exista" << endl;
+		cout << "Ingrese nombre del medicamento:" << endl;
+		cout << "> ";
+		getline(cin, nombre);
+
+		existeMedicamento = iD->ingresarDatosMedicamento(nombre);
+
+		if (existeMedicamento)
+		{
+			system("clear");
+			cout << "ALTA MEDICAMENTO" << endl;
+			cout << "-----------------------------" << endl;
+			cout << "Ya existe un medicamento con ese nombre. ¿Desea dar de alta otro diferente? [1/0]" << endl;
+			cout << "> ";
+			getline(cin, buffer);
+			repetir = (buffer == "1");
+			cancelar = !repetir;
+		} else // Medicamento no existe
+		{
+			system("clear");
+			cout << "ALTA MEDICAMENTO" << endl;
+			cout << "-----------------------------" << endl;
+			cout << "El medicamento no existe. ¿Desea darlo de alta? [1/0]" << endl;
+			getline(cin, buffer);
+			cancelar = (buffer=="0");
+			if (!cancelar) {
+				iD->confirmarAltaMedicamento();
+				system("clear");
+				cout << "ALTA MEDICAMENTO" << endl;
+				cout << "-----------------------------" << endl;
+				cout << "El medicamento ha sido dado de alta. Enter para continuar." << endl;
+				getline(cin, buffer);
+			}
+			repetir = false;
+		}
+		if (cancelar) {
+			system("clear");
+			cout << "ALTA MEDICAMENTO" << endl;
+			cout << "-----------------------------" << endl;
+			cout << "Se ha cancelado Alta Medicamento. Enter para continuar." << endl;
+			getline(cin, buffer);
+		}
+	} while (repetir);
+	delete iD;
+}
 
 void AltaReprEstandarizadaDeDiagnosticos()
 {
-	/*	bool deseaCategorias=true;
+	bool deseaCategorias=true;
 	IDiagnostico* iD=Factory::getIDiagnostico();
 	string buffer;
 	string codigoCat;
@@ -513,40 +590,213 @@ void AltaReprEstandarizadaDeDiagnosticos()
 		set<DTCategoriaPS>::iterator it;
 		for ( it=categorias.begin() ; it != categorias.end() ; ++it )
 			cout << (*it) << endl;
-		cout << "Seleccione la categoria de su elección. (Escriba NO para crear una nueva)" << endl;
+		cout << "Seleccione la categoria de su elección. (Escriba NO para crear una nueva, SALIR para salir)" << endl;
 		cout << "> ";
 		getline(cin,buffer);
 
-		if(buffer == "NO") // Usuario no encuentra categoria
-		{
-			system("clear");
-			cout << "ALTA REPRESENTACION ESTANDARIZADA DE DIAGNOSTICO" << endl;
-			cout << "------------------------------------------------" << endl;
-			cout << "Crearemos una nueva categoria:" << endl;
-			cout << "Ingrese el codigo:" << endl;
-			cout << "> ";
-			getline(cin,codigoCat);
-			cout << "Ingrese la etiqueta" << endl;
-			cout << "> ";
-			getline(cin,etiquetaCat);
-			iD->agregarCategoria(codigoCat,etiquetaCat);
-		}
+		if( buffer == "SALIR" )
+			deseaCategorias=false;
 		else
 		{
-			if(buffer.size()>1)
-				throw invalid_argument("El codigo de categorias tiene una sola letra");
+			if(buffer == "NO") // Usuario no encuentra categoria
+			{
+				system("clear");
+				cout << "ALTA REPRESENTACION ESTANDARIZADA DE DIAGNOSTICO" << endl;
+				cout << "------------------------------------------------" << endl;
+				cout << "Crearemos una nueva categoria:" << endl;
+				cout << "Ingrese el codigo:" << endl;
+				cout << "> ";
+				getline(cin,codigoCat);
+				cout << "Ingrese la etiqueta" << endl;
+				cout << "> ";
+				getline(cin,etiquetaCat);
+				iD->agregarCategoria(codigoCat,etiquetaCat);
+			}
 			else
-				iD->seleccionarCategoria(buffer);
+			{
+				if(buffer.size()>1)
+					throw invalid_argument("El codigo de categorias tiene una sola letra");
+				else
+					iD->seleccionarCategoria(buffer);
+			}
+
+
+			bool deseaProblemaSalud=true;
+			while( deseaProblemaSalud )
+			{
+				string codigo;
+				string etiqueta;
+
+				system("clear");
+				cout << "ALTA REPRESENTACION ESTANDARIZADA DE DIAGNOSTICO" << endl;
+				cout << "------------------------------------------------" << endl;
+				cout << "¿Desea agregar Problemas Salud? [1/0]." << endl;
+				cout << "> ";
+				getline(cin,buffer);
+
+				if(buffer=="1")
+				{
+					system("clear");
+					cout << "ALTA REPRESENTACION ESTANDARIZADA DE DIAGNOSTICO" << endl;
+					cout << "------------------------------------------------" << endl;
+					cout << "Esta agregando Problemas Salud para la Categoria " << buffer << endl;
+					cout << "Ingrese el codigo de dos numeros:" << endl;
+					cout << "> ";
+					getline(cin,codigo); //CUIDADO: COMPROBAR QUE SEA DE DOS LETRAS
+
+					cout << "Ingrese la etiqueta:" << endl;
+					cout << "> ";
+					getline(cin,etiqueta);
+
+					if ( iD->ingresarRepDiag(codigo,etiqueta) )
+					{
+						system("clear");
+						cout << "ALTA REPRESENTACION ESTANDARIZADA DE DIAGNOSTICO" << endl;
+						cout << "------------------------------------------------" << endl;
+						cout << "El Problema Salud " << codigo << " " << etiqueta << " ya existe en la categoria " << codigoCat << endl;
+						cout << "Enter para continuar." << endl;
+						getline(cin,buffer);
+					}
+				}
+				else
+				{
+					deseaProblemaSalud=false;
+					iD->finProblemasSalud();
+				}
+			}
+		}
+	}
+
+	system("clear");
+	cout << "ALTA REPRESENTACION ESTANDARIZADA DE DIAGNOSTICO" << endl;
+	cout << "------------------------------------------------" << endl;
+	cout << "¿Confirma los cambios realizados [1/0]?" << endl;
+	getline(cin,buffer);
+	if(buffer=="1")
+		iD->confirmarAlta(); //CUIDADO:
+
+	delete iD;
+}
+
+void RegistroConsulta()
+{
+/*	string	buffer;
+	string	ciMedico;
+	string	ciSocio;
+	Fecha	fechaConsulta;
+
+	IConsulta* iC = Factory::getIConsulta();
+
+	system("clear");
+	cout << "REGISTRO CONSULTA" << endl;
+	cout << "-----------------" << endl;
+	cout << "¿Desea registrar una consulta comun o una emergencia? [C/E]?" << endl;
+	getline(cin,buffer);
+
+	if ( buffer == "C" ) //COMUN
+	{
+		system("clear");
+		cout << "REGISTRO CONSULTA" << endl;
+		cout << "-----------------" << endl;
+		cout << "Esta registrando una consulta Comun:" << endl;
+		cout << "Ingrese la CI del medico";
+		cout << "> ";
+		getline(cin,ciMedico);
+		cout << "Ingrese la CI del socio";
+		cout << "> ";
+		getline(cin,ciSocio);
+		cout << "Ingrese la fecha de la Consulta" << endl;
+		fechaConsulta=ingresoFecha();
+
+		iC->registrarConsultaComun(ciMedico,ciSocio,fechaConsulta);
+
+		system("clear");
+		cout << "REGISTRO CONSULTA" << endl;
+		cout << "-----------------" << endl;
+		cout << "Se ha registrado la consulta comun. Enter para continuar" << endl;
+		getline(buffer);
+	}
+	else if ( buffer == "E" ) //EMERGENCIA
+	{
+		system("clear");
+		cout << "REGISTRO CONSULTA" << endl;
+		cout << "-----------------" << endl;
+		cout << "Esta registrando una consulta Emergencia:" << endl;
+		cout << "Elija un criterio para seleccionar a el Medico:" << endl;
+		cout << "(1)- Criterio 1: Medicos libres" << endl;
+		cout << "(2)- Criterio 2: Medicos conocidos" << endl;
+		cout << "(cualquier tecla) - Criterio 3: Seleccion manual" << endl;
+		cout << "> ";
+		getline(cin,buffer);
+		if ( buffer == "1" ) iC->seleccionarCriterio(1);
+		else if ( buffer == "2" ) iC->seleccionarCriterio(2);
+		else
+		{
+			cout << "Ingrese la CI del medico";
+			cout << "> ";
+			getline(cin,ciMedico);
+			iC->registroEmergenciaSeleccionarMedico(ciMedico);
 		}
 
+		cout << "Ingrese la CI del socio";
+		cout << "> ";
+		getline(cin,ciSocio);
+		cout << "Ingrese la fecha de la Consulta" << endl;
+		fechaConsulta=ingresoFecha();
+		cout << "Ingrese el Motivo";
+		cout << "> ";
+		string motivo;
+		getline(cin,motivo);
+		iC->registrarConsultaEmergencia(ciSocio,motivo,fechaConsulta);
 
+		system("clear");
+		cout << "REGISTRO CONSULTA" << endl;
+		cout << "-----------------" << endl;
+		cout << "Se ha registrado la consulta Emergencia. Enter para continuar" << endl;
+		getline(cin,buffer);
 	}*/
 }
 
-void RegistroConsulta(){}
-void AltaDiagnosticosDeUnaConsulta(){}
+void AltaDiagnosticosDeUnaConsulta()
+{
+
+}
+/*
+void AltaTratamiento()
+{
+	string buffer;
+
+	system("clear");
+	cout << "ALTA TRATAMIENTO PARA UN DIAGNOSTICO" << endl;
+	cout << "------------------------------------" << endl;
+	cout << "¿Que tratamiento desea? [F/Q]" << endl;
+	cout << "> ";
+
+
+}*/
+
 void ObtenerHistorialPaciente(){}
-void ListarRepresentacionesEstandarizadas(){}
+
+void ListarRepresentacionesEstandarizadas()
+{
+	IDiagnostico* iD=Factory::getIDiagnostico();
+	string buffer;
+	set<DTReprEstandarizada> repr=iD->getReprEstandarizadas();
+	set<DTReprEstandarizada>::iterator it;
+
+	system("clear");
+	cout << "LISTAR REPRESENTACIONES ESTANDARIZADAS" << endl;
+	cout << "--------------------------------------" << endl;
+	cout << "Estos son las Representaciones de Problemas de Salud del sistema" << endl;
+
+	for ( it=repr.begin(); it!=repr.end();++it)
+		cout << (*it);
+
+	cout << "Enter para continuar." << endl;
+	getline(cin,buffer);
+
+	delete iD;
+}
 
 void ReservaConsulta()
 {
@@ -594,7 +844,33 @@ void ReservaConsulta()
 	delete iC;
 }
 
-void DevolucionConsulta(){}
+void DevolucionConsulta()
+{
+	IConsulta* iC=Factory::getIConsulta();
+	string buffer;
+
+	system("clear");
+	cout << "DEVOLUCION CONSULTA" << endl;
+	cout << "-------------------" << endl;
+	cout << "Estas son sus Reservas Activas" << endl;
+
+	set<DTReservaA> reservasActivas=iC->listarReservasActivas();
+	set<DTReservaA>::iterator it;
+	for ( it = reservasActivas.begin() ; it != reservasActivas.end() ; ++it )
+		cout << (*it);
+
+	cout << "Ingrese el codigo de la Reserva que desea cancelar" << endl;
+	cout << "> ";
+	getline(cin, buffer);
+	iC->darBajaReserva(atoi(buffer.c_str()));
+
+	system("clear");
+	cout << "DEVOLUCION CONSULTA" << endl;
+	cout << "-------------------" << endl;
+	cout << "Se ha devuelto la reserva" << endl;
+
+	delete iC;
+}
 
 void CerrarSesion()
 {

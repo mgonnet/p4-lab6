@@ -20,7 +20,7 @@ void Administrativo::altaUsuario(Usuario *u)
 	FechaSistema* fSis=FechaSistema::getInstance();
 	rar->addLineaRegistroAR(fSis->getFechaSistema(),ALTA);
 
-	registros.insert(rar);
+	registrosAR.insert(rar);
 }
 
 void Administrativo::reactivarUsuario(Usuario *u)
@@ -28,7 +28,7 @@ void Administrativo::reactivarUsuario(Usuario *u)
 	RegistroAR* rar;
 	set<RegistroAR*>::iterator it;
 	bool encontre=false;
-	for ( it = registros.begin() ; it != registros.end() && !encontre ; ++it )
+	for ( it = registrosAR.begin() ; it != registrosAR.end() && !encontre ; ++it )
 		if( (*it)->usuarioIs(u) )
 		{
 			encontre=true;
@@ -42,13 +42,28 @@ void Administrativo::reactivarUsuario(Usuario *u)
 	rar->addLineaRegistroAR(fSis->getFechaSistema(),REACTIVACION);
 
 	if(!encontre)
-		registros.insert(rar);
+		registrosAR.insert(rar);
+}
+
+set<DTUsuarioAR> Administrativo::listarUsuariosAR() {
+	set<DTUsuarioAR> datosRegistros; //conjunto de elementos que quiero listar
+	set<RegistroAR*> registros = (this)->getRegistrosAR(); //coleccion de punteros a RegistroAR
+	set<RegistroAR*>::iterator it; //iterar sobre la coleccion de punteros a RegistroAR
+	for (it = registros.begin(); it != registros.end(); ++it) {
+		RegistroAR* registro = (*it); //elemento de la coleccion. Puntero a RegistroAR
+		datosRegistros.insert(registro->getDatosUsuarioAR()); //insertar un datatype de DTUsuarioAR a datosRegistro
+	}
+	return datosRegistros;
+}
+
+set<RegistroAR*> Administrativo::getRegistrosAR() {
+	return registrosAR;
 }
 
 Administrativo::~Administrativo()
 {
 	//Debo eliminar los registros
 	set<RegistroAR*>::iterator it;
-	for ( it = registros.begin() ; it != registros.end() ; ++it)
+	for ( it = registrosAR.begin() ; it != registrosAR.end() ; ++it)
 		delete (*it);
 }

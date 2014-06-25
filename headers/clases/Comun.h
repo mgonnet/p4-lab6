@@ -35,7 +35,7 @@ public:
 	//Operaciones
 	bool			isActiva();
 	TipoConsulta	getTipoConsulta();
-	//DTReservaA		getDatosReserva();
+	DTReservaA		getDatosReserva();
 
 	~Comun();
 };

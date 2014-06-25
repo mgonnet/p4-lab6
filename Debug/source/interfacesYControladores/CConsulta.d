@@ -24,6 +24,7 @@ source/interfacesYControladores/CConsulta.d: \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTConsultaDia.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/FechaHora.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTConsulta.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTReservaA.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTDiagnostico.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/TipoTratamiento.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/FechaHora.h \
@@ -47,6 +48,8 @@ source/interfacesYControladores/CConsulta.d: \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTMedico.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTSocio.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTUser.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Socio.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/clases/Subject.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Logueo.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Usuario.h \
  ../source/interfacesYControladores/../../headers/clases/Socio.h \
@@ -107,6 +110,8 @@ source/interfacesYControladores/CConsulta.d: \
 
 ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTConsulta.h:
 
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTReservaA.h:
+
 ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTDiagnostico.h:
 
 ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/TipoTratamiento.h:
@@ -152,6 +157,10 @@ source/interfacesYControladores/CConsulta.d: \
 ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTSocio.h:
 
 ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTUser.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Socio.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/clases/Subject.h:
 
 ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Logueo.h:
 
