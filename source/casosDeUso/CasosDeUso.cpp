@@ -678,7 +678,43 @@ void AltaReprEstandarizadaDeDiagnosticos()
 	delete iD;
 }
 
-void RegistroConsulta(){}
+void RegistroConsulta()
+{
+	string	buffer;
+	string	ciMedico;
+	string	ciSocio;
+	Fecha	fechaConsulta;
+
+	IConsulta* iC = Factory::getIConsulta();
+
+	system("clear");
+	cout << "REGISTRO CONSULTA" << endl;
+	cout << "-----------------" << endl;
+	cout << "¿Desea registrar una consulta comun o una emergencia? [C/E]?" << endl;
+	getline(cin,buffer);
+
+	if ( buffer == "C" ) //COMUN
+	{
+		system("clear");
+		cout << "REGISTRO CONSULTA" << endl;
+		cout << "-----------------" << endl;
+		cout << "Esta registrando una consulta Comun:" << endl;
+		cout << "Ingrese la CI del medico";
+		cout << "> ";
+		getline(cin,ciMedico);
+		cout << "Ingrese la CI del socio";
+		cout << "> ";
+		getline(cin,ciSocio);
+		cout << "Ingrese la fecha de la Consulta" << endl;
+		fechaConsulta=ingresoFecha();
+
+		iC->registrarConsultaComun(ciMedico,ciSocio,fechaConsulta);
+	}
+	else if ( buffer == "E" ) //EMERGENCIA
+	{
+
+	}
+}
 
 void AltaDiagnosticosDeUnaConsulta()
 {
