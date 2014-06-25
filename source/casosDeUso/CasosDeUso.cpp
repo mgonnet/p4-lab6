@@ -680,7 +680,7 @@ void AltaReprEstandarizadaDeDiagnosticos()
 
 void RegistroConsulta()
 {
-	string	buffer;
+/*	string	buffer;
 	string	ciMedico;
 	string	ciSocio;
 	Fecha	fechaConsulta;
@@ -709,11 +709,52 @@ void RegistroConsulta()
 		fechaConsulta=ingresoFecha();
 
 		iC->registrarConsultaComun(ciMedico,ciSocio,fechaConsulta);
+
+		system("clear");
+		cout << "REGISTRO CONSULTA" << endl;
+		cout << "-----------------" << endl;
+		cout << "Se ha registrado la consulta comun. Enter para continuar" << endl;
+		getline(buffer);
 	}
 	else if ( buffer == "E" ) //EMERGENCIA
 	{
+		system("clear");
+		cout << "REGISTRO CONSULTA" << endl;
+		cout << "-----------------" << endl;
+		cout << "Esta registrando una consulta Emergencia:" << endl;
+		cout << "Elija un criterio para seleccionar a el Medico:" << endl;
+		cout << "(1)- Criterio 1: Medicos libres" << endl;
+		cout << "(2)- Criterio 2: Medicos conocidos" << endl;
+		cout << "(cualquier tecla) - Criterio 3: Seleccion manual" << endl;
+		cout << "> ";
+		getline(cin,buffer);
+		if ( buffer == "1" ) iC->seleccionarCriterio(1);
+		else if ( buffer == "2" ) iC->seleccionarCriterio(2);
+		else
+		{
+			cout << "Ingrese la CI del medico";
+			cout << "> ";
+			getline(cin,ciMedico);
+			iC->registroEmergenciaSeleccionarMedico(ciMedico);
+		}
 
-	}
+		cout << "Ingrese la CI del socio";
+		cout << "> ";
+		getline(cin,ciSocio);
+		cout << "Ingrese la fecha de la Consulta" << endl;
+		fechaConsulta=ingresoFecha();
+		cout << "Ingrese el Motivo";
+		cout << "> ";
+		string motivo;
+		getline(cin,motivo);
+		iC->registrarConsultaEmergencia(ciSocio,motivo,fechaConsulta);
+
+		system("clear");
+		cout << "REGISTRO CONSULTA" << endl;
+		cout << "-----------------" << endl;
+		cout << "Se ha registrado la consulta Emergencia. Enter para continuar" << endl;
+		getline(cin,buffer);
+	}*/
 }
 
 void AltaDiagnosticosDeUnaConsulta()
