@@ -72,8 +72,6 @@ public:
 	void 			destruirLinkMedico();
 	set<DTDiagnostico> getHistorialDiagnosticos();
 
-	DTMedico		getDatosSocio();
-
 	virtual ~Consulta();
 
 };

@@ -103,7 +103,7 @@ ostream &operator<<( std::ostream &stream,Fecha imprimible)
 {
 	stream	<< "Dia: " << imprimible.getDia() << endl
 			<< "Mes: " << imprimible.getMes() << endl
-			<< "Año: " << imprimible.getAnio();
+			<< "Año: " << imprimible.getAnio() << endl;
 
 	return (stream);
 }
@@ -111,7 +111,7 @@ ostream &operator<<( std::ostream &stream,Fecha imprimible)
 ostream &operator<<( std::ostream &stream,Hora imprimible)
 {
 	stream	<< "Hora: " << imprimible.getHoras() << endl
-			<< "Minuto: " << imprimible.getMinutos();
+			<< "Minuto: " << imprimible.getMinutos() << endl;
 
 	return (stream);
 }

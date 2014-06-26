@@ -26,7 +26,6 @@ source/clases/Administrativo.d: ../source/clases/Administrativo.cpp \
  ../source/clases/../../headers/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/DTUser.h \
  ../source/clases/../../headers/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/Sexo.h \
  ../source/clases/../../headers/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/Rol.h \
- ../source/clases/../../headers/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/DTMensaje.h \
  ../source/clases/../../headers/clases/../../headers/clases/../../headers/clases/Administrativo.h \
  ../source/clases/../../headers/clases/RegistroAR.h \
  ../source/clases/../../headers/clases/FechaSistema.h \
@@ -85,8 +84,6 @@ source/clases/Administrativo.d: ../source/clases/Administrativo.cpp \
 ../source/clases/../../headers/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/Sexo.h:
 
 ../source/clases/../../headers/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/Rol.h:
-
-../source/clases/../../headers/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/DTMensaje.h:
 
 ../source/clases/../../headers/clases/../../headers/clases/../../headers/clases/Administrativo.h:
 

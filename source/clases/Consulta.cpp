@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * Consulta.cpp
  *
@@ -18,11 +17,11 @@ int Consulta::ultimoCodigo = 0;
 
 
 Consulta::Consulta( Fecha fechaConsulta,Hora horaConsulta,bool asistio,Medico* medico,Socio* socio):
-							fechaConsulta(fechaConsulta),
-							horaConsulta(horaConsulta),
-							asistio(asistio),
-							medico(medico),
-							socio(socio)
+													fechaConsulta(fechaConsulta),
+													horaConsulta(horaConsulta),
+													asistio(asistio),
+													medico(medico),
+													socio(socio)
 {
 	this->codigo = Consulta::ultimoCodigo++;
 	this->crearLinkMedico(medico);
@@ -120,7 +119,3 @@ Consulta::~Consulta()
 
 }
 
-DTMedico Consulta::getDatosSocio()
-{
-	return socio->getDatosBasicos();
-}

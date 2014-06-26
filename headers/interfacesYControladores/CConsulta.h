@@ -68,11 +68,6 @@ public:
 	set<DTMedico> listarMedicos();
 	void reservarConsulta(string ciMedico,Fecha fechaConsulta,Hora horaConsulta);
 	set<DTReservaA> listarReservasActivas();
-
-	//Notificar
-	set<DTMedico> listarPacientesDelMedicoLogueado();
-	void iniciarSeguimientoPaciente(string ci);
-
 	virtual ~CConsulta();
 };
 

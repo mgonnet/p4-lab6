@@ -12,8 +12,6 @@ source/casosDeUso/CasosDeUso.d: ../source/casosDeUso/CasosDeUso.cpp \
  ../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/DTLineaRegistro.h \
  ../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/../../headers/dataTypes/TipoOper.h \
  ../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/../../headers/dataTypes/FechaHora.h \
- ../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/DTMensaje.h \
- ../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/FechaHora.h \
  ../source/casosDeUso/../../headers/interfacesYControladores/IConsulta.h \
  ../source/casosDeUso/../../headers/interfacesYControladores/../dataTypes/DTReservaA.h \
  ../source/casosDeUso/../../headers/interfacesYControladores/../dataTypes/FechaHora.h \
@@ -34,7 +32,6 @@ source/casosDeUso/CasosDeUso.d: ../source/casosDeUso/CasosDeUso.cpp \
  ../source/casosDeUso/../../headers/interfacesYControladores/IUsuario.h \
  ../source/casosDeUso/../../headers/interfacesYControladores/IConsulta.h \
  ../source/casosDeUso/../../headers/dataTypes/DTInfoLogueo.h \
- ../source/casosDeUso/../../headers/dataTypes/DTMensaje.h \
  ../source/casosDeUso/../../headers/clases/FechaSistema.h \
  ../source/casosDeUso/../../headers/clases/../../headers/dataTypes/FechaHora.h
 
@@ -63,10 +60,6 @@ source/casosDeUso/CasosDeUso.d: ../source/casosDeUso/CasosDeUso.cpp \
 ../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/../../headers/dataTypes/TipoOper.h:
 
 ../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/../../headers/dataTypes/FechaHora.h:
-
-../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/DTMensaje.h:
-
-../source/casosDeUso/../../headers/interfacesYControladores/../../headers/dataTypes/FechaHora.h:
 
 ../source/casosDeUso/../../headers/interfacesYControladores/IConsulta.h:
 
@@ -107,8 +100,6 @@ source/casosDeUso/CasosDeUso.d: ../source/casosDeUso/CasosDeUso.cpp \
 ../source/casosDeUso/../../headers/interfacesYControladores/IConsulta.h:
 
 ../source/casosDeUso/../../headers/dataTypes/DTInfoLogueo.h:
-
-../source/casosDeUso/../../headers/dataTypes/DTMensaje.h:
 
 ../source/casosDeUso/../../headers/clases/FechaSistema.h:
 

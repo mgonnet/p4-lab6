@@ -13,8 +13,6 @@ source/interfacesYControladores/Factory.d: \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/DTLineaRegistro.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/../../headers/dataTypes/TipoOper.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/../../headers/dataTypes/FechaHora.h \
- ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTMensaje.h \
- ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/FechaHora.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/IConsulta.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../dataTypes/DTReservaA.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../dataTypes/FechaHora.h \
@@ -43,7 +41,6 @@ source/interfacesYControladores/Factory.d: \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTMedico.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTSocio.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTUser.h \
- ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTMensaje.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/CDiagnostico.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../dataTypes/DTCombinado.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../dataTypes/DTCategoriaPS.h \
@@ -52,6 +49,7 @@ source/interfacesYControladores/Factory.d: \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/CConsulta.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/interfacesYControladores/IConsulta.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTConsultaDia.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/FechaHora.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTConsulta.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTReservaA.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTDiagnostico.h \
@@ -97,10 +95,6 @@ source/interfacesYControladores/Factory.d: \
 ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/../../headers/dataTypes/TipoOper.h:
 
 ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/../../headers/dataTypes/FechaHora.h:
-
-../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTMensaje.h:
-
-../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/FechaHora.h:
 
 ../source/interfacesYControladores/../../headers/interfacesYControladores/IConsulta.h:
 
@@ -158,8 +152,6 @@ source/interfacesYControladores/Factory.d: \
 
 ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTUser.h:
 
-../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTMensaje.h:
-
 ../source/interfacesYControladores/../../headers/interfacesYControladores/CDiagnostico.h:
 
 ../source/interfacesYControladores/../../headers/interfacesYControladores/../dataTypes/DTCombinado.h:
@@ -175,6 +167,8 @@ source/interfacesYControladores/Factory.d: \
 ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/interfacesYControladores/IConsulta.h:
 
 ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTConsultaDia.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/FechaHora.h:
 
 ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/dataTypes/DTConsulta.h:
 

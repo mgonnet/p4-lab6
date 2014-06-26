@@ -34,14 +34,8 @@ bool Mensaje::isNuevosDiagnosticos() const {
 
 bool Mensaje::isLeido() { return leido; }
 
-void Mensaje::marcarComoLeido() { leido=true; }
 
-DTMensaje Mensaje::getDTMensaje()
-{
-	DTMensaje datos=DTMensaje(ciSocio,ciMedicoIntruso,fecha,nuevosDiagnosticos,leido);
-	leido=true;
-	return datos;
-}
+void Mensaje::marcarComoLeido() { leido=true; }
 
 Mensaje::~Mensaje()
 {

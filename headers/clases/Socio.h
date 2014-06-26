@@ -47,10 +47,6 @@ public:
 	void buscarConsulta(DTConsulta c);
 	Consulta* getConsulta(int codigo);
 
-	DTMedico getDatosBasicos();
-
-	bool consultaConMedico12Meses(Medico*);
-
 	virtual ~Socio();
 };
 
