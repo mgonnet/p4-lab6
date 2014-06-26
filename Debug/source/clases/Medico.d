@@ -16,6 +16,7 @@ source/clases/Medico.d: ../source/clases/Medico.cpp \
  ../source/clases/../../headers/clases/../../headers/clases/Observer.h \
  ../source/clases/../../headers/clases/../../headers/clases/StockAcciones.h \
  ../source/clases/../../headers/clases/../../headers/clases/Accion.h \
+ ../source/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/DTMensaje.h \
  ../source/clases/../../headers/clases/../../headers/dataTypes/DTConsultaDia.h \
  ../source/clases/../../headers/clases/Usuario.h \
  ../source/clases/../../headers/clases/../../headers/dataTypes/Sexo.h \
@@ -29,6 +30,7 @@ source/clases/Medico.d: ../source/clases/Medico.cpp \
  ../source/clases/../../headers/clases/../../headers/dataTypes/DTUser.h \
  ../source/clases/../../headers/clases/../../headers/dataTypes/Sexo.h \
  ../source/clases/../../headers/clases/../../headers/dataTypes/Rol.h \
+ ../source/clases/../../headers/clases/../../headers/dataTypes/DTMensaje.h \
  ../source/clases/../../headers/clases/Consulta.h
 
 ../source/clases/../../headers/clases/Medico.h:
@@ -65,6 +67,8 @@ source/clases/Medico.d: ../source/clases/Medico.cpp \
 
 ../source/clases/../../headers/clases/../../headers/clases/Accion.h:
 
+../source/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/DTMensaje.h:
+
 ../source/clases/../../headers/clases/../../headers/dataTypes/DTConsultaDia.h:
 
 ../source/clases/../../headers/clases/Usuario.h:
@@ -90,5 +94,7 @@ source/clases/Medico.d: ../source/clases/Medico.cpp \
 ../source/clases/../../headers/clases/../../headers/dataTypes/Sexo.h:
 
 ../source/clases/../../headers/clases/../../headers/dataTypes/Rol.h:
+
+../source/clases/../../headers/clases/../../headers/dataTypes/DTMensaje.h:
 
 ../source/clases/../../headers/clases/Consulta.h:

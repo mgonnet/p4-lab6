@@ -17,7 +17,8 @@ source/interfacesYControladores/Almacen.d: \
  ../source/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTSocio.h \
  ../source/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTUser.h \
  ../source/interfacesYControladores/../../headers/clases/../../headers/dataTypes/Sexo.h \
- ../source/interfacesYControladores/../../headers/clases/../../headers/dataTypes/Rol.h
+ ../source/interfacesYControladores/../../headers/clases/../../headers/dataTypes/Rol.h \
+ ../source/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTMensaje.h
 
 ../source/interfacesYControladores/../../headers/interfacesYControladores/Almacen.h:
 
@@ -54,3 +55,5 @@ source/interfacesYControladores/Almacen.d: \
 ../source/interfacesYControladores/../../headers/clases/../../headers/dataTypes/Sexo.h:
 
 ../source/interfacesYControladores/../../headers/clases/../../headers/dataTypes/Rol.h:
+
+../source/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTMensaje.h:

@@ -48,6 +48,8 @@ source/interfacesYControladores/CConsulta.d: \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTMedico.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTSocio.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTUser.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTMensaje.h \
+ ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/FechaHora.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Socio.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/clases/Subject.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Logueo.h \
@@ -59,6 +61,7 @@ source/interfacesYControladores/CConsulta.d: \
  ../source/interfacesYControladores/../../headers/clases/../../headers/clases/Observer.h \
  ../source/interfacesYControladores/../../headers/clases/../../headers/clases/StockAcciones.h \
  ../source/interfacesYControladores/../../headers/clases/../../headers/clases/Accion.h \
+ ../source/interfacesYControladores/../../headers/clases/../../headers/clases/../../headers/dataTypes/DTMensaje.h \
  ../source/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTConsultaDia.h \
  ../source/interfacesYControladores/../../headers/dataTypes/ParametroAccionMensaje.h \
  ../source/interfacesYControladores/../../headers/dataTypes/Parametro.h \
@@ -160,6 +163,10 @@ source/interfacesYControladores/CConsulta.d: \
 
 ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTUser.h:
 
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTMensaje.h:
+
+../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/dataTypes/FechaHora.h:
+
 ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Socio.h:
 
 ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/../../headers/clases/Subject.h:
@@ -181,6 +188,8 @@ source/interfacesYControladores/CConsulta.d: \
 ../source/interfacesYControladores/../../headers/clases/../../headers/clases/StockAcciones.h:
 
 ../source/interfacesYControladores/../../headers/clases/../../headers/clases/Accion.h:
+
+../source/interfacesYControladores/../../headers/clases/../../headers/clases/../../headers/dataTypes/DTMensaje.h:
 
 ../source/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTConsultaDia.h:
 

@@ -54,7 +54,7 @@ public:
 	set<DTUsuarioAR> listarUsuariosAR();
 
 	virtual int cantMensajesNoLeidos();
-
+	virtual set<DTMensaje> getMensajes();
 	~CUsuario() {}
 };
 

@@ -45,6 +45,16 @@ set<Mensaje*>	MedicoNotificable::getMensajes()
 	return this->buzon;
 }
 
+set<DTMensaje>	MedicoNotificable::getDTMensajes()
+{
+	set<Mensaje*>::iterator it;
+	set<DTMensaje> mensajes;
+	for ( it=buzon.begin() ; it != buzon.end() ; ++it)
+		mensajes.insert((*it)->getDTMensaje());
+
+	return mensajes;
+}
+
 int MedicoNotificable::cantMensajesNoLeidos()
 {
 	set<Mensaje*>::iterator it;

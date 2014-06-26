@@ -9,6 +9,7 @@
 #include "../../headers/interfacesYControladores/IUsuario.h"
 #include "../../headers/interfacesYControladores/IConsulta.h"
 #include "../../headers/dataTypes/DTInfoLogueo.h"
+#include "../../headers/dataTypes/DTMensaje.h"
 #include "../../headers/clases/FechaSistema.h"
 
 #include <string>
@@ -938,12 +939,12 @@ void Buzon()
 	cout << "BUZON (" << iU->cantMensajesNoLeidos() << ")" << endl;
 	cout << "----------" << endl;
 
-	getline(cin,buffer);
-	/*set<DTMensajes> mensajes=iU->getMensajes();
-	set<DTMensajes>::iterator it;
+	set<DTMensaje> mensajes=iU->getMensajes();
+	set<DTMensaje>::iterator it;
 	for ( it = mensajes.begin() ; it != mensajes.end() ; ++it)
-		cout << (*it) << endl;*/
+		cout << (*it) << endl;
 
+	getline(cin,buffer);
 }
 
 Fecha ingresoFecha()

@@ -19,6 +19,7 @@ source/clases/Consulta.d: ../source/clases/Consulta.cpp \
  ../source/clases/../../headers/clases/../../headers/dataTypes/DTUser.h \
  ../source/clases/../../headers/clases/../../headers/dataTypes/Sexo.h \
  ../source/clases/../../headers/clases/../../headers/dataTypes/Rol.h \
+ ../source/clases/../../headers/clases/../../headers/dataTypes/DTMensaje.h \
  ../source/clases/../../headers/clases/FechaSistema.h \
  ../source/clases/../../headers/clases/Diagnostico.h \
  ../source/clases/../../headers/clases/../../headers/dataTypes/DTTratamiento.h \
@@ -31,6 +32,7 @@ source/clases/Consulta.d: ../source/clases/Consulta.cpp \
  ../source/clases/../../headers/clases/../../headers/clases/Observer.h \
  ../source/clases/../../headers/clases/../../headers/clases/StockAcciones.h \
  ../source/clases/../../headers/clases/../../headers/clases/Accion.h \
+ ../source/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/DTMensaje.h \
  ../source/clases/../../headers/clases/Socio.h \
  ../source/clases/../../headers/clases/../../headers/clases/Subject.h
 
@@ -74,6 +76,8 @@ source/clases/Consulta.d: ../source/clases/Consulta.cpp \
 
 ../source/clases/../../headers/clases/../../headers/dataTypes/Rol.h:
 
+../source/clases/../../headers/clases/../../headers/dataTypes/DTMensaje.h:
+
 ../source/clases/../../headers/clases/FechaSistema.h:
 
 ../source/clases/../../headers/clases/Diagnostico.h:
@@ -97,6 +101,8 @@ source/clases/Consulta.d: ../source/clases/Consulta.cpp \
 ../source/clases/../../headers/clases/../../headers/clases/StockAcciones.h:
 
 ../source/clases/../../headers/clases/../../headers/clases/Accion.h:
+
+../source/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/DTMensaje.h:
 
 ../source/clases/../../headers/clases/Socio.h:
 

@@ -207,3 +207,9 @@ int CUsuario::cantMensajesNoLeidos()
 	Logueo* log=Logueo::getInstance();
 	return log->getUsuario()->getCantNoLeidos();
 }
+
+set<DTMensaje> CUsuario::getMensajes()
+{
+	Logueo* log=Logueo::getInstance();
+	return log->getUsuario()->getMensajes();
+}

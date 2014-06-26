@@ -125,6 +125,13 @@ int Usuario::getCantNoLeidos()
 		return medico->cantMensajesNoLeidos();
 }
 
+set<DTMensaje> Usuario::getMensajes()
+{
+	if ( medico == NULL ) throw invalid_argument("Solo los médicos tienen buzón");
+	else
+		return medico->getDTMensajes();
+}
+
 Usuario::~Usuario()
 {
 	if (administrativo != NULL) delete administrativo;

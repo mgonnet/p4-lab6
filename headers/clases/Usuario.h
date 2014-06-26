@@ -16,6 +16,7 @@
 #include "../../headers/dataTypes/DTMedico.h"
 #include "../../headers/dataTypes/DTSocio.h"
 #include "../../headers/dataTypes/DTUser.h"
+#include "../../headers/dataTypes/DTMensaje.h"
 #include <string>
 using namespace std;
 
@@ -96,6 +97,7 @@ public:
 	DTMedico		getDatosBasicos();
 
 	int getCantNoLeidos();
+	set<DTMensaje> getMensajes();
 
 	~Usuario();
 };
