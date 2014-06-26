@@ -45,6 +45,18 @@ bool Almacen::memberMedicamento(string nombre) {
 	return encontre;
 }
 
+Usuario* Almacen::findUsuario(string ci) {
+	set<Usuario*>::iterator it;
+	bool encontre = false;
+	Usuario* elUsuario;
+	for (it = usuarios.begin(); !encontre && (it != usuarios.end()); ++it) {
+		if ((*it)->getCi() == ci) {
+			encontre = true;
+			elUsuario = (*it);
+		}
+	}
+	return elUsuario;
+}
 
 Almacen::~Almacen()
 {

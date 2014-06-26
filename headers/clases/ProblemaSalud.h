@@ -33,6 +33,7 @@ public:
 	//Getters
 	string	getCodigoPS();
 	string	getEtiqueta();
+	CategoriaPS* getCategoriaPS();
 
 	//Setters
 	void setCodigoPS(string codigoPS);

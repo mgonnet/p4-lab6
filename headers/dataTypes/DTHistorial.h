@@ -28,4 +28,6 @@ private:
 	set<DTConsulta>	consultas;
 };
 
+std::ostream &operator<<(std::ostream &stream, DTHistorial imprimible);
+
 #endif /* DTHISTORIAL_H_ */

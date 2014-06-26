@@ -38,6 +38,7 @@ public:
 	void	addUsuario(Usuario*);
 	void	addCategoriaPS(CategoriaPS*);
 	bool	memberMedicamento(string);
+	Usuario* findUsuario(string);
 
 	~Almacen();
 };

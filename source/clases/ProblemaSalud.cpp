@@ -13,6 +13,10 @@ ProblemaSalud::ProblemaSalud(string codigoPS,string etiqueta): codigoPS(codigoPS
 //Getters
 string	ProblemaSalud::getCodigoPS() { return codigoPS; }
 string	ProblemaSalud::getEtiqueta() { return etiqueta; }
+CategoriaPS * ProblemaSalud::getCategoriaPS()
+{
+	return categoriaPS;
+}
 
 //Setters
 void	ProblemaSalud::setCodigoPS(string codigoPS) { this->codigoPS=codigoPS; }

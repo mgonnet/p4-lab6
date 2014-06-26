@@ -11,7 +11,7 @@
 #include <set>
 
 Socio::Socio(Usuario* u):
-	usuario(u)
+usuario(u)
 {}
 
 string Socio::getCISocio() { return (this->usuario->getCi()); }
@@ -25,14 +25,14 @@ set<DTReservaA> Socio::obtenerReservasActivas()
 	for( it=consultas.begin() ; it != consultas.end() && !encontre ; ++it )
 
 		if (fSistema->getFechaSistema().esMenorQue((*it)->getFechaConsulta()))
+		{
+			TipoConsulta tipo = (*it)->getTipoConsulta();
+			if (tipo == COMUN)
 			{
-				TipoConsulta tipo = (*it)->getTipoConsulta();
-				if (tipo == COMUN)
-				{
-					//DTReservaA dtRA = (*it)->getDatosReserva();
-					reservasActivas.insert((*it)->getDatosReserva());
-				}
+				//DTReservaA dtRA = (*it)->getDatosReserva();
+				reservasActivas.insert((*it)->getDatosReserva());
 			}
+		}
 	return reservasActivas;
 }
 
@@ -53,14 +53,25 @@ Consulta* Socio::getConsulta(int codigo)
 	Consulta* consultaRetorno;
 	set<Consulta*>::iterator it;
 	for( it=consultas.begin() ; it != consultas.end() && !encontre ; ++it )
-			if ((*it)->getCodigo() == codigo)
-			{
-				encontre = true;
-				consultaRetorno = (*it);
-			}
+		if ((*it)->getCodigo() == codigo)
+		{
+			encontre = true;
+			consultaRetorno = (*it);
+		}
 	return consultaRetorno;
 }
 
+set<DTConsulta> Socio::getHistorialConsultas() {
+	set<DTConsulta> datosConsultas;
+	set<Consulta*>::iterator it;
+	for (it = consultas.begin(); it != consultas.end(); ++it) {
+		if ((*it)->getAsistioConsulta()) {
+			DTConsulta datoConsulta = (*it)->getHistorialConsulta();
+			datosConsultas.insert(datoConsulta);
+		}
+		return datosConsultas;
+	}
+}
 
 Socio::~Socio()
 {

@@ -34,5 +34,6 @@ private:
 	set<string>	tratamientos;
 };
 
+std::ostream &operator<<(std::ostream &stream, DTDiagnostico imprimible);
 
 #endif /* DTDIAGNOSTICO_H_ */
