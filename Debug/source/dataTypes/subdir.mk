@@ -15,6 +15,7 @@ CPP_SRCS += \
 ../source/dataTypes/DTLineaRegistro.cpp \
 ../source/dataTypes/DTMedicamento.cpp \
 ../source/dataTypes/DTMedico.cpp \
+../source/dataTypes/DTMensaje.cpp \
 ../source/dataTypes/DTProblemaSalud.cpp \
 ../source/dataTypes/DTReprEstandarizada.cpp \
 ../source/dataTypes/DTReservaA.cpp \
@@ -38,6 +39,7 @@ OBJS += \
 ./source/dataTypes/DTLineaRegistro.o \
 ./source/dataTypes/DTMedicamento.o \
 ./source/dataTypes/DTMedico.o \
+./source/dataTypes/DTMensaje.o \
 ./source/dataTypes/DTProblemaSalud.o \
 ./source/dataTypes/DTReprEstandarizada.o \
 ./source/dataTypes/DTReservaA.o \
@@ -61,6 +63,7 @@ CPP_DEPS += \
 ./source/dataTypes/DTLineaRegistro.d \
 ./source/dataTypes/DTMedicamento.d \
 ./source/dataTypes/DTMedico.d \
+./source/dataTypes/DTMensaje.d \
 ./source/dataTypes/DTProblemaSalud.d \
 ./source/dataTypes/DTReprEstandarizada.d \
 ./source/dataTypes/DTReservaA.d \

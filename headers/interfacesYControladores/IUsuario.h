@@ -16,6 +16,7 @@
 #include "../../headers/dataTypes/Rol.h"
 #include "../../headers/dataTypes/DTUser.h"
 #include "../../headers/dataTypes/DTUsuarioAR.h"
+#include "../../headers/dataTypes/DTMensaje.h"
 
 using namespace std;
 
@@ -37,6 +38,8 @@ public:
 
 	virtual set<DTUsuarioAR> listarUsuariosAR() = 0;
 
+	virtual int cantMensajesNoLeidos() = 0;
+	virtual set<DTMensaje> getMensajes() = 0;
 	virtual void liberarMemoria()=0; // CUIDADO: Tendria que ir en algún lugar más neutral
 	virtual ~IUsuario() {}
  };

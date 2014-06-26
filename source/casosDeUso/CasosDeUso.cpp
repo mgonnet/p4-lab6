@@ -9,6 +9,7 @@
 #include "../../headers/interfacesYControladores/IUsuario.h"
 #include "../../headers/interfacesYControladores/IConsulta.h"
 #include "../../headers/dataTypes/DTInfoLogueo.h"
+#include "../../headers/dataTypes/DTMensaje.h"
 #include "../../headers/clases/FechaSistema.h"
 
 #include <string>
@@ -44,7 +45,7 @@ bool iniciarSesion(int argc, ... ){
 
 	IUsuario* iU=Factory::getIUsuario();
 
-	//Variables Usuada()s en iniciar Sesion
+	//Variables Usuadas en iniciar Sesion
 	string	buffer;
 	bool	contraseniaIncorrecta;
 	string	contrasenia;
@@ -896,6 +897,38 @@ void CerrarSesion()
 	delete iU;
 }
 
+void Notificar()
+{
+	// PRIMERO CONSIGO UN SET<DTBASICOUSER> CON LOS DATOS DE TODOS LOS PACIENTES DEL MEDICO LOGUEADO
+	// DESPUES EMPIEZO A SEGUIR A UN SOCIO SELECCIONADO POR SU CI
+	IConsulta* iC=Factory::getIConsulta();
+	string buffer;
+
+	system("clear");
+	cout << "INICIAR SEGUIMIENTO DE PACIENTE" << endl;
+	cout << "-------------------------------" << endl;
+	cout << "Estos sus pacientes:" << endl;
+
+	set<DTMedico> datosPacientes=iC->listarPacientesDelMedicoLogueado();
+	set<DTMedico>::iterator it;
+	for ( it=datosPacientes.begin() ; it != datosPacientes.end() ; ++it )
+		cout << (*it) << endl;
+
+	cout << "Ingrese la CI del paciente a seguir" << endl;
+	cout << "> ";
+	getline(cin,buffer);
+
+	iC->iniciarSeguimientoPaciente(buffer);
+
+	system("clear");
+	cout << "INICIAR SEGUIMIENTO DE PACIENTE" << endl;
+	cout << "-------------------------------" << endl;
+	cout << "Se ha iniciado el seguimiento del paciente. Enter para continuar." << endl;
+	getline(cin,buffer);
+
+	delete iC;
+}
+
 bool validaPass(string contrasenia)
 {
 	bool malCaracter=false;
@@ -911,6 +944,24 @@ bool validaPass(string contrasenia)
 	else
 		malCaracter=true;
 	return malCaracter;
+}
+
+void Buzon()
+{
+	IUsuario* iU = Factory::getIUsuario();
+
+	string buffer;
+
+	system("clear");
+	cout << "BUZON (" << iU->cantMensajesNoLeidos() << ")" << endl;
+	cout << "----------" << endl;
+
+	set<DTMensaje> mensajes=iU->getMensajes();
+	set<DTMensaje>::iterator it;
+	for ( it = mensajes.begin() ; it != mensajes.end() ; ++it)
+		cout << (*it) << endl;
+
+	getline(cin,buffer);
 }
 
 Fecha ingresoFecha()

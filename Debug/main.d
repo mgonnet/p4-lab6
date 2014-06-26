@@ -3,7 +3,10 @@ main.d: ../main.cpp ../headers/clases/Accion.h \
  ../headers/dataTypes/ParametroAccionMensaje.h \
  ../headers/dataTypes/Parametro.h ../headers/dataTypes/FechaHora.h \
  ../headers/clases/MedicoNotificable.h ../headers/clases/Observer.h \
- ../headers/clases/StockAcciones.h ../headers/clases/Mensaje.h \
+ ../headers/clases/StockAcciones.h \
+ ../headers/clases/../../headers/dataTypes/DTMensaje.h \
+ ../headers/clases/../../headers/dataTypes/FechaHora.h \
+ ../headers/clases/Mensaje.h \
  ../headers/clases/../../headers/dataTypes/FechaHora.h \
  ../headers/dataTypes/FechaHora.h ../headers/clases/Socio.h \
  ../headers/clases/../../headers/clases/Subject.h \
@@ -29,7 +32,6 @@ main.d: ../main.cpp ../headers/clases/Accion.h \
  ../headers/clases/../../headers/dataTypes/DTReservaA.h \
  ../headers/clases/../../headers/dataTypes/DTMedico.h \
  ../headers/clases/../../headers/dataTypes/DTSocio.h \
- ../headers/clases/../../headers/dataTypes/FechaHora.h \
  ../headers/clases/../../headers/dataTypes/DTUser.h \
  ../headers/clases/../../headers/dataTypes/Sexo.h \
  ../headers/clases/../../headers/dataTypes/Rol.h \
@@ -43,6 +45,7 @@ main.d: ../main.cpp ../headers/clases/Accion.h \
  ../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/DTLineaRegistro.h \
  ../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/../../headers/dataTypes/TipoOper.h \
  ../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/../../headers/dataTypes/FechaHora.h \
+ ../headers/interfacesYControladores/../../headers/dataTypes/DTMensaje.h \
  ../headers/interfacesYControladores/CUsuario.h \
  ../headers/interfacesYControladores/../../headers/interfacesYControladores/IUsuario.h \
  ../headers/interfacesYControladores/../../headers/clases/Usuario.h \
@@ -83,6 +86,10 @@ main.d: ../main.cpp ../headers/clases/Accion.h \
 ../headers/clases/Observer.h:
 
 ../headers/clases/StockAcciones.h:
+
+../headers/clases/../../headers/dataTypes/DTMensaje.h:
+
+../headers/clases/../../headers/dataTypes/FechaHora.h:
 
 ../headers/clases/Mensaje.h:
 
@@ -140,8 +147,6 @@ main.d: ../main.cpp ../headers/clases/Accion.h \
 
 ../headers/clases/../../headers/dataTypes/DTSocio.h:
 
-../headers/clases/../../headers/dataTypes/FechaHora.h:
-
 ../headers/clases/../../headers/dataTypes/DTUser.h:
 
 ../headers/clases/../../headers/dataTypes/Sexo.h:
@@ -167,6 +172,8 @@ main.d: ../main.cpp ../headers/clases/Accion.h \
 ../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/../../headers/dataTypes/TipoOper.h:
 
 ../headers/interfacesYControladores/../../headers/dataTypes/../../headers/dataTypes/../../headers/dataTypes/FechaHora.h:
+
+../headers/interfacesYControladores/../../headers/dataTypes/DTMensaje.h:
 
 ../headers/interfacesYControladores/CUsuario.h:
 

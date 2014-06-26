@@ -42,6 +42,12 @@ public:
 	virtual void confirmarAltaDiagnosticos() = 0;
 	virtual set<DTMedico> listarMedicos() = 0;
 	virtual void reservarConsulta(string ciMedico,Fecha fechaConsulta,Hora horaConsulta) = 0;
+
+
+	//NOTIFICAR
+	virtual set<DTMedico> listarPacientesDelMedicoLogueado()=0;
+	virtual void iniciarSeguimientoPaciente(string ci)=0;
+
 	virtual ~IConsulta() {}
 };
 

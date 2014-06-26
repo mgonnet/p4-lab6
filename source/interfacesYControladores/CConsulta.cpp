@@ -6,9 +6,12 @@
  */
 
 #include "../../headers/interfacesYControladores/CConsulta.h"
+#include "../../headers/clases/Socio.h"
+#include "../../headers/clases/Medico.h"
 #include <set>
 #include <stdexcept>
 
+#include "../../headers/dataTypes/ParametroAccionMensaje.h"
 
 void CConsulta::registrarConsultaComun(string ciMedico, string ciSocio, Fecha fechaConsulta) {}
 void CConsulta::registrarConsultaEmergencia(string ciMedico, string ciSocio, string motivo, Fecha fechaConsulta) {}
@@ -77,6 +80,11 @@ void CConsulta::reservarConsulta(string ciMedico,Fecha fechaConsulta,Hora horaCo
 
 	FechaSistema* fSis=FechaSistema::getInstance();
 	new Comun(fechaConsulta,horaConsulta,false,usuario->getMedico(),u->getSocio(),fSis->getFechaSistema());
+
+	//CUIDADO: BORRAR LO DE ABAJO
+	ParametroAccionMensaje* parametroInventado = new ParametroAccionMensaje(false,fSis->getFechaSistema(),u->getCi(),usuario->getCi());
+	u->getSocio()->notifyAll(parametroInventado);
+	delete parametroInventado;
 	//se genera una nueva instacia de Consulta Comun linkeada con sus respectivos medico y socio
 }
 
@@ -102,6 +110,39 @@ void CConsulta::darBajaReserva(int codigo)
 
 	cons = u->getSocio()->getConsulta(codigo);
 	delete cons;
+}
+
+set<DTMedico> CConsulta::listarPacientesDelMedicoLogueado()
+{
+	Logueo* log=Logueo::getInstance();
+	return log->getUsuario()->getDatosPacientes();
+}
+
+void CConsulta::iniciarSeguimientoPaciente(string ci)
+{
+	// EL USUARIO MEDICO LOGUEADO EMPIEZA A SEGUIR AL SOCIO CON ci
+	Logueo* log=Logueo::getInstance();
+	Almacen* alm=Almacen::getInstance();
+	set<Usuario*> usuarios=alm->getUsuarios();
+	Usuario* uSocio;
+
+	set<Usuario*>::iterator it;
+	bool encontre=false;
+	for ( it = usuarios.begin() ; it != usuarios.end() && !encontre ; ++it )
+		if( (*it)->getCi() == ci )
+		{
+			encontre=true;
+			uSocio=(*it);
+		}
+
+	if(!encontre) throw invalid_argument("No existe ese paciente");
+	else
+	{
+		set<Rol> roles = uSocio->getRoles();
+		if ( roles.find(SOCIO) == roles.end() ) throw invalid_argument("El usuario con esa CI no es paciente");
+		else
+			uSocio->getSocio()->addObserver(log->getUsuario()->getMedico());
+	}
 }
 
 CConsulta::~CConsulta() {}

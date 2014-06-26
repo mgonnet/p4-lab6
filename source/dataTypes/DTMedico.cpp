@@ -32,6 +32,11 @@ bool DTMedico::operator<(DTMedico otro) const
 	return this->ci < otro.getCi();
 }
 
+bool DTMedico::operator==(DTMedico otro) const
+{
+	return this->ci == otro.getCi();
+}
+
 std::ostream &operator<<( std::ostream &stream,DTMedico imprimible)
 {
 	stream	<< "Nombre: " << imprimible.getNombre() << endl

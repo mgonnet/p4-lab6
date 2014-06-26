@@ -109,6 +109,7 @@ DTMedico Usuario::getDatosMedico()
 	return DTMedico(this->getNombre(),this->getApellido(),this->getCi());
 }
 
+
 DTSocio Usuario::getDatosBasicos() {
 	return DTSocio(this->getCi(), this->getNombre(), this->getApellido(),
 			this->getFechaNac());
@@ -117,6 +118,29 @@ DTSocio Usuario::getDatosBasicos() {
 set<DTConsulta> Usuario::getHistorialConsultas() {
 	set<DTConsulta> datosConsultas = this->getSocio()->getHistorialConsultas();
 	return datosConsultas;
+}
+	
+set<DTMedico> Usuario::getDatosPacientes()
+{
+	if(medico==NULL) throw invalid_argument("El Usuario no tiene pacientes porque no es Medico");
+	else
+		return medico->getDatosPacientes();
+}
+
+DTMedico		Usuario::getDatosBasicos() { return DTMedico(nombre,apellido,ci); }
+
+int Usuario::getCantNoLeidos()
+{
+	if ( medico == NULL ) throw invalid_argument("Solo los médicos tienen buzón");
+	else
+		return medico->cantMensajesNoLeidos();
+}
+
+set<DTMensaje> Usuario::getMensajes()
+{
+	if ( medico == NULL ) throw invalid_argument("Solo los médicos tienen buzón");
+	else
+		return medico->getDTMensajes();
 }
 
 Usuario::~Usuario()

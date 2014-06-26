@@ -20,6 +20,8 @@ void ListarRepresentacionesEstandarizadas();
 void ReservaConsulta();
 void DevolucionConsulta();
 void CerrarSesion();
+void Notificar();
+void Buzon();
 
 void cambiarFechaSistema();
 

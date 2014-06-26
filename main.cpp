@@ -77,6 +77,12 @@ void SetUp()
 	IUsuario* iU=Factory::getIUsuario();
 	iU->crearAdminPorDefecto();
 	delete iU;
+
+	StockAcciones* stock = StockAcciones::getInstance();
+	Accion* accion1 = new AccionMensaje();  // Lo repito para cada acción que yo quiera que se realice.
+
+	stock->addAccion(accion1); // Lo repito para cada acción que yo quiera que se realice.
+
 	SetUpPruebasNuestras();
 }
 
@@ -128,6 +134,8 @@ void MostrarCasosDeUso()
 	{
 		cout << "(adc) > Alta Diagnósticos de una consulta" << endl;
 		cout << "(ohp) > Obtener Historial Paciente" << endl;
+		cout << "(not) > Iniciar Seguimiento de Paciente" << endl;
+		cout << "(buz) > Buzon" << endl;
 	}
 
 	if ( roles.find(MEDICO) != roles.end() || roles.find(ADMIN) != roles.end() )
@@ -169,6 +177,8 @@ bool EjecutarCasoDeUso()
 	{
 		if(buffer == "adc") AltaDiagnosticosDeUnaConsulta();
 		if(buffer == "ohp") ObtenerHistorialPaciente();
+		if(buffer == "not") Notificar();
+		if(buffer == "buz") Buzon();
 	}
 
 	if ( roles.find(MEDICO) != roles.end() || roles.find(ADMIN) != roles.end() )
@@ -234,6 +244,17 @@ void SetUpPruebasNuestras()
 	iD->confirmarAlta();
 
 	//DESLOGUEO AL ROOT
+	iU->cerrarSesion();
+
+	//LOGUEO A UN MEDICO
+	iU->comienzoInicioSesion("4855460");
+	iU->crearContrasenia("123456");
+	iU->asignarSesionUsuario();
+
+	//EMPIEZO A SEGUIR AL SOCIO
+	iC->iniciarSeguimientoPaciente("4855461");
+
+	//DESLOGUEO AL MEDICO
 	iU->cerrarSesion();
 
 	//LOGUEO A UN SOCIO

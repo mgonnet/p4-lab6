@@ -11,6 +11,7 @@
 #include <string>
 
 #include "../../headers/dataTypes/FechaHora.h"
+#include "../../headers/dataTypes/DTMensaje.h"
 
 using namespace std;
 
@@ -26,6 +27,7 @@ public:
 	bool isLeido();
 
 	void	marcarComoLeido();
+	DTMensaje getDTMensaje();
 
 	~Mensaje();
 

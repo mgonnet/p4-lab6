@@ -16,6 +16,7 @@
 #include "../../headers/dataTypes/DTMedico.h"
 #include "../../headers/dataTypes/DTSocio.h"
 #include "../../headers/dataTypes/DTUser.h"
+#include "../../headers/dataTypes/DTMensaje.h"
 #include <string>
 using namespace std;
 
@@ -82,7 +83,7 @@ public:
 	bool contraseniaCorrecta();
 	DTUser getDatosCompletos();
 	DTInfoLogueo getInfoLogueo();
-	DTSocio getDatosBasicos();
+	//DTSocio getDatosBasicos();
 	set<DTConsulta> getHistorialConsultas();
 	DTMedico getDatosMedico();
 	set<DTReservaA> obtenerReservasActivas();
@@ -90,6 +91,13 @@ public:
 	void darBajarR(string codigo);
 	void asistir(string ciMedico, Fecha fechaConsulta);
 	set<Rol> getRoles();
+
+	//Notificar
+	set<DTMedico> getDatosPacientes();
+	DTMedico		getDatosBasicos();
+
+	int getCantNoLeidos();
+	set<DTMensaje> getMensajes();
 
 	~Usuario();
 };

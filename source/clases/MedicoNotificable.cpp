@@ -9,11 +9,13 @@
 
 #include "../../headers/clases/MedicoNotificable.h"
 #include "../../headers/dataTypes/Parametro.h"
+#include "../../headers/dataTypes/ParametroAccionMensaje.h"
 #include "../../headers/clases/Mensaje.h"
 #include "../../headers/clases/Accion.h"
 #include "../../headers/clases/Socio.h"
 #include "../../headers/clases/Subject.h"
 #include "../../headers/clases/StockAcciones.h"
+#include "../../headers/clases/Medico.h"
 
 using namespace std;
 
@@ -21,12 +23,17 @@ void	MedicoNotificable::update(Subject* sujeto,Parametro* param)
 {
 	Socio* socioRobado=dynamic_cast<Socio*>(sujeto);
 
+
+	//Medico* medicoReal=dynamic_cast<Medico*>(this); //CUIDADO: ES UNA CHANCHADA ABSOLUTA
 	if(socioRobado!=NULL)
 	{
-		if(/*checkeo 12 meses*/ true )  // CUIDADO: Falta crear la operacion que haga el chequeo.
+		if ( ((ParametroAccionMensaje*)param)->getCiMedicoIntruso() != ((Medico*)this)->getDatosMedico().getCi() ) //COMPRUEBO QUE NO SOY YO MISMO
 		{
-			StockAcciones* stockAcciones=StockAcciones::getInstance();
-			stockAcciones->performActions(this,param);
+			if( socioRobado->consultaConMedico12Meses((Medico*)this) )  // CUIDADO: Falta crear la operacion que haga el chequeo.
+			{
+				StockAcciones* stockAcciones=StockAcciones::getInstance();
+				stockAcciones->performActions(this,param);
+			}
 		}
 	}
 	else
@@ -41,6 +48,16 @@ void	MedicoNotificable::addMensaje(Mensaje* mensaje)
 set<Mensaje*>	MedicoNotificable::getMensajes()
 {
 	return this->buzon;
+}
+
+set<DTMensaje>	MedicoNotificable::getDTMensajes()
+{
+	set<Mensaje*>::iterator it;
+	set<DTMensaje> mensajes;
+	for ( it=buzon.begin() ; it != buzon.end() ; ++it)
+		mensajes.insert((*it)->getDTMensaje());
+
+	return mensajes;
 }
 
 int MedicoNotificable::cantMensajesNoLeidos()

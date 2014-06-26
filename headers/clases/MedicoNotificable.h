@@ -13,6 +13,8 @@
 #include "Observer.h"
 #include "StockAcciones.h"
 
+#include "../../headers/dataTypes/DTMensaje.h"
+
 class Subject;
 class Mensaje;
 class Parametro;
@@ -33,6 +35,7 @@ public:
 	void	addMensaje(Mensaje*);
 
 	set<Mensaje*>	getMensajes();
+	set<DTMensaje>	getDTMensajes();
 	int cantMensajesNoLeidos();
 
 	virtual ~MedicoNotificable();

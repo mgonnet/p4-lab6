@@ -23,6 +23,7 @@ source/clases/RegistroAR.d: ../source/clases/RegistroAR.cpp \
  ../source/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/DTUser.h \
  ../source/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/Sexo.h \
  ../source/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/Rol.h \
+ ../source/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/DTMensaje.h \
  ../source/clases/../../headers/clases/../../headers/clases/Administrativo.h \
  ../source/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/DTUsuarioAR.h \
  ../source/clases/../../headers/clases/../../headers/clases/../../headers/clases/RegistroAR.h
@@ -74,6 +75,8 @@ source/clases/RegistroAR.d: ../source/clases/RegistroAR.cpp \
 ../source/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/Sexo.h:
 
 ../source/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/Rol.h:
+
+../source/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/DTMensaje.h:
 
 ../source/clases/../../headers/clases/../../headers/clases/Administrativo.h:
 
