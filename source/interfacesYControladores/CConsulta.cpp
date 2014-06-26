@@ -12,7 +12,18 @@
 
 void CConsulta::registrarConsultaComun(string ciMedico, string ciSocio, Fecha fechaConsulta) {}
 void CConsulta::registrarConsultaEmergencia(string ciMedico, string ciSocio, string motivo, Fecha fechaConsulta) {}
-DTHistorial CConsulta::obtenerHistorialPaciente(string ciSocio) {}
+
+DTHistorial CConsulta::obtenerHistorialPaciente(string ciSocio) {
+	Almacen* alm = Almacen::getInstance();
+	Usuario* usuario = alm->findUsuario(ciSocio);
+	/*Ac? habr?a que tirar una excepcion si usuario==null que te diga que
+el usuario con cedula ci no pertenece al sistema, o se puede asumir
+que la cedula pertenece al sistema?*/
+	DTSocio datosSocio = usuario->getDatosBasicos();
+	set<DTConsulta> datosConsultas = usuario->getHistorialConsultas();
+	return DTHistorial(datosSocio, datosConsultas);
+}
+
 const set<DTConsulta>& CConsulta::obtenerListaConsultasDia() {}
 void CConsulta::seleccionarConsulta(string ci) {}
 const set<DTCategoriaPS>& CConsulta::obtenerListaCategoriaPS() {}
@@ -36,7 +47,7 @@ set<DTMedico> CConsulta::listarMedicos(){
 		set<Rol> roles = (*it)->getRoles();
 		if ( roles.find(MEDICO) != roles.end())
 		{	usuario = (*it);
-			datosMedicos.insert(usuario->getDatosMedico());
+		datosMedicos.insert(usuario->getDatosMedico());
 		}
 	}
 	return datosMedicos;

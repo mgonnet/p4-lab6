@@ -17,11 +17,11 @@ int Consulta::ultimoCodigo = 0;
 
 
 Consulta::Consulta( Fecha fechaConsulta,Hora horaConsulta,bool asistio,Medico* medico,Socio* socio):
-							fechaConsulta(fechaConsulta),
-							horaConsulta(horaConsulta),
-							asistio(asistio),
-							medico(medico),
-							socio(socio)
+													fechaConsulta(fechaConsulta),
+													horaConsulta(horaConsulta),
+													asistio(asistio),
+													medico(medico),
+													socio(socio)
 {
 	this->codigo = Consulta::ultimoCodigo++;
 	this->crearLinkMedico(medico);
@@ -61,7 +61,12 @@ void Consulta::setAsistioConsulta(bool asistio){
 
 //Operaciones
 
-DTConsulta Consulta::getHistorialConsultas(){}
+DTConsulta Consulta::getHistorialConsulta()
+{
+	DTMedico datosMedico = this->medico->getDatosMedico();
+	set<DTDiagnostico> datosDiagnosticos = this->getHistorialDiagnosticos();
+	return DTConsulta(this->fechaConsulta, this->getTipoConsulta(), datosMedico, datosDiagnosticos);
+}
 
 DTConsultaDia Consulta::obtenerConsultaDia(Socio* socio){
 	FechaSistema* fechaSistema=FechaSistema::getInstance();
@@ -90,6 +95,21 @@ void	Consulta::destruirLinkSocio(){
 
 void	Consulta::destruirLinkMedico(){
 	medico->destruirLinkConsulta(this);
+}
+
+set < DTDiagnostico > Consulta::getHistorialDiagnosticos()
+{
+	set<DTDiagnostico> datosDiagnosticos;
+	set<Diagnostico*>::iterator it;
+	for (it = diagnosticos.begin(); it != diagnosticos.end(); ++it) {
+		DTDiagnostico datoDiagnostico = (*it)->getHistorial();
+		datosDiagnosticos.insert(datoDiagnostico);
+	}
+	return datosDiagnosticos;
+}
+
+set<Diagnostico*> Consulta::getDiagnosticos() {
+	return diagnosticos;
 }
 
 Consulta::~Consulta()

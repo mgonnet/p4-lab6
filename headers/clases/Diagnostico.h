@@ -42,6 +42,7 @@ public:
 
 	//Negocio
 	DTDiagnostico	getHistorial();
+	set < string > getHistorialTratamientos();
 	void			linkearPS(ProblemaSalud ps);
 };
 

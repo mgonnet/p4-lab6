@@ -49,6 +49,7 @@ public:
 	Hora	getHoraConsulta();
 	Medico* getMedico();
 	Socio*  getSocio();
+	set<Diagnostico*> getDiagnosticos();
 
 	//Setters
 	void	setCodigo(int codigo);
@@ -61,7 +62,7 @@ public:
 	virtual 		TipoConsulta getTipoConsulta()=0;
 	virtual			DTReservaA getDatosReserva()=0;
 	bool			getAsistioConsulta();
-	DTConsulta		getHistorialConsultas();
+	DTConsulta		getHistorialConsulta();
 	DTConsultaDia	obtenerConsultaDia(Socio* socio);
 	bool			esDeHoy();
 	void 			altaDiagnosticos(Diagnostico* dt);
@@ -69,6 +70,7 @@ public:
 	void			crearLinkMedico(Medico* medico);
 	void 			destruirLinkSocio();
 	void 			destruirLinkMedico();
+	set<DTDiagnostico> getHistorialDiagnosticos();
 
 	virtual ~Consulta();
 

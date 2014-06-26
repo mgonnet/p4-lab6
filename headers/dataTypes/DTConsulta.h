@@ -29,6 +29,10 @@ public:
 	const Fecha& getFechaConsulta() const;
 	const DTMedico& getDTMedico() const;
 	TipoConsulta getTipo() const;
+
+	bool operator<(DTConsulta) const;
 };
+
+std::ostream &operator<<(std::ostream &stream, DTConsulta imprimible);
 
 #endif /* DTCONSULTA_H_ */

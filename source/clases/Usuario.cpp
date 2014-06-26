@@ -109,6 +109,16 @@ DTMedico Usuario::getDatosMedico()
 	return DTMedico(this->getNombre(),this->getApellido(),this->getCi());
 }
 
+DTSocio Usuario::getDatosBasicos() {
+	return DTSocio(this->getCi(), this->getNombre(), this->getApellido(),
+			this->getFechaNac());
+}
+
+set<DTConsulta> Usuario::getHistorialConsultas() {
+	set<DTConsulta> datosConsultas = this->getSocio()->getHistorialConsultas();
+	return datosConsultas;
+}
+
 Usuario::~Usuario()
 {
 	if (administrativo != NULL) delete administrativo;

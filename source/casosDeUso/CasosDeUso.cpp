@@ -680,7 +680,7 @@ void AltaReprEstandarizadaDeDiagnosticos()
 
 void RegistroConsulta()
 {
-/*	string	buffer;
+	/*	string	buffer;
 	string	ciMedico;
 	string	ciSocio;
 	Fecha	fechaConsulta;
@@ -775,7 +775,24 @@ void AltaTratamiento()
 
 }*/
 
-void ObtenerHistorialPaciente(){}
+void ObtenerHistorialPaciente() {
+	IConsulta* iC = Factory::getIConsulta();
+	string buffer;
+	string ciSocio;
+	system("clear");
+	cout << "OBTENER HISTORIAL DE PACIENTE" << endl;
+	cout << "--------------------------------------" << endl;
+	cout << "Ingrese ci del paciente para obtener su historial:" << endl;
+	cout << "> ";
+	getline(cin, ciSocio);
+	DTHistorial historial = iC->obtenerHistorialPaciente(ciSocio);
+	cout << "A continuacion se detalla el historial del paciente" << endl
+			<< endl;
+	cout << historial << endl;
+	cout << "Enter para continuar." << endl;
+	getline(cin, buffer);
+	delete iC;
+}
 
 void ListarRepresentacionesEstandarizadas()
 {
