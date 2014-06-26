@@ -6,6 +6,9 @@ source/clases/MedicoNotificable.d: ../source/clases/MedicoNotificable.cpp \
  ../source/clases/../../headers/clases/../../headers/dataTypes/DTMensaje.h \
  ../source/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h \
  ../source/clases/../../headers/dataTypes/Parametro.h \
+ ../source/clases/../../headers/dataTypes/ParametroAccionMensaje.h \
+ ../source/clases/../../headers/dataTypes/Parametro.h \
+ ../source/clases/../../headers/dataTypes/FechaHora.h \
  ../source/clases/../../headers/clases/Mensaje.h \
  ../source/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h \
  ../source/clases/../../headers/clases/Accion.h \
@@ -26,7 +29,10 @@ source/clases/MedicoNotificable.d: ../source/clases/MedicoNotificable.cpp \
  ../source/clases/../../headers/clases/../../headers/dataTypes/TipoConsulta.h \
  ../source/clases/../../headers/clases/../../headers/clases/FechaSistema.h \
  ../source/clases/../../headers/clases/Subject.h \
- ../source/clases/../../headers/clases/StockAcciones.h
+ ../source/clases/../../headers/clases/StockAcciones.h \
+ ../source/clases/../../headers/clases/Medico.h \
+ ../source/clases/../../headers/clases/../../headers/clases/MedicoNotificable.h \
+ ../source/clases/../../headers/clases/../../headers/dataTypes/DTConsultaDia.h
 
 ../source/clases/../../headers/clases/MedicoNotificable.h:
 
@@ -41,6 +47,12 @@ source/clases/MedicoNotificable.d: ../source/clases/MedicoNotificable.cpp \
 ../source/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h:
 
 ../source/clases/../../headers/dataTypes/Parametro.h:
+
+../source/clases/../../headers/dataTypes/ParametroAccionMensaje.h:
+
+../source/clases/../../headers/dataTypes/Parametro.h:
+
+../source/clases/../../headers/dataTypes/FechaHora.h:
 
 ../source/clases/../../headers/clases/Mensaje.h:
 
@@ -83,3 +95,9 @@ source/clases/MedicoNotificable.d: ../source/clases/MedicoNotificable.cpp \
 ../source/clases/../../headers/clases/Subject.h:
 
 ../source/clases/../../headers/clases/StockAcciones.h:
+
+../source/clases/../../headers/clases/Medico.h:
+
+../source/clases/../../headers/clases/../../headers/clases/MedicoNotificable.h:
+
+../source/clases/../../headers/clases/../../headers/dataTypes/DTConsultaDia.h:

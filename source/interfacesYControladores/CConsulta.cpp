@@ -70,7 +70,8 @@ void CConsulta::reservarConsulta(string ciMedico,Fecha fechaConsulta,Hora horaCo
 	FechaSistema* fSis=FechaSistema::getInstance();
 	new Comun(fechaConsulta,horaConsulta,false,usuario->getMedico(),u->getSocio(),fSis->getFechaSistema());
 
-	ParametroAccionMensaje* parametroInventado = new ParametroAccionMensaje(false,Fecha(21,21,21),"4855460","4855461");
+	//CUIDADO: BORRAR LO DE ABAJO
+	ParametroAccionMensaje* parametroInventado = new ParametroAccionMensaje(false,fSis->getFechaSistema(),u->getCi(),usuario->getCi());
 	u->getSocio()->notifyAll(parametroInventado);
 	delete parametroInventado;
 	//se genera una nueva instacia de Consulta Comun linkeada con sus respectivos medico y socio
