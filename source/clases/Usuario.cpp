@@ -118,6 +118,13 @@ set<DTMedico> Usuario::getDatosPacientes()
 
 DTMedico		Usuario::getDatosBasicos() { return DTMedico(nombre,apellido,ci); }
 
+int Usuario::getCantNoLeidos()
+{
+	if ( medico == NULL ) throw invalid_argument("Solo los médicos tienen buzón");
+	else
+		return medico->cantMensajesNoLeidos();
+}
+
 Usuario::~Usuario()
 {
 	if (administrativo != NULL) delete administrativo;

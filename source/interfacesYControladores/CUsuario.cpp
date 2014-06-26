@@ -201,3 +201,9 @@ set<DTUsuarioAR> CUsuario::listarUsuariosAR() {
 	set<DTUsuarioAR> usuariosAR=administrativo->listarUsuariosAR();
 	return usuariosAR;
 }
+
+int CUsuario::cantMensajesNoLeidos()
+{
+	Logueo* log=Logueo::getInstance();
+	return log->getUsuario()->getCantNoLeidos();
+}

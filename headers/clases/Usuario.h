@@ -95,6 +95,8 @@ public:
 	set<DTMedico> getDatosPacientes();
 	DTMedico		getDatosBasicos();
 
+	int getCantNoLeidos();
+
 	~Usuario();
 };
 

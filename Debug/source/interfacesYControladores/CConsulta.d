@@ -59,7 +59,10 @@ source/interfacesYControladores/CConsulta.d: \
  ../source/interfacesYControladores/../../headers/clases/../../headers/clases/Observer.h \
  ../source/interfacesYControladores/../../headers/clases/../../headers/clases/StockAcciones.h \
  ../source/interfacesYControladores/../../headers/clases/../../headers/clases/Accion.h \
- ../source/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTConsultaDia.h
+ ../source/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTConsultaDia.h \
+ ../source/interfacesYControladores/../../headers/dataTypes/ParametroAccionMensaje.h \
+ ../source/interfacesYControladores/../../headers/dataTypes/Parametro.h \
+ ../source/interfacesYControladores/../../headers/dataTypes/FechaHora.h
 
 ../source/interfacesYControladores/../../headers/interfacesYControladores/CConsulta.h:
 
@@ -180,3 +183,9 @@ source/interfacesYControladores/CConsulta.d: \
 ../source/interfacesYControladores/../../headers/clases/../../headers/clases/Accion.h:
 
 ../source/interfacesYControladores/../../headers/clases/../../headers/dataTypes/DTConsultaDia.h:
+
+../source/interfacesYControladores/../../headers/dataTypes/ParametroAccionMensaje.h:
+
+../source/interfacesYControladores/../../headers/dataTypes/Parametro.h:
+
+../source/interfacesYControladores/../../headers/dataTypes/FechaHora.h:

@@ -53,6 +53,8 @@ public:
 
 	set<DTUsuarioAR> listarUsuariosAR();
 
+	virtual int cantMensajesNoLeidos();
+
 	~CUsuario() {}
 };
 

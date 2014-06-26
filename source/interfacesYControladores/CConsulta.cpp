@@ -11,6 +11,7 @@
 #include <set>
 #include <stdexcept>
 
+#include "../../headers/dataTypes/ParametroAccionMensaje.h"
 
 void CConsulta::registrarConsultaComun(string ciMedico, string ciSocio, Fecha fechaConsulta) {}
 void CConsulta::registrarConsultaEmergencia(string ciMedico, string ciSocio, string motivo, Fecha fechaConsulta) {}
@@ -68,6 +69,10 @@ void CConsulta::reservarConsulta(string ciMedico,Fecha fechaConsulta,Hora horaCo
 
 	FechaSistema* fSis=FechaSistema::getInstance();
 	new Comun(fechaConsulta,horaConsulta,false,usuario->getMedico(),u->getSocio(),fSis->getFechaSistema());
+
+	ParametroAccionMensaje* parametroInventado = new ParametroAccionMensaje(false,Fecha(21,21,21),"4855460","4855461");
+	u->getSocio()->notifyAll(parametroInventado);
+	delete parametroInventado;
 	//se genera una nueva instacia de Consulta Comun linkeada con sus respectivos medico y socio
 }
 
