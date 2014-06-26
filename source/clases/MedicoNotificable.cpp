@@ -21,9 +21,11 @@ void	MedicoNotificable::update(Subject* sujeto,Parametro* param)
 {
 	Socio* socioRobado=dynamic_cast<Socio*>(sujeto);
 
+
+	//Medico* medicoReal=dynamic_cast<Medico*>(this); //CUIDADO: ES UNA CHANCHADA ABSOLUTA
 	if(socioRobado!=NULL)
 	{
-		if(/*checkeo 12 meses*/ true )  // CUIDADO: Falta crear la operacion que haga el chequeo.
+		if( socioRobado->consultaConMedico12Meses((Medico*)this) )  // CUIDADO: Falta crear la operacion que haga el chequeo.
 		{
 			StockAcciones* stockAcciones=StockAcciones::getInstance();
 			stockAcciones->performActions(this,param);

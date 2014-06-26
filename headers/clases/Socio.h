@@ -49,6 +49,8 @@ public:
 
 	DTMedico getDatosBasicos();
 
+	bool consultaConMedico12Meses(Medico*);
+
 	virtual ~Socio();
 };
 

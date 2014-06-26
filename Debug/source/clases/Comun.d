@@ -13,7 +13,11 @@ source/clases/Comun.d: ../source/clases/Comun.cpp \
  ../source/clases/../../headers/clases/../../headers/clases/../../headers/dataTypes/FechaHora.h \
  ../source/clases/../../headers/clases/Comun.h \
  ../source/clases/../../headers/clases/../../headers/clases/Consulta.h \
- ../source/clases/../../headers/clases/Medico.h
+ ../source/clases/../../headers/clases/Medico.h \
+ ../source/clases/../../headers/clases/../../headers/clases/MedicoNotificable.h \
+ ../source/clases/../../headers/clases/../../headers/clases/Observer.h \
+ ../source/clases/../../headers/clases/../../headers/clases/StockAcciones.h \
+ ../source/clases/../../headers/clases/../../headers/clases/Accion.h
 
 ../source/clases/../../headers/clases/Consulta.h:
 
@@ -44,3 +48,11 @@ source/clases/Comun.d: ../source/clases/Comun.cpp \
 ../source/clases/../../headers/clases/../../headers/clases/Consulta.h:
 
 ../source/clases/../../headers/clases/Medico.h:
+
+../source/clases/../../headers/clases/../../headers/clases/MedicoNotificable.h:
+
+../source/clases/../../headers/clases/../../headers/clases/Observer.h:
+
+../source/clases/../../headers/clases/../../headers/clases/StockAcciones.h:
+
+../source/clases/../../headers/clases/../../headers/clases/Accion.h:

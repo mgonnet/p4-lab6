@@ -67,6 +67,20 @@ DTMedico Socio::getDatosBasicos()
 	return usuario->getDatosBasicos();
 }
 
+bool Socio::consultaConMedico12Meses(Medico* med)
+{
+	bool consulto=false;
+	FechaSistema* fSis = FechaSistema::getInstance();
+
+	set<Consulta*>::iterator it;
+	for ( it = consultas.begin() ; it != consultas.end() && !consulto ; it++ )
+		if ( (*it)->getFechaConsulta().calcularEdad() < 1 )
+			if ( (*it)->getMedico() == med )
+				consulto = true;
+
+	return consulto;
+}
+
 Socio::~Socio()
 {
 	set<Consulta*>::iterator it;

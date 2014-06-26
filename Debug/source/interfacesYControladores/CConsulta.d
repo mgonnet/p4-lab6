@@ -53,9 +53,8 @@ source/interfacesYControladores/CConsulta.d: \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Logueo.h \
  ../source/interfacesYControladores/../../headers/interfacesYControladores/../../headers/clases/Usuario.h \
  ../source/interfacesYControladores/../../headers/clases/Socio.h \
- ../source/interfacesYControladores/../../headers/clases/../../headers/clases/Subject.h \
- ../source/interfacesYControladores/../../headers/clases/../../headers/clases/Consulta.h \
  ../source/interfacesYControladores/../../headers/clases/Medico.h \
+ ../source/interfacesYControladores/../../headers/clases/../../headers/clases/Consulta.h \
  ../source/interfacesYControladores/../../headers/clases/../../headers/clases/MedicoNotificable.h \
  ../source/interfacesYControladores/../../headers/clases/../../headers/clases/Observer.h \
  ../source/interfacesYControladores/../../headers/clases/../../headers/clases/StockAcciones.h \
@@ -168,11 +167,9 @@ source/interfacesYControladores/CConsulta.d: \
 
 ../source/interfacesYControladores/../../headers/clases/Socio.h:
 
-../source/interfacesYControladores/../../headers/clases/../../headers/clases/Subject.h:
+../source/interfacesYControladores/../../headers/clases/Medico.h:
 
 ../source/interfacesYControladores/../../headers/clases/../../headers/clases/Consulta.h:
-
-../source/interfacesYControladores/../../headers/clases/Medico.h:
 
 ../source/interfacesYControladores/../../headers/clases/../../headers/clases/MedicoNotificable.h:
 
