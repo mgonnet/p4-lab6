@@ -64,7 +64,7 @@ Consulta* Socio::getConsulta(int codigo)
 
 DTMedico Socio::getDatosBasicos()
 {
-	return usuario->getDatosBasicos();
+	return usuario->getDatosMedico();
 }
 
 bool Socio::consultaConMedico12Meses(Medico* med)

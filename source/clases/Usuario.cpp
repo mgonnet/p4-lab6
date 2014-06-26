@@ -116,8 +116,6 @@ set<DTMedico> Usuario::getDatosPacientes()
 		return medico->getDatosPacientes();
 }
 
-DTMedico		Usuario::getDatosBasicos() { return DTMedico(nombre,apellido,ci); }
-
 int Usuario::getCantNoLeidos()
 {
 	if ( medico == NULL ) throw invalid_argument("Solo los médicos tienen buzón");

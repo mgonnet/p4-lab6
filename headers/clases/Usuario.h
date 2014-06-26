@@ -94,7 +94,6 @@ public:
 
 	//Notificar
 	set<DTMedico> getDatosPacientes();
-	DTMedico		getDatosBasicos();
 
 	int getCantNoLeidos();
 	set<DTMensaje> getMensajes();
