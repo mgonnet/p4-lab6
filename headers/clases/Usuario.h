@@ -16,6 +16,7 @@
 #include "../../headers/dataTypes/DTMedico.h"
 #include "../../headers/dataTypes/DTSocio.h"
 #include "../../headers/dataTypes/DTUser.h"
+#include "../../headers/dataTypes/DTMensaje.h"
 #include <string>
 using namespace std;
 
@@ -90,6 +91,12 @@ public:
 	void darBajarR(string codigo);
 	void asistir(string ciMedico, Fecha fechaConsulta);
 	set<Rol> getRoles();
+
+	//Notificar
+	set<DTMedico> getDatosPacientes();
+
+	int getCantNoLeidos();
+	set<DTMensaje> getMensajes();
 
 	~Usuario();
 };
