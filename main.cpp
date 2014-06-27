@@ -252,3 +252,61 @@ void SetUpPruebasNuestras()
 	delete iC;
 	delete iD;
 }
+
+void SetUpPruebasInco()
+{
+	IUsuario* iU=Factory::getIUsuario();
+	IDiagnostico* iD=Factory::getIDiagnostico();
+	IConsulta* iC=Factory::getIConsulta();
+	FechaSistema* fSis=FechaSistema::getInstance();
+
+	fSis->setFechaSistema(Fecha(1,1,2014));
+
+	//VOY A LOGUEAR AL ROOT
+	iU->comienzoInicioSesion("ROOT");
+	iU->ingresarContrasenia("123");
+	iU->asignarSesionUsuario();
+
+	set<Rol> soloMedico; soloMedico.insert(MEDICO);
+	set<Rol> soloSocio; soloSocio.insert(SOCIO);
+	set<Rol> soloAdmin; soloAdmin.insert(ADMIN);
+	set<Rol> SocioMedico; SocioMedico.insert(SOCIO); SocioMedico.insert(MEDICO);
+
+	//CREO JA
+	iU->iniciarAltaReactivacion("34567645");
+	iU->ingresarDatos("James","Peer",MASCULINO,Fecha(28,12,1998),soloAdmin);
+	iU->altaUsuario();
+
+	//DESLOGUEO AL ROOT
+	iU->cerrarSesion();
+
+	//LOGUEO A UN SOCIO
+	iU->comienzoInicioSesion("345676");
+	iU->crearContrasenia("123456");
+	iU->asignarSesionUsuario();
+
+	//CREO TM
+	iU->iniciarAltaReactivacion("34562345");
+	iU->ingresarDatos("Tifany","McKensey",FEMENINO,Fecha(1,1,1990),soloSocio);
+	iU->altaUsuario();
+
+	//CREO DP
+	iU->iniciarAltaReactivacion("12345435");
+	iU->ingresarDatos("Diego","Lopez",MASCULINO,Fecha(3,3,1980),soloSocio);
+	iU->altaUsuario();
+
+	//CREO JM
+	iU->iniciarAltaReactivacion("6543667");
+	iU->ingresarDatos("Diego","Lopez",MASCULINO,Fecha(7,4,1970),soloSocio);
+	iU->altaUsuario();
+
+	//CREO DC
+	iU->iniciarAltaReactivacion("43521343");
+	iU->ingresarDatos("Debora","Corral",FEMENINO,Fecha(13,07,1993),soloMedico);
+	iU->altaUsuario();
+
+	//CREO AL
+	iU->iniciarAltaReactivacion("98056743");
+	iU->ingresarDatos("Ana","Lopez",FEMENINO,Fecha(24,9,1981),soloMedico);
+	iU->altaUsuario();
+}
