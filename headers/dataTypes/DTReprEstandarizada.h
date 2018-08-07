@@ -10,6 +10,7 @@
 
 #include <string>
 #include <set>
+#include <iostream>
 
 class DTProblemaSalud;
 
@@ -22,12 +23,15 @@ public:
 
 	const string& getCodigoCps() const;
 	const string& getNombre() const;
-	const set<DTProblemaSalud>& getProblemasSalud() const;
+	set<DTProblemaSalud> getProblemasSalud() const;
+	bool operator<(DTReprEstandarizada) const;
 
 private:
 	string					codigoCPS;
 	string					nombre;
 	set<DTProblemaSalud>	problemasSalud;
 };
+
+std::ostream &operator<<( std::ostream &stream,DTReprEstandarizada imprimible);
 
 #endif /* DTREPRESTANDARIZADA_H_ */

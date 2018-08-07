@@ -11,6 +11,8 @@
 #include <string>
 #include <set>
 
+#include "../../headers/dataTypes/DTProblemaSalud.h"
+
 class Diagnostico;
 class CategoriaPS;
 
@@ -19,24 +21,27 @@ using namespace std;
 class ProblemaSalud
 {
 private:
-	int					codigoPS;
+	string				codigoPS;
 	string				etiqueta;
 	set<Diagnostico*>	diagnosticos;
 	CategoriaPS*		categoriaPS;
 
 public:
 	//Creadores
-	ProblemaSalud(int codigoPS,string etiqueta);
+	ProblemaSalud(string codigoPS,string etiqueta);
 
 	//Getters
-	int		getCodigoPS();
+	string	getCodigoPS();
 	string	getEtiqueta();
+	CategoriaPS* getCategoriaPS();
 
 	//Setters
-	void setCodigoPS(int codigoPS);
+	void setCodigoPS(string codigoPS);
 	void setEtiqueta(string etiqueta);
+	void setCategoriaPS(CategoriaPS*);
 
 	void linkearDiagnostico(Diagnostico diag);
+	DTProblemaSalud obtenerDTProblemaSalud();
 };
 
 

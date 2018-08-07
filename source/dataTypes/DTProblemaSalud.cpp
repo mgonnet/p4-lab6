@@ -19,3 +19,16 @@ const string& DTProblemaSalud::getCodigo() const {
 const string& DTProblemaSalud::getEtiqueta() const {
 	return etiqueta;
 }
+
+bool DTProblemaSalud::operator<(DTProblemaSalud otro) const
+{
+	return this->codigo < otro.codigo;
+}
+
+std::ostream &operator<<( std::ostream &stream,DTProblemaSalud imprimible)
+{
+	stream	<< "Codigo Problema Salud: " << imprimible.getCodigo() << endl
+			<< "Etiqueta: " << imprimible.getEtiqueta() << endl;
+
+	return (stream);
+}

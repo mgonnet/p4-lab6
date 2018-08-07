@@ -1,8 +1,8 @@
 /*
  * Factory.h
  *
- *  Created on: 09/06/2014
- *      Author: GRUPO_04
+ *  Created on: Jun 10, 2014
+ *      Author: eacosta
  */
 
 #ifndef FACTORY_H_
@@ -12,12 +12,13 @@
 #include "IConsulta.h"
 #include "IDiagnostico.h"
 
-class Factory
-{
+class Factory {
+
 public:
-	IUsuario		getIUsuario();
-	IConsulta		getIConsulta();
-	IDiagnostico	getIDiagnostico();
+
+	static IUsuario* getIUsuario();
+	static IConsulta* getIConsulta();
+	static IDiagnostico* getIDiagnostico();
 };
 
 

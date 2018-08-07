@@ -3,6 +3,62 @@
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
+O_SRCS += \
+../Accion.o \
+../AccionMensaje.o \
+../Administrativo.o \
+../Almacen.o \
+../CConsulta.o \
+../CDiagnostico.o \
+../CUsuario.o \
+../CategoriaPS.o \
+../Consulta.o \
+../DTCategoriaPS.o \
+../DTConsulta.o \
+../DTConsultaDia.o \
+../DTDiagnostico.o \
+../DTDiagnosticoAlta.o \
+../DTHistorial.o \
+../DTInfoLogueo.o \
+../DTLineaRegistro.o \
+../DTMedicamento.o \
+../DTMedico.o \
+../DTProblemaSalud.o \
+../DTReprEstandarizada.o \
+../DTReservaA.o \
+../DTSocio.o \
+../DTTratamiento.o \
+../DTUser.o \
+../DTUsuarioAR.o \
+../Diagnostico.o \
+../Factory.o \
+../Farmacologico.o \
+../FechaHora.o \
+../FechaSistema.o \
+../LineaRegistroAR.o \
+../Logueo.o \
+../Medicamento.o \
+../Medico.o \
+../MedicoNotificable.o \
+../Mensaje.o \
+../Observer.o \
+../Parametro.o \
+../ParametroAccionMensaje.o \
+../PequeniosTest.o \
+../ProblemaSalud.o \
+../Quirurgico.o \
+../RegistroAR.o \
+../SesionTest.o \
+../Socio.o \
+../SocioRobadoTest.o \
+../StockAcciones.o \
+../Subject.o \
+../Tratamiento.o \
+../Usuario.o \
+../gtest-all.o \
+../gtest_main.o \
+../medicoNotificableTest.o 
+
 CPP_SRCS += \
 ../main.cpp 
 

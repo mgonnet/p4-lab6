@@ -4,6 +4,8 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../source/clases/Accion.cpp \
+../source/clases/AccionMensaje.cpp \
 ../source/clases/Administrativo.cpp \
 ../source/clases/CategoriaPS.cpp \
 ../source/clases/Comun.cpp \
@@ -11,16 +13,29 @@ CPP_SRCS += \
 ../source/clases/Diagnostico.cpp \
 ../source/clases/Emergencia.cpp \
 ../source/clases/Farmacologico.cpp \
+../source/clases/FechaSistema.cpp \
+../source/clases/LineaRegistroAR.cpp \
 ../source/clases/Logueo.cpp \
 ../source/clases/Medicamento.cpp \
 ../source/clases/Medico.cpp \
+../source/clases/MedicoNotificable.cpp \
+../source/clases/Mensaje.cpp \
+../source/clases/Observer.cpp \
+../source/clases/ParametroCriterio1.cpp \
+../source/clases/ParametroCriterio2.cpp \
 ../source/clases/ProblemaSalud.cpp \
 ../source/clases/Quirurgico.cpp \
+../source/clases/RegistroAR.cpp \
+../source/clases/SeleccionMedico.cpp \
 ../source/clases/Socio.cpp \
+../source/clases/StockAcciones.cpp \
+../source/clases/Subject.cpp \
 ../source/clases/Tratamiento.cpp \
 ../source/clases/Usuario.cpp 
 
 OBJS += \
+./source/clases/Accion.o \
+./source/clases/AccionMensaje.o \
 ./source/clases/Administrativo.o \
 ./source/clases/CategoriaPS.o \
 ./source/clases/Comun.o \
@@ -28,16 +43,29 @@ OBJS += \
 ./source/clases/Diagnostico.o \
 ./source/clases/Emergencia.o \
 ./source/clases/Farmacologico.o \
+./source/clases/FechaSistema.o \
+./source/clases/LineaRegistroAR.o \
 ./source/clases/Logueo.o \
 ./source/clases/Medicamento.o \
 ./source/clases/Medico.o \
+./source/clases/MedicoNotificable.o \
+./source/clases/Mensaje.o \
+./source/clases/Observer.o \
+./source/clases/ParametroCriterio1.o \
+./source/clases/ParametroCriterio2.o \
 ./source/clases/ProblemaSalud.o \
 ./source/clases/Quirurgico.o \
+./source/clases/RegistroAR.o \
+./source/clases/SeleccionMedico.o \
 ./source/clases/Socio.o \
+./source/clases/StockAcciones.o \
+./source/clases/Subject.o \
 ./source/clases/Tratamiento.o \
 ./source/clases/Usuario.o 
 
 CPP_DEPS += \
+./source/clases/Accion.d \
+./source/clases/AccionMensaje.d \
 ./source/clases/Administrativo.d \
 ./source/clases/CategoriaPS.d \
 ./source/clases/Comun.d \
@@ -45,12 +73,23 @@ CPP_DEPS += \
 ./source/clases/Diagnostico.d \
 ./source/clases/Emergencia.d \
 ./source/clases/Farmacologico.d \
+./source/clases/FechaSistema.d \
+./source/clases/LineaRegistroAR.d \
 ./source/clases/Logueo.d \
 ./source/clases/Medicamento.d \
 ./source/clases/Medico.d \
+./source/clases/MedicoNotificable.d \
+./source/clases/Mensaje.d \
+./source/clases/Observer.d \
+./source/clases/ParametroCriterio1.d \
+./source/clases/ParametroCriterio2.d \
 ./source/clases/ProblemaSalud.d \
 ./source/clases/Quirurgico.d \
+./source/clases/RegistroAR.d \
+./source/clases/SeleccionMedico.d \
 ./source/clases/Socio.d \
+./source/clases/StockAcciones.d \
+./source/clases/Subject.d \
 ./source/clases/Tratamiento.d \
 ./source/clases/Usuario.d 
 

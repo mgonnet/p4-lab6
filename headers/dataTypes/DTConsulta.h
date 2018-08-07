@@ -18,16 +18,21 @@ class DTConsulta
 private:
 	Fecha			fechaConsulta;
 	TipoConsulta	tipo;
-	DTMedico		medico;
-	DTDiagnostico	diagnostico;	// CUIDADO: creo que aca sería un conjunto
+	DTMedico		dtMedico;
+	set<DTDiagnostico> diagnosticos;	// CUIDADO: creo que aca sería un conjunto
 
 public:
-	DTConsulta(Fecha fechaConsulta, TipoConsulta tipo, DTMedico medico, DTDiagnostico diagnostico);
+	DTConsulta() {}
+	DTConsulta(Fecha fechaConsulta, TipoConsulta tipo, DTMedico dtMedico, set<DTDiagnostico> diagnosticos);
 
-	const DTDiagnostico& getDiagnostico() const;
+	const set<DTDiagnostico>& getSetDiagnostico() const;
 	const Fecha& getFechaConsulta() const;
-	const DTMedico& getMedico() const;
+	const DTMedico& getDTMedico() const;
 	TipoConsulta getTipo() const;
+
+	bool operator<(DTConsulta) const;
 };
+
+std::ostream &operator<<(std::ostream &stream, DTConsulta imprimible);
 
 #endif /* DTCONSULTA_H_ */

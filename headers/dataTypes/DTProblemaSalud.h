@@ -9,6 +9,7 @@
 #define DTPROBLEMASALUD_H_
 
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -23,7 +24,9 @@ public:
 
 	const string& getCodigo() const;
 	const string& getEtiqueta() const;
+	bool operator<(DTProblemaSalud) const;
 };
 
+std::ostream &operator<<( std::ostream &stream,DTProblemaSalud imprimible);
 
 #endif /* DTPROBLEMASALUD_H_ */

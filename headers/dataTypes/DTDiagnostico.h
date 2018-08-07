@@ -26,6 +26,7 @@ public:
 	const string& getEtiqueta() const;
 	const set<string>& getTratamientos() const;
 
+	bool operator<(DTDiagnostico) const;
 private:
 	string		descripcion;
 	string		codigo;
@@ -33,5 +34,6 @@ private:
 	set<string>	tratamientos;
 };
 
+std::ostream &operator<<(std::ostream &stream, DTDiagnostico imprimible);
 
 #endif /* DTDIAGNOSTICO_H_ */

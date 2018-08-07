@@ -40,8 +40,9 @@ public:
 	//Setters
 	void	setDescripcion();
 
-	//
+	//Negocio
 	DTDiagnostico	getHistorial();
+	set < string > getHistorialTratamientos();
 	void			linkearPS(ProblemaSalud ps);
 };
 

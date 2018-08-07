@@ -5,13 +5,12 @@
  *      Author: Emiliano
  */
 
-
-
 #include "../../headers/clases/Emergencia.h"
-#include "../../headers/clases/Consulta.h"
-#include "../../headers/dataTypes/FechaHora.h"
 
-Emergencia::Emergencia(int codigo,Fecha fechaEmergencia,Hora horaEmergencia, string motivo) : Consulta(codigo, fechaEmergencia, horaEmergencia, true), motivo(motivo){};
+Emergencia::Emergencia(Fecha fechaConsulta,Hora horaConsulta,bool asistio,Medico* medico,
+		Socio* socio,string motivo):
+		Consulta(fechaConsulta,horaConsulta,asistio,medico,socio),
+		motivo(motivo){}
 
 //Getters
 string	Emergencia::getMotivo(){
@@ -23,6 +22,12 @@ void Emergencia::setMotivo(string motivo){
 	this->motivo = motivo;
 }
 
+DTReservaA		Emergencia::getDatosReserva(){}
 
 
+TipoConsulta Emergencia::getTipoConsulta(){
+    	return EMERGENCIA;
+}
+
+Emergencia::~Emergencia() {}
 

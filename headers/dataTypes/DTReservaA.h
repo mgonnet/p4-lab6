@@ -9,22 +9,29 @@
 #define DTRESERVAA_H_
 
 #include "FechaHora.h"
+#include "DTMedico.h"
 
 class DTReservaA
 {
 public:
-	DTReservaA(Fecha fechaC,Hora horaC,Fecha fechaR);
+	DTReservaA(int codigoC,Fecha fechaC,Hora horaC,Fecha fechaR,DTMedico dtMed);
 
-	const Fecha& getFechaC() const;
-	const Fecha& getFechaR() const;
-	const Hora& getHoraC() const;
+	int getCodigoC();
+	Fecha getFechaC();
+	Fecha getFechaR();
+	Hora getHoraC();
+	DTMedico getDTMedico();
+
+	bool operator<(DTReservaA) const;
 
 private:
+	int		codigoC;
 	Fecha	fechaC;
 	Hora	horaC;
 	Fecha	fechaR;
+	DTMedico dtMed;
 };
 
-
+std::ostream &operator<<( std::ostream &stream,DTReservaA imprimible);
 
 #endif /* DTRESERVAA_H_ */

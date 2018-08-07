@@ -23,6 +23,9 @@ public:
 
 	string	getCodigoCPS();
 	string	getEtiqueta();
+	bool operator<(DTCategoriaPS) const;
 };
+
+std::ostream &operator<<( std::ostream &stream,DTCategoriaPS imprimible);
 
 #endif /* DTCATEGORIAPS_H_ */

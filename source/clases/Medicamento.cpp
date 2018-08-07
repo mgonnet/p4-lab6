@@ -4,6 +4,7 @@
 #include "../../headers/clases/Farmacologico.h"
 
 //Creadoras
+Medicamento::Medicamento(string nombre): nombre(nombre) {}
 Medicamento::Medicamento(string nombre,Farmacologico farmacologico): nombre(nombre) { }
 
 //Getters

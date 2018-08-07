@@ -6,6 +6,7 @@
 O_SRCS += \
 ../obj/DTCategoriaPS.o \
 ../obj/FechaHora.o \
+../obj/ParametroAccionMensaje.o \
 ../obj/main.o 
 
 

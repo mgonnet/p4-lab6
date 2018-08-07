@@ -9,32 +9,32 @@
 #define EMERGENCIA_H_
 
 #include <string>
-
-#include "../../headers/dataTypes/FechaHora.h"
-#include "../../headers/clases/Consulta.h"
-
 using namespace std;
+
+#include "../../headers/clases/Consulta.h"
+#include "../../headers/clases/Medico.h"
 
 class Emergencia: public Consulta{
 
 private:
-	
 	string motivo;
 
 public:
-	
 	//Creadoras
-	Emergencia(int codigo,Fecha fechaEmergencia,Hora horaEmergencia,string motivo);
+	Emergencia(	Fecha fechaConsulta,Hora horaConsulta,bool asistio,Medico* medico,
+				Socio* socio,string motivo );
 
 	//Getters
 	string	getMotivo();
-	
+
 	//Setters
 	void	setMotivo(string motivo);
 
 	//Operaciones
-		void 	create(string ciSocio, string ciMedico,
-								Fecha fechaConsulta, string motivo, bool asiste);
+	TipoConsulta	getTipoConsulta();
+	DTReservaA		getDatosReserva();
+
+	~Emergencia();
 };
 
 

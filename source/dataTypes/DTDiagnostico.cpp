@@ -8,17 +8,19 @@
 #include <string>
 #include <set>
 
+#include <iostream>
+
 #include "../../headers/dataTypes/DTDiagnostico.h"
 
 DTDiagnostico::DTDiagnostico(	string descripcion,
-								string codigo,
-								string etiqueta,
-								set<string> tratamientos):
+		string codigo,
+		string etiqueta,
+		set<string> tratamientos):
 
-	descripcion(descripcion),
-	codigo(codigo),
-	etiqueta(etiqueta),
-	tratamientos(tratamientos) { }
+		descripcion(descripcion),
+		codigo(codigo),
+		etiqueta(etiqueta),
+		tratamientos(tratamientos) { }
 
 
 const string& DTDiagnostico::getCodigo() const {
@@ -37,8 +39,20 @@ const set<string>& DTDiagnostico::getTratamientos() const {
 	return tratamientos;
 }
 
+bool DTDiagnostico::operator<(DTDiagnostico otro) const
+{
+	return this->codigo < otro.getCodigo();
+}
 
-
-
-
+std::ostream &operator<<(std::ostream &stream,DTDiagnostico imprimible) {
+	stream << "C?digo: " << imprimible.getCodigo() << endl
+			<< "Etiqueta: " << imprimible.getEtiqueta() << endl
+			<< "Descripci?n: " << imprimible.getDescripcion() << endl;
+	set<string>::iterator it;
+	set<string> tratamientos = imprimible.getTratamientos();
+	for (it = tratamientos.begin(); it != tratamientos.end(); ++it) {
+		stream << (*it);
+	}
+	return (stream);
+}
 
